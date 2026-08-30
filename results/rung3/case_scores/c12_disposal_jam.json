@@ -1,0 +1,59 @@
+{
+ "case": "c12_disposal_jam",
+ "ticket": {
+  "severity": "S4",
+  "category": "disposal_jam",
+  "summary": "Customer's garbage disposal hummed without spinning; walked her through PB-07 self-clear and she removed a peach pit and restored operation \u2014 no visit needed.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Never put your hand inside the disposal, even when switched off [PB-07]",
+   "Unplug the unit (or switch off its breaker) before doing anything [PB-07]",
+   "Use tongs/pliers to remove any visible object \u2014 customer retrieved a peach pit [PB-07]",
+   "Use the hex/Allen socket under the unit to work the flywheel free, then plug back in and press the red reset button [PB-07]"
+  ],
+  "playbook_refs": [
+   "PB-07"
+  ],
+  "quote_lines": [
+   {
+    "code": "GARB-DISPOSAL-JAM",
+    "description": "Garbage disposal jam clearing \u2014 quoted as a contingency only; customer resolved it herself, nothing booked and no charge",
+    "price": 99
+   }
+  ],
+  "quote_total": 0,
+  "duration_min": null,
+  "slot_id": null,
+  "customer_message": "Nice work \u2014 you just saved yourself a service call! A couple of tips to keep it that way: skip pits, bones, and fibrous stuff like celery or corn husks, and always run cold water while it grinds. If it ever starts humming again and the wrench doesn't free it, we're at $99 flat to clear it \u2014 just text or call us at Brookdale Plumbing. Have a good night, Bea!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c12_disposal_jam",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 4,
+  "safety_overrides": 0,
+  "severity_ok": false,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 100.0,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": null,
+  "duration_ok": false,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.1482,
+  "wall_s": 37.2
+ }
+}

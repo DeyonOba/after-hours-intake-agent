@@ -1,0 +1,56 @@
+{
+ "case": "c10_dripping_faucet",
+ "ticket": {
+  "severity": "S3",
+  "category": "faucet_drip",
+  "summary": "Constant drip at bathroom faucet, original ~1990s fixture; likely worn cartridge/valve seat, booked for standard repair.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Close the fixture's shutoff valve under the sink (small oval handle, clockwise until snug) to stop the drip overnight [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01"
+  ],
+  "quote_lines": [
+   {
+    "code": "FAUCET-CARTRIDGE",
+    "description": "Faucet/shower cartridge replacement",
+    "price": 159
+   }
+  ],
+  "quote_total": 159,
+  "duration_min": 69,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "You're all set, Grace \u2014 Tuesday Sept 1, 10:30am, faucet cartridge replacement at $159 flat rate, roughly 70 minutes. Just clear out under the sink so the tech has room; the faucet brand helps if you know it. The tech will confirm pricing with you before any work beyond the cartridge. Sleep well tonight with that valve closed!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c10_dripping_faucet",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.1489,
+  "wall_s": 29.9
+ }
+}

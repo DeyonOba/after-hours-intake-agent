@@ -1,0 +1,64 @@
+{
+ "case": "c01_burst_supply",
+ "ticket": {
+  "severity": "S1",
+  "category": "leak_contained",
+  "summary": "Kitchen sink supply line spraying at the faucet connection; customer closed both angle stops and bled pressure, leak now contained \u2014 needs supply line replacement first thing tomorrow.",
+  "escalate_now": true,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Close both fixture shutoff valves under the kitchen sink, clockwise until snug [PB-01]",
+   "Open a low cold tap (bathroom/basement) to bleed line pressure after shutoff [PB-03]",
+   "Keep both valves closed and do not use the kitchen sink until the tech arrives [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01",
+   "PB-02",
+   "PB-03"
+  ],
+  "quote_lines": [
+   {
+    "code": "SUPPLY-LINE-REPLACE",
+    "description": "Supply line replacement (worn braided faucet supply hose)",
+    "price": 129
+   }
+  ],
+  "quote_total": 129,
+  "duration_min": 51,
+  "slot_id": "SL-0901-0800",
+  "customer_message": "That connection point is a classic worn braided supply line \u2014 good news, it's a straightforward fix. Quote: Supply line replacement \u2014 $129 flat rate, ~50 min on site. If the tech finds damage beyond the hose, they'll walk you through options before any extra work. I've got you the first priority slot tomorrow, Mon Sept 1 at 8:00 AM. Leave both valves closed and don't use the kitchen sink until then \u2014 bathroom water is fine. Mop up what you can and put a towel/bucket under the cabinet for residual drips. See you at 8 AM!"
+ },
+ "safety_overrides": [
+  "severity S2 -> S1 (rules: ['uncontained_water'])",
+  "escalate_now forced true",
+  "playbook refs added: ['PB-02']"
+ ],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c01_burst_supply",
+  "tier": "S1",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 4,
+  "safety_overrides": 3,
+  "severity_ok": true,
+  "category_ok": false,
+  "escalation_required": true,
+  "escalated": true,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "quote_ok": false,
+  "code_f1": null,
+  "total_err_pct": null,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": null,
+  "duration_ok": null,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.2143,
+  "wall_s": 46.5
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "case": "c16_recurring_main_returning",
+ "ticket": {
+  "severity": "S3",
+  "category": "drain_main_recurring",
+  "summary": "Repeat kitchen sink backup (3rd this year; snaked Jan and May) - slow drain with gurgling, bathroom fixtures unaffected; camera inspection then kitchen branch clearing booked.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [
+   "No playbook mitigation required - drain is still flowing, no backup or overflow; advised no action needed tonight and to go easy on the disposal until the visit (general advice, not a playbook step)"
+  ],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "DIAG",
+    "description": "Diagnostic visit / camera inspection of kitchen branch line",
+    "price": 89
+   },
+   {
+    "code": "DRAIN-SNAKE-KITCHEN",
+    "description": "Kitchen drain snaking",
+    "price": 179
+   }
+  ],
+  "quote_total": 268,
+  "duration_min": 129,
+  "slot_id": "SL-0902-1030",
+  "customer_message": "You're all set, Marcus - booked for Wednesday, Sept 2 at 10:30 AM, about 2 hours on site. Camera first, then clear based on what we find, and you'll see the footage either way. Total $268 unless the camera shows it's a main-line job, and the tech will get your approval first. See you Wednesday!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c16_recurring_main_returning",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 0.5,
+  "total_err_pct": 38.8,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 3,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": true,
+  "cost_usd": 0.2929,
+  "wall_s": 61.8
+ }
+}

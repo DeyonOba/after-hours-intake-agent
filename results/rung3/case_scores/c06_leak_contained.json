@@ -1,0 +1,58 @@
+{
+ "case": "c06_leak_contained",
+ "ticket": {
+  "severity": "S2",
+  "category": "leak_contained",
+  "summary": "Leaking braided supply line under bathroom sink; customer closed fixture shutoff, leak stopped, but it's the home's only full bathroom so water is off there.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Confirmed customer closed the fixture shutoff valve under the sink and leak stopped; keep it closed until the tech arrives [PB-01]",
+   "If leaking resumes, shut off the house main (clockwise wheel / lever perpendicular) and text back for on-call dispatch [PB-02]"
+  ],
+  "playbook_refs": [
+   "PB-01",
+   "PB-02"
+  ],
+  "quote_lines": [
+   {
+    "code": "SUPPLY-LINE-REPLACE",
+    "description": "Supply line replacement (braided hose, bathroom sink)",
+    "price": 129
+   }
+  ],
+  "quote_total": 129,
+  "duration_min": 44,
+  "slot_id": "SL-0901-0800",
+  "customer_message": "You're all set \u2014 since it's your only bathroom, I've reserved our first priority slot: tomorrow (Mon Sept 1) at 8:00 AM. Keep that shutoff valve closed overnight; the rest of the house is fine to use [PB-01]. If anything starts leaking again before then, shut the house main [PB-02] and text back and I'll page the on-call plumber. Quote: $129 flat \u2014 SUPPLY-LINE-REPLACE (braided supply line replacement, ~45 min on site). If the tech finds the shutoff valve itself is failing, they'll quote that before doing extra work."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c06_leak_contained",
+  "tier": "S2",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 1,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.1532,
+  "wall_s": 27.7
+ }
+}

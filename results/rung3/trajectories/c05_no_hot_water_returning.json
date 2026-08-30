@@ -1,0 +1,132 @@
+{
+ "config": "rung3",
+ "case": "c05_no_hot_water_returning",
+ "system_prompt_chars": 6669,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi, this is Sam Okafor - you guys installed our water heater last year. The pilot light keeps going out tonight and we have no hot water. We have a 4-month-old at home. Can someone come first thing?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "water heater no hot water pilot light"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "water heater thermocouple repair"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_011HtKZ7fybsBsJTotydCsc1",
+    "content": "[{\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01BNZoi83DL5ZCQNmvbVcGq1",
+    "content": "[{\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}, {\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Sam \u2014 sorry you're dealing with this, especially with a little one at home. One important safety check first: do you smell anything like rotten eggs or sulfur near the heater or anywhere in the house?\n\nIf yes, get everyone outside right away, don't touch light switches or appliances, and call the gas utility or 911 from outside [PB-06] \u2014 then text me back."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No gas smell at all, thank god. We're safe inside. The pilot just won't stay lit \u2014 burns for maybe 10 mins then dies. No water on the floor either if that matters. We really need hot water asap with the baby."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "WH-PILOT",
+     "old_fixture": false,
+     "recurring": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_013yBmmrYJNG1m4VknmfUhSP",
+    "content": "{\"job_code\": \"WH-PILOT\", \"predicted_duration_min\": 59}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 59,
+     "priority": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01D5fZJzK8f97Q45jd6uUgRw",
+    "content": "[{\"id\": \"SL-0901-0800\", \"start\": \"2026-09-01T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}, {\"id\": \"SL-0902-0800\", \"start\": \"2026-09-02T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Great \u2014 no gas smell means this isn't an emergency, just no hot water, so I'm flagging it urgent and grabbing our first priority slot tomorrow. A pilot that lights then dies after ~10 minutes is almost always a failing thermocouple, which is a straightforward fix. Please stop relighting it for tonight; if you ever notice water at the base or the tank overheating, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank [PB-04]. For the baby tonight, heat water on the stove and let it cool to a safe temperature before use.\n\nI've booked you for **tomorrow, Sept 1 at 8:00 AM** (about 1 hour on site). Water heater pilot/thermocouple service is **$169** flat rate; since we installed the unit last year, the tech will check whether the part is still under warranty, which could reduce that. See you in the morning, Sam!\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"water_heater_no_hot\",\n  \"summary\": \"Known customer with no hot water - gas water heater pilot lights but dies after ~10 min (likely thermocouple); no gas smell, no leak; infant in home, booked first priority slot.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [\n    \"Confirmed no rotten-egg/sulfur smell; if gas odor appears, evacuate everyone, don't touch switches or appliances, and call the gas utility or 911 from outside [PB-06]\",\n    \"Stop relighting the pilot tonight; if water appears at the base or the tank overheats, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank - do not drain it [PB-04]\"\n  ],\n  \"playbook_refs\": [\"PB-06\", \"PB-04\"],\n  \"quote_lines\": [\n    {\"code\": \"WH-PILOT\", \"description\": \"Water heater pilot/thermocouple service\", \"price\": 169}\n  ],\n  \"quote_total\": 169,\n  \"duration_min\": 59,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"Great - no gas smell means this isn't an emergency, just no hot water, so I'm flagging it urgent and grabbing our first priority slot tomorrow. A pilot that lights then dies after ~10 minutes is almost always a failing thermocouple. Please stop relighting it tonight; if you notice water at the base or the tank overheating, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank [PB-04]. For the baby tonight, heat water on the stove and let it cool to a safe temperature. I've booked you for tomorrow, Sept 1 at 8:00 AM (about 1 hour on site). Pilot/thermocouple service is $169 flat rate; since we installed the unit last year, the tech will check whether the part is still under warranty.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "water_heater_no_hot",
+    "summary": "Known customer with no hot water - gas water heater pilot lights but dies after ~10 min (likely thermocouple); no gas smell, no leak; infant in home, booked first priority slot.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Confirmed no rotten-egg/sulfur smell; if gas odor appears, evacuate everyone, don't touch switches or appliances, and call the gas utility or 911 from outside [PB-06]",
+     "Stop relighting the pilot tonight; if water appears at the base or the tank overheats, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank - do not drain it [PB-04]"
+    ],
+    "playbook_refs": [
+     "PB-06",
+     "PB-04"
+    ],
+    "quote_lines": [
+     {
+      "code": "WH-PILOT",
+      "description": "Water heater pilot/thermocouple service",
+      "price": 169
+     }
+    ],
+    "quote_total": 169,
+    "duration_min": 59,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "Great - no gas smell means this isn't an emergency, just no hot water, so I'm flagging it urgent and grabbing our first priority slot tomorrow. A pilot that lights then dies after ~10 minutes is almost always a failing thermocouple. Please stop relighting it tonight; if you notice water at the base or the tank overheating, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank [PB-04]. For the baby tonight, heat water on the stove and let it cool to a safe temperature. I've booked you for tomorrow, Sept 1 at 8:00 AM (about 1 hour on site). Pilot/thermocouple service is $169 flat rate; since we installed the unit last year, the tech will check whether the part is still under warranty."
+   }
+  }
+ ]
+}

@@ -1,0 +1,119 @@
+{
+ "config": "rung3",
+ "case": "c14_wh_replace_quote",
+ "system_prompt_chars": 6671,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No emergency - our gas water heater is 14 years old and I'd rather replace it before it dies. Ballpark for a standard 40 gallon gas unit, installed? And do you handle the permit?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "water heater replace 40 gallon gas"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "permit"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Kk8U4yA43aK9j4mWuPhz5z",
+    "content": "[{\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}, {\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01CK1XTWNShqCjsHb5eSyDvH",
+    "content": "No price-book match. Try get_price with an exact code, or different keywords."
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "WH-REPLACE-40G",
+     "old_fixture": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01KMriSBAxxQpAVdz1TA5Mji",
+    "content": "{\"job_code\": \"WH-REPLACE-40G\", \"predicted_duration_min\": 272}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 272,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01DDkxZWxrktzaGNXPnYH1CM",
+    "content": "No slots fit. Try priority=false, a shorter duration, or tell the customer the office will call."
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good call replacing it proactively \u2014 14 years is right at the end of the road for a gas tank.\n\nBallpark: **WH-REPLACE-40G \u2014 40-gal gas water heater replacement, $1,450** flat rate (tank, standard connections, haul-away of the old unit). Given the age of the existing setup, plan on about **4.5 hours** on site; older installs sometimes need venting or connector updates, which the tech would price before starting.\n\nOn the permit: I don't have permit fees in my after-hours price book, so I don't want to guess \u2014 I'll flag it for the office to confirm what your municipality requires and what it costs when they call you back.\n\nOne thing to watch in the meantime: if you ever see water pooling at the base of the tank, shut the gas control dial to OFF and close the cold-water inlet valve on top of the tank [PB-04].\n\nA replacement needs a half-day block and I don't have one open on the after-hours calendar, so the office will call you at +1-555-0114 during business hours to lock in a date and go over tank options. Sound good?\n\n```json\n{\n  \"severity\": \"S4\",\n  \"category\": \"water_heater_replace\",\n  \"summary\": \"Homeowner wants proactive replacement quote for a 14-year-old 40-gal gas water heater; asked about permit handling.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [\"If the tank ever starts leaking, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank; do not drain it yourself [PB-04]\"],\n  \"playbook_refs\": [\"PB-04\"],\n  \"quote_lines\": [{\"code\": \"WH-REPLACE-40G\", \"description\": \"40-gal gas water heater replacement (flat rate)\", \"price\": 1450}],\n  \"quote_total\": 1450,\n  \"duration_min\": 272,\n  \"slot_id\": null,\n  \"customer_message\": \"Ballpark is $1,450 flat rate for a 40-gal gas water heater replacement (WH-REPLACE-40G), about 4.5 hours on site given the age of the existing unit; venting/connector updates would be priced by the tech before starting. I don't have permit fees in my price book, so the office will confirm your municipality's permit requirement and cost. If the tank ever leaks, turn the gas control dial OFF and close the cold-water inlet valve on top of the tank [PB-04]. No half-day slot is open on the after-hours calendar, so the office will call +1-555-0114 during business hours to schedule and review tank options.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S4",
+    "category": "water_heater_replace",
+    "summary": "Homeowner wants proactive replacement quote for a 14-year-old 40-gal gas water heater; asked about permit handling.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [
+     "If the tank ever starts leaking, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank; do not drain it yourself [PB-04]"
+    ],
+    "playbook_refs": [
+     "PB-04"
+    ],
+    "quote_lines": [
+     {
+      "code": "WH-REPLACE-40G",
+      "description": "40-gal gas water heater replacement (flat rate)",
+      "price": 1450
+     }
+    ],
+    "quote_total": 1450,
+    "duration_min": 272,
+    "slot_id": null,
+    "customer_message": "Ballpark is $1,450 flat rate for a 40-gal gas water heater replacement (WH-REPLACE-40G), about 4.5 hours on site given the age of the existing unit; venting/connector updates would be priced by the tech before starting. I don't have permit fees in my price book, so the office will confirm your municipality's permit requirement and cost. If the tank ever leaks, turn the gas control dial OFF and close the cold-water inlet valve on top of the tank [PB-04]. No half-day slot is open on the after-hours calendar, so the office will call +1-555-0114 during business hours to schedule and review tank options."
+   }
+  }
+ ]
+}

@@ -1,0 +1,167 @@
+{
+ "config": "rung3",
+ "case": "c01_burst_supply",
+ "system_prompt_chars": 6673,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "PLEASE HELP water is SPRAYING out from under my kitchen sink, it's going everywhere, I called twice and nobody picked up!!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I'm here, Dana \u2014 let's stop the water first.\n\nLook under the sink for the small oval/football-shaped handles on the supply lines and turn them clockwise until snug [PB-01]. If you can't find them or they won't budge, tell me right away and we'll shut off the house main [PB-02]."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok looking now!! i see two handles under here, one on each side. turning the left one clockwise... its kinda stiff but its moving... ok its off, still dripping a little but way less. should i do the right one too??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Yes, close the right one the same way \u2014 clockwise until snug [PB-01]. That should stop the rest of it.\n\nOnce both are shut, open a low cold tap (basement sink or an outdoor spigot) to bleed the pressure out of the lines [PB-03]. How's it looking?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok turning the right one now... got it, its off too. going to the sink in the bathroom now... opening the cold tap... ok water came out for a sec then stopped. dripping under the sink has basically stopped now. much better!! what do i do next?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Great work \u2014 that's the emergency over. Let me get you priced and booked."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "leak under kitchen sink supply line repair"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "contained leak repair"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01TWKyNRN4z8komqpbxvG6Tc",
+    "content": "[{\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}, {\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}, {\"code\": \"DRAIN-SNAKE-KITCHEN\", \"name\": \"Kitchen/bath drain snaking\", \"price\": 179, \"base_duration_min\": 60}, {\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_014SHrrp3rq2wSmxRoQXgovf",
+    "content": "[{\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Quick question so I quote the right fix: was the spray coming from one of those braided/flexible hoses connecting the valve to the faucet, or from a metal pipe/the drain area? Any idea how old the faucet and hoses are?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "oh good question - it's coming from like where the hose connects to the faucet i think? the spray is right at that connection point. honestly no idea how old it is, we've been here like 3 years and it was already here. the hose looks kinda worn maybe?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "SUPPLY-LINE-REPLACE",
+     "old_fixture": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01ACkQJbF8Z5zuGuUKseg1XK",
+    "content": "{\"job_code\": \"SUPPLY-LINE-REPLACE\", \"predicted_duration_min\": 51}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 51,
+     "priority": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01DmQYHsi9vMV1v3PHbcvzZj",
+    "content": "[{\"id\": \"SL-0901-0800\", \"start\": \"2026-09-01T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}, {\"id\": \"SL-0902-0800\", \"start\": \"2026-09-02T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That connection point is a classic worn braided supply line \u2014 good news, it's a straightforward fix.\n\n**Quote: Supply line replacement \u2014 $129** (flat rate, ~50 min on site). If the tech finds damage beyond the hose, they'll walk you through options before doing any extra work.\n\nI've got you the first priority slot tomorrow, **Mon Sept 1 at 8:00 AM**. Leave both valves closed and don't use the kitchen sink until then \u2014 bathroom water is fine. Mop up what you can and put a towel/bucket under the cabinet in case of residual drips.\n\nYou're all set \u2014 see you at 8 AM, and thanks for staying calm through that!\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"leak_contained\",\n  \"summary\": \"Kitchen sink supply line spraying at the faucet connection; customer closed both angle stops and bled pressure, leak now contained \u2014 needs supply line replacement first thing tomorrow.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Close both fixture shutoff valves under the kitchen sink, clockwise until snug [PB-01]\",\n    \"Open a low cold tap (bathroom/basement) to bleed line pressure after shutoff [PB-03]\",\n    \"Keep both valves closed and do not use the kitchen sink until the tech arrives [PB-01]\"\n  ],\n  \"playbook_refs\": [\"PB-01\", \"PB-03\"],\n  \"quote_lines\": [\n    {\"code\": \"SUPPLY-LINE-REPLACE\", \"description\": \"Supply line replacement (worn braided faucet supply hose)\", \"price\": 129}\n  ],\n  \"quote_total\": 129,\n  \"duration_min\": 51,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"That connection point is a classic worn braided supply line \u2014 good news, it's a straightforward fix. Quote: Supply line replacement \u2014 $129 flat rate, ~50 min on site. If the tech finds damage beyond the hose, they'll walk you through options before any extra work. I've got you the first priority slot tomorrow, Mon Sept 1 at 8:00 AM. Leave both valves closed and don't use the kitchen sink until then \u2014 bathroom water is fine. Mop up what you can and put a towel/bucket under the cabinet for residual drips. See you at 8 AM!\"\n}\n```"
+  },
+  {
+   "role": "safety",
+   "kind": "overrides",
+   "content": [
+    "severity S2 -> S1 (rules: ['uncontained_water'])",
+    "escalate_now forced true",
+    "playbook refs added: ['PB-02']"
+   ]
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "leak_contained",
+    "summary": "Kitchen sink supply line spraying at the faucet connection; customer closed both angle stops and bled pressure, leak now contained \u2014 needs supply line replacement first thing tomorrow.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Close both fixture shutoff valves under the kitchen sink, clockwise until snug [PB-01]",
+     "Open a low cold tap (bathroom/basement) to bleed line pressure after shutoff [PB-03]",
+     "Keep both valves closed and do not use the kitchen sink until the tech arrives [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02",
+     "PB-03"
+    ],
+    "quote_lines": [
+     {
+      "code": "SUPPLY-LINE-REPLACE",
+      "description": "Supply line replacement (worn braided faucet supply hose)",
+      "price": 129
+     }
+    ],
+    "quote_total": 129,
+    "duration_min": 51,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "That connection point is a classic worn braided supply line \u2014 good news, it's a straightforward fix. Quote: Supply line replacement \u2014 $129 flat rate, ~50 min on site. If the tech finds damage beyond the hose, they'll walk you through options before any extra work. I've got you the first priority slot tomorrow, Mon Sept 1 at 8:00 AM. Leave both valves closed and don't use the kitchen sink until then \u2014 bathroom water is fine. Mop up what you can and put a towel/bucket under the cabinet for residual drips. See you at 8 AM!"
+   }
+  }
+ ]
+}

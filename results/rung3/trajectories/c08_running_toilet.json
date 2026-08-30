@@ -1,0 +1,121 @@
+{
+ "config": "rung3",
+ "case": "c08_running_toilet",
+ "system_prompt_chars": 6668,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My upstairs toilet won't stop running after you flush it, been like that a few days. Water bill is going to be scary. Not urgent but I'd like it fixed. What would it cost?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "toilet running fill valve flapper"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_019jV6iLs3DRuid1koc6c9tY",
+    "content": "[{\"code\": \"TOILET-REBUILD\", \"name\": \"Running toilet rebuild (fill+flush valve)\", \"price\": 189, \"base_duration_min\": 60}, {\"code\": \"TOILET-CLOG\", \"name\": \"Toilet clog clearing (auger)\", \"price\": 149, \"base_duration_min\": 45}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news \u2014 a running toilet is usually a worn flapper/fill valve, and it's a straightforward fix. Our flat rate for a full rebuild (fill valve + flush valve) is **$189**, parts and labor included. \ud83d\ude42\n\nIn the meantime, if you want to stop the bleeding on the water bill, you can close the shutoff valve under the toilet (the small oval handle on the supply line, clockwise until snug) between uses [PB-01].\n\nQuick question so I can size the visit: is the toilet fairly old (15+ years), or newer?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok that helps thanks! yeah it's like 12 years old so not ancient. and $189 sounds reasonable if that includes everything. just want to make sure - does that cover the parts AND the labor, or is labor extra?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "TOILET-REBUILD",
+     "old_fixture": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01NYcjEUGuXqpEV2aZNZze39",
+    "content": "{\"job_code\": \"TOILET-REBUILD\", \"predicted_duration_min\": 65}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 65,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01CbzTpHWsRpQBxgiX13t2BP",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Yes \u2014 $189 is all-in: parts *and* labor, flat rate, no separate labor charge. The only thing that would change it is if we find something unexpected (like a corroded shutoff valve), and we'd tell you the price before doing anything extra.\n\nWe'd budget about an hour on site. I can put you down for **tomorrow (Sept 1) at 10:30 AM** or **3:00 PM** \u2014 which works better?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "3pm works better for me tomorrow. and cool, appreciate you being upfront about the all-in price. so that's tomorrow sept 1 at 3pm, 402 ashgrove ter. sound right?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Nora \u2014 Sept 1 at 3:00 PM, 402 Ashgrove Ter, running toilet rebuild at $189 all-in (about an hour on site). Your tech will text when they're on the way. Until then, feel free to close the toilet's shutoff valve between uses to save water [PB-01]. Thanks for texting us!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"toilet_running\",\n  \"summary\": \"Upstairs toilet (12 yrs old) has been running continuously for a few days; customer booked a standard rebuild visit.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\"Close the toilet's supply shutoff valve (small oval handle under the fixture, clockwise until snug) between uses to stop water waste [PB-01]\"],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [{\"code\": \"TOILET-REBUILD\", \"description\": \"Running toilet rebuild (fill+flush valve), parts and labor included\", \"price\": 189}],\n  \"quote_total\": 189,\n  \"duration_min\": 65,\n  \"slot_id\": \"SL-0901-1500\",\n  \"customer_message\": \"You're all set, Nora - Sept 1 at 3:00 PM, 402 Ashgrove Ter, running toilet rebuild at $189 all-in (about an hour on site). Your tech will text when they're on the way. Until then, feel free to close the toilet's shutoff valve between uses to save water [PB-01]. Thanks for texting us!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "toilet_running",
+    "summary": "Upstairs toilet (12 yrs old) has been running continuously for a few days; customer booked a standard rebuild visit.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Close the toilet's supply shutoff valve (small oval handle under the fixture, clockwise until snug) between uses to stop water waste [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "TOILET-REBUILD",
+      "description": "Running toilet rebuild (fill+flush valve), parts and labor included",
+      "price": 189
+     }
+    ],
+    "quote_total": 189,
+    "duration_min": 65,
+    "slot_id": "SL-0901-1500",
+    "customer_message": "You're all set, Nora - Sept 1 at 3:00 PM, 402 Ashgrove Ter, running toilet rebuild at $189 all-in (about an hour on site). Your tech will text when they're on the way. Until then, feel free to close the toilet's shutoff valve between uses to save water [PB-01]. Thanks for texting us!"
+   }
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "config": "rung3",
+ "case": "c02_sewage_backup",
+ "system_prompt_chars": 6669,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "hi, sewage is coming UP through the bathtub drain and the toilet gurgles when we use the kitchen sink. smells terrible. is this an emergency or can it wait til morning?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Yes \u2014 that's an emergency, don't wait. Sewage coming up through a tub plus a gurgling toilet means your main sewer line is blocked and backing up into the house.\n\nRight now: **stop using all water** \u2014 no flushing, no sinks, no laundry or dishwasher. Every drop you run makes the backup worse [PB-05]. Keep people and pets away from the tub and any standing sewage, and don't touch it \u2014 it's a biohazard [PB-05].\n\nI'm paging our on-call plumber for you now. One sec while I confirm the callout details."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "emergency callout dispatch fee after hours"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "sewage backup main line"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_013M5Ns8E9rD25u6gc5bRmcr",
+    "content": "[{\"code\": \"EMERG-CALLOUT\", \"name\": \"After-hours emergency dispatch surcharge\", \"price\": 150, \"base_duration_min\": 0}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01YRUF4XE6nyFYjdAGUvFRRK",
+    "content": "[{\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}, {\"code\": \"SEWAGE-CLEAR\", \"name\": \"Sewage backup clearing & sanitation check\", \"price\": 425, \"base_duration_min\": 150}, {\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set \u2014 the on-call plumber has been paged and will call you at +1-555-0102 shortly to head your way tonight.\n\nTwo things while you wait: keep all water off (that includes anyone in the house taking a shower or running the dishwasher), and stay out of the tub area [PB-05]. After-hours dispatch is a flat $150 callout; the plumber will assess the line on site and quote the repair before starting any work.\n\n```json\n{\n  \"severity\": \"S1\",\n  \"category\": \"sewage_backup\",\n  \"summary\": \"Sewage backing up through bathtub drain with toilet gurgling on kitchen sink use - main sewer line blockage, on-call paged for tonight.\",\n  \"escalate_now\": true,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Stop using all water immediately - no flushing, sinks, laundry or dishwasher [PB-05]\",\n    \"Keep people and pets away from the tub and any standing sewage; do not touch it [PB-05]\"\n  ],\n  \"playbook_refs\": [\"PB-05\"],\n  \"quote_lines\": [\n    {\"code\": \"EMERG-CALLOUT\", \"description\": \"After-hours emergency dispatch surcharge\", \"price\": 150}\n  ],\n  \"quote_total\": 150,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"You're all set - the on-call plumber has been paged and will call you at +1-555-0102 shortly to head your way tonight. Keep all water off in the house and stay out of the tub area [PB-05]. After-hours dispatch is a flat $150 callout; the plumber will assess the line on site and quote the repair before starting any work.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "sewage_backup",
+    "summary": "Sewage backing up through bathtub drain with toilet gurgling on kitchen sink use - main sewer line blockage, on-call paged for tonight.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Stop using all water immediately - no flushing, sinks, laundry or dishwasher [PB-05]",
+     "Keep people and pets away from the tub and any standing sewage; do not touch it [PB-05]"
+    ],
+    "playbook_refs": [
+     "PB-05"
+    ],
+    "quote_lines": [
+     {
+      "code": "EMERG-CALLOUT",
+      "description": "After-hours emergency dispatch surcharge",
+      "price": 150
+     }
+    ],
+    "quote_total": 150,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "You're all set - the on-call plumber has been paged and will call you at +1-555-0102 shortly to head your way tonight. Keep all water off in the house and stay out of the tub area [PB-05]. After-hours dispatch is a flat $150 callout; the plumber will assess the line on site and quote the repair before starting any work."
+   }
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "case": "c13_low_pressure_returning",
+ "ticket": {
+  "severity": "S3",
+  "category": "low_pressure_shower",
+  "summary": "Returning customer Priya Natarajan reports recurring low pressure at master shower only, low on both hot and cold; March visit diagnosed a worn cartridge that was never replaced.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "FAUCET-CARTRIDGE",
+    "description": "Faucet/shower cartridge replacement - master shower valve",
+    "price": 159
+   }
+  ],
+  "quote_total": 159,
+  "duration_min": 70,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "Here's the plan - shower cartridge replacement, FAUCET-CARTRIDGE, $159 flat rate (parts + labor, about 70 min). If the cartridge turns out to be fine we'd fall back to a diagnostic (DIAG, $89) and quote from there, but based on March's finding the cartridge is very likely it. No emergency here, so nothing you need to do tonight; you can keep using the shower. I've penciled you in for tomorrow, Tue Sep 1 at 10:30 AM (slot SL-0901-1030). If afternoon is easier, I also have Sep 1 at 3:00 PM or Sep 2 at 10:30 AM - just text back and I'll switch it. The office will confirm when they open in the morning."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c13_low_pressure_returning",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 1,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": true,
+  "cost_usd": 0.1949,
+  "wall_s": 37.0
+ }
+}

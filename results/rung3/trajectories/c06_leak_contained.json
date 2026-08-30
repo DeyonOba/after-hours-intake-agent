@@ -1,0 +1,130 @@
+{
+ "config": "rung3",
+ "case": "c06_leak_contained",
+ "system_prompt_chars": 6670,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "The braided hose under my bathroom sink started leaking tonight. I already closed the little valve under the sink so it stopped. But I have no water in that bathroom now - how soon can someone replace the hose?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "supply line braided hose replacement under sink"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "contained leak repair fixture"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01M72BTCGXp4fp3JvUNdSYt1",
+    "content": "[{\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}, {\"code\": \"HOSE-BIB-REPLACE\", \"name\": \"Outdoor hose bib replacement\", \"price\": 169, \"base_duration_min\": 75}, {\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}, {\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01YEY28KCUHnwYGrcLtfGwKD",
+    "content": "[{\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Nice work \u2014 closing that fixture shutoff valve is exactly the right move [PB-01]. Two quick questions so I can get you the right slot:\n\n1. Is the leak fully stopped now (no drip, no wet spot spreading)?\n2. Is that your only bathroom, or do you have another working one tonight?\n\nReplacing a braided supply line runs **$129 flat (SUPPLY-LINE-REPLACE)**. Keep a towel under the connection and leave that valve closed until we're out."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, the leak's completely stopped\u2014closed that valve and it's dry now. And yeah, this is my only full bathroom, so I'm hoping to get someone out pretty soon if possible?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "SUPPLY-LINE-REPLACE"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_012bfrbN1My4HXoYsooMN1WN",
+    "content": "{\"job_code\": \"SUPPLY-LINE-REPLACE\", \"predicted_duration_min\": 44}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 44,
+     "priority": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Su3wjp5qAHixy7jLZ17yAx",
+    "content": "[{\"id\": \"SL-0901-0800\", \"start\": \"2026-09-01T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}, {\"id\": \"SL-0902-0800\", \"start\": \"2026-09-02T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set \u2014 since it's your only bathroom, I've reserved you our first priority slot: **tomorrow (Mon Sept 1) at 8:00 AM**. Keep that shutoff valve closed overnight; the rest of the house is fine to use [PB-01]. If anything starts leaking again before then, shut the house main [PB-02] and text back and I'll page the on-call plumber.\n\nQuote: **$129 flat \u2014 SUPPLY-LINE-REPLACE** (braided supply line replacement, about 45 minutes on site). If the tech finds the shutoff valve itself is failing, they'll quote that before doing any extra work.\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"leak_contained\",\n  \"summary\": \"Leaking braided supply line under bathroom sink; customer closed fixture shutoff, leak stopped, but it's the home's only full bathroom so water is off there.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Confirmed customer closed the fixture shutoff valve under the sink and leak stopped; keep it closed until the tech arrives [PB-01]\",\n    \"If leaking resumes, shut off the house main (clockwise wheel / lever perpendicular) and text back for on-call dispatch [PB-02]\"\n  ],\n  \"playbook_refs\": [\"PB-01\", \"PB-02\"],\n  \"quote_lines\": [\n    {\"code\": \"SUPPLY-LINE-REPLACE\", \"description\": \"Supply line replacement (braided hose, bathroom sink)\", \"price\": 129}\n  ],\n  \"quote_total\": 129,\n  \"duration_min\": 44,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're all set \u2014 since it's your only bathroom, I've reserved our first priority slot: tomorrow (Mon Sept 1) at 8:00 AM. Keep that shutoff valve closed overnight; the rest of the house is fine to use [PB-01]. If anything starts leaking again before then, shut the house main [PB-02] and text back and I'll page the on-call plumber. Quote: $129 flat \u2014 SUPPLY-LINE-REPLACE (braided supply line replacement, ~45 min on site). If the tech finds the shutoff valve itself is failing, they'll quote that before doing extra work.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "leak_contained",
+    "summary": "Leaking braided supply line under bathroom sink; customer closed fixture shutoff, leak stopped, but it's the home's only full bathroom so water is off there.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Confirmed customer closed the fixture shutoff valve under the sink and leak stopped; keep it closed until the tech arrives [PB-01]",
+     "If leaking resumes, shut off the house main (clockwise wheel / lever perpendicular) and text back for on-call dispatch [PB-02]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02"
+    ],
+    "quote_lines": [
+     {
+      "code": "SUPPLY-LINE-REPLACE",
+      "description": "Supply line replacement (braided hose, bathroom sink)",
+      "price": 129
+     }
+    ],
+    "quote_total": 129,
+    "duration_min": 44,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're all set \u2014 since it's your only bathroom, I've reserved our first priority slot: tomorrow (Mon Sept 1) at 8:00 AM. Keep that shutoff valve closed overnight; the rest of the house is fine to use [PB-01]. If anything starts leaking again before then, shut the house main [PB-02] and text back and I'll page the on-call plumber. Quote: $129 flat \u2014 SUPPLY-LINE-REPLACE (braided supply line replacement, ~45 min on site). If the tech finds the shutoff valve itself is failing, they'll quote that before doing extra work."
+   }
+  }
+ ]
+}

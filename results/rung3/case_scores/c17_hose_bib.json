@@ -1,0 +1,57 @@
+{
+ "case": "c17_hose_bib",
+ "ticket": {
+  "severity": "S3",
+  "category": "hose_bib",
+  "summary": "Original 1990s outdoor hose bib sprays from the handle when opened; contained, customer will leave it closed - standard replacement visit.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Keep the spigot closed (and hose disconnected) until the visit",
+   "If there is an interior shutoff serving that line, close it clockwise until snug [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01"
+  ],
+  "quote_lines": [
+   {
+    "code": "HOSE-BIB-REPLACE",
+    "description": "Outdoor hose bib replacement",
+    "price": 169
+   }
+  ],
+  "quote_total": 169,
+  "duration_min": 82,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "Thanks Faye - that spray from the handle is a worn packing/stem on an original-'90s spigot, and it's not an emergency since it stops when the valve's closed. Keep the spigot shut off (and any hose disconnected) until we get there; if there's an indoor shutoff on that line, close it clockwise until snug [PB-01]. Flat rate to replace it is $169 (HOSE-BIB-REPLACE), about 80 minutes on site. I've penciled you in for Tomorrow, Sep 1 at 10:30 AM - just reply if you'd rather do Sep 1 at 3:00 PM or Sep 2."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c17_hose_bib",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 1,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 4,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.1192,
+  "wall_s": 22.1
+ }
+}

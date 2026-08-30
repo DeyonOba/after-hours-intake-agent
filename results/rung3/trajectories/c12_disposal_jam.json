@@ -1,0 +1,96 @@
+{
+ "config": "rung3",
+ "case": "c12_disposal_jam",
+ "system_prompt_chars": 6669,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My garbage disposal just hums and doesn't spin, I think something's stuck. Do I need a visit or is there something I can try safely?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "garbage disposal jam"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01XoNuxd6Mm9YEksNdBNfpyf",
+    "content": "[{\"code\": \"GARB-DISPOSAL-JAM\", \"name\": \"Garbage disposal jam clearing\", \"price\": 99, \"base_duration_min\": 30}, {\"code\": \"GARB-DISPOSAL-REPLACE\", \"name\": \"Garbage disposal replacement (unit incl.)\", \"price\": 329, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news \u2014 that hum usually means the motor's fine and the flywheel is just jammed, and it's often a safe DIY fix:\n\n1. **Never put your hand inside the unit, even switched off** [PB-07]\n2. Unplug it under the sink (or flip its breaker) first [PB-07]\n3. Use tongs or pliers to pull out anything visible [PB-07]\n4. Then use the hex/Allen wrench in the socket on the *underside* of the unit and work it back and forth to free the flywheel [PB-07]\n\nThen plug it back in and press the small red reset button on the bottom. Give that a try and let me know \u2014 if it still just hums, we clear jams for **$99 flat (GARB-DISPOSAL-JAM)** and I can get you on the schedule."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok this is super helpful, thanks! I have an Allen key so I can def try this. gimme a sec to unplug it and see what's stuck in there"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Sounds good \u2014 take your time. \ud83d\udc4d Just make sure it's fully unplugged before you reach in with the tongs [PB-07]. I'm here when you're ready."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "alright so I unplugged it and used the tongs \u2014 pulled out a peach pit! lol that explains it. now trying the Allen wrench thing on the bottom to loosen it up"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That'll do it \u2014 peach pits are a classic. \ud83c\udf51 Work the Allen wrench back and forth a few turns until it spins freely [PB-07], then plug it back in and hit the red reset button on the underside before testing it."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok got it spinning again with the wrench! plugged it back in and hit the reset button... and it's working!! no more humming, just the normal disposal sound. problem solved \ud83c\udf89"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Nice work \u2014 you just saved yourself a service call! \ud83c\udf89 A couple of tips to keep it that way: skip pits, bones, and fibrous stuff like celery or corn husks, and always run cold water while it grinds.\n\nIf it ever starts humming again and the wrench doesn't free it, we're at $99 flat to clear it \u2014 just text or call us at Brookdale Plumbing. Have a good night, Bea!\n\n```json\n{\n  \"severity\": \"S4\",\n  \"category\": \"disposal_jam\",\n  \"summary\": \"Customer's garbage disposal hummed without spinning; walked her through PB-07 self-clear and she removed a peach pit and restored operation \u2014 no visit needed.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Never put your hand inside the disposal, even when switched off [PB-07]\",\n    \"Unplug the unit (or switch off its breaker) before doing anything [PB-07]\",\n    \"Use tongs/pliers to remove any visible object \u2014 customer retrieved a peach pit [PB-07]\",\n    \"Use the hex/Allen socket under the unit to work the flywheel free, then plug back in and press the red reset button [PB-07]\"\n  ],\n  \"playbook_refs\": [\"PB-07\"],\n  \"quote_lines\": [\n    {\n      \"code\": \"GARB-DISPOSAL-JAM\",\n      \"description\": \"Garbage disposal jam clearing \u2014 quoted as a contingency only; customer resolved it herself, nothing booked and no charge\",\n      \"price\": 99\n    }\n  ],\n  \"quote_total\": 0,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"Nice work \u2014 you just saved yourself a service call! A couple of tips to keep it that way: skip pits, bones, and fibrous stuff like celery or corn husks, and always run cold water while it grinds. If it ever starts humming again and the wrench doesn't free it, we're at $99 flat to clear it \u2014 just text or call us at Brookdale Plumbing. Have a good night, Bea!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S4",
+    "category": "disposal_jam",
+    "summary": "Customer's garbage disposal hummed without spinning; walked her through PB-07 self-clear and she removed a peach pit and restored operation \u2014 no visit needed.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Never put your hand inside the disposal, even when switched off [PB-07]",
+     "Unplug the unit (or switch off its breaker) before doing anything [PB-07]",
+     "Use tongs/pliers to remove any visible object \u2014 customer retrieved a peach pit [PB-07]",
+     "Use the hex/Allen socket under the unit to work the flywheel free, then plug back in and press the red reset button [PB-07]"
+    ],
+    "playbook_refs": [
+     "PB-07"
+    ],
+    "quote_lines": [
+     {
+      "code": "GARB-DISPOSAL-JAM",
+      "description": "Garbage disposal jam clearing \u2014 quoted as a contingency only; customer resolved it herself, nothing booked and no charge",
+      "price": 99
+     }
+    ],
+    "quote_total": 0,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "Nice work \u2014 you just saved yourself a service call! A couple of tips to keep it that way: skip pits, bones, and fibrous stuff like celery or corn husks, and always run cold water while it grinds. If it ever starts humming again and the wrench doesn't free it, we're at $99 flat to clear it \u2014 just text or call us at Brookdale Plumbing. Have a good night, Bea!"
+   }
+  }
+ ]
+}

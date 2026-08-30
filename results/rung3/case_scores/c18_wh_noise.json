@@ -1,0 +1,57 @@
+{
+ "case": "c18_wh_noise",
+ "ticket": {
+  "severity": "S3",
+  "category": "water_heater_noise",
+  "summary": "7-year-old water heater rumbling/popping on heat cycle, never flushed; no leak, no overheating - sediment buildup, needs flush service.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "No shutoff needed tonight - confirmed no pooling water and normal hot-water temps; noise is sediment, not a rupture risk.",
+   "If water ever pools at the tank base or water turns scalding: turn the gas control dial to OFF (or switch off the heater's breaker if electric), then close the cold-water inlet valve on top of the tank; do not drain the tank yourself [PB-04]."
+  ],
+  "playbook_refs": [
+   "PB-04"
+  ],
+  "quote_lines": [
+   {
+    "code": "WH-FLUSH",
+    "description": "Water heater flush & sediment service",
+    "price": 139
+   }
+  ],
+  "quote_total": 139,
+  "duration_min": 77,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "A flush is the fix - it clears the sediment causing the popping. WH-FLUSH, Water heater flush & sediment service: $139, about 75-80 min on site. At 7 years and never flushed, it'll also add life to the tank and improve efficiency. I've held Mon Sep 1 at 10:30 AM (SL-0901-1030), with 3:00 PM the same day as an alternative - reply with your preference. Just in case: if you ever see water pooling at the base or the water turns scalding, turn the gas control dial OFF (or the heater's breaker if electric), close the cold-water inlet valve on top of the tank, and call us - don't drain it yourself [PB-04]."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c18_wh_noise",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 2,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.1615,
+  "wall_s": 36.1
+ }
+}

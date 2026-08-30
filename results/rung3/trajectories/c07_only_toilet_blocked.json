@@ -1,0 +1,111 @@
+{
+ "config": "rung3",
+ "case": "c07_only_toilet_blocked",
+ "system_prompt_chars": 6671,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Our toilet is completely blocked and almost overflowed when I flushed. Plunger did nothing. It's the only toilet in the house and we have kids. Tonight or tomorrow??"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "toilet clog"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "TOILET-CLOG"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_015xhwEzSCBxbqVQAS2t4DDf",
+    "content": "[{\"code\": \"TOILET-CLOG\", \"name\": \"Toilet clog clearing (auger)\", \"price\": 149, \"base_duration_min\": 45}, {\"code\": \"TOILET-REBUILD\", \"name\": \"Running toilet rebuild (fill+flush valve)\", \"price\": 189, \"base_duration_min\": 60}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01PLA8fptrvAenRBDfVVFwjZ",
+    "content": "{\"job_code\": \"TOILET-CLOG\", \"predicted_duration_min\": 46}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 46,
+     "priority": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_015tCn7NJHNu5aJRViQXQYg2",
+    "content": "[{\"id\": \"SL-0901-0800\", \"start\": \"2026-09-01T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}, {\"id\": \"SL-0902-0800\", \"start\": \"2026-09-02T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news: since it didn't overflow, this is contained \u2014 but with one toilet and kids, we'll get you the first slot in the morning.\n\nTonight, please don't flush again (a second flush is what usually causes the overflow). If the bowl is still full, close the toilet's shutoff valve \u2014 the small oval handle on the supply line at the wall behind the toilet \u2014 clockwise until snug [PB-01].\n\nToilet clog clearing with an auger is a flat $149 (TOILET-CLOG), about 45 minutes. I can hold our first priority slot tomorrow, Tue Sep 1 at 8:00 AM \u2014 want me to book it?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "yeah ok thanks - wont flush again. found the shutoff valve, turned it off. \n\n8am tomorrow works perfect, book it. whats the address to put you in the system?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're booked \u2014 Tue Sep 1, 8:00 AM (slot SL-0901-0800). We don't have a service address on file yet, so just reply with your street address and I'll attach it to the ticket; the tech will also call ~30 min before arrival.\n\nBooked: TOILET-CLOG, $149 flat, ~45 min on site. Leave the supply valve off overnight [PB-01] and no flushing until we're there. Thanks, Aiden \u2014 see you in the morning!\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"toilet_clog\",\n  \"summary\": \"Only toilet in home is fully blocked and nearly overflowed; plunger failed, supply valve shut off by customer \u2014 booked first priority slot 9/1 8:00 AM for auger clearing.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Do not flush again until the tech arrives [PB-01]\",\n    \"Close the toilet's shutoff valve on the supply line behind the toilet, clockwise until snug [PB-01]\"\n  ],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [\n    {\"code\": \"TOILET-CLOG\", \"description\": \"Toilet clog clearing (auger)\", \"price\": 149}\n  ],\n  \"quote_total\": 149,\n  \"duration_min\": 46,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're booked - Tue Sep 1, 8:00 AM (slot SL-0901-0800). We don't have a service address on file yet, so just reply with your street address and I'll attach it to the ticket; the tech will also call ~30 min before arrival. Booked: TOILET-CLOG, $149 flat, ~45 min on site. Leave the supply valve off overnight [PB-01] and no flushing until we're there. Thanks, Aiden - see you in the morning!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "toilet_clog",
+    "summary": "Only toilet in home is fully blocked and nearly overflowed; plunger failed, supply valve shut off by customer \u2014 booked first priority slot 9/1 8:00 AM for auger clearing.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Do not flush again until the tech arrives [PB-01]",
+     "Close the toilet's shutoff valve on the supply line behind the toilet, clockwise until snug [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "TOILET-CLOG",
+      "description": "Toilet clog clearing (auger)",
+      "price": 149
+     }
+    ],
+    "quote_total": 149,
+    "duration_min": 46,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're booked - Tue Sep 1, 8:00 AM (slot SL-0901-0800). We don't have a service address on file yet, so just reply with your street address and I'll attach it to the ticket; the tech will also call ~30 min before arrival. Booked: TOILET-CLOG, $149 flat, ~45 min on site. Leave the supply valve off overnight [PB-01] and no flushing until we're there. Thanks, Aiden - see you in the morning!"
+   }
+  }
+ ]
+}

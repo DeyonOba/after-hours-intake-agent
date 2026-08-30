@@ -1,0 +1,56 @@
+{
+ "case": "c14_wh_replace_quote",
+ "ticket": {
+  "severity": "S4",
+  "category": "water_heater_replace",
+  "summary": "Homeowner wants proactive replacement quote for a 14-year-old 40-gal gas water heater; asked about permit handling.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [
+   "If the tank ever starts leaking, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank; do not drain it yourself [PB-04]"
+  ],
+  "playbook_refs": [
+   "PB-04"
+  ],
+  "quote_lines": [
+   {
+    "code": "WH-REPLACE-40G",
+    "description": "40-gal gas water heater replacement (flat rate)",
+    "price": 1450
+   }
+  ],
+  "quote_total": 1450,
+  "duration_min": 272,
+  "slot_id": null,
+  "customer_message": "Ballpark is $1,450 flat rate for a 40-gal gas water heater replacement (WH-REPLACE-40G), about 4.5 hours on site given the age of the existing unit; venting/connector updates would be priced by the tech before starting. I don't have permit fees in my price book, so the office will confirm your municipality's permit requirement and cost. If the tank ever leaks, turn the gas control dial OFF and close the cold-water inlet valve on top of the tank [PB-04]. No half-day slot is open on the after-hours calendar, so the office will call +1-555-0114 during business hours to schedule and review tank options."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c14_wh_replace_quote",
+  "tier": "S4",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 1,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 32,
+  "duration_ok": false,
+  "slot_ok": null,
+  "known_customer_ok": null,
+  "cost_usd": 0.1184,
+  "wall_s": 25.9
+ }
+}

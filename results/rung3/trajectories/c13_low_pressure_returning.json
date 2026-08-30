@@ -1,0 +1,171 @@
+{
+ "config": "rung3",
+ "case": "c13_low_pressure_returning",
+ "system_prompt_chars": 6674,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi, Priya Natarajan again. The master shower pressure has gotten bad again, same as in March. Can we finally sort it properly this time?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Priya \u2014 thanks for reaching out, and sorry the shower pressure is acting up again. Let me pull up what a proper diagnosis/fix runs."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "low water pressure shower"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "shower valve cartridge"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Pxz7Dvz3TNc4Gjfi7WE7y4",
+    "content": "[{\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01XE5mqTsQvwFHB1Gvdx7VNL",
+    "content": "[{\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"TOILET-REBUILD\", \"name\": \"Running toilet rebuild (fill+flush valve)\", \"price\": 189, \"base_duration_min\": 60}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "low pressure diagnostic"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_price",
+    "input": {
+     "code": "LOW-PRESSURE-DIAG"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_016McKqtP8BufQQkP37ZVd2K",
+    "content": "[{\"code\": \"DIAG\", \"name\": \"Diagnostic visit / camera inspection\", \"price\": 89, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_018xDxNeXPSE3a8th8ebcTTW",
+    "content": "Unknown code 'LOW-PRESSURE-DIAG'. Codes must come from price_book_lookup."
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Quick check so we bring the right parts: is it just the master shower (other faucets fine), and is it low on both hot and cold? Also \u2014 last time in March, did the tech clean the showerhead/screens or replace anything?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah just the master shower, other stuff's fine. And yeah it's low on both sides. Look, the tech in March said something about a worn cartridge but I didn't replace it then \u2014 figured I'd wait and see. Clearly that was dumb lol"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Not dumb at all \u2014 that's a very common fix and it lines up perfectly with what you're describing (low on both hot and cold at one fixture = worn cartridge). Let me check timing."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "FAUCET-CARTRIDGE",
+     "recurring": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01P4LhfT9djnk2qWcyhLcAAf",
+    "content": "{\"job_code\": \"FAUCET-CARTRIDGE\", \"predicted_duration_min\": 70}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 70,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_015Yi9bjrB9hutS4J8Pe7Nyf",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Here's the plan \u2014 shower cartridge replacement, **FAUCET-CARTRIDGE, $159 flat rate** (parts + labor, about 70 min). If we open it up and the cartridge turns out to be fine, we'd fall back to a diagnostic (DIAG, $89) and quote from there \u2014 but based on March's finding, the cartridge is very likely it. No emergency here, so nothing you need to do tonight; you can keep using the shower.\n\nI've penciled you in for **tomorrow, Tue Sep 1 at 10:30 AM** (slot SL-0901-1030). If afternoon is easier, I also have Sep 1 at 3:00 PM or Sep 2 at 10:30 AM \u2014 just text back and I'll switch it. The office will confirm when they open in the morning.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"low_pressure_shower\",\n  \"summary\": \"Returning customer Priya Natarajan reports recurring low pressure at master shower only, low on both hot and cold; March visit diagnosed a worn cartridge that was never replaced.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\"code\": \"FAUCET-CARTRIDGE\", \"description\": \"Faucet/shower cartridge replacement - master shower valve\", \"price\": 159}\n  ],\n  \"quote_total\": 159,\n  \"duration_min\": 70,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"Here's the plan - shower cartridge replacement, FAUCET-CARTRIDGE, $159 flat rate (parts + labor, about 70 min). If the cartridge turns out to be fine we'd fall back to a diagnostic (DIAG, $89) and quote from there, but based on March's finding the cartridge is very likely it. No emergency here, so nothing you need to do tonight; you can keep using the shower. I've penciled you in for tomorrow, Tue Sep 1 at 10:30 AM (slot SL-0901-1030). If afternoon is easier, I also have Sep 1 at 3:00 PM or Sep 2 at 10:30 AM - just text back and I'll switch it. The office will confirm when they open in the morning.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "low_pressure_shower",
+    "summary": "Returning customer Priya Natarajan reports recurring low pressure at master shower only, low on both hot and cold; March visit diagnosed a worn cartridge that was never replaced.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "FAUCET-CARTRIDGE",
+      "description": "Faucet/shower cartridge replacement - master shower valve",
+      "price": 159
+     }
+    ],
+    "quote_total": 159,
+    "duration_min": 70,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "Here's the plan - shower cartridge replacement, FAUCET-CARTRIDGE, $159 flat rate (parts + labor, about 70 min). If the cartridge turns out to be fine we'd fall back to a diagnostic (DIAG, $89) and quote from there, but based on March's finding the cartridge is very likely it. No emergency here, so nothing you need to do tonight; you can keep using the shower. I've penciled you in for tomorrow, Tue Sep 1 at 10:30 AM (slot SL-0901-1030). If afternoon is easier, I also have Sep 1 at 3:00 PM or Sep 2 at 10:30 AM - just text back and I'll switch it. The office will confirm when they open in the morning."
+   }
+  }
+ ]
+}

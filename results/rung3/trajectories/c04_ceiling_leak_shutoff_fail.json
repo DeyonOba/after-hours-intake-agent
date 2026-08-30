@@ -1,0 +1,99 @@
+{
+ "config": "rung3",
+ "case": "c04_ceiling_leak_shutoff_fail",
+ "system_prompt_chars": 6671,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Water is pouring through my dining room ceiling light fixture, I think from the upstairs bathroom. I put a bucket. What do I do??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "This is an emergency \u2014 let's stop the water first.\n\n1. Shut off the house main now: it's usually where the water line enters (basement front wall, crawl space, garage, or the meter box). Turn the wheel clockwise / the lever perpendicular to the pipe [PB-02].\n2. Then open the lowest cold tap in the house (basement sink or outdoor spigot) to drain pressure from the lines [PB-03].\n3. Stay clear of the sagging, water-heavy ceiling and don't touch that light fixture or its switch \u2014 keep people out from under it [PB-08].\n\nCan you get to the main shutoff? I'm paging our on-call plumber for you now."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "omg thank you. okay im looking now - checked the basement, i cant find anything like that. no meter box either. where else would it be??\n\nand dont worry i wont touch the light fixture, thats terrifying. water is still pouring tho \ud83d\ude2d"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Two quick things to try:\n\n1. Check the garage or a crawl space, and outside near the front of the house at ground level \u2014 the main is often a lever or wheel on the pipe where it enters [PB-02].\n2. Faster option: run upstairs to the bathroom you suspect and close the small oval/football-shaped handle on the supply line under the toilet or sink \u2014 turn clockwise until snug [PB-01]. If it's the toilet, that alone may stop it.\n\nDon't spend more than a minute or two looking \u2014 tell me either way and I'll get the on-call plumber rolling."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "okay im going upstairs to the bathroom now - the toilet supply line handle is stuck, i cant turn it!! its like frozen or something. let me check the garage real quick - OH WAIT i see it! theres a wheel thing on a pipe next to the water heater. turning it now... its moving... okay i think its closed??\n\nthe water is slowing down! is that it??"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_price",
+    "input": {
+     "code": "EMERG-CALLOUT"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01SrdWwzaaxg7MCb9bAAWnCj",
+    "content": "{\"code\": \"EMERG-CALLOUT\", \"name\": \"After-hours emergency dispatch surcharge\", \"price\": 150, \"base_duration_min\": 0}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's it \u2014 great job. \ud83d\udc4f\n\nNext: open the lowest cold tap in the house (basement sink or an outdoor spigot) to drain the remaining pressure out of the lines [PB-03]. That's why water may still trickle for a few minutes \u2014 that's normal.\n\nKeep everyone out from under the sagging ceiling and leave that light fixture and its switch alone [PB-08].\n\nI'm paging our on-call plumber to come out tonight. After-hours emergency dispatch is $150 (EMERG-CALLOUT); any repair gets quoted after the tech sees what's going on upstairs. Can you confirm your address and that +1-555-0104 is the best number?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "yes!! address is 31 Halcyon Ct and that number is good. opening the tap now in the basement - yeah water is still coming out a little. okay leaving it open.\n\nim so relieved the main is off. thank you so much, when should the plumber get here??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Maria \u2014 nice work under pressure. \ud83d\ude4c\n\nOur on-call plumber is being paged now and typically arrives within 60\u201390 minutes; he'll call +1-555-0104 when he's on the way to 31 Halcyon Ct. Keep the main off, leave the basement tap open, and stay out from under the dining room ceiling until he's had a look.\n\n```json\n{\n  \"severity\": \"S1\",\n  \"category\": \"ceiling_leak_active\",\n  \"summary\": \"Active water pouring through dining room ceiling light fixture from suspected upstairs bathroom leak; customer closed house main (wheel valve by water heater in garage) and opened a basement tap - on-call plumber paged for tonight.\",\n  \"escalate_now\": true,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Shut off the house main - wheel/lever where the water line enters (found next to water heater in garage); turn clockwise [PB-02]\",\n    \"Open the lowest cold tap in the house to drain pressure from the lines [PB-03]\",\n    \"Stay clear of the sagging water-heavy ceiling; do not touch the light fixture or its switch [PB-08]\",\n    \"Attempted fixture shutoff: close the oval handle on the toilet supply line - handle was seized/stuck [PB-01]\"\n  ],\n  \"playbook_refs\": [\"PB-01\", \"PB-02\", \"PB-03\", \"PB-08\"],\n  \"quote_lines\": [\n    {\"code\": \"EMERG-CALLOUT\", \"description\": \"After-hours emergency dispatch surcharge\", \"price\": 150}\n  ],\n  \"quote_total\": 150,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"You're all set, Maria - nice work under pressure. Our on-call plumber is being paged now and typically arrives within 60-90 minutes; he'll call +1-555-0104 when he's on the way to 31 Halcyon Ct. Keep the main off, leave the basement tap open, and stay out from under the dining room ceiling until he's had a look. After-hours emergency dispatch is $150; any repair will be quoted after he assesses the leak.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "ceiling_leak_active",
+    "summary": "Active water pouring through dining room ceiling light fixture from suspected upstairs bathroom leak; customer closed house main (wheel valve by water heater in garage) and opened a basement tap - on-call plumber paged for tonight.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Shut off the house main - wheel/lever where the water line enters (found next to water heater in garage); turn clockwise [PB-02]",
+     "Open the lowest cold tap in the house to drain pressure from the lines [PB-03]",
+     "Stay clear of the sagging water-heavy ceiling; do not touch the light fixture or its switch [PB-08]",
+     "Attempted fixture shutoff: close the oval handle on the toilet supply line - handle was seized/stuck [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02",
+     "PB-03",
+     "PB-08"
+    ],
+    "quote_lines": [
+     {
+      "code": "EMERG-CALLOUT",
+      "description": "After-hours emergency dispatch surcharge",
+      "price": 150
+     }
+    ],
+    "quote_total": 150,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "You're all set, Maria - nice work under pressure. Our on-call plumber is being paged now and typically arrives within 60-90 minutes; he'll call +1-555-0104 when he's on the way to 31 Halcyon Ct. Keep the main off, leave the basement tap open, and stay out from under the dining room ceiling until he's had a look. After-hours emergency dispatch is $150; any repair will be quoted after he assesses the leak."
+   }
+  }
+ ]
+}

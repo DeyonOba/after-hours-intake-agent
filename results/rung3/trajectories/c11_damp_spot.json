@@ -1,0 +1,138 @@
+{
+ "config": "rung3",
+ "case": "c11_damp_spot",
+ "system_prompt_chars": 6670,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "There's a damp patch on my bedroom ceiling, maybe the size of a dinner plate. Not dripping, just damp and a bit yellow. Upstairs neighbor says nothing is leaking at theirs. Should I worry?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "ceiling damp spot leak investigation diagnostic"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "damp spot"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01M5aUULJrJ7bad5aQUYUtQY",
+    "content": "[{\"code\": \"DIAG\", \"name\": \"Diagnostic visit / camera inspection\", \"price\": 89, \"base_duration_min\": 45}, {\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_012TfYZiQhnGEZaXqANMQeQE",
+    "content": "No price-book match. Try get_price with an exact code, or different keywords."
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks Omar \u2014 a damp, yellowed patch that isn't dripping usually means a slow leak rather than an emergency, so no need to panic tonight. Two quick questions: is the patch sagging or bulging at all, and has it grown noticeably in the last day or two? Also, do you know what's directly above that spot (bathroom, kitchen, or roof)?\n\nIn the meantime, keep away from the area if it starts to sag or feel heavy with water, and don't poke at it [PB-08]."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No sagging or bulging, just flat and damp. And nah, hasn't grown\u2014been the same size for like 3 days now. It's right below my upstairs neighbor's bathroom, so that tracks with what you're saying about a slow leak."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "DIAG"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01HNxwi1t6inmXbcHqEH1BEv",
+    "content": "{\"job_code\": \"DIAG\", \"predicted_duration_min\": 44}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 44,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01BtiWkAjxvyX1wdXLxicbjQ",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's reassuring \u2014 flat, stable, and no growth means it's a slow seep, so it can wait for a normal appointment. Since it's under your neighbor's bathroom, the source is most likely their fixture or a shared drain line, so it's worth giving them (or the building/landlord) a heads-up too.\n\nOur diagnostic visit with camera inspection is $89 (about 45 min), and that gets applied toward whatever repair is needed. I have tomorrow, Sept 1 at 10:30 AM \u2014 want me to hold it? Just note the tech may need access upstairs to trace the source."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, that works for me \u2014 hold that 10:30 AM slot tomorrow. And good call, I'll text my neighbor tonight to give them a heads up. Thanks for the help, really appreciate it."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Omar \u2014 booked for tomorrow, Sept 1 at 10:30 AM, $89 diagnostic with camera inspection (credited toward any repair). Great idea texting your neighbor so we can get upstairs access if the tech needs to trace it. If the patch starts sagging, spreading, or dripping before then, call us right away and stay clear of the area [PB-08].\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"damp_spot\",\n  \"summary\": \"Stable dinner-plate-sized damp/yellow ceiling stain in bedroom below upstairs neighbor's bathroom, no dripping or sagging for 3 days; diagnostic visit booked.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Stay clear of the area and do not poke the ceiling if it begins to sag or feel heavy with water [PB-08]\"\n  ],\n  \"playbook_refs\": [\"PB-08\"],\n  \"quote_lines\": [\n    {\"code\": \"DIAG\", \"description\": \"Diagnostic visit / camera inspection (credited toward repair)\", \"price\": 89}\n  ],\n  \"quote_total\": 89,\n  \"duration_min\": 44,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You're all set, Omar \u2014 booked for tomorrow, Sept 1 at 10:30 AM, $89 diagnostic with camera inspection (credited toward any repair). Great idea texting your neighbor so we can get upstairs access if the tech needs to trace it. If the patch starts sagging, spreading, or dripping before then, call us right away and stay clear of the area [PB-08].\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "damp_spot",
+    "summary": "Stable dinner-plate-sized damp/yellow ceiling stain in bedroom below upstairs neighbor's bathroom, no dripping or sagging for 3 days; diagnostic visit booked.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Stay clear of the area and do not poke the ceiling if it begins to sag or feel heavy with water [PB-08]"
+    ],
+    "playbook_refs": [
+     "PB-08"
+    ],
+    "quote_lines": [
+     {
+      "code": "DIAG",
+      "description": "Diagnostic visit / camera inspection (credited toward repair)",
+      "price": 89
+     }
+    ],
+    "quote_total": 89,
+    "duration_min": 44,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set, Omar \u2014 booked for tomorrow, Sept 1 at 10:30 AM, $89 diagnostic with camera inspection (credited toward any repair). Great idea texting your neighbor so we can get upstairs access if the tech needs to trace it. If the patch starts sagging, spreading, or dripping before then, call us right away and stay clear of the area [PB-08]."
+   }
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "case": "c08_running_toilet",
+ "ticket": {
+  "severity": "S3",
+  "category": "toilet_running",
+  "summary": "Upstairs toilet (12 yrs old) has been running continuously for a few days; customer booked a standard rebuild visit.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Close the toilet's supply shutoff valve (small oval handle under the fixture, clockwise until snug) between uses to stop water waste [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01"
+  ],
+  "quote_lines": [
+   {
+    "code": "TOILET-REBUILD",
+    "description": "Running toilet rebuild (fill+flush valve), parts and labor included",
+    "price": 189
+   }
+  ],
+  "quote_total": 189,
+  "duration_min": 65,
+  "slot_id": "SL-0901-1500",
+  "customer_message": "You're all set, Nora - Sept 1 at 3:00 PM, 402 Ashgrove Ter, running toilet rebuild at $189 all-in (about an hour on site). Your tech will text when they're on the way. Until then, feel free to close the toilet's shutoff valve between uses to save water [PB-01]. Thanks for texting us!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c08_running_toilet",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 5,
+  "duration_ok": true,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.1614,
+  "wall_s": 28.7
+ }
+}
