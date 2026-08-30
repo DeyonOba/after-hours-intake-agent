@@ -21,7 +21,7 @@ from eval import scoring
 from eval.simulator import CustomerSimulator
 
 
-def run(cfg_path: str, case_filter: list[str] | None, dry_run: bool) -> int:
+def run(cfg_path: str, case_filter: list[str] | None, dry_run: bool, resume: bool = False) -> int:
     config.load_dotenv()
     cfg = config.load_rung_config(cfg_path)
     cases = config.load_cases()
@@ -33,6 +33,17 @@ def run(cfg_path: str, case_filter: list[str] | None, dry_run: bool) -> int:
 
     out_dir = config.RESULTS_DIR / cfg.name
     (out_dir / "trajectories").mkdir(parents=True, exist_ok=True)
+    scores_dir = out_dir / "case_scores"
+    scores_dir.mkdir(exist_ok=True)
+
+    done: dict[str, dict] = {}
+    if resume:
+        for f in scores_dir.glob("*.json"):
+            rec = json.loads(f.read_text())
+            done[rec["case"]] = rec
+        if done:
+            print(f"[resume] {len(done)} case(s) already scored, skipping them")
+        cases = [c for c in cases if c["id"] not in done]
 
     if dry_run:
         from agent_core import prompts
@@ -67,11 +78,14 @@ def run(cfg_path: str, case_filter: list[str] | None, dry_run: bool) -> int:
         score["cost_usd"] = round(case_cost, 4)
         score["wall_s"] = round(time.time() - t0, 1)
         all_scores.append(score)
-        records.append({"case": case["id"], "ticket": result.ticket,
-                        "safety_overrides": result.safety_overrides,
-                        "verifier_issues_initial": result.verifier_issues_initial,
-                        "verifier_issues_final": result.verifier_issues_final,
-                        "score": score})
+        record = {"case": case["id"], "ticket": result.ticket,
+                  "safety_overrides": result.safety_overrides,
+                  "verifier_issues_initial": result.verifier_issues_initial,
+                  "verifier_issues_final": result.verifier_issues_final,
+                  "score": score}
+        records.append(record)
+        # incremental save: a killed run loses nothing that already finished
+        (scores_dir / f"{case['id']}.json").write_text(json.dumps(record, indent=1))
         (out_dir / "trajectories" / f"{case['id']}.json").write_text(
             json.dumps({"config": cfg.name, "case": case["id"],
                         "system_prompt_chars": len(session.system),
@@ -79,6 +93,14 @@ def run(cfg_path: str, case_filter: list[str] | None, dry_run: bool) -> int:
         flag = "OK " if score["severity_ok"] and score["parse_ok"] else "MISS"
         print(f"{flag} sev={result.ticket.get('severity') if result.ticket else '-'} "
               f"(key {case['answer_key']['severity']}) turns={result.turns} ${case_cost:.2f}")
+
+    # merge resumed cases back in, keeping canonical case order
+    if done:
+        records = list(done.values()) + records
+        order = {c["id"]: i for i, c in enumerate(config.load_cases())}
+        records.sort(key=lambda r: order.get(r["case"], 99))
+        all_scores = [r["score"] for r in records]
+        total_cost += sum(r["score"].get("cost_usd") or 0 for r in done.values())
 
     agg = scoring.aggregate(all_scores)
     agg["total_cost_usd"] = round(total_cost, 2)
@@ -116,12 +138,13 @@ def main() -> int:
     ap.add_argument("--cases", help="comma-separated case ids")
     ap.add_argument("--dry-run", action="store_true", help="validate data + prompts, no API calls")
     ap.add_argument("--selfcheck", action="store_true", help="answer-key consistency check only")
+    ap.add_argument("--resume", action="store_true", help="skip cases already in results/<rung>/case_scores/")
     args = ap.parse_args()
     if args.selfcheck:
         return scoring.selfcheck()
     if not args.config:
         ap.error("--config required (or use --selfcheck)")
-    return run(args.config, args.cases.split(",") if args.cases else None, args.dry_run)
+    return run(args.config, args.cases.split(",") if args.cases else None, args.dry_run, args.resume)
 
 
 if __name__ == "__main__":

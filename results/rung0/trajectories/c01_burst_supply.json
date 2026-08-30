@@ -1,0 +1,89 @@
+{
+ "config": "rung0",
+ "case": "c01_burst_supply",
+ "system_prompt_chars": 2121,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "PLEASE HELP water is SPRAYING out from under my kitchen sink, it's going everywhere, I called twice and nobody picked up!!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Dana \u2014 I'm here, let's stop the water first:\n\n1. Look under the sink for the two small oval/football-shaped valves on the pipes going up to the faucet. Turn both **clockwise** until they stop.\n2. If they won't budge or the spray isn't from there, shut off the **main** (usually where the water line enters the house, in the garage/basement, or a meter box near the street).\n3. Clear the cabinet out and throw towels/a bucket under it. If there's an outlet or power strip nearby, don't touch it while wet.\n\nTell me when the water's off (or if it isn't) \u2014 I can page the on-call plumber tonight."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok im under the sink now, i see them!! turning both clockwise... the first one moved, second ones stiff but its turning... ok its off, still dripping a little but way less. thank god"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Nice work \u2014 that's the hard part done. \n\nTwo quick things: turn the **kitchen faucet on** (both hot and cold) to release the pressure still in the lines \u2014 the dripping should stop within a minute or so. Then dry out the cabinet and check the floor/anything stored under there.\n\nNow, so I can quote and bring the right parts: can you see **where** the spray was coming from? A braided steel hose going up to the faucet, the valve itself, or somewhere on the drain pipe?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok turning on the faucet now... yeah the dripping stopped! \n\nlooking at it \u2014 the spray is coming from the cold water line going up, looks like right where it connects at the top near the faucet. the hose itself looks split or something at that connection point"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's a classic braided supply line failure \u2014 the good news is it's a straightforward fix and you're no longer flooding.\n\nSince the shutoff is holding, this isn't a middle-of-the-night emergency. You can still use the hot side if you need to, but I'd leave both valves off until we're there.\n\n**Quote: $199** \u2014 after-hours diagnostic/trip ($89) plus replacing the cold supply line ($110), about an hour. If the hot line is the same age I'd swap both while we're under there (+$45), and if that stiff valve turns out to be failing I'll quote that on site before doing anything.\n\nI can hold you the **first slot tomorrow, 8:00\u201310:00 AM**. Want me to book it?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "yes please book it!! 8am works. do i need to do anything tonight or just leave the valves off?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Booked \u2014 Tuesday 9/1, 8:00\u201310:00 AM. \n\nTonight: just leave both valves off and the faucet handle in the off position. Towel-dry the cabinet, pull out anything stored under there, and leave the doors open so it airs out overnight \u2014 that's the best way to avoid swollen particleboard or mildew. If you have a fan, point it in there. If water got past the cabinet onto the floor or into a basement below, snap a photo so we can take a look.\n\nIf anything starts spraying again, shut off the main and text me \u2014 I'll page the on-call plumber.\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"leak_contained\",\n  \"summary\": \"Split braided cold-water supply line at the kitchen faucet connection sprayed under the sink; customer successfully closed both angle stops and the leak is contained, needs supply line replacement first thing tomorrow.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Close both angle stop valves under the kitchen sink (clockwise) to isolate the leak\",\n    \"Open the kitchen faucet hot and cold to bleed residual line pressure - dripping stopped\",\n    \"Clear out and towel-dry the sink cabinet, keep doors open overnight to air-dry, use a fan if available\",\n    \"Do not touch nearby outlets or power strips while wet\",\n    \"Leave both valves off and the faucet off until the technician arrives\",\n    \"Photograph any water damage to floor or space below\",\n    \"If spraying resumes, shut off the main water supply and text back for on-call dispatch\"\n  ],\n  \"playbook_refs\": null,\n  \"quote_lines\": [\n    {\n      \"code\": \"SVC-AH-DIAG\",\n      \"description\": \"After-hours diagnostic / trip charge\",\n      \"price\": 89\n    },\n    {\n      \"code\": \"SUP-LINE-REPL\",\n      \"description\": \"Replace braided cold water supply line at kitchen faucet\",\n      \"price\": 110\n    },\n    {\n      \"code\": \"SUP-LINE-REPL-ADD\",\n      \"description\": \"OPTIONAL - replace matching hot water supply line while on site (customer to confirm)\",\n      \"price\": 45\n    }\n  ],\n  \"quote_total\": 199,\n  \"duration_min\": 60,\n  \"slot_id\": \"SLOT-2026-09-01-0800\",\n  \"customer_message\": \"Booked - Tuesday 9/1, 8:00-10:00 AM. Tonight: leave both valves off and the faucet off. Towel-dry the cabinet, remove stored items, and leave the doors open overnight to air out (a fan helps) to prevent swelling and mildew. Photograph any water damage to the floor or the space below. If anything sprays again, shut off the main and text me and I'll page the on-call plumber.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "leak_contained",
+    "summary": "Split braided cold-water supply line at the kitchen faucet connection sprayed under the sink; customer successfully closed both angle stops and the leak is contained, needs supply line replacement first thing tomorrow.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Close both angle stop valves under the kitchen sink (clockwise) to isolate the leak",
+     "Open the kitchen faucet hot and cold to bleed residual line pressure - dripping stopped",
+     "Clear out and towel-dry the sink cabinet, keep doors open overnight to air-dry, use a fan if available",
+     "Do not touch nearby outlets or power strips while wet",
+     "Leave both valves off and the faucet off until the technician arrives",
+     "Photograph any water damage to floor or space below",
+     "If spraying resumes, shut off the main water supply and text back for on-call dispatch"
+    ],
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "SVC-AH-DIAG",
+      "description": "After-hours diagnostic / trip charge",
+      "price": 89
+     },
+     {
+      "code": "SUP-LINE-REPL",
+      "description": "Replace braided cold water supply line at kitchen faucet",
+      "price": 110
+     },
+     {
+      "code": "SUP-LINE-REPL-ADD",
+      "description": "OPTIONAL - replace matching hot water supply line while on site (customer to confirm)",
+      "price": 45
+     }
+    ],
+    "quote_total": 199,
+    "duration_min": 60,
+    "slot_id": "SLOT-2026-09-01-0800",
+    "customer_message": "Booked - Tuesday 9/1, 8:00-10:00 AM. Tonight: leave both valves off and the faucet off. Towel-dry the cabinet, remove stored items, and leave the doors open overnight to air out (a fan helps) to prevent swelling and mildew. Photograph any water damage to the floor or the space below. If anything sprays again, shut off the main and text me and I'll page the on-call plumber."
+   }
+  }
+ ]
+}

@@ -1,0 +1,116 @@
+{
+ "config": "rung0",
+ "case": "c04_ceiling_leak_shutoff_fail",
+ "system_prompt_chars": 2119,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Water is pouring through my dining room ceiling light fixture, I think from the upstairs bathroom. I put a bucket. What do I do??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "**Turn off the water first, and stay clear of that light fixture \u2014 water + electricity is the immediate danger.**\n\n1. Don't touch the fixture or the standing water under it. If your breaker panel is dry and easy to reach, shut off the breaker for the dining room lights.\n2. Shut off the water: upstairs, close the valve behind/under the toilet and the sink stops. If it's still running, shut off the **main** (usually in the basement/crawlspace where the water line enters, or at the street meter).\n3. Move furniture and rugs out from under it, keep the bucket going.\n\nCan you get to a shutoff \u2014 and do you know what's running upstairs (toilet overflowing, tub, or no obvious source)? I'm paging our on-call plumber now."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "omg thank you. ok not touching the light. water is definitely coming from the upstairs bathroom - sounds like the toilet maybe? let me try the shutoff valves up there first"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect \u2014 the toilet's shutoff is the small oval/football-shaped valve on the wall behind the toilet, low on the left. Turn it **clockwise** until it stops. If it's stuck or spins without stopping, go straight to the main.\n\nAlso lift the toilet tank lid and press the flapper down at the bottom of the tank \u2014 that stops water from feeding the bowl right away.\n\nIf water is overflowing the bowl rather than leaking from the base, don't flush again. Tell me what you find and whether the flow downstairs slows."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok going upstairs now... found the valve behind the toilet but it's not turning?? it's stuck or something. water is still pouring down. should i try harder or go find the main?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "**Don't force it** \u2014 those old valves snap and then you've got a worse leak. Go straight to the main.\n\nLook where the water line enters the house: basement/crawlspace wall, garage, or a utility closet \u2014 usually a lever or round handle on the pipe just past the meter. Lever = turn a quarter turn so it's crosswise to the pipe. Round handle = turn clockwise until it stops.\n\nIf you can't find it inside, there's a meter box in the ground near the street/sidewalk \u2014 the lid lifts off and the valve inside needs a wrench or meter key to turn crosswise.\n\nAlso: while you're down there, press the flapper down in the tank if you haven't \u2014 that alone may stop the flow. Text me as soon as it's off."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok i'm in the basement looking around... i don't see anything like that down here. no meter or valve or anything. water's still coming down pretty bad \ud83d\ude29"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Check these three spots fast: **near the water heater**, on the **wall that faces the street** (front of the basement, pipe coming up out of the floor or through the wall), and by the **washer hookups**. It'll be a lever or round handle on the pipe closest to where it enters.\n\nIf it's not there in the next minute, run back up and do this instead: lift the tank lid, push the rubber flapper at the bottom down and hold it, and lift the float/cup on the fill valve \u2014 that shuts the water off at the toilet. Then wedge something in there to hold the flapper down.\n\nMy on-call tech is en route \u2014 **ETA about 35\u201345 min**. Do you have a hose bib outside the front of the house? The main is often just inside from that."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "omg wait \u2014 i just checked by the water heater in the garage and found it!! there's a lever on the pipe. turning it now..."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "\ud83d\ude4c Turn it a quarter turn so the lever sits **crosswise** to the pipe. Then open a cold faucet on the lowest floor and let it run dry \u2014 that drains the pipes so the leak slows fast.\n\nGive it 2\u20133 minutes; the ceiling will keep dripping as trapped water works its way out, so leave the bucket. Tell me when the flow stops."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok turning it now... lever is crosswise. went to the kitchen sink and opened it \u2014 water's coming out but slowing down. the ceiling drip is getting way lighter already. phew"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's the sound of the emergency being over \u2014 nice work, Maria. \ud83d\udc4f\n\nWhile you wait on the tech:\n- Leave the dining room breaker off and stay out from under the fixture.\n- If any part of the ceiling is **bulging or sagging**, tell me now \u2014 that's trapped water and it needs to be relieved carefully.\n- Take a few photos/video of the ceiling and the wet area for your insurance claim.\n- House water is off, so no flushing or faucets until the tech restores it.\n\nOn cost: after-hours emergency call-out is **$189** (includes the trip and diagnosis), and he'll quote the repair on-site before doing any work \u2014 a stuck toilet angle stop replacement typically runs **$145\u2013$185**, and if the leak is from the toilet's wax seal or supply line it's usually in a similar range.\n\nTwo quick things: is the ceiling bulging anywhere, and have we done work for you before?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "no bulging, just wet. and no, first time calling you guys. i'm gonna take those pics now and just... sit with my bucket lol. thanks so much for walking me through that. really appreciate it"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You've earned that bucket-sitting break. \ud83d\ude04 Here's where we stand:\n\n**Tech is en route \u2014 ETA ~35\u201345 min from now.** He'll call your cell (+1-555-0104) when he's close. Keep the dining room breaker off until he clears the fixture, and leave the house water off until he restores it.\n\nHe'll find the source upstairs, quote the repair before touching anything, and can dry-check the ceiling cavity so you know what your insurance is dealing with. You're all set \u2014 text back if anything changes before he arrives.\n\n```json\n{\n  \"severity\": \"S1\",\n  \"category\": \"ceiling_leak_active\",\n  \"summary\": \"Active water pouring through dining room ceiling light fixture from upstairs bathroom (suspected toilet); customer's toilet angle stop was seized, main shutoff located at water heater in garage and closed \u2014 flow stopped, on-call tech dispatched.\",\n  \"escalate_now\": true,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Do not touch the light fixture or standing water; shut off the dining room lighting breaker (water through an energized fixture)\",\n    \"Attempted toilet angle stop behind toilet \u2014 seized; advised NOT to force it to avoid snapping the valve\",\n    \"Advised holding/wedging the tank flapper closed and lifting the fill valve float as an interim stop\",\n    \"Located and closed main shutoff lever at water heater in garage (quarter turn, crosswise)\",\n    \"Opened lowest-floor cold faucet (kitchen sink) to depressurize and drain lines \u2014 ceiling drip reduced significantly\",\n    \"Keep bucket in place for residual trapped water; move furniture and rugs clear\",\n    \"Checked for ceiling bulge/sag \u2014 none present, ceiling wet only, no relief puncture needed\",\n    \"Photograph/video ceiling and wet area for insurance\",\n    \"No fixture use or flushing until tech restores water\"\n  ],\n  \"playbook_refs\": null,\n  \"quote_lines\": [\n    {\n      \"code\": \"EMRG-AH-DISPATCH\",\n      \"description\": \"After-hours emergency call-out, includes trip and on-site diagnosis (firm)\",\n      \"price\": 189\n    },\n    {\n      \"code\": \"EST-ANGLE-STOP\",\n      \"description\": \"Estimated replacement of seized toilet angle stop, $145-185 range, to be confirmed on site before work\",\n      \"price\": 165\n    }\n  ],\n  \"quote_total\": 354,\n  \"duration_min\": 90,\n  \"slot_id\": null,\n  \"customer_message\": \"You've earned that bucket-sitting break. Here's where we stand: Tech is en route - ETA ~35-45 min from now. He'll call your cell (+1-555-0104) when he's close. Keep the dining room breaker off until he clears the fixture, and leave the house water off until he restores it. He'll find the source upstairs, quote the repair before touching anything, and can dry-check the ceiling cavity so you know what your insurance is dealing with. You're all set - text back if anything changes before he arrives.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "ceiling_leak_active",
+    "summary": "Active water pouring through dining room ceiling light fixture from upstairs bathroom (suspected toilet); customer's toilet angle stop was seized, main shutoff located at water heater in garage and closed \u2014 flow stopped, on-call tech dispatched.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Do not touch the light fixture or standing water; shut off the dining room lighting breaker (water through an energized fixture)",
+     "Attempted toilet angle stop behind toilet \u2014 seized; advised NOT to force it to avoid snapping the valve",
+     "Advised holding/wedging the tank flapper closed and lifting the fill valve float as an interim stop",
+     "Located and closed main shutoff lever at water heater in garage (quarter turn, crosswise)",
+     "Opened lowest-floor cold faucet (kitchen sink) to depressurize and drain lines \u2014 ceiling drip reduced significantly",
+     "Keep bucket in place for residual trapped water; move furniture and rugs clear",
+     "Checked for ceiling bulge/sag \u2014 none present, ceiling wet only, no relief puncture needed",
+     "Photograph/video ceiling and wet area for insurance",
+     "No fixture use or flushing until tech restores water"
+    ],
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "EMRG-AH-DISPATCH",
+      "description": "After-hours emergency call-out, includes trip and on-site diagnosis (firm)",
+      "price": 189
+     },
+     {
+      "code": "EST-ANGLE-STOP",
+      "description": "Estimated replacement of seized toilet angle stop, $145-185 range, to be confirmed on site before work",
+      "price": 165
+     }
+    ],
+    "quote_total": 354,
+    "duration_min": 90,
+    "slot_id": null,
+    "customer_message": "You've earned that bucket-sitting break. Here's where we stand: Tech is en route - ETA ~35-45 min from now. He'll call your cell (+1-555-0104) when he's close. Keep the dining room breaker off until he clears the fixture, and leave the house water off until he restores it. He'll find the source upstairs, quote the repair before touching anything, and can dry-check the ceiling cavity so you know what your insurance is dealing with. You're all set - text back if anything changes before he arrives."
+   }
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "config": "rung0",
+ "case": "c02_sewage_backup",
+ "system_prompt_chars": 2117,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "hi, sewage is coming UP through the bathtub drain and the toilet gurgles when we use the kitchen sink. smells terrible. is this an emergency or can it wait til morning?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hey Rob \u2014 that's an emergency, not a wait-till-morning problem. Sewage surfacing at the lowest drain (your tub) plus the toilet gurgling when the kitchen sink runs means your **main sewer line is blocked**, and the next thing that drains will come up on your floor.\n\nRight now, please:\n1. **Stop all water use** \u2014 no flushing, no sinks, no shower, no washer or dishwasher. Every gallon you send down has nowhere to go but up.\n2. Keep kids and pets out of that bathroom; sewage is a biohazard. Don't touch the water without gloves.\n3. Crack a window / run the exhaust fan for the smell.\n4. **No chemical drain cleaner** \u2014 it won't clear a main line and it makes the cleanout dangerous for our tech.\n\nI'm paging our on-call plumber now. What's the service address, and do you know if you have an exterior cleanout (a capped pipe sticking up near the foundation)?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "oof ok yeah that's what i was afraid of. address is 9 delmore st. and honestly i have no idea about a cleanout thing - never had to deal with this before. should i go look for it?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "No need to go hunting in the dark \u2014 our tech will find it. If you happen to glance outside with a flashlight, it's usually a 3\u20134\" white or black capped pipe sticking a few inches out of the ground near the foundation on the bathroom side of the house, sometimes hidden in a flower bed. Totally fine if you can't spot it; just don't open it yourself if you do.\n\nYou're on the on-call plumber's list now for 9 Delmore St. Dispatch will text you an ETA in the next few minutes \u2014 typically 60\u201390 minutes out this time of night. Keep the water off until he's there.\n\nBallpark for tonight: **$189** after-hours emergency dispatch + **$375** to cable the main line through the cleanout = **~$564**, and he'll confirm before starting any work. If the line won't clear or it looks like roots or a collapse, he'll recommend a camera inspection (**$250**) so we're not guessing \u2014 your call at that point.\n\nHang tight, Rob, and keep everyone out of that bathroom. We'll get it flowing tonight.\n\n```json\n{\n  \"severity\": \"S1\",\n  \"category\": \"sewage_backup\",\n  \"summary\": \"Sewage backing up through bathtub drain with toilet gurgling on kitchen sink use at 9 Delmore St \u2014 main sewer line blockage, on-call plumber paged for tonight.\",\n  \"escalate_now\": true,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Stop all water use immediately \u2014 no flushing, sinks, showers, washer or dishwasher\",\n    \"Keep children and pets out of the affected bathroom; treat standing water as a biohazard and avoid skin contact\",\n    \"Ventilate the bathroom (window/exhaust fan) for sewer gas odor\",\n    \"Do not use chemical drain cleaner \u2014 ineffective on a main line and hazardous to the tech opening the cleanout\",\n    \"Do not open the exterior cleanout cap yourself; tech will locate and open it on arrival\"\n  ],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"AH-DISPATCH\",\n      \"description\": \"After-hours emergency dispatch fee\",\n      \"price\": 189\n    },\n    {\n      \"code\": \"MAIN-CABLE\",\n      \"description\": \"Cable/auger main sewer line via exterior cleanout\",\n      \"price\": 375\n    }\n  ],\n  \"quote_total\": 564,\n  \"duration_min\": 120,\n  \"slot_id\": null,\n  \"customer_message\": \"No need to go hunting in the dark \u2014 our tech will find the cleanout (usually a 3-4\\\" capped pipe near the foundation). You're on the on-call plumber's list for 9 Delmore St; dispatch will text an ETA shortly, typically 60-90 minutes. Keep all water off until he arrives. Ballpark tonight: $189 after-hours dispatch + $375 to cable the main line = ~$564, confirmed before any work starts. If the line won't clear or roots/collapse are suspected, he'll recommend a $250 camera inspection \u2014 your call. Keep everyone out of that bathroom.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "sewage_backup",
+    "summary": "Sewage backing up through bathtub drain with toilet gurgling on kitchen sink use at 9 Delmore St \u2014 main sewer line blockage, on-call plumber paged for tonight.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Stop all water use immediately \u2014 no flushing, sinks, showers, washer or dishwasher",
+     "Keep children and pets out of the affected bathroom; treat standing water as a biohazard and avoid skin contact",
+     "Ventilate the bathroom (window/exhaust fan) for sewer gas odor",
+     "Do not use chemical drain cleaner \u2014 ineffective on a main line and hazardous to the tech opening the cleanout",
+     "Do not open the exterior cleanout cap yourself; tech will locate and open it on arrival"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "AH-DISPATCH",
+      "description": "After-hours emergency dispatch fee",
+      "price": 189
+     },
+     {
+      "code": "MAIN-CABLE",
+      "description": "Cable/auger main sewer line via exterior cleanout",
+      "price": 375
+     }
+    ],
+    "quote_total": 564,
+    "duration_min": 120,
+    "slot_id": null,
+    "customer_message": "No need to go hunting in the dark \u2014 our tech will find the cleanout (usually a 3-4\" capped pipe near the foundation). You're on the on-call plumber's list for 9 Delmore St; dispatch will text an ETA shortly, typically 60-90 minutes. Keep all water off until he arrives. Ballpark tonight: $189 after-hours dispatch + $375 to cable the main line = ~$564, confirmed before any work starts. If the line won't clear or roots/collapse are suspected, he'll recommend a $250 camera inspection \u2014 your call. Keep everyone out of that bathroom."
+   }
+  }
+ ]
+}

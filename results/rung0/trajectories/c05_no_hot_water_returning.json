@@ -1,0 +1,61 @@
+{
+ "config": "rung0",
+ "case": "c05_no_hot_water_returning",
+ "system_prompt_chars": 2117,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi, this is Sam Okafor - you guys installed our water heater last year. The pilot light keeps going out tonight and we have no hot water. We have a 4-month-old at home. Can someone come first thing?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Sam \u2014 sorry we missed your call, and sorry you're dealing with this with a little one at home.\n\nFirst, a quick safety check: do you smell gas (rotten eggs) anywhere near the heater or in the room? If yes, don't relight it \u2014 leave the house and call 911 or your gas utility from outside, then text me back.\n\nIf there's no gas smell: does the pilot light again and then die after a few minutes, or won't it stay lit at all? And is there any water pooling around the base of the tank?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No gas smell at all, thank goodness. The pilot catches and burns for maybe 10 mins then just goes out on its own \u2014 no water on the floor either. We're pretty stressed with the baby, honestly. Can someone get out here in the morning?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's a relief \u2014 no gas smell and no water on the floor means this isn't an emergency, so we don't need to page the on-call plumber tonight. A pilot that burns ~10 minutes and dies is the classic sign of a failing thermocouple (the safety sensor that tells the gas valve the flame is lit). It's a common, quick fix.\n\nFor tonight:\n- Turn the gas control knob to OFF rather than relighting over and over \u2014 repeated relights don't help and just cycle gas through the burner.\n- For the baby, heat water on the stove and mix to warm, never hot; always test on your wrist before use.\n- If you ever do smell gas, stop and call your gas utility or 911 from outside.\n\nI've put you in the first priority slot tomorrow, Tuesday Sept 1, arrival window 8:00\u201310:00 AM (about 60\u201390 min on site). On pricing: a thermocouple replacement typically runs $89 diagnostic + $145 parts/labor = $234 total. Important \u2014 since we installed your heater last year, this is very likely covered under warranty, which would bring your cost to $0. I can't pull the warranty file after hours, so the office will verify first thing and confirm before any work is charged.\n\nDispatch will text you a confirmation around 7:00 AM. Hang in there tonight \u2014 you're first on the list.\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"water_heater_no_hot\",\n  \"summary\": \"No hot water \u2014 gas water heater pilot lights then self-extinguishes after ~10 min (likely failed thermocouple); no gas odor, no leak; infant in home, needs first morning slot.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Confirmed no gas odor; instructed to leave home and call gas utility/911 from outside if gas smell ever occurs\",\n    \"Turn gas control knob to OFF instead of repeatedly relighting the pilot\",\n    \"Heat water on stove and mix to warm for the 4-month-old, test temperature on wrist before use\",\n    \"Confirmed no water pooling at base of tank \u2014 no active leak\"\n  ],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\"code\": \"DIAG-STD\", \"description\": \"After-hours-booked standard diagnostic, gas water heater\", \"price\": 89},\n    {\"code\": \"WH-THERMOCOUPLE\", \"description\": \"Thermocouple replacement, parts + labor (estimate, pending on-site diagnosis)\", \"price\": 145}\n  ],\n  \"quote_total\": 234,\n  \"duration_min\": 90,\n  \"slot_id\": \"2026-09-01-0800\",\n  \"customer_message\": \"That's a relief \u2014 no gas smell and no water on the floor means this isn't an emergency, so we don't need to page the on-call plumber tonight. A pilot that burns ~10 minutes and dies is the classic sign of a failing thermocouple. Tonight: turn the gas control to OFF rather than relighting repeatedly; heat water on the stove and mix to warm for the baby, testing on your wrist first; if you ever smell gas, call the gas utility or 911 from outside. I've put you in the first priority slot tomorrow, Tuesday Sept 1, 8:00\u201310:00 AM arrival (60\u201390 min on site). Pricing: thermocouple replacement typically $89 diagnostic + $145 parts/labor = $234 \u2014 but since we installed your heater last year this is very likely warranty-covered ($0 to you). The office will verify the warranty first thing and confirm before charging anything. Dispatch will text confirmation around 7:00 AM.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "water_heater_no_hot",
+    "summary": "No hot water \u2014 gas water heater pilot lights then self-extinguishes after ~10 min (likely failed thermocouple); no gas odor, no leak; infant in home, needs first morning slot.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Confirmed no gas odor; instructed to leave home and call gas utility/911 from outside if gas smell ever occurs",
+     "Turn gas control knob to OFF instead of repeatedly relighting the pilot",
+     "Heat water on stove and mix to warm for the 4-month-old, test temperature on wrist before use",
+     "Confirmed no water pooling at base of tank \u2014 no active leak"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DIAG-STD",
+      "description": "After-hours-booked standard diagnostic, gas water heater",
+      "price": 89
+     },
+     {
+      "code": "WH-THERMOCOUPLE",
+      "description": "Thermocouple replacement, parts + labor (estimate, pending on-site diagnosis)",
+      "price": 145
+     }
+    ],
+    "quote_total": 234,
+    "duration_min": 90,
+    "slot_id": "2026-09-01-0800",
+    "customer_message": "That's a relief \u2014 no gas smell and no water on the floor means this isn't an emergency, so we don't need to page the on-call plumber tonight. A pilot that burns ~10 minutes and dies is the classic sign of a failing thermocouple. Tonight: turn the gas control to OFF rather than relighting repeatedly; heat water on the stove and mix to warm for the baby, testing on your wrist first; if you ever smell gas, call the gas utility or 911 from outside. I've put you in the first priority slot tomorrow, Tuesday Sept 1, 8:00\u201310:00 AM arrival (60\u201390 min on site). Pricing: thermocouple replacement typically $89 diagnostic + $145 parts/labor = $234 \u2014 but since we installed your heater last year this is very likely warranty-covered ($0 to you). The office will verify the warranty first thing and confirm before charging anything. Dispatch will text confirmation around 7:00 AM."
+   }
+  }
+ ]
+}

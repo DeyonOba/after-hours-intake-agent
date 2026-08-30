@@ -1,0 +1,58 @@
+{
+ "case": "c06_leak_contained",
+ "ticket": {
+  "severity": "S2",
+  "category": "leak_contained",
+  "summary": "Leaking braided supply line under bathroom sink; customer shut the angle stop and leak fully stopped, but it's their only full bathroom so that sink is out of service \u2014 needs first morning slot.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Leave the angle stop closed until the tech arrives",
+   "Towel-dry the cabinet base and area under the sink to prevent swelling/damage",
+   "Confirmed no residual drip from the valve itself"
+  ],
+  "playbook_refs": null,
+  "quote_lines": [
+   {
+    "code": "SUPPLY-LINE-REPL",
+    "description": "Replace braided faucet supply line (parts + labor, regular hours)",
+    "price": 145
+   }
+  ],
+  "quote_total": 145,
+  "duration_min": 45,
+  "slot_id": "2026-09-01-0800-1000",
+  "customer_message": "You're all set \u2014 8:00\u201310:00 AM tomorrow (Mon Sept 1) is locked in, and you'll get a text when the tech is on the way. Keep that valve closed tonight; the rest of the house is unaffected. See you in the morning, Jess!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c06_leak_contained",
+  "tier": "S2",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [
+   "SUPPLY-LINE-REPL"
+  ],
+  "code_f1": 0.0,
+  "total_err_pct": 12.4,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.04,
+  "wall_s": null
+ }
+}

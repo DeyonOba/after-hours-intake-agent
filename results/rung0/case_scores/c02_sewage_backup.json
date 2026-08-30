@@ -1,0 +1,66 @@
+{
+ "case": "c02_sewage_backup",
+ "ticket": {
+  "severity": "S1",
+  "category": "sewage_backup",
+  "summary": "Sewage backing up through bathtub drain with toilet gurgling on kitchen sink use at 9 Delmore St \u2014 main sewer line blockage, on-call plumber paged for tonight.",
+  "escalate_now": true,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Stop all water use immediately \u2014 no flushing, sinks, showers, washer or dishwasher",
+   "Keep children and pets out of the affected bathroom; treat standing water as a biohazard and avoid skin contact",
+   "Ventilate the bathroom (window/exhaust fan) for sewer gas odor",
+   "Do not use chemical drain cleaner \u2014 ineffective on a main line and hazardous to the tech opening the cleanout",
+   "Do not open the exterior cleanout cap yourself; tech will locate and open it on arrival"
+  ],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "AH-DISPATCH",
+    "description": "After-hours emergency dispatch fee",
+    "price": 189
+   },
+   {
+    "code": "MAIN-CABLE",
+    "description": "Cable/auger main sewer line via exterior cleanout",
+    "price": 375
+   }
+  ],
+  "quote_total": 564,
+  "duration_min": 120,
+  "slot_id": null,
+  "customer_message": "No need to go hunting in the dark \u2014 our tech will find the cleanout (usually a 3-4\" capped pipe near the foundation). You're on the on-call plumber's list for 9 Delmore St; dispatch will text an ETA shortly, typically 60-90 minutes. Keep all water off until he arrives. Ballpark tonight: $189 after-hours dispatch + $375 to cable the main line = ~$564, confirmed before any work starts. If the line won't clear or roots/collapse are suspected, he'll recommend a $250 camera inspection \u2014 your call. Keep everyone out of that bathroom."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c02_sewage_backup",
+  "tier": "S1",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": true,
+  "escalated": true,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [
+   "AH-DISPATCH",
+   "MAIN-CABLE"
+  ],
+  "quote_ok": false,
+  "code_f1": null,
+  "total_err_pct": null,
+  "refs_valid": true,
+  "mitigation_ok": false,
+  "duration_abs_err": null,
+  "duration_ok": null,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.06,
+  "wall_s": null
+ }
+}

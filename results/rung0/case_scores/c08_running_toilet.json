@@ -1,0 +1,62 @@
+{
+ "case": "c08_running_toilet",
+ "ticket": {
+  "severity": "S3",
+  "category": "toilet_running",
+  "summary": "Upstairs toilet runs continuously for several days; likely worn flapper or fill valve, customer shutting off supply valve overnight.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Turn the toilet's supply shutoff valve clockwise to stop water flow between uses until the repair",
+   "Reopen the valve only when a flush is needed to limit water waste"
+  ],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "SVC-CALL",
+    "description": "Service call / diagnostic",
+    "price": 89
+   },
+   {
+    "code": "TOILET-REBUILD",
+    "description": "Flapper or fill valve replacement, parts and labor (range $100-$140)",
+    "price": 110
+   }
+  ],
+  "quote_total": 199,
+  "duration_min": 60,
+  "slot_id": "2026-09-01-PM-1",
+  "customer_message": "Yes - that price covers the service call, labor, and the standard part (flapper or fill valve). The only time it'd go higher is if we find something unusual, like a cracked tank or a corroded shutoff valve, and we'd show you and get your OK before doing any extra work. No surprise charges. You're booked for Tue Sep 1, 1-3pm. Just make sure we can get to the toilet and that someone 18+ is home; we'll text when the tech is on the way. Keep that valve closed overnight and flip it back open only when you need to flush. See you tomorrow, Nora!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c08_running_toilet",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [
+   "SVC-CALL"
+  ],
+  "code_f1": 0.667,
+  "total_err_pct": 5.3,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.05,
+  "wall_s": null
+ }
+}

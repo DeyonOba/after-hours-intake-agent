@@ -1,0 +1,174 @@
+{
+ "config": "rung6",
+ "case": "c05_no_hot_water_returning",
+ "system_prompt_chars": 7479,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi, this is Sam Okafor - you guys installed our water heater last year. The pilot light keeps going out tonight and we have no hot water. We have a 4-month-old at home. Can someone come first thing?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I'll pull up your record right now."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "lookup_customer",
+    "input": {
+     "phone": "+1-555-0105"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_015iLYdRfxM1MQ8patKe73a9",
+    "content": "{\"name\": \"Sam Okafor\", \"address\": \"77 Birchwood Ln\", \"equipment\": [{\"type\": \"water_heater\", \"model\": \"Rheem Performance 40gal gas\", \"installed\": \"2025-06-14\", \"installed_by_us\": true, \"warranty\": \"6yr tank / 2yr labor\"}], \"history\": [{\"date\": \"2025-06-14\", \"job\": \"WH-REPLACE-40G\", \"notes\": \"New install, garage location, easy access.\"}]}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Sam! Good to hear from you \u2014 I see the Rheem 40-gal gas unit we installed in your garage last June (still under our 2-yr labor warranty). \n\nFirst, a safety check: do you smell any gas \u2014 rotten eggs or sulfur \u2014 near the heater or in the garage?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No gas smell at all, thank goodness. And there's no water pooling around it either. Just the pilot light going out after it's been running for maybe 10 minutes or so."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good \u2014 no gas smell and no water means this isn't an emergency. Sounds like a thermocouple/flame-sensor issue, which is common and fixable.\n\nHas this just started tonight, or has the pilot been dropping out over the past few days?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Just started tonight actually. It was working fine all day, then around 8pm it went out and we couldn't get it to stay lit. We've got a 4-month-old at home so no hot water is pretty stressful right now."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Understood \u2014 with a baby in the house I'll get you the first priority slot tomorrow morning. Let me check pricing and the schedule."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "water heater pilot light thermocouple no hot water"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "water heater repair diagnostic"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_018m7aUB4UaGFPcBvaBgyqHH",
+    "content": "[{\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01NXcRhAb66fLbZ6ncCojFee",
+    "content": "[{\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}, {\"code\": \"DIAG\", \"name\": \"Diagnostic visit / camera inspection\", \"price\": 89, \"base_duration_min\": 45}, {\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "WH-PILOT",
+     "old_fixture": false,
+     "recurring": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_019FKy1oEevWKCeHvphNZFsA",
+    "content": "{\"job_code\": \"WH-PILOT\", \"predicted_duration_min\": 59}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 59,
+     "priority": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01LxTxYNoW4sZVH6Fgn4GPJW",
+    "content": "[{\"id\": \"SL-0901-0800\", \"start\": \"2026-09-01T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}, {\"id\": \"SL-0902-0800\", \"start\": \"2026-09-02T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news: this is covered work \u2014 a pilot/thermocouple service is **$169 (WH-PILOT)**, about 1 hour, and since your install is still under our 2-year labor warranty the tech will confirm on site whether the labor portion is waived. I can hold the first priority slot tomorrow, **Mon Sep 1 at 8:00 AM**.\n\nCan you confirm the address is still 77 Birchwood Ln?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yes, 77 Birchwood Ln is correct. 8 AM tomorrow works perfect for us \u2014 we really need the hot water back. Thanks so much for squeezing us in first thing."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Sam \u2014 booked for **8:00 AM tomorrow (Mon, Sep 1)** at 77 Birchwood Ln, first slot of the day. The tech will bring a replacement thermocouple/flame sensor so it can most likely be fixed on the spot, and he'll verify your 2-year labor warranty coverage before any charges. If anything changes overnight \u2014 especially if you ever smell gas \u2014 leave the house and call the gas utility or 911 from outside. Hang in there with the little one!\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"water_heater_no_hot\",\n  \"summary\": \"Pilot light on 2025-installed Rheem 40gal gas water heater won't stay lit (drops out after ~10 min) since 8pm tonight; no hot water, infant in home, no gas smell or leaking - likely thermocouple.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"WH-PILOT\",\n      \"description\": \"Water heater pilot/thermocouple service - verify labor coverage under 2yr labor warranty (installed 2025-06-14 by us)\",\n      \"price\": 169\n    }\n  ],\n  \"quote_total\": 169,\n  \"duration_min\": 59,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're all set, Sam - booked for 8:00 AM tomorrow (Mon, Sep 1) at 77 Birchwood Ln, first slot of the day. The tech will bring a replacement thermocouple/flame sensor so it can most likely be fixed on the spot, and he'll verify your 2-year labor warranty coverage before any charges. If anything changes overnight - especially if you ever smell gas - leave the house and call the gas utility or 911 from outside. Hang in there with the little one!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "water_heater_no_hot",
+    "summary": "Pilot light on 2025-installed Rheem 40gal gas water heater won't stay lit (drops out after ~10 min) since 8pm tonight; no hot water, infant in home, no gas smell or leaking - likely thermocouple.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "WH-PILOT",
+      "description": "Water heater pilot/thermocouple service - verify labor coverage under 2yr labor warranty (installed 2025-06-14 by us)",
+      "price": 169
+     }
+    ],
+    "quote_total": 169,
+    "duration_min": 59,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're all set, Sam - booked for 8:00 AM tomorrow (Mon, Sep 1) at 77 Birchwood Ln, first slot of the day. The tech will bring a replacement thermocouple/flame sensor so it can most likely be fixed on the spot, and he'll verify your 2-year labor warranty coverage before any charges. If anything changes overnight - especially if you ever smell gas - leave the house and call the gas utility or 911 from outside. Hang in there with the little one!"
+   }
+  }
+ ]
+}

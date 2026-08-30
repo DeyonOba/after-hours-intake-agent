@@ -1,0 +1,68 @@
+{
+ "case": "c07_only_toilet_blocked",
+ "ticket": {
+  "severity": "S2",
+  "category": "toilet_clog",
+  "summary": "Sole toilet in home fully blocked, nearly overflowed; plunger failed, no other fixtures affected \u2014 local trap clog, booked first morning slot.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Stop flushing to avoid overflow",
+   "Close the toilet supply shutoff valve (clockwise) \u2014 customer confirmed done",
+   "Bail bowl down to roughly half level into a bucket",
+   "Attempt dish soap plus hot-not-boiling water poured from height, let sit 20 minutes",
+   "Do not use chemical drain cleaner in the toilet",
+   "Leave supply valve off overnight; text to cancel if clog clears",
+   "Report any gurgling in tub/sinks or recurrence to tech \u2014 would indicate main line issue"
+  ],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "TOILET-AUGER",
+    "description": "Toilet auger / clog clear, standard hours",
+    "price": 145
+   },
+   {
+    "code": "TOILET-PULL-RESET",
+    "description": "Contingent only if object lodged in trap: pull and reset toilet incl. new wax ring \u2014 customer approval required on site",
+    "price": 120
+   }
+  ],
+  "quote_total": 145,
+  "duration_min": 60,
+  "slot_id": "TUE-2026-09-01-0700",
+  "customer_message": "You're on the list \u2014 I've locked you into the 7\u20139am slot tomorrow (Tue Sep 1), first call of the day. No callback needed to confirm. If the hot water trick works tonight, just text this number and I'll cancel it, no charge. And if it drains but backs up again in a day or two, or the tub/sinks start gurgling, tell the tech \u2014 that changes the picture to a main line issue. One heads-up on price: $145 covers clearing it with the auger, which handles the large majority of these. If something solid is wedged in the trap (the classic toy scenario) and the tech has to pull and reset the toilet, that's +$120 including a new wax ring. He'll show you before doing anything extra. Leave the supply valve off overnight, and thanks for your patience with the after-hours line."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c07_only_toilet_blocked",
+  "tier": "S2",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [
+   "TOILET-AUGER",
+   "TOILET-PULL-RESET"
+  ],
+  "code_f1": 0.0,
+  "total_err_pct": 2.7,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": false,
+  "duration_abs_err": 15,
+  "duration_ok": true,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.09,
+  "wall_s": null
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "config": "rung0",
+ "case": "c07_only_toilet_blocked",
+ "system_prompt_chars": 2119,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Our toilet is completely blocked and almost overflowed when I flushed. Plunger did nothing. It's the only toilet in the house and we have kids. Tonight or tomorrow??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Sorry you're dealing with that \u2014 good news is it sounds contained for now.\n\nFirst things: **don't flush again**, and reach behind the toilet and turn the shutoff valve clockwise until it stops. That way it can't overflow on you. If the bowl is still full, bail a few cups out into a bucket so there's room to work.\n\nQuick question so I know how urgent this is: are any *other* drains acting up \u2014 tub or shower gurgling, sink draining slow, or any water/waste coming up anywhere else in the house?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok got it, not flushing. just turned the valve - good call. bowl's still pretty full but I'll bail some out.\n\nand no, just the toilet. tub and sinks are fine. this came outta nowhere tbh"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect \u2014 that's the good sign. Only the toilet backing up means it's a local clog in the bowl trap (very often a toy, wipes, or a big wad of paper), not your main sewer line. Much simpler fix.\n\nWorth trying while you wait: bail the bowl down to about half, then pour in a squirt of dish soap and a bucket of *hot-not-boiling* tap water from about waist height. Let it sit 20 minutes. Sometimes that's enough. Don't use chemical drain cleaner in a toilet \u2014 it won't clear it and it makes it nasty for whoever augers it.\n\nTwo options from us:\n- **Tonight:** after-hours callout, $175 trip + $145 auger = **$320**\n- **Tomorrow 7\u20139am,** first slot of the day: **$145 flat**, no trip fee\n\nSince it's contained and the valve's off, I'd honestly save you the $175 and take the early slot \u2014 but with kids and no second toilet, totally your call. Which do you want?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ugh yeah the hot water thing's worth a shot first i guess. lemme try that.\n\nhonestly if the early slot is tomorrow morning i'd rather do that than drop $320 tonight. when do i need to call back to confirm or do you just add me to the list?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're on the list \u2014 I've locked you into the **7\u20139am slot tomorrow (Tue Sep 1)**, first call of the day. No callback needed to confirm.\n\nIf the hot water trick works tonight, just text this number and I'll cancel it, no charge. And if it drains but backs up again in a day or two, or the tub/sinks start gurgling, tell the tech \u2014 that changes the picture to a main line issue.\n\nOne heads-up on price: $145 covers clearing it with the auger, which handles the large majority of these. If something solid is wedged in the trap (the classic toy scenario) and the tech has to pull and reset the toilet, that's +$120 including a new wax ring. He'll show you before doing anything extra.\n\nLeave the supply valve off overnight, and thanks for your patience with the after-hours line.\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"toilet_clog\",\n  \"summary\": \"Sole toilet in home fully blocked, nearly overflowed; plunger failed, no other fixtures affected \u2014 local trap clog, booked first morning slot.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Stop flushing to avoid overflow\",\n    \"Close the toilet supply shutoff valve (clockwise) \u2014 customer confirmed done\",\n    \"Bail bowl down to roughly half level into a bucket\",\n    \"Attempt dish soap plus hot-not-boiling water poured from height, let sit 20 minutes\",\n    \"Do not use chemical drain cleaner in the toilet\",\n    \"Leave supply valve off overnight; text to cancel if clog clears\",\n    \"Report any gurgling in tub/sinks or recurrence to tech \u2014 would indicate main line issue\"\n  ],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"TOILET-AUGER\",\n      \"description\": \"Toilet auger / clog clear, standard hours\",\n      \"price\": 145\n    },\n    {\n      \"code\": \"TOILET-PULL-RESET\",\n      \"description\": \"Contingent only if object lodged in trap: pull and reset toilet incl. new wax ring \u2014 customer approval required on site\",\n      \"price\": 120\n    }\n  ],\n  \"quote_total\": 145,\n  \"duration_min\": 60,\n  \"slot_id\": \"TUE-2026-09-01-0700\",\n  \"customer_message\": \"You're on the list \u2014 I've locked you into the 7\u20139am slot tomorrow (Tue Sep 1), first call of the day. No callback needed to confirm. If the hot water trick works tonight, just text this number and I'll cancel it, no charge. And if it drains but backs up again in a day or two, or the tub/sinks start gurgling, tell the tech \u2014 that changes the picture to a main line issue. One heads-up on price: $145 covers clearing it with the auger, which handles the large majority of these. If something solid is wedged in the trap (the classic toy scenario) and the tech has to pull and reset the toilet, that's +$120 including a new wax ring. He'll show you before doing anything extra. Leave the supply valve off overnight, and thanks for your patience with the after-hours line.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "toilet_clog",
+    "summary": "Sole toilet in home fully blocked, nearly overflowed; plunger failed, no other fixtures affected \u2014 local trap clog, booked first morning slot.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Stop flushing to avoid overflow",
+     "Close the toilet supply shutoff valve (clockwise) \u2014 customer confirmed done",
+     "Bail bowl down to roughly half level into a bucket",
+     "Attempt dish soap plus hot-not-boiling water poured from height, let sit 20 minutes",
+     "Do not use chemical drain cleaner in the toilet",
+     "Leave supply valve off overnight; text to cancel if clog clears",
+     "Report any gurgling in tub/sinks or recurrence to tech \u2014 would indicate main line issue"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "TOILET-AUGER",
+      "description": "Toilet auger / clog clear, standard hours",
+      "price": 145
+     },
+     {
+      "code": "TOILET-PULL-RESET",
+      "description": "Contingent only if object lodged in trap: pull and reset toilet incl. new wax ring \u2014 customer approval required on site",
+      "price": 120
+     }
+    ],
+    "quote_total": 145,
+    "duration_min": 60,
+    "slot_id": "TUE-2026-09-01-0700",
+    "customer_message": "You're on the list \u2014 I've locked you into the 7\u20139am slot tomorrow (Tue Sep 1), first call of the day. No callback needed to confirm. If the hot water trick works tonight, just text this number and I'll cancel it, no charge. And if it drains but backs up again in a day or two, or the tub/sinks start gurgling, tell the tech \u2014 that changes the picture to a main line issue. One heads-up on price: $145 covers clearing it with the auger, which handles the large majority of these. If something solid is wedged in the trap (the classic toy scenario) and the tech has to pull and reset the toilet, that's +$120 including a new wax ring. He'll show you before doing anything extra. Leave the supply valve off overnight, and thanks for your patience with the after-hours line."
+   }
+  }
+ ]
+}

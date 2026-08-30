@@ -1,0 +1,55 @@
+{
+ "config": "rung0",
+ "case": "c06_leak_contained",
+ "system_prompt_chars": 2118,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "The braided hose under my bathroom sink started leaking tonight. I already closed the little valve under the sink so it stopped. But I have no water in that bathroom now - how soon can someone replace the hose?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Nice work shutting that angle stop \u2014 that's exactly the right move, and it means this is contained rather than an emergency. Leave the valve closed until we're there, and towel-dry the cabinet base so the wood doesn't swell overnight.\n\nTwo quick things: is that your only bathroom, and is the leak fully stopped now (no drip from the valve itself)?\n\nTypical fix is a braided supply line swap \u2014 about $145 all-in (parts + labor, ~30\u201345 min), no after-hours surcharge if we come during regular hours. I can hold you the first morning slot tomorrow, 8:00\u201310:00 AM."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Thanks for the tips! Yeah, it's stopped completely\u2014no drip from the valve. And yeah, this is actually my only full bathroom, so morning works perfect for me. Can you lock in that 8\u201310 AM slot tomorrow?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set \u2014 8:00\u201310:00 AM tomorrow (Mon Sept 1) is locked in, and you'll get a text when the tech is on the way. Keep that valve closed tonight; the rest of the house is unaffected. See you in the morning, Jess!\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"leak_contained\",\n  \"summary\": \"Leaking braided supply line under bathroom sink; customer shut the angle stop and leak fully stopped, but it's their only full bathroom so that sink is out of service \u2014 needs first morning slot.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Leave the angle stop closed until the tech arrives\",\n    \"Towel-dry the cabinet base and area under the sink to prevent swelling/damage\",\n    \"Confirmed no residual drip from the valve itself\"\n  ],\n  \"playbook_refs\": null,\n  \"quote_lines\": [\n    {\n      \"code\": \"SUPPLY-LINE-REPL\",\n      \"description\": \"Replace braided faucet supply line (parts + labor, regular hours)\",\n      \"price\": 145\n    }\n  ],\n  \"quote_total\": 145,\n  \"duration_min\": 45,\n  \"slot_id\": \"2026-09-01-0800-1000\",\n  \"customer_message\": \"You're all set \u2014 8:00\u201310:00 AM tomorrow (Mon Sept 1) is locked in, and you'll get a text when the tech is on the way. Keep that valve closed tonight; the rest of the house is unaffected. See you in the morning, Jess!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "leak_contained",
+    "summary": "Leaking braided supply line under bathroom sink; customer shut the angle stop and leak fully stopped, but it's their only full bathroom so that sink is out of service \u2014 needs first morning slot.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Leave the angle stop closed until the tech arrives",
+     "Towel-dry the cabinet base and area under the sink to prevent swelling/damage",
+     "Confirmed no residual drip from the valve itself"
+    ],
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "SUPPLY-LINE-REPL",
+      "description": "Replace braided faucet supply line (parts + labor, regular hours)",
+      "price": 145
+     }
+    ],
+    "quote_total": 145,
+    "duration_min": 45,
+    "slot_id": "2026-09-01-0800-1000",
+    "customer_message": "You're all set \u2014 8:00\u201310:00 AM tomorrow (Mon Sept 1) is locked in, and you'll get a text when the tech is on the way. Keep that valve closed tonight; the rest of the house is unaffected. See you in the morning, Jess!"
+   }
+  }
+ ]
+}

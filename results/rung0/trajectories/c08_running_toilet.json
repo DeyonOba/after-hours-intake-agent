@@ -1,0 +1,59 @@
+{
+ "config": "rung0",
+ "case": "c08_running_toilet",
+ "system_prompt_chars": 2116,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My upstairs toilet won't stop running after you flush it, been like that a few days. Water bill is going to be scary. Not urgent but I'd like it fixed. What would it cost?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks for reaching out, Nora! A constantly running toilet is usually a worn flapper or a fill valve that isn't shutting off \u2014 annoying and pricey on the water bill, but not an emergency, so no after-hours charge needed.\n\nQuick tip tonight: turn the shutoff valve behind/below the toilet clockwise to stop the water between uses, and you'll stop the waste until we get there.\n\nTypical repair runs **$189\u2013$229** \u2014 that's our $89 diagnostic/service call plus $100\u2013$140 for a flapper or fill valve replacement (parts included). Most of these are done in under an hour.\n\nI have tomorrow (Tue Sep 1) **8\u201310am** or **1\u20133pm** open. Which works better?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Thanks so much! The clockwise valve thing is helpful \u2014 I'll do that tonight. And yeah, $189\u2013$229 sounds reasonable if that includes the part and labor. Does it? Just want to make sure there aren't surprise charges after.\n\nThe 1\u20133pm slot tomorrow works better for me. Should I just expect someone to show up, or do I need to do anything else?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Yes \u2014 that price covers the service call, labor, and the standard part (flapper or fill valve). The only time it'd go higher is if we find something unusual, like a cracked tank or a corroded shutoff valve, and we'd show you and get your OK before doing any extra work. No surprise charges.\n\nYou're booked for **Tue Sep 1, 1\u20133pm**. Just make sure we can get to the toilet and that someone 18+ is home; we'll text when the tech is on the way. Keep that valve closed overnight and flip it back open only when you need to flush. See you tomorrow, Nora!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"toilet_running\",\n  \"summary\": \"Upstairs toilet runs continuously for several days; likely worn flapper or fill valve, customer shutting off supply valve overnight.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Turn the toilet's supply shutoff valve clockwise to stop water flow between uses until the repair\",\n    \"Reopen the valve only when a flush is needed to limit water waste\"\n  ],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\"code\": \"SVC-CALL\", \"description\": \"Service call / diagnostic\", \"price\": 89},\n    {\"code\": \"TOILET-REBUILD\", \"description\": \"Flapper or fill valve replacement, parts and labor (range $100-$140)\", \"price\": 110}\n  ],\n  \"quote_total\": 199,\n  \"duration_min\": 60,\n  \"slot_id\": \"2026-09-01-PM-1\",\n  \"customer_message\": \"Yes - that price covers the service call, labor, and the standard part (flapper or fill valve). The only time it'd go higher is if we find something unusual, like a cracked tank or a corroded shutoff valve, and we'd show you and get your OK before doing any extra work. No surprise charges. You're booked for Tue Sep 1, 1-3pm. Just make sure we can get to the toilet and that someone 18+ is home; we'll text when the tech is on the way. Keep that valve closed overnight and flip it back open only when you need to flush. See you tomorrow, Nora!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "toilet_running",
+    "summary": "Upstairs toilet runs continuously for several days; likely worn flapper or fill valve, customer shutting off supply valve overnight.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Turn the toilet's supply shutoff valve clockwise to stop water flow between uses until the repair",
+     "Reopen the valve only when a flush is needed to limit water waste"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "SVC-CALL",
+      "description": "Service call / diagnostic",
+      "price": 89
+     },
+     {
+      "code": "TOILET-REBUILD",
+      "description": "Flapper or fill valve replacement, parts and labor (range $100-$140)",
+      "price": 110
+     }
+    ],
+    "quote_total": 199,
+    "duration_min": 60,
+    "slot_id": "2026-09-01-PM-1",
+    "customer_message": "Yes - that price covers the service call, labor, and the standard part (flapper or fill valve). The only time it'd go higher is if we find something unusual, like a cracked tank or a corroded shutoff valve, and we'd show you and get your OK before doing any extra work. No surprise charges. You're booked for Tue Sep 1, 1-3pm. Just make sure we can get to the toilet and that someone 18+ is home; we'll text when the tech is on the way. Keep that valve closed overnight and flip it back open only when you need to flush. See you tomorrow, Nora!"
+   }
+  }
+ ]
+}
