@@ -1,0 +1,59 @@
+{
+ "case": "c12_disposal_jam",
+ "ticket": {
+  "severity": "S3",
+  "category": "disposal_jam",
+  "summary": "Garbage disposal hums but won't spin (suspected jam); customer is attempting approved DIY flywheel-freeing steps first, tentative 9/1 10:30am slot offered if it fails.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [
+   "Never reach into the disposal, even when off [PB-07]",
+   "Unplug the unit or switch off its breaker before touching it [PB-07]",
+   "Remove visible objects with tongs or pliers [PB-07]",
+   "Use the hex/Allen socket under the unit to rock the flywheel free, then restore power and press the red reset button [PB-07]"
+  ],
+  "playbook_refs": [
+   "PB-07"
+  ],
+  "quote_lines": [
+   {
+    "code": "GARB-DISPOSAL-JAM",
+    "description": "Garbage disposal jam clearing (only if DIY attempt fails)",
+    "price": 99
+   }
+  ],
+  "quote_total": 99,
+  "duration_min": 30,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "You've got this. Make sure it's fully unplugged before anything goes in there, and rock the Allen key both directions \u2014 jams usually pop free with a bit of back and forth [PB-07]. Don't forget the red reset button underneath before you test it. If it still hums or won't restart, text me back and I'll grab you tomorrow's 10:30am slot for the $99 jam clearing (no after-hours charge). Otherwise, enjoy the win!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c12_disposal_jam",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.0835,
+  "wall_s": 23.1
+ }
+}

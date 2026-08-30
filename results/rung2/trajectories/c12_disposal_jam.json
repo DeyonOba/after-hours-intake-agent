@@ -1,0 +1,58 @@
+{
+ "config": "rung2",
+ "case": "c12_disposal_jam",
+ "system_prompt_chars": 10291,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My garbage disposal just hums and doesn't spin, I think something's stuck. Do I need a visit or is there something I can try safely?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Bea \u2014 good news, that hum usually means the motor's fine and the flywheel is just jammed, so this is often a DIY fix.\n\nSafe steps [PB-07]: never put your hand in the unit, even off. Unplug it under the sink (or flip its breaker). Remove anything visible with tongs or pliers. Then use the hex/Allen wrench in the socket on the underside of the unit and rock the flywheel back and forth to free it. Restore power and press the red reset button on the bottom.\n\nIf it still just hums after that, we'd send someone out \u2014 disposal jam clearing is $99 flat. Want me to hold a slot, or try it first?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "omg thank you! yeah I'm definitely up for trying this first \u2014 beats paying $99 if I can fix it myself. I've got an Allen key so I should be good. let me unplug it and see what's in there \ud83e\udd1e"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You've got this \ud83d\ude4c Just make sure it's fully unplugged before anything goes in there, and rock the Allen key both directions \u2014 jams usually pop free with a bit of back and forth [PB-07]. Don't forget the red reset button underneath before you test it.\n\nIf it still hums or won't restart, text me back and I'll grab you tomorrow's 10:30am slot for the $99 jam clearing (no after-hours charge). Otherwise, enjoy the win!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"disposal_jam\",\n  \"summary\": \"Garbage disposal hums but won't spin (suspected jam); customer is attempting approved DIY flywheel-freeing steps first, tentative 9/1 10:30am slot offered if it fails.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [\n    \"Never reach into the disposal, even when off [PB-07]\",\n    \"Unplug the unit or switch off its breaker before touching it [PB-07]\",\n    \"Remove visible objects with tongs or pliers [PB-07]\",\n    \"Use the hex/Allen socket under the unit to rock the flywheel free, then restore power and press the red reset button [PB-07]\"\n  ],\n  \"playbook_refs\": [\"PB-07\"],\n  \"quote_lines\": [\n    {\"code\": \"GARB-DISPOSAL-JAM\", \"description\": \"Garbage disposal jam clearing (only if DIY attempt fails)\", \"price\": 99}\n  ],\n  \"quote_total\": 99,\n  \"duration_min\": 30,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You've got this. Make sure it's fully unplugged before anything goes in there, and rock the Allen key both directions \u2014 jams usually pop free with a bit of back and forth [PB-07]. Don't forget the red reset button underneath before you test it. If it still hums or won't restart, text me back and I'll grab you tomorrow's 10:30am slot for the $99 jam clearing (no after-hours charge). Otherwise, enjoy the win!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "disposal_jam",
+    "summary": "Garbage disposal hums but won't spin (suspected jam); customer is attempting approved DIY flywheel-freeing steps first, tentative 9/1 10:30am slot offered if it fails.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Never reach into the disposal, even when off [PB-07]",
+     "Unplug the unit or switch off its breaker before touching it [PB-07]",
+     "Remove visible objects with tongs or pliers [PB-07]",
+     "Use the hex/Allen socket under the unit to rock the flywheel free, then restore power and press the red reset button [PB-07]"
+    ],
+    "playbook_refs": [
+     "PB-07"
+    ],
+    "quote_lines": [
+     {
+      "code": "GARB-DISPOSAL-JAM",
+      "description": "Garbage disposal jam clearing (only if DIY attempt fails)",
+      "price": 99
+     }
+    ],
+    "quote_total": 99,
+    "duration_min": 30,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You've got this. Make sure it's fully unplugged before anything goes in there, and rock the Allen key both directions \u2014 jams usually pop free with a bit of back and forth [PB-07]. Don't forget the red reset button underneath before you test it. If it still hums or won't restart, text me back and I'll grab you tomorrow's 10:30am slot for the $99 jam clearing (no after-hours charge). Otherwise, enjoy the win!"
+   }
+  }
+ ]
+}

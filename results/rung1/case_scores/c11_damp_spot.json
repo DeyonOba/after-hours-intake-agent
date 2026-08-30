@@ -1,0 +1,56 @@
+{
+ "case": "c11_damp_spot",
+ "ticket": {
+  "severity": "S3",
+  "category": "damp_spot",
+  "summary": "Stable dinner-plate-sized damp/yellow ceiling stain in bedroom directly below upstairs neighbor's bathroom, no drip, unchanged for 3 days; needs leak-source diagnostic and possibly access to unit above.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Monitor the patch; if it bulges, sags, or starts dripping, stay clear of the area beneath it and call us immediately [PB-08]"
+  ],
+  "playbook_refs": [
+   "PB-08"
+  ],
+  "quote_lines": [
+   {
+    "code": "DIAG",
+    "description": "Diagnostic visit to trace ceiling leak source (repair quoted separately after assessment)",
+    "price": 89
+   }
+  ],
+  "quote_total": 89,
+  "duration_min": 45,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "That pattern fits an intermittent leak from the bathroom above \u2014 often a shower pan, tub/shower drain seal, or toilet flange that only leaks when used, which is why your neighbor may not see anything. Stable size for 3 days is a good sign, so standard scheduling is fine. I've held you tomorrow, Tue Sep 1 at 10:30 AM: diagnostic is $89 (~45 min), applied toward the repair if we do it that day, and any repair is quoted before we start. We may need access to your neighbor's unit as well. Watch for bulging, sagging, or dripping \u2014 if that happens, stay out from under it and call us right away."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c11_damp_spot",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.0754,
+  "wall_s": 20.7
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "case": "c03_gas_smell_hidden",
+ "ticket": {
+  "severity": "S1",
+  "category": "gas_emergency",
+  "summary": "Customer reports rotten-egg/sulfur odor near basement water heater (possible gas leak) alongside a week of slow basement floor drain and musty smell; evacuation advised and on-call paged.",
+  "escalate_now": true,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Leave the building immediately with all people and pets [PB-06]",
+   "Do not operate light switches, phones, or appliances inside the house [PB-06]",
+   "From outside, call the gas utility emergency line or 911 [PB-06]",
+   "Do not re-enter until the gas utility clears the property [PB-06]"
+  ],
+  "playbook_refs": [
+   "PB-06"
+  ],
+  "quote_lines": null,
+  "quote_total": null,
+  "duration_min": null,
+  "slot_id": null,
+  "customer_message": "Lena \u2014 stop and read this first. A rotten-egg smell can mean a natural gas leak, and that takes priority over the drain. Please leave the house now with everyone (and pets). Don't flip light switches, unplug anything, or use appliances on your way out. Once you're outside, call your gas utility's emergency line or 911. I'm paging our on-call plumber right now \u2014 he'll call you at 555-0103. Don't go back inside until the gas utility says it's safe. We'll sort out the slow floor drain and any quote after you're safe and the gas side is cleared."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c03_gas_smell_hidden",
+  "tier": "S1",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 1,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": true,
+  "escalated": true,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "quote_ok": true,
+  "code_f1": null,
+  "total_err_pct": null,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": null,
+  "duration_ok": null,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.0528,
+  "wall_s": 17.6
+ }
+}

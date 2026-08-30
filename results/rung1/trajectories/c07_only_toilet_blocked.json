@@ -1,0 +1,56 @@
+{
+ "config": "rung1",
+ "case": "c07_only_toilet_blocked",
+ "system_prompt_chars": 9223,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Our toilet is completely blocked and almost overflowed when I flushed. Plunger did nothing. It's the only toilet in the house and we have kids. Tonight or tomorrow??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Got it \u2014 don't flush again for now; another flush is what causes the overflow. If the bowl starts rising, close the toilet's shutoff valve (the small oval handle on the supply line at the wall, turn clockwise until snug) [PB-01].\n\nSince it's your only toilet with kids in the house, I can do either:\n\u2022 **Tonight** \u2014 on-call callout, $149 clog clearing + $150 after-hours dispatch = **$299**\n\u2022 **Tomorrow 8:00 AM** \u2014 first priority slot, **$149** flat, about 45 min\n\nWhich works better?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok got it, won't flush. i can see the shutoff valve under there. \n\nhonestly tomorrow 8am works \u2014 can't afford another $150 rn lol. just book me for that, please?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Booked! **Tomorrow (Tue Sep 1) at 8:00 AM** \u2014 toilet clog clearing, flat $149, about 45 minutes. Your tech will call ahead. Tonight: keep it unflushed, and if the water level ever creeps up, close that shutoff valve [PB-01]. If anything overflows or you see backup in the tub/shower drains, text us right back \u2014 that's a different problem and we'll page the on-call plumber. Hang in there!\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"toilet_clog\",\n  \"summary\": \"Fully blocked sole toilet in household with kids; nearly overflowed, plunger ineffective, no active spill \u2014 booked first priority slot tomorrow 8:00 AM for auger clearing.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Do not flush again until the tech arrives, to avoid an overflow [PB-01]\",\n    \"If the bowl water rises, close the toilet's shutoff valve on the supply line at the wall, clockwise until snug [PB-01]\"\n  ],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [\n    {\"code\": \"TOILET-CLOG\", \"description\": \"Toilet clog clearing (auger)\", \"price\": 149}\n  ],\n  \"quote_total\": 149,\n  \"duration_min\": 45,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"Booked! Tomorrow (Tue Sep 1) at 8:00 AM \u2014 toilet clog clearing, flat $149, about 45 minutes. Your tech will call ahead. Tonight: keep it unflushed, and if the water level ever creeps up, close that shutoff valve [PB-01]. If anything overflows or you see backup in the tub/shower drains, text us right back \u2014 that's a different problem and we'll page the on-call plumber.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "toilet_clog",
+    "summary": "Fully blocked sole toilet in household with kids; nearly overflowed, plunger ineffective, no active spill \u2014 booked first priority slot tomorrow 8:00 AM for auger clearing.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Do not flush again until the tech arrives, to avoid an overflow [PB-01]",
+     "If the bowl water rises, close the toilet's shutoff valve on the supply line at the wall, clockwise until snug [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "TOILET-CLOG",
+      "description": "Toilet clog clearing (auger)",
+      "price": 149
+     }
+    ],
+    "quote_total": 149,
+    "duration_min": 45,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "Booked! Tomorrow (Tue Sep 1) at 8:00 AM \u2014 toilet clog clearing, flat $149, about 45 minutes. Your tech will call ahead. Tonight: keep it unflushed, and if the water level ever creeps up, close that shutoff valve [PB-01]. If anything overflows or you see backup in the tub/shower drains, text us right back \u2014 that's a different problem and we'll page the on-call plumber."
+   }
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "config": "rung2",
+ "case": "c15_disposal_install",
+ "system_prompt_chars": 10290,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi! Our disposal died (15 years old, seized solid). We just want a new one installed, nothing fancy. Price and earliest slot?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Sorry we missed your call! A straight swap-out is **$329 flat** (GARB-DISPOSAL-REPLACE) \u2014 includes a standard new 1/2 HP unit, labor, and haul-away of the old one. No after-hours fee since this isn't an emergency.\n\nEarliest fit is **tomorrow, Tue Sept 1 at 3:00 PM** (about 1h45 booked, since 15-year-old mountings often need extra persuasion). I've reserved it for you \u2014 just reply if you'd like a different day instead.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"disposal_install\",\n  \"summary\": \"15-year-old garbage disposal seized solid; customer wants straight replacement with a basic unit.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"GARB-DISPOSAL-REPLACE\",\n      \"description\": \"Garbage disposal replacement (standard unit included, old unit removed)\",\n      \"price\": 329\n    }\n  ],\n  \"quote_total\": 329,\n  \"duration_min\": 105,\n  \"slot_id\": \"SL-0901-1500\",\n  \"customer_message\": \"Sorry we missed your call! A straight swap-out is $329 flat (GARB-DISPOSAL-REPLACE) \u2014 includes a standard new 1/2 HP unit, labor, and haul-away of the old one. No after-hours fee since this isn't an emergency. Earliest fit is tomorrow, Tue Sept 1 at 3:00 PM (about 1h45 booked, since 15-year-old mountings often need extra persuasion). I've reserved it for you \u2014 just reply if you'd like a different day instead.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "disposal_install",
+    "summary": "15-year-old garbage disposal seized solid; customer wants straight replacement with a basic unit.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "GARB-DISPOSAL-REPLACE",
+      "description": "Garbage disposal replacement (standard unit included, old unit removed)",
+      "price": 329
+     }
+    ],
+    "quote_total": 329,
+    "duration_min": 105,
+    "slot_id": "SL-0901-1500",
+    "customer_message": "Sorry we missed your call! A straight swap-out is $329 flat (GARB-DISPOSAL-REPLACE) \u2014 includes a standard new 1/2 HP unit, labor, and haul-away of the old one. No after-hours fee since this isn't an emergency. Earliest fit is tomorrow, Tue Sept 1 at 3:00 PM (about 1h45 booked, since 15-year-old mountings often need extra persuasion). I've reserved it for you \u2014 just reply if you'd like a different day instead."
+   }
+  }
+ ]
+}

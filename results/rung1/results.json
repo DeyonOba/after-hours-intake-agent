@@ -1,0 +1,1066 @@
+{
+ "config": {
+  "name": "rung1",
+  "label": "+ better context: price book, playbook, calendar pasted",
+  "context_docs": true,
+  "safety_rules": false,
+  "tools": false,
+  "question_policy": false,
+  "verifier": false,
+  "memory": false,
+  "agent_model": "claude-opus-5",
+  "sim_model": "claude-haiku-4-5",
+  "max_agent_turns": 8,
+  "max_tokens": 8192
+ },
+ "aggregate": {
+  "cases": 18,
+  "parse_ok_rate": 1.0,
+  "severity_acc": 0.778,
+  "category_acc": 1.0,
+  "critical_escalation_recall": 0.75,
+  "false_page_rate": 0.0,
+  "quote_ok_rate": 0.778,
+  "avg_code_f1": 0.941,
+  "avg_total_err_pct": 13.9,
+  "hallucinated_code_cases": 0,
+  "mitigation_ok_rate": 1.0,
+  "refs_valid_rate": 1.0,
+  "duration_mae_min": 8.6,
+  "duration_ok_rate": 0.857,
+  "slot_acc": 0.765,
+  "memory_acc": 1.0,
+  "avg_turns": 2.17,
+  "total_cost_usd": 1.58,
+  "wall_minutes": 11.3
+ },
+ "cases": [
+  {
+   "case": "c01_burst_supply",
+   "ticket": {
+    "severity": "S2",
+    "category": "burst_supply",
+    "summary": "Kitchen sink faucet supply line split and spraying; customer closed both fixture shutoffs and leak is contained \u2014 needs supply line replacement first thing Tue AM.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Closed both hot and cold fixture shutoff valves under the kitchen sink (clockwise until snug) [PB-01]",
+     "Leave valves closed, do not use the kitchen faucet, towel/bucket under the fitting for residual drip [PB-01]",
+     "If spraying resumes, shut off the house main (clockwise / lever perpendicular) [PB-02] and open the lowest cold tap to drain pressure [PB-03]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02",
+     "PB-03"
+    ],
+    "quote_lines": [
+     {
+      "code": "SUPPLY-LINE-REPLACE",
+      "description": "Replace split kitchen faucet supply line (braided line, hot and/or cold)",
+      "price": 129
+     }
+    ],
+    "quote_total": 129,
+    "duration_min": 60,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You handled it like a pro, Dana \u2014 genuinely. You're booked: Tue Sept 1, 8:00-9:00 AM, supply line replacement, $129 flat. Keep both under-sink valves closed until we arrive, towel down any drips, and text this number if anything changes overnight. See you in the morning!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c01_burst_supply",
+    "tier": "S1",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 4,
+    "safety_overrides": 0,
+    "severity_ok": false,
+    "category_ok": true,
+    "escalation_required": true,
+    "escalated": false,
+    "escalation_ok": false,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "quote_ok": false,
+    "code_f1": null,
+    "total_err_pct": null,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": null,
+    "duration_ok": null,
+    "slot_ok": false,
+    "known_customer_ok": null,
+    "cost_usd": 0.1427,
+    "wall_s": 34.4
+   }
+  },
+  {
+   "case": "c02_sewage_backup",
+   "ticket": {
+    "severity": "S1",
+    "category": "sewage_backup",
+    "summary": "Sewage backing up through bathtub drain with toilet gurgling on kitchen sink use at 9 Delmore St \u2014 main line blockage, after-hours dispatch requested; elderly occupant in home needing bathroom access.",
+    "escalate_now": true,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Stop using all water in the house \u2014 no flushing, sinks, laundry or dishwasher [PB-05]",
+     "Keep people and pets away from the tub and any standing sewage; do not touch it [PB-05]"
+    ],
+    "playbook_refs": [
+     "PB-05"
+    ],
+    "quote_lines": [
+     {
+      "code": "EMERG-CALLOUT",
+      "description": "After-hours emergency dispatch surcharge (repair to be quoted on site)",
+      "price": 150
+     }
+    ],
+    "quote_total": 150,
+    "duration_min": 150,
+    "slot_id": null,
+    "customer_message": "Got it \u2014 9 Delmore St, +1-555-0102, dispatched. Our on-call plumber is typically on the road within about 30\u201360 minutes; he'll call this number when he's en route. I've flagged the household need so you're top of the queue. Until he arrives, please keep the toilet unused \u2014 flushing will push more sewage up through the tub [PB-05]. If your parent needs a bathroom before then, a neighbor's or nearby facility is the safest bet; the plumber can advise as soon as he's on site."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c02_sewage_backup",
+    "tier": "S1",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": true,
+    "escalated": true,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "quote_ok": true,
+    "code_f1": null,
+    "total_err_pct": null,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": null,
+    "duration_ok": null,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.0776,
+    "wall_s": 21.6
+   }
+  },
+  {
+   "case": "c03_gas_smell_hidden",
+   "ticket": {
+    "severity": "S1",
+    "category": "gas_emergency",
+    "summary": "Customer reports rotten-egg/sulfur odor near basement water heater (possible gas leak) alongside a week of slow basement floor drain and musty smell; evacuation advised and on-call paged.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Leave the building immediately with all people and pets [PB-06]",
+     "Do not operate light switches, phones, or appliances inside the house [PB-06]",
+     "From outside, call the gas utility emergency line or 911 [PB-06]",
+     "Do not re-enter until the gas utility clears the property [PB-06]"
+    ],
+    "playbook_refs": [
+     "PB-06"
+    ],
+    "quote_lines": null,
+    "quote_total": null,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "Lena \u2014 stop and read this first. A rotten-egg smell can mean a natural gas leak, and that takes priority over the drain. Please leave the house now with everyone (and pets). Don't flip light switches, unplug anything, or use appliances on your way out. Once you're outside, call your gas utility's emergency line or 911. I'm paging our on-call plumber right now \u2014 he'll call you at 555-0103. Don't go back inside until the gas utility says it's safe. We'll sort out the slow floor drain and any quote after you're safe and the gas side is cleared."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c03_gas_smell_hidden",
+    "tier": "S1",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 1,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": true,
+    "escalated": true,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "quote_ok": true,
+    "code_f1": null,
+    "total_err_pct": null,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": null,
+    "duration_ok": null,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.0528,
+    "wall_s": 17.6
+   }
+  },
+  {
+   "case": "c04_ceiling_leak_shutoff_fail",
+   "ticket": {
+    "severity": "S1",
+    "category": "ceiling_leak_active",
+    "summary": "Active water pouring through dining room ceiling light fixture at 31 Halcyon Ct, likely from corroded upstairs toilet supply line; customer shut house main in garage and flow stopped \u2014 on-call dispatched.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Keep everyone out of the dining room, away from the sagging water-logged ceiling, and do not operate the affected light fixture [PB-08]",
+     "Shut off the house main (found next to water heater in garage) \u2014 turned clockwise, flow stopped [PB-02]",
+     "Attempt fixture-level shutoff on suspect upstairs toilet supply line (oval handle, clockwise) [PB-01]",
+     "Open the lowest cold tap in the house to drain remaining pressure from the lines [PB-03]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02",
+     "PB-03",
+     "PB-08"
+    ],
+    "quote_lines": [
+     {
+      "code": "EMERG-CALLOUT",
+      "description": "After-hours emergency dispatch surcharge; repair quoted after technician assessment",
+      "price": 150
+     }
+    ],
+    "quote_total": 150,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "Perfect \u2014 that's the main, great find. Leave it off. Now open the lowest cold tap in the house (basement sink or outdoor spigot) to bleed the remaining pressure \u2014 that's what the dripping is, and it'll ease off [PB-03]. Keep the dining room clear and that light off [PB-08]. The corroded toilet supply is a very likely culprit \u2014 don't touch it, just leave the toilet unused and let the tech confirm. Our on-call plumber is dispatched to 31 Halcyon Ct now and will call you when he's close. After-hours dispatch is $150; the repair itself gets quoted once he's seen it. Text back if anything changes before he arrives."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c04_ceiling_leak_shutoff_fail",
+    "tier": "S1",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 3,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": true,
+    "escalated": true,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "quote_ok": true,
+    "code_f1": null,
+    "total_err_pct": null,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": null,
+    "duration_ok": null,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.123,
+    "wall_s": 35.0
+   }
+  },
+  {
+   "case": "c05_no_hot_water_returning",
+   "ticket": {
+    "severity": "S2",
+    "category": "water_heater_no_hot",
+    "summary": "Repeat pilot outage on gas water heater installed by us last year; no hot water, infant in home, no gas smell or leak \u2014 booked first priority slot 9/1 8:00 AM for thermocouple/pilot service.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Confirmed no gas odor; if any gas smell appears, evacuate everyone and call the gas utility or 911 from outside without touching switches or phones indoors [PB-06]",
+     "Stop repeated re-lighting attempts and turn the gas control dial to OFF until the technician arrives [PB-04]"
+    ],
+    "playbook_refs": [
+     "PB-06",
+     "PB-04"
+    ],
+    "quote_lines": [
+     {
+      "code": "WH-PILOT",
+      "description": "Water heater pilot/thermocouple service",
+      "price": 169
+     }
+    ],
+    "quote_total": 169,
+    "duration_min": 66,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're all set \u2014 first priority slot tomorrow, Tuesday Sept 1, 8:00 AM (SL-0901-0800). Our tech will have thermocouple/pilot assembly parts on the truck. Tonight: rather than re-lighting repeatedly, turn the gas control dial to OFF and leave it off until we arrive [PB-04]. Heating small amounts of water on the stove is fine for the baby's needs in the meantime. Expected cost is $169 flat rate for pilot/thermocouple service \u2014 no after-hours surcharge since we're coming during regular hours."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c05_no_hot_water_returning",
+    "tier": "S2",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 1.0,
+    "total_err_pct": 0.0,
+    "quote_ok": true,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 6,
+    "duration_ok": true,
+    "slot_ok": true,
+    "known_customer_ok": true,
+    "cost_usd": 0.0784,
+    "wall_s": 21.6
+   }
+  },
+  {
+   "case": "c06_leak_contained",
+   "ticket": {
+    "severity": "S2",
+    "category": "leak_contained",
+    "summary": "Braided supply line under bathroom sink leaking; customer closed fixture shutoff, leak contained and area dry, bathroom water off until hose replaced.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Confirmed customer closed the fixture shutoff valve under the sink and advised leaving it closed until the visit [PB-01]",
+     "If dripping resumes with the fixture valve closed, shut off the house main [PB-02] and open the lowest cold tap to drain line pressure [PB-03]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02",
+     "PB-03"
+    ],
+    "quote_lines": [
+     {
+      "code": "SUPPLY-LINE-REPLACE",
+      "description": "Replace failed braided supply line under bathroom sink",
+      "price": 129
+     }
+    ],
+    "quote_total": 129,
+    "duration_min": 45,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "Booked \u2014 Tue Sep 1, 8:00 AM, supply line replacement, $129 flat (about 45 min). Leave the valve closed until we arrive, and if it ever starts dripping again with the valve shut, close the house main and open a low tap to drain pressure [PB-02][PB-03], then text us. See you in the morning, Jess!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c06_leak_contained",
+    "tier": "S2",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 1.0,
+    "total_err_pct": 0.0,
+    "quote_ok": true,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 0,
+    "duration_ok": true,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.0778,
+    "wall_s": 21.4
+   }
+  },
+  {
+   "case": "c07_only_toilet_blocked",
+   "ticket": {
+    "severity": "S2",
+    "category": "toilet_clog",
+    "summary": "Fully blocked sole toilet in household with kids; nearly overflowed, plunger ineffective, no active spill \u2014 booked first priority slot tomorrow 8:00 AM for auger clearing.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Do not flush again until the tech arrives, to avoid an overflow [PB-01]",
+     "If the bowl water rises, close the toilet's shutoff valve on the supply line at the wall, clockwise until snug [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "TOILET-CLOG",
+      "description": "Toilet clog clearing (auger)",
+      "price": 149
+     }
+    ],
+    "quote_total": 149,
+    "duration_min": 45,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "Booked! Tomorrow (Tue Sep 1) at 8:00 AM \u2014 toilet clog clearing, flat $149, about 45 minutes. Your tech will call ahead. Tonight: keep it unflushed, and if the water level ever creeps up, close that shutoff valve [PB-01]. If anything overflows or you see backup in the tub/shower drains, text us right back \u2014 that's a different problem and we'll page the on-call plumber."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c07_only_toilet_blocked",
+    "tier": "S2",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 1.0,
+    "total_err_pct": 0.0,
+    "quote_ok": true,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 0,
+    "duration_ok": true,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.0742,
+    "wall_s": 18.7
+   }
+  },
+  {
+   "case": "c08_running_toilet",
+   "ticket": {
+    "severity": "S3",
+    "category": "toilet_running",
+    "summary": "Upstairs toilet running continuously for several days; needs fill/flush valve rebuild, booked Sept 1 10:30 AM.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Close the toilet's shutoff valve (oval handle on supply line behind bowl, clockwise until snug) between flushes to stop water waste overnight [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "TOILET-REBUILD",
+      "description": "Running toilet rebuild (fill valve + flush valve + flapper, labor and standard parts included)",
+      "price": 189
+     }
+    ],
+    "quote_total": 189,
+    "duration_min": 60,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "The $189 is all-in \u2014 labor plus standard fill valve, flush valve, and flapper parts. Nothing for you to buy, and no trip or diagnostic fee on top. The only thing that could change it is if we find a cracked tank or a bad shutoff valve, and we'd show you and get your OK before doing anything extra. You're booked for Tuesday, Sept 1 at 10:30 AM (about an hour). The tech will text when they're on the way \u2014 see you then!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c08_running_toilet",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 1.0,
+    "total_err_pct": 0.0,
+    "quote_ok": true,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 0,
+    "duration_ok": true,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.071,
+    "wall_s": 16.7
+   }
+  },
+  {
+   "case": "c09_slow_kitchen_drain",
+   "ticket": {
+    "severity": "S3",
+    "category": "drain_slow",
+    "summary": "Kitchen sink draining slowly on both basins, baking soda/vinegar failed, no other fixtures affected \u2014 clog in shared kitchen branch line, snaking booked.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Offered optional safe disposal check: unplug or kill breaker, never reach inside, use tongs and the hex socket under the unit to free the flywheel \u2014 customer declined [PB-07]"
+    ],
+    "playbook_refs": [
+     "PB-07"
+    ],
+    "quote_lines": [
+     {
+      "code": "DRAIN-SNAKE-KITCHEN",
+      "description": "Kitchen/bath drain snaking \u2014 shared branch line past disposal tee",
+      "price": 179
+     }
+    ],
+    "quote_total": 179,
+    "duration_min": 60,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set, Tom \u2014 booked for Tuesday, Sept 1 at 10:30 AM at $179 flat for the kitchen drain snaking (about an hour on site). The tech will call before arriving; just keep the cabinet under the sink clear and hold off on heavy sink use until then. If anything changes overnight \u2014 water backing up elsewhere or overflowing \u2014 text us back and we'll re-prioritize."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c09_slow_kitchen_drain",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 3,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 1.0,
+    "total_err_pct": 0.0,
+    "quote_ok": true,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 0,
+    "duration_ok": true,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.1075,
+    "wall_s": 26.1
+   }
+  },
+  {
+   "case": "c10_dripping_faucet",
+   "ticket": {
+    "severity": "S3",
+    "category": "faucet_drip",
+    "summary": "Constant drip at bathroom faucet, original ~1990s fixture; likely cartridge/washer rebuild, possible faucet replacement if body is corroded.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Optional overnight fix: close the oval shutoff valve on the supply line under the sink, clockwise until snug, to stop the drip [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "FAUCET-CARTRIDGE",
+      "description": "Faucet/shower cartridge replacement - bathroom faucet drip",
+      "price": 159
+     }
+    ],
+    "quote_total": 159,
+    "duration_min": 70,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "Sorry we missed your call! A nightly drip is a standard non-emergency fix, usually a worn cartridge or washer. Flat rate $159 (FAUCET-CARTRIDGE), parts and labor, about 60-75 min given the fixture's age. If the faucet body is too corroded to rebuild, the tech will quote a replacement before doing any work. To stop the drip tonight, close the small oval shutoff valve under the sink (clockwise until snug) [PB-01]. I can book you for Tuesday Sept 1 at 10:30 AM - reply 'yes' and a dispatcher will confirm in the morning."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c10_dripping_faucet",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 1,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 1.0,
+    "total_err_pct": 0.0,
+    "quote_ok": true,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 1,
+    "duration_ok": true,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.0463,
+    "wall_s": 15.0
+   }
+  },
+  {
+   "case": "c11_damp_spot",
+   "ticket": {
+    "severity": "S3",
+    "category": "damp_spot",
+    "summary": "Stable dinner-plate-sized damp/yellow ceiling stain in bedroom directly below upstairs neighbor's bathroom, no drip, unchanged for 3 days; needs leak-source diagnostic and possibly access to unit above.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Monitor the patch; if it bulges, sags, or starts dripping, stay clear of the area beneath it and call us immediately [PB-08]"
+    ],
+    "playbook_refs": [
+     "PB-08"
+    ],
+    "quote_lines": [
+     {
+      "code": "DIAG",
+      "description": "Diagnostic visit to trace ceiling leak source (repair quoted separately after assessment)",
+      "price": 89
+     }
+    ],
+    "quote_total": 89,
+    "duration_min": 45,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "That pattern fits an intermittent leak from the bathroom above \u2014 often a shower pan, tub/shower drain seal, or toilet flange that only leaks when used, which is why your neighbor may not see anything. Stable size for 3 days is a good sign, so standard scheduling is fine. I've held you tomorrow, Tue Sep 1 at 10:30 AM: diagnostic is $89 (~45 min), applied toward the repair if we do it that day, and any repair is quoted before we start. We may need access to your neighbor's unit as well. Watch for bulging, sagging, or dripping \u2014 if that happens, stay out from under it and call us right away."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c11_damp_spot",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 1.0,
+    "total_err_pct": 0.0,
+    "quote_ok": true,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 0,
+    "duration_ok": true,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.0754,
+    "wall_s": 20.7
+   }
+  },
+  {
+   "case": "c12_disposal_jam",
+   "ticket": {
+    "severity": "S4",
+    "category": "disposal_jam",
+    "summary": "After-hours text: garbage disposal humming/not spinning due to a peach pit; customer cleared it herself with PB-07 steps, no visit needed.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Unplug the disposal or switch off its breaker before doing anything; never reach into the unit [PB-07]",
+     "Remove visible debris with tongs/pliers, not fingers [PB-07]",
+     "Use the hex/Allen socket under the unit to work the flywheel back and forth until free [PB-07]",
+     "Restore power, press the red reset button underneath, then test with cold water running [PB-07]"
+    ],
+    "playbook_refs": [
+     "PB-07"
+    ],
+    "quote_lines": [
+     {
+      "code": "GARB-DISPOSAL-JAM",
+      "description": "Disposal jam clearing \u2014 quoted as contingency only; customer resolved it herself, work not performed",
+      "price": 99
+     }
+    ],
+    "quote_total": 0,
+    "duration_min": 0,
+    "slot_id": null,
+    "customer_message": "Amazing \u2014 peach pit strikes again! \ud83c\udf89 Nice work, that's a proper DIY win. Two quick tips going forward: keep pits, bones, and fibrous stuff (celery, corn husks) out of it, and always run cold water a few seconds after grinding. If it ever hums again and the wrench doesn't free it, that usually means the motor rather than a jam \u2014 text us and we'll take a look. No charge for tonight, and thanks for calling Brookdale!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c12_disposal_jam",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 3,
+    "safety_overrides": 0,
+    "severity_ok": false,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 1.0,
+    "total_err_pct": 100.0,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 30,
+    "duration_ok": false,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.1216,
+    "wall_s": 35.8
+   }
+  },
+  {
+   "case": "c13_low_pressure_returning",
+   "ticket": {
+    "severity": "S3",
+    "category": "low_pressure_shower",
+    "summary": "Recurring low pressure at master shower only (both hot and cold); cartridge replaced in March for same issue \u2014 diagnose valve body/inlet screens for debris, replace cartridge as needed.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DIAG",
+      "description": "Diagnostic visit \u2014 shower valve inspection for recurring pressure loss",
+      "price": 89
+     },
+     {
+      "code": "FAUCET-CARTRIDGE",
+      "description": "Shower cartridge replacement (if diagnosis confirms)",
+      "price": 159
+     }
+    ],
+    "quote_total": 248,
+    "duration_min": 115,
+    "slot_id": "SL-0901-1500",
+    "customer_message": "Totally fair \u2014 a cartridge that clogs twice in six months usually means something upstream (debris in the valve body or inlet screens), so we'll diagnose the valve properly rather than just swapping the part again. I've flagged your March visit so the office can review any warranty coverage on that work. Plan: full diagnostic on the shower valve, plus cartridge replacement if that's what it needs \u2014 $89 diagnostic + $159 cartridge = $248, about 2 hours. If the tech finds a different cause, he'll quote you before doing anything extra. I've got you down for tomorrow, Sept 1 at 3:00 PM. Text back if mornings work better and I'll see what I can shuffle. Thanks for your patience, Priya!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c13_low_pressure_returning",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 0.667,
+    "total_err_pct": 56.0,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 46,
+    "duration_ok": false,
+    "slot_ok": false,
+    "known_customer_ok": true,
+    "cost_usd": 0.0907,
+    "wall_s": 27.8
+   }
+  },
+  {
+   "case": "c14_wh_replace_quote",
+   "ticket": {
+    "severity": "S3",
+    "category": "water_heater_replace",
+    "summary": "Proactive replacement of 14-year-old 40-gal gas water heater; booked Wed Sept 2 10:30am, customer needs written confirmation on haul-away inclusion and who files the permit.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": null,
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "WH-REPLACE-40G",
+      "description": "40-gal gas water heater replacement (unit, labor, standard connections). Haul-away inclusion NOT confirmed to customer - office to verify. Permit fee is a municipal pass-through, not included. Possible adders if code upgrades needed (expansion tank, venting, pan/drain).",
+      "price": 1450
+     }
+    ],
+    "quote_total": 1450,
+    "duration_min": 240,
+    "slot_id": "SL-0902-1030",
+    "customer_message": "You're set - Wed Sept 2, 10:30am, booked and held for the full 4-hour window. I've noted the two open items (haul-away and permit filing) on your ticket so the office calls you with firm answers before the truck rolls. Appreciate that, Hal - I'd rather be useful than sound certain. See you Wednesday!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c14_wh_replace_quote",
+    "tier": "S4",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 3,
+    "safety_overrides": 0,
+    "severity_ok": false,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 1.0,
+    "total_err_pct": 0.0,
+    "quote_ok": true,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 0,
+    "duration_ok": true,
+    "slot_ok": null,
+    "known_customer_ok": null,
+    "cost_usd": 0.116,
+    "wall_s": 31.8
+   }
+  },
+  {
+   "case": "c15_disposal_install",
+   "ticket": {
+    "severity": "S3",
+    "category": "disposal_install",
+    "summary": "15-year-old garbage disposal seized solid; customer wants straight replacement with a basic unit.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Leave the disposal switched off and do not reach inside the unit even when off; unplug it or switch off its breaker to fully de-energize it until the tech arrives [PB-07]"
+    ],
+    "playbook_refs": [
+     "PB-07"
+    ],
+    "quote_lines": [
+     {
+      "code": "GARB-DISPOSAL-REPLACE",
+      "description": "Garbage disposal replacement, standard unit included, labor + haul-away of old unit",
+      "price": 329
+     }
+    ],
+    "quote_total": 329,
+    "duration_min": 105,
+    "slot_id": "SL-0901-1500",
+    "customer_message": "Sorry about the disposal! Since it's 15 years old and seized, replacement is the right call. Flat rate: $329 (GARB-DISPOSAL-REPLACE) \u2014 standard 1/2 HP unit, labor, and haul-away included. Planning about 1h45 since old mounting hardware often needs extra work. No after-hours fee. Earliest fitting slot: Tue Sep 1, 3:00 PM \u2014 you're pencilled in, reply 'yes' to lock it. Until then leave it switched off and don't reach inside the unit even with the power off; unplug it or flip its breaker if you want it fully dead [PB-07]."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c15_disposal_install",
+    "tier": "S4",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 1,
+    "safety_overrides": 0,
+    "severity_ok": false,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 1.0,
+    "total_err_pct": 0.0,
+    "quote_ok": true,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 15,
+    "duration_ok": true,
+    "slot_ok": false,
+    "known_customer_ok": null,
+    "cost_usd": 0.0537,
+    "wall_s": 18.2
+   }
+  },
+  {
+   "case": "c16_recurring_main_returning",
+   "ticket": {
+    "severity": "S3",
+    "category": "drain_main_recurring",
+    "summary": "Repeat kitchen-branch drain clog (3rd this year, snaked Jan and May) \u2014 draining slowly with gurgling, no other fixtures affected; camera inspection + snaking booked to find root cause.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Minimize use of the kitchen line tonight \u2014 no dishwasher, no disposal, run water sparingly so the sink doesn't overflow (no playbook entry applies; slow drain, not an active leak or sewage backup)",
+     "Confirmed no cross-fixture symptoms (toilets/laundry/bath clear), so no main-line/sewage protocol needed"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DIAG",
+      "description": "Camera inspection of kitchen branch line to identify recurrence cause",
+      "price": 89
+     },
+     {
+      "code": "DRAIN-SNAKE-KITCHEN",
+      "description": "Kitchen drain snaking",
+      "price": 179
+     }
+    ],
+    "quote_total": 268,
+    "duration_min": 120,
+    "slot_id": "SL-0901-1500",
+    "customer_message": "That's actually good news \u2014 since your toilets, laundry and bathroom are all fine, the main line is clear. The problem is the kitchen branch, and a third clog in one year almost always means grease/soap scale rebuilding on the pipe wall, or a sag/damaged section catching debris. Snaking punches a hole through it and it re-closes in a few months. So this time it's snake PLUS camera: Camera inspection (DIAG) $89 + Kitchen drain snaking (DRAIN-SNAKE-KITCHEN) $179 = $268 total, about 2 hours. If the camera shows something bigger (power auger or a damaged section), the tech shows you the footage and quotes before doing extra work. I've got you down for tomorrow, Tue Sept 1 at 3:00 PM. Keep it light on that sink until then \u2014 no dishwasher, no disposal, run water sparingly. Reply 'yes' to confirm, or I can move you to a morning."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c16_recurring_main_returning",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 0.5,
+    "total_err_pct": 38.8,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 12,
+    "duration_ok": true,
+    "slot_ok": false,
+    "known_customer_ok": true,
+    "cost_usd": 0.1173,
+    "wall_s": 270.8
+   }
+  },
+  {
+   "case": "c17_hose_bib",
+   "ticket": {
+    "severity": "S3",
+    "category": "hose_bib",
+    "summary": "Original 1990s outdoor hose bib sprays from the handle when opened; worn stem/packing seal, customer not urgent \u2014 replacement booked.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Leave the spigot fully closed until the visit; if there is an interior shutoff valve on that hose bib line, close it clockwise [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "HOSE-BIB-REPLACE",
+      "description": "Outdoor hose bib replacement (parts + labor)",
+      "price": 169
+     }
+    ],
+    "quote_total": 169,
+    "duration_min": 75,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "Thanks for the details, Faye \u2014 that's a classic worn-out hose bib (spray from the handle = failed packing/stem seal), and 30-year-old originals usually aren't worth rebuilding. Not an emergency: leave it closed for now, and if there's an interior shutoff for that line, close it clockwise as extra insurance. Flat rate to replace is $169, about 75 minutes, parts and labor included. I've penciled you in for Tue Sep 1 at 10:30 AM; the office will confirm in the morning, or text back for another day."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c17_hose_bib",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 1,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 1.0,
+    "total_err_pct": 0.0,
+    "quote_ok": true,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 11,
+    "duration_ok": true,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.0494,
+    "wall_s": 16.5
+   }
+  },
+  {
+   "case": "c18_wh_noise",
+   "ticket": {
+    "severity": "S3",
+    "category": "water_heater_noise",
+    "summary": "Electric water heater rumbling/popping during heating cycles, no leak and normal temps \u2014 sediment buildup; booked flush & sediment service.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Reassured no immediate danger; no shutoff needed tonight since there is no pooling water and no scalding water",
+     "If pooling water or overheating appears tonight: switch off the water heater's breaker and close the cold-water inlet valve on top of the tank, do not drain it yourself [PB-04]"
+    ],
+    "playbook_refs": [
+     "PB-04"
+    ],
+    "quote_lines": [
+     {
+      "code": "WH-FLUSH",
+      "description": "Water heater flush & sediment service",
+      "price": 139
+     }
+    ],
+    "quote_total": 139,
+    "duration_min": 75,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set \u2014 Tue Sep 1, 10:30 AM, water heater flush & sediment service, $139 flat, about 75 minutes. Nothing you need to do beforehand: leave it running as normal, just clear a path to the tank so the tech can get around it. The only 'if' is the one from earlier \u2014 pooling water or scalding water tonight means breaker off + cold inlet valve closed [PB-04] and call us. Otherwise, sleep easy. See you tomorrow, Denis!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c18_wh_noise",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 3,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 1.0,
+    "total_err_pct": 0.0,
+    "quote_ok": true,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 0,
+    "duration_ok": true,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.1041,
+    "wall_s": 26.8
+   }
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "case": "c09_slow_kitchen_drain",
+ "ticket": {
+  "severity": "S3",
+  "category": "drain_slow",
+  "summary": "Kitchen sink draining slowly on both basins, baking soda/vinegar failed, no other fixtures affected \u2014 clog in shared kitchen branch line, snaking booked.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Offered optional safe disposal check: unplug or kill breaker, never reach inside, use tongs and the hex socket under the unit to free the flywheel \u2014 customer declined [PB-07]"
+  ],
+  "playbook_refs": [
+   "PB-07"
+  ],
+  "quote_lines": [
+   {
+    "code": "DRAIN-SNAKE-KITCHEN",
+    "description": "Kitchen/bath drain snaking \u2014 shared branch line past disposal tee",
+    "price": 179
+   }
+  ],
+  "quote_total": 179,
+  "duration_min": 60,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "You're all set, Tom \u2014 booked for Tuesday, Sept 1 at 10:30 AM at $179 flat for the kitchen drain snaking (about an hour on site). The tech will call before arriving; just keep the cabinet under the sink clear and hold off on heavy sink use until then. If anything changes overnight \u2014 water backing up elsewhere or overflowing \u2014 text us back and we'll re-prioritize."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c09_slow_kitchen_drain",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.1075,
+  "wall_s": 26.1
+ }
+}

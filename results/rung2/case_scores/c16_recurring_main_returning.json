@@ -1,0 +1,57 @@
+{
+ "case": "c16_recurring_main_returning",
+ "ticket": {
+  "severity": "S3",
+  "category": "drain_main_recurring",
+  "summary": "Repeat customer: kitchen sink draining slow with gurgle, third recurrence this year (snaked Jan and May) - kitchen branch only, no other fixtures affected; camera inspection + snaking booked.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": null,
+  "playbook_refs": null,
+  "quote_lines": [
+   {
+    "code": "DIAG",
+    "description": "Diagnostic visit / camera inspection of kitchen branch line (recurring clog)",
+    "price": 89
+   },
+   {
+    "code": "DRAIN-SNAKE-KITCHEN",
+    "description": "Kitchen drain snaking",
+    "price": 179
+   }
+  ],
+  "quote_total": 268,
+  "duration_min": 120,
+  "slot_id": "SL-0901-1500",
+  "customer_message": "Kitchen-only backup with gurgling points to a partial blockage in the kitchen branch line, likely grease re-forming. Since it's the third time, we'll bring a camera to check for a belly or bad fitting rather than just snaking again. Camera inspection $89 + kitchen drain snaking $179 = $268, about 2 hours, tomorrow Tue Sept 1 at 3:00 PM. No after-hours fee since it's still draining. Any repair found by the camera will be quoted on-site before work. Reply if 3 PM doesn't work."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c16_recurring_main_returning",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 0.5,
+  "total_err_pct": 38.8,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 12,
+  "duration_ok": true,
+  "slot_ok": false,
+  "known_customer_ok": true,
+  "cost_usd": 0.097,
+  "wall_s": 31.0
+ }
+}

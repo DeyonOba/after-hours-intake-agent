@@ -1,0 +1,56 @@
+{
+ "case": "c11_damp_spot",
+ "ticket": {
+  "severity": "S3",
+  "category": "damp_spot",
+  "summary": "Stable dinner-plate-sized damp/yellow ceiling patch in bedroom below neighbor's upstairs bathroom, no dripping, unchanged for 3 days - diagnostic visit booked.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Stay clear of the damp area and don't press on it; if the ceiling sags or becomes water-heavy, keep away and call immediately [PB-08]"
+  ],
+  "playbook_refs": [
+   "PB-08"
+  ],
+  "quote_lines": [
+   {
+    "code": "DIAG",
+    "description": "Diagnostic visit to trace ceiling moisture source (likely from upstairs bathroom - may need neighbor access)",
+    "price": 89
+   }
+  ],
+  "quote_total": 89,
+  "duration_min": 45,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "You're all set, Omar - Tue Sep 1, 10:30 AM, diagnostic visit at $89, and we'll quote any repair before starting. Nice touch giving your neighbor a heads-up; that'll save us time tracing it. If the patch suddenly spreads, starts dripping, or the ceiling bulges before then, stay clear of it and call us right away."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c11_damp_spot",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.1076,
+  "wall_s": 22.3
+ }
+}

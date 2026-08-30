@@ -1,0 +1,68 @@
+{
+ "config": "rung1",
+ "case": "c12_disposal_jam",
+ "system_prompt_chars": 9221,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My garbage disposal just hums and doesn't spin, I think something's stuck. Do I need a visit or is there something I can try safely?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news \u2014 this one's often a DIY fix, and it's not an emergency. Here's the safe way to try it [PB-07]:\n\n1. Unplug the disposal under the sink (or switch off its breaker) \u2014 never reach into the unit, even when it's off.\n2. Shine a light in and pull out anything visible with tongs or pliers \u2014 not your fingers.\n3. Look for a hex/Allen socket on the underside of the unit; work the included wrench back and forth to free the flywheel.\n4. Restore power, press the red reset button on the bottom, then test with cold water running.\n\nIf it still just hums, we'd come clear it: $99 flat (GARB-DISPOSAL-JAM, about 30 min). Want me to hold you a slot, or will you try it first?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "omg thank you! yeah i have an allen key somewhere. im gonna try this rn \u2014 ill unplug it first obvi. fingers crossed \ud83e\udd1e\n\ngonna let u know in like 10 min if it works!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect \u2014 unplugging first is exactly right. \ud83e\udd1e Two tips while you're in there: work the wrench both directions a few times until it spins freely, and don't forget the red reset button underneath before you test.\n\nText me either way \u2014 if it's still humming I'll grab you a morning slot."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "got it! unplugged, shining a light in now... oh man i can see something wedged in there. grabbing my tongs\n\nok using the allen key and working it back and forth... it's loosening up! one sec\n\nYES!! it's moving!! the flywheel is spinning now \ud83c\udf89 there was a peach pit stuck in there lol. hit the reset button and running water now \u2014 it's working!! no more humming\n\nthank you SO much, saved me a trip! really appreciate you walking me through it"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Amazing \u2014 peach pit strikes again! \ud83c\udf89 Nice work, that's a proper DIY win. Two quick tips going forward: keep pits, bones, and fibrous stuff (celery, corn husks) out of it, and always run cold water a few seconds after grinding. If it ever hums again and the wrench doesn't free it, that usually means the motor rather than a jam \u2014 text us and we'll take a look. No charge for tonight, and thanks for calling Brookdale!\n\n```json\n{\n  \"severity\": \"S4\",\n  \"category\": \"disposal_jam\",\n  \"summary\": \"After-hours text: garbage disposal humming/not spinning due to a peach pit; customer cleared it herself with PB-07 steps, no visit needed.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Unplug the disposal or switch off its breaker before doing anything; never reach into the unit [PB-07]\",\n    \"Remove visible debris with tongs/pliers, not fingers [PB-07]\",\n    \"Use the hex/Allen socket under the unit to work the flywheel back and forth until free [PB-07]\",\n    \"Restore power, press the red reset button underneath, then test with cold water running [PB-07]\"\n  ],\n  \"playbook_refs\": [\"PB-07\"],\n  \"quote_lines\": [\n    {\n      \"code\": \"GARB-DISPOSAL-JAM\",\n      \"description\": \"Disposal jam clearing \u2014 quoted as contingency only; customer resolved it herself, work not performed\",\n      \"price\": 99\n    }\n  ],\n  \"quote_total\": 0,\n  \"duration_min\": 0,\n  \"slot_id\": null,\n  \"customer_message\": \"Amazing \u2014 peach pit strikes again! \ud83c\udf89 Nice work, that's a proper DIY win. Two quick tips going forward: keep pits, bones, and fibrous stuff (celery, corn husks) out of it, and always run cold water a few seconds after grinding. If it ever hums again and the wrench doesn't free it, that usually means the motor rather than a jam \u2014 text us and we'll take a look. No charge for tonight, and thanks for calling Brookdale!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S4",
+    "category": "disposal_jam",
+    "summary": "After-hours text: garbage disposal humming/not spinning due to a peach pit; customer cleared it herself with PB-07 steps, no visit needed.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Unplug the disposal or switch off its breaker before doing anything; never reach into the unit [PB-07]",
+     "Remove visible debris with tongs/pliers, not fingers [PB-07]",
+     "Use the hex/Allen socket under the unit to work the flywheel back and forth until free [PB-07]",
+     "Restore power, press the red reset button underneath, then test with cold water running [PB-07]"
+    ],
+    "playbook_refs": [
+     "PB-07"
+    ],
+    "quote_lines": [
+     {
+      "code": "GARB-DISPOSAL-JAM",
+      "description": "Disposal jam clearing \u2014 quoted as contingency only; customer resolved it herself, work not performed",
+      "price": 99
+     }
+    ],
+    "quote_total": 0,
+    "duration_min": 0,
+    "slot_id": null,
+    "customer_message": "Amazing \u2014 peach pit strikes again! \ud83c\udf89 Nice work, that's a proper DIY win. Two quick tips going forward: keep pits, bones, and fibrous stuff (celery, corn husks) out of it, and always run cold water a few seconds after grinding. If it ever hums again and the wrench doesn't free it, that usually means the motor rather than a jam \u2014 text us and we'll take a look. No charge for tonight, and thanks for calling Brookdale!"
+   }
+  }
+ ]
+}

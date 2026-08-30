@@ -1,0 +1,52 @@
+{
+ "case": "c14_wh_replace_quote",
+ "ticket": {
+  "severity": "S3",
+  "category": "water_heater_replace",
+  "summary": "Proactive replacement of 14-year-old 40-gal gas water heater; booked Wed Sept 2 10:30am, customer needs written confirmation on haul-away inclusion and who files the permit.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": null,
+  "playbook_refs": null,
+  "quote_lines": [
+   {
+    "code": "WH-REPLACE-40G",
+    "description": "40-gal gas water heater replacement (unit, labor, standard connections). Haul-away inclusion NOT confirmed to customer - office to verify. Permit fee is a municipal pass-through, not included. Possible adders if code upgrades needed (expansion tank, venting, pan/drain).",
+    "price": 1450
+   }
+  ],
+  "quote_total": 1450,
+  "duration_min": 240,
+  "slot_id": "SL-0902-1030",
+  "customer_message": "You're set - Wed Sept 2, 10:30am, booked and held for the full 4-hour window. I've noted the two open items (haul-away and permit filing) on your ticket so the office calls you with firm answers before the truck rolls. Appreciate that, Hal - I'd rather be useful than sound certain. See you Wednesday!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c14_wh_replace_quote",
+  "tier": "S4",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": false,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": null,
+  "known_customer_ok": null,
+  "cost_usd": 0.116,
+  "wall_s": 31.8
+ }
+}

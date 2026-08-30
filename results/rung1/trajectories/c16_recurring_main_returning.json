@@ -1,0 +1,59 @@
+{
+ "config": "rung1",
+ "case": "c16_recurring_main_returning",
+ "system_prompt_chars": 9222,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Marcus Bell here. Kitchen line is backing up AGAIN - third time this year. You snaked it in January and May. It's draining a little but gurgling. What now?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hey Marcus \u2014 thanks for the details, and sorry it's back a third time. Three clogs in one year usually means it's not just the kitchen branch: it's grease buildup deeper in the line or a root/belly issue in the main.\n\nQuick question so I can size the job: is anything else acting up \u2014 toilets gurgling, laundry or bathroom sinks slow \u2014 or is it only the kitchen sink?\n\nIn the meantime, go easy on that line tonight (no dishwasher, no disposal, minimal water down it) so it doesn't back up over the rim. Since it's still draining, this isn't an emergency callout \u2014 I'd rather book you properly than charge you the after-hours fee."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Good call on that. Nah, just the kitchen \u2014 toilets, bathroom sink, laundry all fine. So it's definitely something in that main line then?\n\nAnd yeah, I'll keep it off the dishwasher tonight. What's the next move here?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's actually good news \u2014 since your toilets, laundry and bathroom are all fine, the main line is clear. The problem is the kitchen branch, and a third clog in one year almost always means grease/soap scale rebuilding on the pipe wall, or a sag/damaged section that keeps catching debris. Snaking punches a hole through it; it re-closes in a few months. That's the pattern you're seeing.\n\nSo the next move is snake **plus camera** this time, so we actually see why it keeps coming back:\n\n- Camera inspection (DIAG) \u2014 $89\n- Kitchen drain snaking (DRAIN-SNAKE-KITCHEN) \u2014 $179\n- **Total $268**, about 2 hours\n\nIf the camera shows a bigger issue (deeper blockage needing the power auger, or a damaged section), the tech will show you the footage and quote before doing anything extra.\n\nI've got you down for **tomorrow, Tue Sept 1 at 3:00 PM**. Keep it light on that sink until then \u2014 no dishwasher, no disposal, run water sparingly so it doesn't crest the rim. Just reply \"yes\" and you're confirmed; if mornings work better I can move you.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"drain_main_recurring\",\n  \"summary\": \"Repeat kitchen-branch drain clog (3rd this year, snaked Jan and May) \u2014 draining slowly with gurgling, no other fixtures affected; camera inspection + snaking booked to find root cause.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [\n    \"Minimize use of the kitchen line tonight \u2014 no dishwasher, no disposal, run water sparingly so the sink doesn't overflow (no playbook entry applies; slow drain, not an active leak or sewage backup)\",\n    \"Confirmed no cross-fixture symptoms (toilets/laundry/bath clear), so no main-line/sewage protocol needed\"\n  ],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\"code\": \"DIAG\", \"description\": \"Camera inspection of kitchen branch line to identify recurrence cause\", \"price\": 89},\n    {\"code\": \"DRAIN-SNAKE-KITCHEN\", \"description\": \"Kitchen drain snaking\", \"price\": 179}\n  ],\n  \"quote_total\": 268,\n  \"duration_min\": 120,\n  \"slot_id\": \"SL-0901-1500\",\n  \"customer_message\": \"That's actually good news \u2014 since your toilets, laundry and bathroom are all fine, the main line is clear. The problem is the kitchen branch, and a third clog in one year almost always means grease/soap scale rebuilding on the pipe wall, or a sag/damaged section catching debris. Snaking punches a hole through it and it re-closes in a few months. So this time it's snake PLUS camera: Camera inspection (DIAG) $89 + Kitchen drain snaking (DRAIN-SNAKE-KITCHEN) $179 = $268 total, about 2 hours. If the camera shows something bigger (power auger or a damaged section), the tech shows you the footage and quotes before doing extra work. I've got you down for tomorrow, Tue Sept 1 at 3:00 PM. Keep it light on that sink until then \u2014 no dishwasher, no disposal, run water sparingly. Reply 'yes' to confirm, or I can move you to a morning.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "drain_main_recurring",
+    "summary": "Repeat kitchen-branch drain clog (3rd this year, snaked Jan and May) \u2014 draining slowly with gurgling, no other fixtures affected; camera inspection + snaking booked to find root cause.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Minimize use of the kitchen line tonight \u2014 no dishwasher, no disposal, run water sparingly so the sink doesn't overflow (no playbook entry applies; slow drain, not an active leak or sewage backup)",
+     "Confirmed no cross-fixture symptoms (toilets/laundry/bath clear), so no main-line/sewage protocol needed"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DIAG",
+      "description": "Camera inspection of kitchen branch line to identify recurrence cause",
+      "price": 89
+     },
+     {
+      "code": "DRAIN-SNAKE-KITCHEN",
+      "description": "Kitchen drain snaking",
+      "price": 179
+     }
+    ],
+    "quote_total": 268,
+    "duration_min": 120,
+    "slot_id": "SL-0901-1500",
+    "customer_message": "That's actually good news \u2014 since your toilets, laundry and bathroom are all fine, the main line is clear. The problem is the kitchen branch, and a third clog in one year almost always means grease/soap scale rebuilding on the pipe wall, or a sag/damaged section catching debris. Snaking punches a hole through it and it re-closes in a few months. So this time it's snake PLUS camera: Camera inspection (DIAG) $89 + Kitchen drain snaking (DRAIN-SNAKE-KITCHEN) $179 = $268 total, about 2 hours. If the camera shows something bigger (power auger or a damaged section), the tech shows you the footage and quotes before doing extra work. I've got you down for tomorrow, Tue Sept 1 at 3:00 PM. Keep it light on that sink until then \u2014 no dishwasher, no disposal, run water sparingly. Reply 'yes' to confirm, or I can move you to a morning."
+   }
+  }
+ ]
+}

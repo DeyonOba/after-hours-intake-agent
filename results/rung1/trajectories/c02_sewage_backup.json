@@ -1,0 +1,56 @@
+{
+ "config": "rung1",
+ "case": "c02_sewage_backup",
+ "system_prompt_chars": 9221,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "hi, sewage is coming UP through the bathtub drain and the toilet gurgles when we use the kitchen sink. smells terrible. is this an emergency or can it wait til morning?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's an emergency \u2014 sewage backing up into the tub plus gurgling means your main sewer line is blocked, and it will keep coming up as long as water goes down. Don't wait until morning.\n\nRight now: stop using ALL water in the house \u2014 no flushing, no sinks, no laundry or dishwasher [PB-05]. Keep everyone and pets away from the tub and any standing sewage; don't touch it [PB-05].\n\nI'm paging our on-call plumber now. After-hours dispatch is a $150 callout ($150 EMERG-CALLOUT) on top of the repair, which he'll quote once he's seen it. Can you confirm your service address and that this number (+1-555-0102) is best to reach you?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok got it, thanks. address is 9 Delmore St. yeah +1-555-0102 is the best number. we'll stop using water right now.\n\nhow long til someone can get here? my elderly parent lives with us and needs to use the bathroom soon"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Got it \u2014 9 Delmore St, +1-555-0102, dispatched. Our on-call plumber is typically on the road within about 30\u201360 minutes; he'll call this number when he's en route.\n\nI've flagged the household need so you're top of the queue. Until he arrives, please keep the toilet unused \u2014 flushing will push more sewage up through the tub [PB-05]. If your parent needs a bathroom before then, a neighbor's or nearby facility is the safest bet; the plumber can advise as soon as he's on site.\n\n```json\n{\n  \"severity\": \"S1\",\n  \"category\": \"sewage_backup\",\n  \"summary\": \"Sewage backing up through bathtub drain with toilet gurgling on kitchen sink use at 9 Delmore St \u2014 main line blockage, after-hours dispatch requested; elderly occupant in home needing bathroom access.\",\n  \"escalate_now\": true,\n  \"known_customer\": true,\n  \"mitigation_advice\": [\n    \"Stop using all water in the house \u2014 no flushing, sinks, laundry or dishwasher [PB-05]\",\n    \"Keep people and pets away from the tub and any standing sewage; do not touch it [PB-05]\"\n  ],\n  \"playbook_refs\": [\"PB-05\"],\n  \"quote_lines\": [\n    {\"code\": \"EMERG-CALLOUT\", \"description\": \"After-hours emergency dispatch surcharge (repair to be quoted on site)\", \"price\": 150}\n  ],\n  \"quote_total\": 150,\n  \"duration_min\": 150,\n  \"slot_id\": null,\n  \"customer_message\": \"Got it \u2014 9 Delmore St, +1-555-0102, dispatched. Our on-call plumber is typically on the road within about 30\u201360 minutes; he'll call this number when he's en route. I've flagged the household need so you're top of the queue. Until he arrives, please keep the toilet unused \u2014 flushing will push more sewage up through the tub [PB-05]. If your parent needs a bathroom before then, a neighbor's or nearby facility is the safest bet; the plumber can advise as soon as he's on site.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "sewage_backup",
+    "summary": "Sewage backing up through bathtub drain with toilet gurgling on kitchen sink use at 9 Delmore St \u2014 main line blockage, after-hours dispatch requested; elderly occupant in home needing bathroom access.",
+    "escalate_now": true,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Stop using all water in the house \u2014 no flushing, sinks, laundry or dishwasher [PB-05]",
+     "Keep people and pets away from the tub and any standing sewage; do not touch it [PB-05]"
+    ],
+    "playbook_refs": [
+     "PB-05"
+    ],
+    "quote_lines": [
+     {
+      "code": "EMERG-CALLOUT",
+      "description": "After-hours emergency dispatch surcharge (repair to be quoted on site)",
+      "price": 150
+     }
+    ],
+    "quote_total": 150,
+    "duration_min": 150,
+    "slot_id": null,
+    "customer_message": "Got it \u2014 9 Delmore St, +1-555-0102, dispatched. Our on-call plumber is typically on the road within about 30\u201360 minutes; he'll call this number when he's en route. I've flagged the household need so you're top of the queue. Until he arrives, please keep the toilet unused \u2014 flushing will push more sewage up through the tub [PB-05]. If your parent needs a bathroom before then, a neighbor's or nearby facility is the safest bet; the plumber can advise as soon as he's on site."
+   }
+  }
+ ]
+}

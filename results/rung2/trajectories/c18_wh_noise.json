@@ -1,0 +1,66 @@
+{
+ "config": "rung2",
+ "case": "c18_wh_noise",
+ "system_prompt_chars": 10290,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My water heater is making a loud rumbling/popping noise when it heats. Googled it and now I'm worried it will explode?? Should I shut it off?? It's 11pm."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Denis \u2014 deep breath, that rumbling/popping is almost always sediment buildup at the bottom of the tank, not an explosion risk. It's the sound of water boiling under a layer of hardened mineral crud. Very common, and it's a maintenance item, not an emergency.\n\nTwo quick checks: is there any water pooling around the base of the tank, and is the hot water coming out scalding/steaming or the relief valve dripping?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "omg thank you, that actually helps a lot. no pooling water that i can see, and the hot water seems normal temp - not crazy hot. phew\n\nso i can leave it running tonight then??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Yep \u2014 no pooling and normal temps means it's fine to leave running tonight. Sleep easy.\n\nIf you'd still feel better shutting it down for peace of mind, it's simple: gas unit \u2192 turn the gas control dial to OFF; electric \u2192 flip the water heater's breaker. Totally optional here [PB-04].\n\nThe fix is a flush & sediment service \u2014 $139 flat rate, about 75 minutes. I can hold you tomorrow (Tue Sep 1) at 10:30am. Want it?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "yeah that works for me, 10:30 tomorrow is good. and nah, i'll leave it running - feeling way better now honestly. thanks for talking me down lol\n\nso just to confirm - someone's coming to 72 Tanager Way tomorrow at 10:30?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Confirmed! \ud83d\ude42 Tuesday Sep 1 at 10:30am, 72 Tanager Way \u2014 water heater flush & sediment service, $139 flat rate, roughly 75 minutes. No after-hours fee since we're scheduling normal hours. We'll text you at +1-555-0118 if the tech is running early or late. Glad we could ease your mind \u2014 see you tomorrow!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"water_heater_noise\",\n  \"summary\": \"Water heater rumbling/popping on heat cycle, no leak and normal water temp \u2014 sediment buildup; booked flush & sediment service at 72 Tanager Way.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\"Confirmed no pooling water at tank base and no scalding/steaming hot water, so unit is safe to run overnight\", \"Optional peace-of-mind shutdown offered: gas control dial to OFF, or switch off the water heater's breaker for an electric unit [PB-04]\"],\n  \"playbook_refs\": [\"PB-04\"],\n  \"quote_lines\": [{\"code\": \"WH-FLUSH\", \"description\": \"Water heater flush & sediment service\", \"price\": 139}],\n  \"quote_total\": 139,\n  \"duration_min\": 75,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"Confirmed! Tuesday Sep 1 at 10:30am, 72 Tanager Way \u2014 water heater flush & sediment service, $139 flat rate, roughly 75 minutes. No after-hours fee since we're scheduling normal hours. We'll text you at +1-555-0118 if the tech is running early or late. Glad we could ease your mind \u2014 see you tomorrow!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "water_heater_noise",
+    "summary": "Water heater rumbling/popping on heat cycle, no leak and normal water temp \u2014 sediment buildup; booked flush & sediment service at 72 Tanager Way.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Confirmed no pooling water at tank base and no scalding/steaming hot water, so unit is safe to run overnight",
+     "Optional peace-of-mind shutdown offered: gas control dial to OFF, or switch off the water heater's breaker for an electric unit [PB-04]"
+    ],
+    "playbook_refs": [
+     "PB-04"
+    ],
+    "quote_lines": [
+     {
+      "code": "WH-FLUSH",
+      "description": "Water heater flush & sediment service",
+      "price": 139
+     }
+    ],
+    "quote_total": 139,
+    "duration_min": 75,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "Confirmed! Tuesday Sep 1 at 10:30am, 72 Tanager Way \u2014 water heater flush & sediment service, $139 flat rate, roughly 75 minutes. No after-hours fee since we're scheduling normal hours. We'll text you at +1-555-0118 if the tech is running early or late. Glad we could ease your mind \u2014 see you tomorrow!"
+   }
+  }
+ ]
+}

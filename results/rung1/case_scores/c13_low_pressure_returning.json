@@ -1,0 +1,57 @@
+{
+ "case": "c13_low_pressure_returning",
+ "ticket": {
+  "severity": "S3",
+  "category": "low_pressure_shower",
+  "summary": "Recurring low pressure at master shower only (both hot and cold); cartridge replaced in March for same issue \u2014 diagnose valve body/inlet screens for debris, replace cartridge as needed.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "DIAG",
+    "description": "Diagnostic visit \u2014 shower valve inspection for recurring pressure loss",
+    "price": 89
+   },
+   {
+    "code": "FAUCET-CARTRIDGE",
+    "description": "Shower cartridge replacement (if diagnosis confirms)",
+    "price": 159
+   }
+  ],
+  "quote_total": 248,
+  "duration_min": 115,
+  "slot_id": "SL-0901-1500",
+  "customer_message": "Totally fair \u2014 a cartridge that clogs twice in six months usually means something upstream (debris in the valve body or inlet screens), so we'll diagnose the valve properly rather than just swapping the part again. I've flagged your March visit so the office can review any warranty coverage on that work. Plan: full diagnostic on the shower valve, plus cartridge replacement if that's what it needs \u2014 $89 diagnostic + $159 cartridge = $248, about 2 hours. If the tech finds a different cause, he'll quote you before doing anything extra. I've got you down for tomorrow, Sept 1 at 3:00 PM. Text back if mornings work better and I'll see what I can shuffle. Thanks for your patience, Priya!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c13_low_pressure_returning",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 0.667,
+  "total_err_pct": 56.0,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 46,
+  "duration_ok": false,
+  "slot_ok": false,
+  "known_customer_ok": true,
+  "cost_usd": 0.0907,
+  "wall_s": 27.8
+ }
+}

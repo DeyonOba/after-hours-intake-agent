@@ -1,0 +1,67 @@
+{
+ "config": "rung2",
+ "case": "c06_leak_contained",
+ "system_prompt_chars": 10292,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "The braided hose under my bathroom sink started leaking tonight. I already closed the little valve under the sink so it stopped. But I have no water in that bathroom now - how soon can someone replace the hose?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good work shutting that valve \u2014 that's exactly right [PB-01]. Two quick questions: is the leak fully stopped now (no drip with the valve closed), and is that your only working bathroom in the house?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, totally stopped\u2014no drip at all now. And yeah, it's my only full bathroom so I'm kinda in a bind here \ud83d\ude05"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect \u2014 leak contained and no water damage risk overnight. Since it's your only full bathroom, I'll put you in our first priority slot tomorrow morning: **Tue Sep 1, 8:00 AM**. Keep that valve closed until we arrive.\n\nBraided supply line replacement is flat-rate **$129** (SUPPLY-LINE-REPLACE), about 45 minutes, no after-hours surcharge since it's a regular morning visit. If the shutoff valve itself turns out to be worn, we'd quote that separately before doing any extra work. Want me to lock in the 8:00 AM?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yes! Lock it in please. 8:00 AM works perfect\u2014thank you so much. I'll keep the valve shut til you guys get here. Really appreciate the quick turnaround \ud83d\ude4c"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Jess \u2014 booked for **Tue Sep 1, 8:00 AM** (SL-0901-0800), supply line replacement at $129, roughly 45 minutes. The tech will text on the way. If the leak restarts before then, close the house main [PB-02] and message us right away. Thanks for your patience tonight! \ud83d\ude4c\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"leak_contained\",\n  \"summary\": \"Leaking braided supply hose under bathroom sink; customer closed fixture shutoff and leak is fully stopped, but it's the home's only full bathroom - needs priority morning replacement.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Confirmed customer closed the fixture shutoff valve under the sink and leak fully stopped; keep it closed until the tech arrives [PB-01]\",\n    \"If the leak restarts, shut off the house main (clockwise wheel / lever perpendicular to pipe) and call us [PB-02]\"\n  ],\n  \"playbook_refs\": [\"PB-01\", \"PB-02\"],\n  \"quote_lines\": [\n    {\n      \"code\": \"SUPPLY-LINE-REPLACE\",\n      \"description\": \"Replace leaking braided supply line under bathroom sink\",\n      \"price\": 129\n    }\n  ],\n  \"quote_total\": 129,\n  \"duration_min\": 45,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're all set, Jess - booked for Tue Sep 1, 8:00 AM (SL-0901-0800), supply line replacement at $129, roughly 45 minutes. The tech will text on the way. If the leak restarts before then, close the house main [PB-02] and message us right away. Thanks for your patience tonight!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "leak_contained",
+    "summary": "Leaking braided supply hose under bathroom sink; customer closed fixture shutoff and leak is fully stopped, but it's the home's only full bathroom - needs priority morning replacement.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Confirmed customer closed the fixture shutoff valve under the sink and leak fully stopped; keep it closed until the tech arrives [PB-01]",
+     "If the leak restarts, shut off the house main (clockwise wheel / lever perpendicular to pipe) and call us [PB-02]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02"
+    ],
+    "quote_lines": [
+     {
+      "code": "SUPPLY-LINE-REPLACE",
+      "description": "Replace leaking braided supply line under bathroom sink",
+      "price": 129
+     }
+    ],
+    "quote_total": 129,
+    "duration_min": 45,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're all set, Jess - booked for Tue Sep 1, 8:00 AM (SL-0901-0800), supply line replacement at $129, roughly 45 minutes. The tech will text on the way. If the leak restarts before then, close the house main [PB-02] and message us right away. Thanks for your patience tonight!"
+   }
+  }
+ ]
+}

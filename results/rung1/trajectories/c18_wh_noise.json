@@ -1,0 +1,66 @@
+{
+ "config": "rung1",
+ "case": "c18_wh_noise",
+ "system_prompt_chars": 9220,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My water heater is making a loud rumbling/popping noise when it heats. Googled it and now I'm worried it will explode?? Should I shut it off?? It's 11pm."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news first: that rumbling/popping is almost always sediment \u2014 hardened mineral buildup on the tank bottom trapping little pockets of water that boil and pop. Noisy and inefficient, but not an explosion risk. Tanks have a T&P safety valve exactly for pressure.\n\nQuick check though: any water pooling around the base of the tank, or is the water coming out scalding hot? And is it gas or electric?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "omg thank god. i was literally googling \"water heater explosion\" lol. no pooling water that i can see, water temp seems normal, not scalding. its electric. so i can leave it running tonight and not die?? \ud83d\ude05"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "\ud83d\ude04 Yes \u2014 you can sleep, no shutoff needed. No leak, normal temps, popping only during heating = classic sediment, not an emergency.\n\nOnly if something changes tonight (water pooling at the base, or the water turns scalding): flip the water heater's breaker off and close the cold inlet valve on top of the tank [PB-04], then call us.\n\nThe fix is a flush & sediment service \u2014 $139 flat, about 75 minutes. Ignoring it just shortens the tank's life and raises your electric bill. I can put you in tomorrow (Tue Sep 1) at 10:30 AM \u2014 want that slot?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "yeah that makes sense. and honestly after tonight im def ready to get it fixed lol. tomorrow at 10:30 works perfect for me. should i do anything before you guys come out or just leave it as is?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set \u2014 Tue Sep 1, 10:30 AM, water heater flush & sediment service, $139 flat, about 75 minutes. Nothing you need to do beforehand: leave it running as normal, just clear a path to the tank so the tech can get around it. The only \"if\" is the one from earlier \u2014 pooling water or scalding water tonight means breaker off + cold inlet valve closed [PB-04] and call us. Otherwise, sleep easy. See you tomorrow, Denis!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"water_heater_noise\",\n  \"summary\": \"Electric water heater rumbling/popping during heating cycles, no leak and normal temps \u2014 sediment buildup; booked flush & sediment service.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\"Reassured no immediate danger; no shutoff needed tonight since there is no pooling water and no scalding water\", \"If pooling water or overheating appears tonight: switch off the water heater's breaker and close the cold-water inlet valve on top of the tank, do not drain it yourself [PB-04]\"],\n  \"playbook_refs\": [\"PB-04\"],\n  \"quote_lines\": [{\"code\": \"WH-FLUSH\", \"description\": \"Water heater flush & sediment service\", \"price\": 139}],\n  \"quote_total\": 139,\n  \"duration_min\": 75,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You're all set \u2014 Tue Sep 1, 10:30 AM, water heater flush & sediment service, $139 flat, about 75 minutes. Nothing you need to do beforehand: leave it running as normal, just clear a path to the tank so the tech can get around it. The only 'if' is the one from earlier \u2014 pooling water or scalding water tonight means breaker off + cold inlet valve closed [PB-04] and call us. Otherwise, sleep easy. See you tomorrow, Denis!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "water_heater_noise",
+    "summary": "Electric water heater rumbling/popping during heating cycles, no leak and normal temps \u2014 sediment buildup; booked flush & sediment service.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Reassured no immediate danger; no shutoff needed tonight since there is no pooling water and no scalding water",
+     "If pooling water or overheating appears tonight: switch off the water heater's breaker and close the cold-water inlet valve on top of the tank, do not drain it yourself [PB-04]"
+    ],
+    "playbook_refs": [
+     "PB-04"
+    ],
+    "quote_lines": [
+     {
+      "code": "WH-FLUSH",
+      "description": "Water heater flush & sediment service",
+      "price": 139
+     }
+    ],
+    "quote_total": 139,
+    "duration_min": 75,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set \u2014 Tue Sep 1, 10:30 AM, water heater flush & sediment service, $139 flat, about 75 minutes. Nothing you need to do beforehand: leave it running as normal, just clear a path to the tank so the tech can get around it. The only 'if' is the one from earlier \u2014 pooling water or scalding water tonight means breaker off + cold inlet valve closed [PB-04] and call us. Otherwise, sleep easy. See you tomorrow, Denis!"
+   }
+  }
+ ]
+}

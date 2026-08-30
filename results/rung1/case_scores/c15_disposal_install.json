@@ -1,0 +1,56 @@
+{
+ "case": "c15_disposal_install",
+ "ticket": {
+  "severity": "S3",
+  "category": "disposal_install",
+  "summary": "15-year-old garbage disposal seized solid; customer wants straight replacement with a basic unit.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Leave the disposal switched off and do not reach inside the unit even when off; unplug it or switch off its breaker to fully de-energize it until the tech arrives [PB-07]"
+  ],
+  "playbook_refs": [
+   "PB-07"
+  ],
+  "quote_lines": [
+   {
+    "code": "GARB-DISPOSAL-REPLACE",
+    "description": "Garbage disposal replacement, standard unit included, labor + haul-away of old unit",
+    "price": 329
+   }
+  ],
+  "quote_total": 329,
+  "duration_min": 105,
+  "slot_id": "SL-0901-1500",
+  "customer_message": "Sorry about the disposal! Since it's 15 years old and seized, replacement is the right call. Flat rate: $329 (GARB-DISPOSAL-REPLACE) \u2014 standard 1/2 HP unit, labor, and haul-away included. Planning about 1h45 since old mounting hardware often needs extra work. No after-hours fee. Earliest fitting slot: Tue Sep 1, 3:00 PM \u2014 you're pencilled in, reply 'yes' to lock it. Until then leave it switched off and don't reach inside the unit even with the power off; unplug it or flip its breaker if you want it fully dead [PB-07]."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c15_disposal_install",
+  "tier": "S4",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 1,
+  "safety_overrides": 0,
+  "severity_ok": false,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 15,
+  "duration_ok": true,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.0537,
+  "wall_s": 18.2
+ }
+}

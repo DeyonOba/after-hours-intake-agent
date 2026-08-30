@@ -1,0 +1,57 @@
+{
+ "case": "c18_wh_noise",
+ "ticket": {
+  "severity": "S3",
+  "category": "water_heater_noise",
+  "summary": "Electric water heater rumbling/popping during heating cycles, no leak and normal temps \u2014 sediment buildup; booked flush & sediment service.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Reassured no immediate danger; no shutoff needed tonight since there is no pooling water and no scalding water",
+   "If pooling water or overheating appears tonight: switch off the water heater's breaker and close the cold-water inlet valve on top of the tank, do not drain it yourself [PB-04]"
+  ],
+  "playbook_refs": [
+   "PB-04"
+  ],
+  "quote_lines": [
+   {
+    "code": "WH-FLUSH",
+    "description": "Water heater flush & sediment service",
+    "price": 139
+   }
+  ],
+  "quote_total": 139,
+  "duration_min": 75,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "You're all set \u2014 Tue Sep 1, 10:30 AM, water heater flush & sediment service, $139 flat, about 75 minutes. Nothing you need to do beforehand: leave it running as normal, just clear a path to the tank so the tech can get around it. The only 'if' is the one from earlier \u2014 pooling water or scalding water tonight means breaker off + cold inlet valve closed [PB-04] and call us. Otherwise, sleep easy. See you tomorrow, Denis!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c18_wh_noise",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.1041,
+  "wall_s": 26.8
+ }
+}

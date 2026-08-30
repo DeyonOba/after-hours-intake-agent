@@ -1,0 +1,45 @@
+{
+ "config": "rung2",
+ "case": "c08_running_toilet",
+ "system_prompt_chars": 10290,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My upstairs toilet won't stop running after you flush it, been like that a few days. Water bill is going to be scary. Not urgent but I'd like it fixed. What would it cost?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks for reaching out, Nora \u2014 a constantly running toilet is usually a worn flapper or fill valve, and yes, it can quietly waste hundreds of gallons a day. Not an emergency, but worth fixing soon.\n\nOur flat rate for a full running-toilet rebuild (new fill valve + flush valve/flapper, parts and labor included) is **$189**, about an hour on site. No after-hours fee since we'd come during normal hours.\n\nI've got you penciled in for **tomorrow, Tue Sep 1 at 10:30 AM**. Just reply to confirm and we'll lock it in \u2014 or tell me a better time and I'll find another slot. In the meantime, if you want to slow the waste, you can shut the toilet's supply valve (the small oval handle on the line behind the toilet, clockwise until snug) between uses [PB-01].\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"toilet_running\",\n  \"summary\": \"Upstairs toilet has been running continuously for several days; standard rebuild proposed for Sep 1 10:30 AM slot.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\"Close the toilet's supply shutoff valve behind the fixture (clockwise until snug) between uses to stop water waste [PB-01]\"],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [{\"code\": \"TOILET-REBUILD\", \"description\": \"Running toilet rebuild (fill valve + flush valve/flapper), parts and labor\", \"price\": 189}],\n  \"quote_total\": 189,\n  \"duration_min\": 60,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"Running toilet is usually a worn flapper or fill valve - not urgent but wasteful. Flat rate for a full rebuild is $189, about an hour, no after-hours fee. Proposed Tue Sep 1 at 10:30 AM (SL-0901-1030); reply to confirm or request another time. Meanwhile you can close the toilet's supply valve between uses to limit waste [PB-01].\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "toilet_running",
+    "summary": "Upstairs toilet has been running continuously for several days; standard rebuild proposed for Sep 1 10:30 AM slot.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Close the toilet's supply shutoff valve behind the fixture (clockwise until snug) between uses to stop water waste [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "TOILET-REBUILD",
+      "description": "Running toilet rebuild (fill valve + flush valve/flapper), parts and labor",
+      "price": 189
+     }
+    ],
+    "quote_total": 189,
+    "duration_min": 60,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "Running toilet is usually a worn flapper or fill valve - not urgent but wasteful. Flat rate for a full rebuild is $189, about an hour, no after-hours fee. Proposed Tue Sep 1 at 10:30 AM (SL-0901-1030); reply to confirm or request another time. Meanwhile you can close the toilet's supply valve between uses to limit waste [PB-01]."
+   }
+  }
+ ]
+}

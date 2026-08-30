@@ -1,0 +1,57 @@
+{
+ "case": "c18_wh_noise",
+ "ticket": {
+  "severity": "S3",
+  "category": "water_heater_noise",
+  "summary": "Water heater rumbling/popping on heat cycle, no leak and normal water temp \u2014 sediment buildup; booked flush & sediment service at 72 Tanager Way.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Confirmed no pooling water at tank base and no scalding/steaming hot water, so unit is safe to run overnight",
+   "Optional peace-of-mind shutdown offered: gas control dial to OFF, or switch off the water heater's breaker for an electric unit [PB-04]"
+  ],
+  "playbook_refs": [
+   "PB-04"
+  ],
+  "quote_lines": [
+   {
+    "code": "WH-FLUSH",
+    "description": "Water heater flush & sediment service",
+    "price": 139
+   }
+  ],
+  "quote_total": 139,
+  "duration_min": 75,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "Confirmed! Tuesday Sep 1 at 10:30am, 72 Tanager Way \u2014 water heater flush & sediment service, $139 flat rate, roughly 75 minutes. No after-hours fee since we're scheduling normal hours. We'll text you at +1-555-0118 if the tech is running early or late. Glad we could ease your mind \u2014 see you tomorrow!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c18_wh_noise",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.1043,
+  "wall_s": 26.6
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "config": "rung2",
+ "case": "c13_low_pressure_returning",
+ "system_prompt_chars": 10296,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi, Priya Natarajan again. The master shower pressure has gotten bad again, same as in March. Can we finally sort it properly this time?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Priya \u2014 sorry you're dealing with this again, and sorry we missed your call. Quick check so I can send the right fix: is the weak pressure only in the master shower (other faucets fine), and is it on both hot and cold, or just one side?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, just the master shower\u2014kitchen and guest bath are totally fine. And it's both hot and cold, so it's not a temperature thing. This is the same issue from March, remember? Your tech said something about the cartridge but I didn't want to replace it then. Guess I should've gone for it."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That tracks \u2014 a worn pressure-balance cartridge in one shower valve is exactly what causes weak flow on both hot and cold while the rest of the house is fine. Good news: it's a straightforward flat-rate fix.\n\nCartridge replacement is **$159** flat (labor + standard cartridge), about an hour on site. No after-hours charge \u2014 this is a normal-hours booking. If the tech opens it up and finds the valve body itself is shot, he'll stop and get your OK before doing anything extra.\n\nI've penciled you in for **tomorrow, Tuesday Sept 1, at 10:30 AM**. Reply here if you'd rather have Wednesday morning and I'll move it.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"low_pressure_shower\",\n  \"summary\": \"Recurring low pressure at master shower only, both hot and cold; prior March visit diagnosed worn cartridge, customer now approving replacement.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"FAUCET-CARTRIDGE\",\n      \"description\": \"Faucet/shower cartridge replacement \u2014 master shower valve\",\n      \"price\": 159\n    }\n  ],\n  \"quote_total\": 159,\n  \"duration_min\": 70,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"That tracks \u2014 a worn pressure-balance cartridge in one shower valve is exactly what causes weak flow on both hot and cold while the rest of the house is fine. Cartridge replacement is $159 flat (labor + standard cartridge), about an hour on site, no after-hours charge. If the tech finds the valve body itself is shot, he'll stop and get your OK before doing anything extra. I've penciled you in for Tuesday Sept 1 at 10:30 AM \u2014 reply if you'd rather have Wednesday morning.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "low_pressure_shower",
+    "summary": "Recurring low pressure at master shower only, both hot and cold; prior March visit diagnosed worn cartridge, customer now approving replacement.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "FAUCET-CARTRIDGE",
+      "description": "Faucet/shower cartridge replacement \u2014 master shower valve",
+      "price": 159
+     }
+    ],
+    "quote_total": 159,
+    "duration_min": 70,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "That tracks \u2014 a worn pressure-balance cartridge in one shower valve is exactly what causes weak flow on both hot and cold while the rest of the house is fine. Cartridge replacement is $159 flat (labor + standard cartridge), about an hour on site, no after-hours charge. If the tech finds the valve body itself is shot, he'll stop and get your OK before doing anything extra. I've penciled you in for Tuesday Sept 1 at 10:30 AM \u2014 reply if you'd rather have Wednesday morning."
+   }
+  }
+ ]
+}

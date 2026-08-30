@@ -1,0 +1,86 @@
+{
+ "config": "rung2",
+ "case": "c01_burst_supply",
+ "system_prompt_chars": 10295,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "PLEASE HELP water is SPRAYING out from under my kitchen sink, it's going everywhere, I called twice and nobody picked up!!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I'm here, Dana \u2014 let's stop the water first.\n\nLook under the sink for the small oval/football-shaped handle on the supply line and turn it clockwise until snug. If both hot and cold are spraying, close both [PB-01].\n\nTell me what happens \u2014 if you can't find or turn the valve, I'll get you to the main shutoff next."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok looking now!! found it!! turning it clockwise... \n\nok its off!! still dripping a little but way better. the spray stopped thank god"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Nicely done \u2014 that's the hard part over. A little residual drip is normal as the line depressurizes.\n\nTwo quick things:\n1. Is the drip slowing/stopping now, or still steady after a minute or two?\n2. Can you see where it was spraying from \u2014 the braided supply hose itself, the valve, or where it connects to the faucet?\n\nAlso mop up standing water and pull anything out of the cabinet so it can dry."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "drip is basically stopped now, just tiny drops\n\nthe spray was coming from the hose itself, looks like it split right where it connects to the faucet. the hose is all kinked up under there\n\nmoping now, pulled out the stuff under the sink"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect \u2014 that's a classic split braided supply line, and now that it's isolated it's no longer an emergency, so you don't need an after-hours callout charge tonight.\n\nLeave that valve closed and don't use the kitchen faucet until we swap the hose. Rest of the house water is unaffected.\n\nI can hold you the first slot tomorrow, 8:00 AM: supply line replacement, $129 flat (parts + labor), about 45 minutes. If the shutoff valve itself turns out to be corroded, that's $139 more and we'd confirm with you before doing it. Want me to book 8 AM?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "yeah 8 am works, book it please!! thank god you picked up. seriously i was freaking out\n\nso just don't use that faucet til tomorrow morning right??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Dana \u2014 booked for tomorrow, Tuesday Sept 1 at 8:00 AM. And yes: keep that shutoff valve closed and don't use the kitchen faucet until the tech replaces the hose. Everything else in the house is fine to use.\n\nIf anything starts spraying again overnight, text or call us right away and we'll page the on-call plumber. You handled that really well.\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"burst_supply\",\n  \"summary\": \"Split braided supply hose under kitchen sink was spraying; customer closed the fixture shutoff and leak is contained \u2014 needs supply line replacement, kitchen sink out of service until repaired.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Closed the kitchen sink supply shutoff valve (clockwise until snug) to stop the spray [PB-01]\",\n    \"Keep the fixture valve closed and do not use the kitchen faucet until repaired [PB-01]\"\n  ],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [\n    {\"code\": \"SUPPLY-LINE-REPLACE\", \"description\": \"Replace split braided supply line at kitchen faucet connection\", \"price\": 129}\n  ],\n  \"quote_total\": 129,\n  \"duration_min\": 45,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're all set, Dana \u2014 booked for tomorrow, Tuesday Sept 1 at 8:00 AM. Keep the shutoff valve closed and don't use the kitchen faucet until the tech replaces the hose; the rest of the house is fine. If anything starts spraying again overnight, text or call and we'll page the on-call plumber. Quote: $129 flat for the supply line replacement, ~45 minutes; if the shutoff valve is corroded we'd confirm with you before adding $139.\"\n}\n```"
+  },
+  {
+   "role": "safety",
+   "kind": "overrides",
+   "content": [
+    "severity S2 -> S1 (rules: ['uncontained_water'])",
+    "escalate_now forced true",
+    "playbook refs added: ['PB-02']"
+   ]
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "burst_supply",
+    "summary": "Split braided supply hose under kitchen sink was spraying; customer closed the fixture shutoff and leak is contained \u2014 needs supply line replacement, kitchen sink out of service until repaired.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Closed the kitchen sink supply shutoff valve (clockwise until snug) to stop the spray [PB-01]",
+     "Keep the fixture valve closed and do not use the kitchen faucet until repaired [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02"
+    ],
+    "quote_lines": [
+     {
+      "code": "SUPPLY-LINE-REPLACE",
+      "description": "Replace split braided supply line at kitchen faucet connection",
+      "price": 129
+     }
+    ],
+    "quote_total": 129,
+    "duration_min": 45,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're all set, Dana \u2014 booked for tomorrow, Tuesday Sept 1 at 8:00 AM. Keep the shutoff valve closed and don't use the kitchen faucet until the tech replaces the hose; the rest of the house is fine. If anything starts spraying again overnight, text or call and we'll page the on-call plumber. Quote: $129 flat for the supply line replacement, ~45 minutes; if the shutoff valve is corroded we'd confirm with you before adding $139."
+   }
+  }
+ ]
+}

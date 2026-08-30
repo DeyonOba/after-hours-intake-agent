@@ -1,0 +1,79 @@
+{
+ "config": "rung1",
+ "case": "c01_burst_supply",
+ "system_prompt_chars": 9225,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "PLEASE HELP water is SPRAYING out from under my kitchen sink, it's going everywhere, I called twice and nobody picked up!!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Dana, I'm here \u2014 let's stop the water first.\n\nUnder the sink, look at the supply line going up to the faucet: there's a small oval/football-shaped handle. Turn it clockwise until snug \u2014 that shuts off that fixture [PB-01]. There may be two (hot and cold); close both.\n\nIf you can't find it or it won't turn, tell me right away and we'll shut off the house main instead. Can you check now?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok looking now... YES i see them!! turning... ok its off, still dripping a little but WAY better. both handles closed"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Great work \u2014 that's the key step done.\n\nA small residual drip right after closing the valves is normal as the line depressurizes. Put a towel and a bucket underneath and watch it for a couple of minutes.\n\nTwo questions: is the drip slowing or staying steady? And can you tell what's spraying \u2014 the braided/plastic hose itself, or the valve/connection?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "drip is definitely slowing down, almost stopped now. and it looks like the hose itself is split right where it connects to the faucet... theres like a crack in the line"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's a split supply line \u2014 very common failure, and you did exactly the right thing. With the valves closed it's contained, so you don't need an emergency call-out tonight (which would add a $150 after-hours fee). Leave those valves closed and don't use that faucet.\n\nIf it ever starts spraying again, shut off the house main \u2014 usually where the water line enters (basement wall, crawl space, garage, or meter box), turn clockwise/lever crosswise [PB-02] \u2014 then open the lowest cold tap to drain pressure [PB-03].\n\nI can get you our first priority slot tomorrow, Tue Sept 1 at 8:00 AM. Supply line replacement is $129 flat (parts + labor, about 45\u201360 min); if the shutoff valve turns out to be weeping too, that's $139 more and we'd confirm with you first. Want me to book 8:00 AM?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "yes please book it!! 8am tomorrow works. thank you so much for talking me through this, i was freaking out lol"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You handled it like a pro, Dana \u2014 genuinely. \ud83d\ude42\n\nYou're booked: **Tue Sept 1, 8:00\u20139:00 AM**, supply line replacement, $129 flat. Keep both under-sink valves closed until we arrive, towel down any drips, and text this number if anything changes overnight. See you in the morning!\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"burst_supply\",\n  \"summary\": \"Kitchen sink faucet supply line split and spraying; customer closed both fixture shutoffs and leak is contained \u2014 needs supply line replacement first thing Tue AM.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Closed both hot and cold fixture shutoff valves under the kitchen sink (clockwise until snug) [PB-01]\",\n    \"Leave valves closed, do not use the kitchen faucet, towel/bucket under the fitting for residual drip [PB-01]\",\n    \"If spraying resumes, shut off the house main (clockwise / lever perpendicular) [PB-02] and open the lowest cold tap to drain pressure [PB-03]\"\n  ],\n  \"playbook_refs\": [\"PB-01\", \"PB-02\", \"PB-03\"],\n  \"quote_lines\": [\n    {\n      \"code\": \"SUPPLY-LINE-REPLACE\",\n      \"description\": \"Replace split kitchen faucet supply line (braided line, hot and/or cold)\",\n      \"price\": 129\n    }\n  ],\n  \"quote_total\": 129,\n  \"duration_min\": 60,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You handled it like a pro, Dana \u2014 genuinely. You're booked: Tue Sept 1, 8:00-9:00 AM, supply line replacement, $129 flat. Keep both under-sink valves closed until we arrive, towel down any drips, and text this number if anything changes overnight. See you in the morning!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "burst_supply",
+    "summary": "Kitchen sink faucet supply line split and spraying; customer closed both fixture shutoffs and leak is contained \u2014 needs supply line replacement first thing Tue AM.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Closed both hot and cold fixture shutoff valves under the kitchen sink (clockwise until snug) [PB-01]",
+     "Leave valves closed, do not use the kitchen faucet, towel/bucket under the fitting for residual drip [PB-01]",
+     "If spraying resumes, shut off the house main (clockwise / lever perpendicular) [PB-02] and open the lowest cold tap to drain pressure [PB-03]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02",
+     "PB-03"
+    ],
+    "quote_lines": [
+     {
+      "code": "SUPPLY-LINE-REPLACE",
+      "description": "Replace split kitchen faucet supply line (braided line, hot and/or cold)",
+      "price": 129
+     }
+    ],
+    "quote_total": 129,
+    "duration_min": 60,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You handled it like a pro, Dana \u2014 genuinely. You're booked: Tue Sept 1, 8:00-9:00 AM, supply line replacement, $129 flat. Keep both under-sink valves closed until we arrive, towel down any drips, and text this number if anything changes overnight. See you in the morning!"
+   }
+  }
+ ]
+}

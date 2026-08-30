@@ -1,0 +1,56 @@
+{
+ "config": "rung2",
+ "case": "c14_wh_replace_quote",
+ "system_prompt_chars": 10293,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No emergency - our gas water heater is 14 years old and I'd rather replace it before it dies. Ballpark for a standard 40 gallon gas unit, installed? And do you handle the permit?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Hal \u2014 smart move replacing it proactively at 14 years. Ballpark for a standard 40-gallon gas water heater, installed: **$1,450 flat rate** (WH-REPLACE-40G), which includes the unit, labor, standard connections, and hauling away the old tank. Figure about 4 hours on site.\n\nPermits: yes, we pull it and handle the inspection \u2014 permit fees are billed at cost from the city (typically $50\u2013150 here) since they vary. Any surprises like a venting or gas-line upgrade to meet current code would be quoted before we start, never after.\n\nWant me to hold a morning slot? I've got Sept 2 at 8:00 AM open, which fits the full job comfortably."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Thanks for the quick response! That $1,450 sounds reasonable. Just to clarify \u2014 when you say \"standard connections,\" does that include the gas line hookup and the water lines, or is there anything extra I'd need to budget for beyond that flat rate and permit fees?\n\nAnd Sept 2 at 8 AM works great for me, but I'm not in a rush \u2014 happy to book it or wait if something sooner or later works better for you guys."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good question \u2014 the $1,450 covers the new 40-gallon tank, reconnecting the existing gas line and water lines, a new flex connector kit, drip leg/sediment trap, T&P valve and discharge pipe, plus disposal of the old unit. Beyond that and the permit fee, the only things that would ever add cost are code upgrades we can't reuse \u2014 e.g. a corroded gas shutoff, an undersized or non-compliant vent, or adding an expansion tank if your system needs one (~$180). The tech will flag anything like that with a price before touching a wrench.\n\nOne correction on scheduling: our 8 AM slots are held for emergency/urgent calls, so let's put you in **Sept 2 at 10:30 AM** \u2014 it's a full 4-hour block, perfect for this job. You're booked. Please clear a path to the heater and we'll take it from there. Text this number anytime if anything changes.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"water_heater_replace\",\n  \"summary\": \"Proactive replacement of 14-year-old 40-gal gas water heater; no leak or emergency, customer booked Sept 2 10:30 AM.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": null,\n  \"playbook_refs\": null,\n  \"quote_lines\": [\n    {\"code\": \"WH-REPLACE-40G\", \"description\": \"40-gal gas water heater replacement, incl. unit, gas/water reconnection, flex kit, T&P discharge, old tank haul-away\", \"price\": 1450},\n    {\"code\": \"PERMIT-PASSTHRU\", \"description\": \"City permit + inspection, billed at cost (~$50-150, not included in total)\", \"price\": 0}\n  ],\n  \"quote_total\": 1450,\n  \"duration_min\": 240,\n  \"slot_id\": \"SL-0902-1030\",\n  \"customer_message\": \"Good question - the $1,450 covers the new 40-gallon tank, reconnecting the existing gas line and water lines, a new flex connector kit, drip leg/sediment trap, T&P valve and discharge pipe, plus disposal of the old unit. Beyond that and the permit fee, the only things that would ever add cost are code upgrades we can't reuse - e.g. a corroded gas shutoff, an undersized or non-compliant vent, or adding an expansion tank if your system needs one (~$180). The tech will flag anything like that with a price before touching a wrench. One correction on scheduling: our 8 AM slots are held for emergency/urgent calls, so let's put you in Sept 2 at 10:30 AM - a full 4-hour block, perfect for this job. You're booked. Please clear a path to the heater and text this number anytime if anything changes.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "water_heater_replace",
+    "summary": "Proactive replacement of 14-year-old 40-gal gas water heater; no leak or emergency, customer booked Sept 2 10:30 AM.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": null,
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "WH-REPLACE-40G",
+      "description": "40-gal gas water heater replacement, incl. unit, gas/water reconnection, flex kit, T&P discharge, old tank haul-away",
+      "price": 1450
+     },
+     {
+      "code": "PERMIT-PASSTHRU",
+      "description": "City permit + inspection, billed at cost (~$50-150, not included in total)",
+      "price": 0
+     }
+    ],
+    "quote_total": 1450,
+    "duration_min": 240,
+    "slot_id": "SL-0902-1030",
+    "customer_message": "Good question - the $1,450 covers the new 40-gallon tank, reconnecting the existing gas line and water lines, a new flex connector kit, drip leg/sediment trap, T&P valve and discharge pipe, plus disposal of the old unit. Beyond that and the permit fee, the only things that would ever add cost are code upgrades we can't reuse - e.g. a corroded gas shutoff, an undersized or non-compliant vent, or adding an expansion tank if your system needs one (~$180). The tech will flag anything like that with a price before touching a wrench. One correction on scheduling: our 8 AM slots are held for emergency/urgent calls, so let's put you in Sept 2 at 10:30 AM - a full 4-hour block, perfect for this job. You're booked. Please clear a path to the heater and text this number anytime if anything changes."
+   }
+  }
+ ]
+}

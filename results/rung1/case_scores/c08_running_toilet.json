@@ -1,0 +1,56 @@
+{
+ "case": "c08_running_toilet",
+ "ticket": {
+  "severity": "S3",
+  "category": "toilet_running",
+  "summary": "Upstairs toilet running continuously for several days; needs fill/flush valve rebuild, booked Sept 1 10:30 AM.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Close the toilet's shutoff valve (oval handle on supply line behind bowl, clockwise until snug) between flushes to stop water waste overnight [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01"
+  ],
+  "quote_lines": [
+   {
+    "code": "TOILET-REBUILD",
+    "description": "Running toilet rebuild (fill valve + flush valve + flapper, labor and standard parts included)",
+    "price": 189
+   }
+  ],
+  "quote_total": 189,
+  "duration_min": 60,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "The $189 is all-in \u2014 labor plus standard fill valve, flush valve, and flapper parts. Nothing for you to buy, and no trip or diagnostic fee on top. The only thing that could change it is if we find a cracked tank or a bad shutoff valve, and we'd show you and get your OK before doing anything extra. You're booked for Tuesday, Sept 1 at 10:30 AM (about an hour). The tech will text when they're on the way \u2014 see you then!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c08_running_toilet",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.071,
+  "wall_s": 16.7
+ }
+}

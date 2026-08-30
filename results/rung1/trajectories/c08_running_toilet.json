@@ -1,0 +1,55 @@
+{
+ "config": "rung1",
+ "case": "c08_running_toilet",
+ "system_prompt_chars": 9220,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My upstairs toilet won't stop running after you flush it, been like that a few days. Water bill is going to be scary. Not urgent but I'd like it fixed. What would it cost?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks for reaching out, Nora! A running toilet is usually a worn flapper or fill valve \u2014 annoying but not an emergency, so no after-hours fee needed.\n\nOur flat rate for a full rebuild (fill valve + flush valve) is **$189**, about an hour on site. In the meantime, if you want to stop the water waste tonight, you can close the toilet's shutoff valve \u2014 the small oval handle on the supply line behind the bowl, turn clockwise until snug \u2014 and just reopen it when you need to flush [PB-01].\n\nI can put you down for **tomorrow, Sept 1 at 10:30 AM**. Does that work?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "That sounds good \u2014 thanks for the tip on the shutoff valve, I'll do that tonight. Quick question tho \u2014 what's included in that $189? Like is it just the parts or labor too, or do I need to buy anything else?\n\nAnd yeah, tomorrow at 10:30 works for me."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "The $189 is all-in \u2014 labor plus standard fill valve, flush valve, and flapper parts. Nothing for you to buy, and no trip or diagnostic fee on top. The only thing that could change it is if we find a cracked tank or a bad shutoff valve, and we'd show you and get your OK before doing anything extra.\n\nYou're booked for Tuesday, Sept 1 at 10:30 AM (about an hour). The tech will text when they're on the way \u2014 see you then!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"toilet_running\",\n  \"summary\": \"Upstairs toilet running continuously for several days; needs fill/flush valve rebuild, booked Sept 1 10:30 AM.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\"Close the toilet's shutoff valve (oval handle on supply line behind bowl, clockwise until snug) between flushes to stop water waste overnight [PB-01]\"],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [{\"code\": \"TOILET-REBUILD\", \"description\": \"Running toilet rebuild (fill valve + flush valve + flapper, labor and standard parts included)\", \"price\": 189}],\n  \"quote_total\": 189,\n  \"duration_min\": 60,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"The $189 is all-in \u2014 labor plus standard fill valve, flush valve, and flapper parts. Nothing for you to buy, and no trip or diagnostic fee on top. The only thing that could change it is if we find a cracked tank or a bad shutoff valve, and we'd show you and get your OK before doing anything extra. You're booked for Tuesday, Sept 1 at 10:30 AM (about an hour). The tech will text when they're on the way \u2014 see you then!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "toilet_running",
+    "summary": "Upstairs toilet running continuously for several days; needs fill/flush valve rebuild, booked Sept 1 10:30 AM.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Close the toilet's shutoff valve (oval handle on supply line behind bowl, clockwise until snug) between flushes to stop water waste overnight [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "TOILET-REBUILD",
+      "description": "Running toilet rebuild (fill valve + flush valve + flapper, labor and standard parts included)",
+      "price": 189
+     }
+    ],
+    "quote_total": 189,
+    "duration_min": 60,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "The $189 is all-in \u2014 labor plus standard fill valve, flush valve, and flapper parts. Nothing for you to buy, and no trip or diagnostic fee on top. The only thing that could change it is if we find a cracked tank or a bad shutoff valve, and we'd show you and get your OK before doing anything extra. You're booked for Tuesday, Sept 1 at 10:30 AM (about an hour). The tech will text when they're on the way \u2014 see you then!"
+   }
+  }
+ ]
+}

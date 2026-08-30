@@ -1,0 +1,56 @@
+{
+ "case": "c08_running_toilet",
+ "ticket": {
+  "severity": "S3",
+  "category": "toilet_running",
+  "summary": "Upstairs toilet has been running continuously for several days; standard rebuild proposed for Sep 1 10:30 AM slot.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Close the toilet's supply shutoff valve behind the fixture (clockwise until snug) between uses to stop water waste [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01"
+  ],
+  "quote_lines": [
+   {
+    "code": "TOILET-REBUILD",
+    "description": "Running toilet rebuild (fill valve + flush valve/flapper), parts and labor",
+    "price": 189
+   }
+  ],
+  "quote_total": 189,
+  "duration_min": 60,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "Running toilet is usually a worn flapper or fill valve - not urgent but wasteful. Flat rate for a full rebuild is $189, about an hour, no after-hours fee. Proposed Tue Sep 1 at 10:30 AM (SL-0901-1030); reply to confirm or request another time. Meanwhile you can close the toilet's supply valve between uses to limit waste [PB-01]."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c08_running_toilet",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 1,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.0477,
+  "wall_s": 14.0
+ }
+}

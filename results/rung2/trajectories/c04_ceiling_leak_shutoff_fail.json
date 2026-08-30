@@ -1,0 +1,69 @@
+{
+ "config": "rung2",
+ "case": "c04_ceiling_leak_shutoff_fail",
+ "system_prompt_chars": 10293,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Water is pouring through my dining room ceiling light fixture, I think from the upstairs bathroom. I put a bucket. What do I do??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Okay Maria \u2014 do this now:\n\n1. **Shut off the house main.** It's usually where the water line enters the house \u2014 basement front wall, crawl space, garage, or the meter box outside. Turn the wheel clockwise, or the lever so it's perpendicular to the pipe. [PB-02]\n2. Then **open the lowest cold tap** in the house (basement sink or outdoor spigot) to drain the pressure out of the lines. [PB-03]\n3. **Stay out from under the ceiling** \u2014 a sagging, water-heavy ceiling can come down. Don't stand under it to empty the bucket. [PB-08]\n\nTell me once the main is off and I'll get the on-call plumber rolling."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok looking for the main now!! basement front wall first... checked everywhere down here i dont see anything like that?? just the furnace and stuff"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "No problem \u2014 try these two spots, they're the other common ones [PB-02]:\n\n- **Outside at the meter box** \u2014 a metal/plastic lid in the ground near the street or driveway; the valve is inside.\n- **Garage or crawl space**, on the wall closest to the street.\n\nLook for a round wheel or a lever on a pipe about an inch thick. If you don't spot it in the next minute or two, stop looking \u2014 I'll page the on-call plumber right now either way."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "checking the garage now... omg yes!! i found it!! there's a wheel valve thing next to the water heater. turning it clockwise... it's tight but it's moving... okay i think it's off??\n\nwater should stop coming down now right??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Great work! One thing to expect: water will keep dripping for a few minutes as the pipes upstairs drain out \u2014 that's normal. Speed it up by **opening the lowest cold tap in the house** (basement sink or outdoor spigot) to bleed the pressure [PB-03]. If it's still pouring steadily after ~10 minutes, the main isn't fully closed \u2014 crank the wheel a bit tighter.\n\nKeep everyone out from under that ceiling and don't touch the light fixture or its switch \u2014 it's soaked [PB-08].\n\nI'm paging the on-call plumber now for tonight; they'll call you at 555-0104 shortly with an ETA. After-hours dispatch is $150 (EMERG-CALLOUT); any repair gets quoted after they see the source. Sit tight \u2014 you did exactly the right thing.\n\n```json\n{\n  \"severity\": \"S1\",\n  \"category\": \"ceiling_leak_active\",\n  \"summary\": \"Water pouring through dining room ceiling light fixture from suspected upstairs bathroom leak; customer located and closed house main in garage, on-call dispatch requested.\",\n  \"escalate_now\": true,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Shut off the house main - checked basement, then garage/meter box; found wheel valve by water heater in garage and closed it clockwise [PB-02]\",\n    \"Open the lowest cold tap in the house to drain pressure from the lines [PB-03]\",\n    \"Stay out from under the sagging water-logged ceiling and away from the soaked light fixture; do not operate it [PB-08]\"\n  ],\n  \"playbook_refs\": [\"PB-02\", \"PB-03\", \"PB-08\"],\n  \"quote_lines\": [\n    {\"code\": \"EMERG-CALLOUT\", \"description\": \"After-hours emergency dispatch surcharge\", \"price\": 150}\n  ],\n  \"quote_total\": 150,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"Great work! Water will keep dripping a few minutes as the upstairs pipes drain - open the lowest cold tap to bleed pressure [PB-03]; if it's still pouring after ~10 min the main isn't fully closed, tighten it more. Keep everyone out from under the ceiling and don't touch the soaked light fixture or its switch [PB-08]. I'm paging the on-call plumber now - they'll call you at 555-0104 with an ETA. After-hours dispatch is $150 (EMERG-CALLOUT); repair costs are quoted after they see the source.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "ceiling_leak_active",
+    "summary": "Water pouring through dining room ceiling light fixture from suspected upstairs bathroom leak; customer located and closed house main in garage, on-call dispatch requested.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Shut off the house main - checked basement, then garage/meter box; found wheel valve by water heater in garage and closed it clockwise [PB-02]",
+     "Open the lowest cold tap in the house to drain pressure from the lines [PB-03]",
+     "Stay out from under the sagging water-logged ceiling and away from the soaked light fixture; do not operate it [PB-08]"
+    ],
+    "playbook_refs": [
+     "PB-02",
+     "PB-03",
+     "PB-08"
+    ],
+    "quote_lines": [
+     {
+      "code": "EMERG-CALLOUT",
+      "description": "After-hours emergency dispatch surcharge",
+      "price": 150
+     }
+    ],
+    "quote_total": 150,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "Great work! Water will keep dripping a few minutes as the upstairs pipes drain - open the lowest cold tap to bleed pressure [PB-03]; if it's still pouring after ~10 min the main isn't fully closed, tighten it more. Keep everyone out from under the ceiling and don't touch the soaked light fixture or its switch [PB-08]. I'm paging the on-call plumber now - they'll call you at 555-0104 with an ETA. After-hours dispatch is $150 (EMERG-CALLOUT); repair costs are quoted after they see the source."
+   }
+  }
+ ]
+}

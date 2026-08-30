@@ -1,0 +1,56 @@
+{
+ "case": "c10_dripping_faucet",
+ "ticket": {
+  "severity": "S3",
+  "category": "faucet_drip",
+  "summary": "Constant drip from original 1990s bathroom faucet; standard cartridge replacement booked for Sep 1 10:30 AM.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [
+   "Optional: close the fixture shutoff valve under the sink (oval handle on supply line, clockwise until snug) to stop the drip overnight [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01"
+  ],
+  "quote_lines": [
+   {
+    "code": "FAUCET-CARTRIDGE",
+    "description": "Faucet/shower cartridge replacement - bathroom faucet, vintage ~1990s fixture",
+    "price": 159
+   }
+  ],
+  "quote_total": 159,
+  "duration_min": 70,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "Dripping is usually a worn cartridge/washer - not urgent. Flat rate $159 (FAUCET-CARTRIDGE), ~70 min allowing for older hardware; if the 90s faucet can't take parts, the tech will quote a replacement before proceeding. Optional tonight: close the shutoff valve under the sink, oval handle, clockwise until snug [PB-01]. Booked Tue Sep 1 at 10:30 AM - reply if you need a different time."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c10_dripping_faucet",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 1,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 1,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.0491,
+  "wall_s": 15.1
+ }
+}

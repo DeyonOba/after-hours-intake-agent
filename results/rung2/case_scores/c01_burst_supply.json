@@ -1,0 +1,62 @@
+{
+ "case": "c01_burst_supply",
+ "ticket": {
+  "severity": "S1",
+  "category": "burst_supply",
+  "summary": "Split braided supply hose under kitchen sink was spraying; customer closed the fixture shutoff and leak is contained \u2014 needs supply line replacement, kitchen sink out of service until repaired.",
+  "escalate_now": true,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Closed the kitchen sink supply shutoff valve (clockwise until snug) to stop the spray [PB-01]",
+   "Keep the fixture valve closed and do not use the kitchen faucet until repaired [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01",
+   "PB-02"
+  ],
+  "quote_lines": [
+   {
+    "code": "SUPPLY-LINE-REPLACE",
+    "description": "Replace split braided supply line at kitchen faucet connection",
+    "price": 129
+   }
+  ],
+  "quote_total": 129,
+  "duration_min": 45,
+  "slot_id": "SL-0901-0800",
+  "customer_message": "You're all set, Dana \u2014 booked for tomorrow, Tuesday Sept 1 at 8:00 AM. Keep the shutoff valve closed and don't use the kitchen faucet until the tech replaces the hose; the rest of the house is fine. If anything starts spraying again overnight, text or call and we'll page the on-call plumber. Quote: $129 flat for the supply line replacement, ~45 minutes; if the shutoff valve is corroded we'd confirm with you before adding $139."
+ },
+ "safety_overrides": [
+  "severity S2 -> S1 (rules: ['uncontained_water'])",
+  "escalate_now forced true",
+  "playbook refs added: ['PB-02']"
+ ],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c01_burst_supply",
+  "tier": "S1",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 4,
+  "safety_overrides": 3,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": true,
+  "escalated": true,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "quote_ok": false,
+  "code_f1": null,
+  "total_err_pct": null,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": null,
+  "duration_ok": null,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.1452,
+  "wall_s": 33.5
+ }
+}

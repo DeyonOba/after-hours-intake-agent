@@ -1,0 +1,65 @@
+{
+ "config": "rung2",
+ "case": "c11_damp_spot",
+ "system_prompt_chars": 10292,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "There's a damp patch on my bedroom ceiling, maybe the size of a dinner plate. Not dripping, just damp and a bit yellow. Upstairs neighbor says nothing is leaking at theirs. Should I worry?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks for the details, Omar \u2014 that sounds like a slow seepage rather than an emergency, so no need to panic tonight. Keep clear of the patch and don't push on it; if the ceiling ever starts to sag or bulge, stay out from under it and call us right away [PB-08].\n\nQuick question so I can plan the visit: is there a bathroom, kitchen, or laundry directly above that spot (or is it below a roof/attic)? And has the patch grown in the last day or two?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hey, thanks for the reassurance. Yeah, it's below my neighbor's bathroom upstairs. And nah, hasn't grown\u2014been the same size for like 3 days now."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good \u2014 a stable, non-growing patch under a neighbor's bathroom usually means an old or intermittent seep (shower pan, tub caulk, or a toilet flange up there) rather than an active pipe leak. Since it's under their unit, our tech will likely need access to their bathroom to trace it, so it's worth giving your neighbor a heads-up.\n\nI'd start with a diagnostic visit: **$89 (DIAG)**, about 45 minutes, and any repair gets quoted before we do it. I can put you in tomorrow, **Tue Sep 1 at 10:30 AM** \u2014 want me to lock that in?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, tomorrow at 10:30 works perfect for me. And good call\u2014I'll give my neighbor a heads up tonight so they're not caught off guard. Thanks for getting me sorted so quick."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Omar \u2014 **Tue Sep 1, 10:30 AM**, diagnostic visit at $89, and we'll quote any repair before starting. Nice touch giving your neighbor a heads-up; that'll save us time tracing it. If the patch suddenly spreads, starts dripping, or the ceiling bulges before then, stay clear of it and call us right away.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"damp_spot\",\n  \"summary\": \"Stable dinner-plate-sized damp/yellow ceiling patch in bedroom below neighbor's upstairs bathroom, no dripping, unchanged for 3 days - diagnostic visit booked.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Stay clear of the damp area and don't press on it; if the ceiling sags or becomes water-heavy, keep away and call immediately [PB-08]\"\n  ],\n  \"playbook_refs\": [\"PB-08\"],\n  \"quote_lines\": [\n    {\"code\": \"DIAG\", \"description\": \"Diagnostic visit to trace ceiling moisture source (likely from upstairs bathroom - may need neighbor access)\", \"price\": 89}\n  ],\n  \"quote_total\": 89,\n  \"duration_min\": 45,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You're all set, Omar - Tue Sep 1, 10:30 AM, diagnostic visit at $89, and we'll quote any repair before starting. Nice touch giving your neighbor a heads-up; that'll save us time tracing it. If the patch suddenly spreads, starts dripping, or the ceiling bulges before then, stay clear of it and call us right away.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "damp_spot",
+    "summary": "Stable dinner-plate-sized damp/yellow ceiling patch in bedroom below neighbor's upstairs bathroom, no dripping, unchanged for 3 days - diagnostic visit booked.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Stay clear of the damp area and don't press on it; if the ceiling sags or becomes water-heavy, keep away and call immediately [PB-08]"
+    ],
+    "playbook_refs": [
+     "PB-08"
+    ],
+    "quote_lines": [
+     {
+      "code": "DIAG",
+      "description": "Diagnostic visit to trace ceiling moisture source (likely from upstairs bathroom - may need neighbor access)",
+      "price": 89
+     }
+    ],
+    "quote_total": 89,
+    "duration_min": 45,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set, Omar - Tue Sep 1, 10:30 AM, diagnostic visit at $89, and we'll quote any repair before starting. Nice touch giving your neighbor a heads-up; that'll save us time tracing it. If the patch suddenly spreads, starts dripping, or the ceiling bulges before then, stay clear of it and call us right away."
+   }
+  }
+ ]
+}

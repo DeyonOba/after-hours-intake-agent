@@ -1,0 +1,51 @@
+{
+ "config": "rung2",
+ "case": "c09_slow_kitchen_drain",
+ "system_prompt_chars": 10289,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Kitchen sink is draining really slowly, takes 10 minutes to empty. I tried baking soda and vinegar, didn't help. Can you send someone this week?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks for reaching out, Tom \u2014 sounds like a classic kitchen line clog, not an emergency, so we can get you on the schedule.\n\nQuick check: is it just the kitchen sink, or are other drains (tub, toilet, bathroom sink) slow or gurgling too?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Just the kitchen sink - both basins are draining slow though. Other drains seem fine. How soon could someone come out?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news \u2014 both basins slow points to the shared kitchen branch line, not your main sewer, so it's a straightforward snaking job.\n\nI can get a tech out tomorrow, Tue Sep 1 at 10:30 AM. Flat rate is $179 (DRAIN-SNAKE-KITCHEN), about an hour, no after-hours fee. In the meantime, go easy on the sink and skip the chemical drain cleaners \u2014 they don't do much on grease and make the line nastier to work on.\n\nI've got you penciled in for 10:30 AM \u2014 just reply if you'd prefer the 3:00 PM window instead.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"drain_slow\",\n  \"summary\": \"Kitchen sink (both basins) draining very slowly; other fixtures unaffected \u2014 kitchen branch line clog needing snaking.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"DRAIN-SNAKE-KITCHEN\",\n      \"description\": \"Kitchen/bath drain snaking \u2014 clear kitchen branch line serving both basins\",\n      \"price\": 179\n    }\n  ],\n  \"quote_total\": 179,\n  \"duration_min\": 60,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"Good news \u2014 both basins slow points to the shared kitchen branch line, not your main sewer, so it's a straightforward snaking job. I can get a tech out tomorrow, Tue Sep 1 at 10:30 AM. Flat rate is $179 (DRAIN-SNAKE-KITCHEN), about an hour, no after-hours fee. In the meantime, go easy on the sink and skip the chemical drain cleaners. I've got you penciled in for 10:30 AM \u2014 just reply if you'd prefer the 3:00 PM window instead.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "drain_slow",
+    "summary": "Kitchen sink (both basins) draining very slowly; other fixtures unaffected \u2014 kitchen branch line clog needing snaking.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DRAIN-SNAKE-KITCHEN",
+      "description": "Kitchen/bath drain snaking \u2014 clear kitchen branch line serving both basins",
+      "price": 179
+     }
+    ],
+    "quote_total": 179,
+    "duration_min": 60,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "Good news \u2014 both basins slow points to the shared kitchen branch line, not your main sewer, so it's a straightforward snaking job. I can get a tech out tomorrow, Tue Sep 1 at 10:30 AM. Flat rate is $179 (DRAIN-SNAKE-KITCHEN), about an hour, no after-hours fee. In the meantime, go easy on the sink and skip the chemical drain cleaners. I've got you penciled in for 10:30 AM \u2014 just reply if you'd prefer the 3:00 PM window instead."
+   }
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "case": "c09_slow_kitchen_drain",
+ "ticket": {
+  "severity": "S3",
+  "category": "drain_slow",
+  "summary": "Kitchen sink (both basins) draining very slowly; other fixtures unaffected \u2014 kitchen branch line clog needing snaking.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "DRAIN-SNAKE-KITCHEN",
+    "description": "Kitchen/bath drain snaking \u2014 clear kitchen branch line serving both basins",
+    "price": 179
+   }
+  ],
+  "quote_total": 179,
+  "duration_min": 60,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "Good news \u2014 both basins slow points to the shared kitchen branch line, not your main sewer, so it's a straightforward snaking job. I can get a tech out tomorrow, Tue Sep 1 at 10:30 AM. Flat rate is $179 (DRAIN-SNAKE-KITCHEN), about an hour, no after-hours fee. In the meantime, go easy on the sink and skip the chemical drain cleaners. I've got you penciled in for 10:30 AM \u2014 just reply if you'd prefer the 3:00 PM window instead."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c09_slow_kitchen_drain",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.0742,
+  "wall_s": 18.1
+ }
+}

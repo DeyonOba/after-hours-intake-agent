@@ -1,0 +1,59 @@
+{
+ "case": "c06_leak_contained",
+ "ticket": {
+  "severity": "S2",
+  "category": "leak_contained",
+  "summary": "Braided supply line under bathroom sink leaking; customer closed fixture shutoff, leak contained and area dry, bathroom water off until hose replaced.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Confirmed customer closed the fixture shutoff valve under the sink and advised leaving it closed until the visit [PB-01]",
+   "If dripping resumes with the fixture valve closed, shut off the house main [PB-02] and open the lowest cold tap to drain line pressure [PB-03]"
+  ],
+  "playbook_refs": [
+   "PB-01",
+   "PB-02",
+   "PB-03"
+  ],
+  "quote_lines": [
+   {
+    "code": "SUPPLY-LINE-REPLACE",
+    "description": "Replace failed braided supply line under bathroom sink",
+    "price": 129
+   }
+  ],
+  "quote_total": 129,
+  "duration_min": 45,
+  "slot_id": "SL-0901-0800",
+  "customer_message": "Booked \u2014 Tue Sep 1, 8:00 AM, supply line replacement, $129 flat (about 45 min). Leave the valve closed until we arrive, and if it ever starts dripping again with the valve shut, close the house main and open a low tap to drain pressure [PB-02][PB-03], then text us. See you in the morning, Jess!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c06_leak_contained",
+  "tier": "S2",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.0778,
+  "wall_s": 21.4
+ }
+}

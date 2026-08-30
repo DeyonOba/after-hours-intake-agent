@@ -1,0 +1,57 @@
+{
+ "case": "c07_only_toilet_blocked",
+ "ticket": {
+  "severity": "S2",
+  "category": "toilet_clog",
+  "summary": "Only toilet in the home is fully blocked and nearly overflowed; plunger failed \u2014 customer shut the fixture valve and booked first priority slot tomorrow 8 AM for auger clearing.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [
+   "Close the toilet's shutoff valve on the supply line (clockwise until snug) to prevent overflow [PB-01]",
+   "Do not flush again until the technician arrives [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01"
+  ],
+  "quote_lines": [
+   {
+    "code": "TOILET-CLOG",
+    "description": "Toilet clog clearing (auger)",
+    "price": 149
+   }
+  ],
+  "quote_total": 149,
+  "duration_min": 45,
+  "slot_id": "SL-0901-0800",
+  "customer_message": "You're locked in: tomorrow, Tuesday Sept 1 at 8:00 AM \u2014 our first slot of the day. Flat rate $149 for the auger clearing, no after-hours fee, about 45 minutes on site. Keep that valve closed and don't flush until the tech arrives; if anything changes overnight (water rising on its own, backing up into a tub or sink), text this number right away and we'll page on-call. See you in the morning, Aiden!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c07_only_toilet_blocked",
+  "tier": "S2",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.0794,
+  "wall_s": 20.0
+ }
+}

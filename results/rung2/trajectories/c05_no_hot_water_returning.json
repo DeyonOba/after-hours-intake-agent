@@ -1,0 +1,56 @@
+{
+ "config": "rung2",
+ "case": "c05_no_hot_water_returning",
+ "system_prompt_chars": 10291,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi, this is Sam Okafor - you guys installed our water heater last year. The pilot light keeps going out tonight and we have no hot water. We have a 4-month-old at home. Can someone come first thing?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Sam \u2014 sorry about that, and no hot water with a 4-month-old is no fun. Quick safety check first: do you smell any gas or rotten-egg odor near the heater or anywhere in the house?\n\nIf yes, don't touch anything \u2014 tell me right away. If no, have you tried relighting the pilot, and does it stay lit for a while before dropping out?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No gas smell at all, and no water on the floor either. Yeah, I tried relighting it\u2014pilot catches fine and burns for like 10 minutes, then just dies. Same thing happened twice now tonight."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's a textbook thermocouple/flame-sensor failure \u2014 it senses the flame, then drops out and shuts the gas valve as a safety measure. Nothing dangerous, but it won't stay lit on its own. Since you've tried twice already, I'd stop relighting and leave it be until our tech is there.\n\nI've reserved you the first priority slot tomorrow, Tue Sep 1 at 8:00 AM. The fix is our pilot/thermocouple service at $169 flat (about an hour) \u2014 no after-hours surcharge since it's a scheduled visit. And since we installed the unit last year, the tech will check whether the part is covered under warranty, which could reduce that.\n\nYou're all set for 8:00 AM \u2014 the on-call tech will text before heading over. Sorry for the cold showers tonight, Sam; we'll get hot water back for you and the little one first thing.\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"water_heater_no_hot\",\n  \"summary\": \"Existing customer's gas water heater pilot lights but drops out after ~10 min (two attempts) \u2014 no hot water, infant in home; likely thermocouple failure, booked first priority slot.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [\"Confirmed no gas/rotten-egg odor before proceeding [PB-06]\", \"Advised to stop further relight attempts after two failures and leave the unit alone until the tech arrives\"],\n  \"playbook_refs\": [\"PB-06\"],\n  \"quote_lines\": [{\"code\": \"WH-PILOT\", \"description\": \"Water heater pilot/thermocouple service (check warranty coverage \u2014 unit installed by us last year)\", \"price\": 169}],\n  \"quote_total\": 169,\n  \"duration_min\": 60,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're all set for Tue Sep 1 at 8:00 AM \u2014 pilot/thermocouple service, $169 flat (~1 hr), no after-hours surcharge. Tech will check warranty coverage since we installed the unit last year. Don't relight it again in the meantime; the on-call tech will text before heading over.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "water_heater_no_hot",
+    "summary": "Existing customer's gas water heater pilot lights but drops out after ~10 min (two attempts) \u2014 no hot water, infant in home; likely thermocouple failure, booked first priority slot.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Confirmed no gas/rotten-egg odor before proceeding [PB-06]",
+     "Advised to stop further relight attempts after two failures and leave the unit alone until the tech arrives"
+    ],
+    "playbook_refs": [
+     "PB-06"
+    ],
+    "quote_lines": [
+     {
+      "code": "WH-PILOT",
+      "description": "Water heater pilot/thermocouple service (check warranty coverage \u2014 unit installed by us last year)",
+      "price": 169
+     }
+    ],
+    "quote_total": 169,
+    "duration_min": 60,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're all set for Tue Sep 1 at 8:00 AM \u2014 pilot/thermocouple service, $169 flat (~1 hr), no after-hours surcharge. Tech will check warranty coverage since we installed the unit last year. Don't relight it again in the meantime; the on-call tech will text before heading over."
+   }
+  }
+ ]
+}

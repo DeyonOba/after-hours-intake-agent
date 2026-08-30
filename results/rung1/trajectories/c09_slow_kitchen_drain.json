@@ -1,0 +1,65 @@
+{
+ "config": "rung1",
+ "case": "c09_slow_kitchen_drain",
+ "system_prompt_chars": 9219,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Kitchen sink is draining really slowly, takes 10 minutes to empty. I tried baking soda and vinegar, didn't help. Can you send someone this week?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks for the note, Tom \u2014 slow kitchen drain, no emergency there, so we can get you on the regular schedule.\n\nQuick check so I book the right job: are any other drains slow or gurgling (bathroom sink, tub, toilet), or is it just the kitchen sink?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Just the kitchen. Both sides of the sink drain slow though, so I'm thinking it might be the disposal or something deeper in the line."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That points to a clog in the shared branch line past the disposal, not the disposal itself \u2014 that's a straightforward snaking job.\n\nIf you want to peek at the disposal first, only do it safely: unplug it or switch off its breaker, never put a hand inside, and use tongs plus the hex socket underneath to free the flywheel [PB-07]. Totally optional \u2014 the tech can handle it either way.\n\nKitchen/bath drain snaking is $179 flat (labor + standard parts), about an hour on site. I can put you in tomorrow, Tuesday Sept 1, at 10:30 AM. Want me to lock that in?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, tomorrow at 10:30 works great. And nah, I'll leave the disposal alone \u2014 rather not mess with it. Just get someone out here to snake it."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Tom \u2014 booked for Tuesday, Sept 1 at 10:30 AM at $179 flat for the kitchen drain snaking (about an hour on site). The tech will call before arriving; just keep the cabinet under the sink clear and hold off on heavy sink use until then. If anything changes overnight \u2014 water backing up elsewhere or overflowing \u2014 text us back and we'll re-prioritize.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"drain_slow\",\n  \"summary\": \"Kitchen sink draining slowly on both basins, baking soda/vinegar failed, no other fixtures affected \u2014 clog in shared kitchen branch line, snaking booked.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\"Offered optional safe disposal check: unplug or kill breaker, never reach inside, use tongs and the hex socket under the unit to free the flywheel \u2014 customer declined [PB-07]\"],\n  \"playbook_refs\": [\"PB-07\"],\n  \"quote_lines\": [{\"code\": \"DRAIN-SNAKE-KITCHEN\", \"description\": \"Kitchen/bath drain snaking \u2014 shared branch line past disposal tee\", \"price\": 179}],\n  \"quote_total\": 179,\n  \"duration_min\": 60,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You're all set, Tom \u2014 booked for Tuesday, Sept 1 at 10:30 AM at $179 flat for the kitchen drain snaking (about an hour on site). The tech will call before arriving; just keep the cabinet under the sink clear and hold off on heavy sink use until then. If anything changes overnight \u2014 water backing up elsewhere or overflowing \u2014 text us back and we'll re-prioritize.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "drain_slow",
+    "summary": "Kitchen sink draining slowly on both basins, baking soda/vinegar failed, no other fixtures affected \u2014 clog in shared kitchen branch line, snaking booked.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Offered optional safe disposal check: unplug or kill breaker, never reach inside, use tongs and the hex socket under the unit to free the flywheel \u2014 customer declined [PB-07]"
+    ],
+    "playbook_refs": [
+     "PB-07"
+    ],
+    "quote_lines": [
+     {
+      "code": "DRAIN-SNAKE-KITCHEN",
+      "description": "Kitchen/bath drain snaking \u2014 shared branch line past disposal tee",
+      "price": 179
+     }
+    ],
+    "quote_total": 179,
+    "duration_min": 60,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set, Tom \u2014 booked for Tuesday, Sept 1 at 10:30 AM at $179 flat for the kitchen drain snaking (about an hour on site). The tech will call before arriving; just keep the cabinet under the sink clear and hold off on heavy sink use until then. If anything changes overnight \u2014 water backing up elsewhere or overflowing \u2014 text us back and we'll re-prioritize."
+   }
+  }
+ ]
+}

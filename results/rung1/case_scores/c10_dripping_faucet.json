@@ -1,0 +1,56 @@
+{
+ "case": "c10_dripping_faucet",
+ "ticket": {
+  "severity": "S3",
+  "category": "faucet_drip",
+  "summary": "Constant drip at bathroom faucet, original ~1990s fixture; likely cartridge/washer rebuild, possible faucet replacement if body is corroded.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [
+   "Optional overnight fix: close the oval shutoff valve on the supply line under the sink, clockwise until snug, to stop the drip [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01"
+  ],
+  "quote_lines": [
+   {
+    "code": "FAUCET-CARTRIDGE",
+    "description": "Faucet/shower cartridge replacement - bathroom faucet drip",
+    "price": 159
+   }
+  ],
+  "quote_total": 159,
+  "duration_min": 70,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "Sorry we missed your call! A nightly drip is a standard non-emergency fix, usually a worn cartridge or washer. Flat rate $159 (FAUCET-CARTRIDGE), parts and labor, about 60-75 min given the fixture's age. If the faucet body is too corroded to rebuild, the tech will quote a replacement before doing any work. To stop the drip tonight, close the small oval shutoff valve under the sink (clockwise until snug) [PB-01]. I can book you for Tuesday Sept 1 at 10:30 AM - reply 'yes' and a dispatcher will confirm in the morning."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c10_dripping_faucet",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 1,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 1,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.0463,
+  "wall_s": 15.0
+ }
+}

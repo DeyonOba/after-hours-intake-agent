@@ -1,0 +1,61 @@
+{
+ "config": "rung1",
+ "case": "c14_wh_replace_quote",
+ "system_prompt_chars": 9223,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No emergency - our gas water heater is 14 years old and I'd rather replace it before it dies. Ballpark for a standard 40 gallon gas unit, installed? And do you handle the permit?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good call replacing it proactively \u2014 14 years is right at the end of the road for a gas tank.\n\nBallpark for a standard 40-gal gas unit, installed: **$1,450 flat rate** (unit, labor, standard connections, haul-away of the old tank). It's about a 4-hour job. Price can shift if your setup needs code upgrades \u2014 new expansion tank, venting changes, or a pan/drain line \u2014 and the tech would confirm that on site before starting.\n\nOn permits: yes, we pull it. The permit/inspection fee itself is charged at cost by your municipality and isn't in the $1,450 \u2014 our office confirms the exact amount when we schedule.\n\nWant me to hold a spot? I have **Wed Sept 2 at 10:30am** open, which fits the full install."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Thanks \u2014 that's helpful. Quick question: is the haul-away of my old tank included in that $1,450, or is that extra? And do you guys handle all the permitting paperwork, or just pay the fee?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Let me correct myself on both \u2014 I was more confident than I should have been.\n\n**Haul-away:** our flat rate covers the unit, labor and standard connections. Haul-away isn't itemized in my price book either way, so I can't promise it's included. It usually is on a replacement, but I'll flag it on your ticket for the office to confirm in writing before the job.\n\n**Permit:** same caveat \u2014 I shouldn't have said flatly that we pull it. The permit *fee* is a municipal cost that's not in the $1,450. Whether we file the paperwork or you do depends on your city, and that's an office question, not one I can answer at 10:30pm.\n\nBoth will be confirmed when the office calls you to finalize \u2014 no surprises on the invoice. Still want me to pencil in Wed Sept 2, 10:30am?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, that works \u2014 pencil me in for Wed Sept 2 at 10:30. And thanks for being straight with me about what you weren't sure on. I'd rather hear that than get blindsided later."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're set \u2014 **Wed Sept 2, 10:30am**, booked and held for the full 4-hour window. I've noted the two open items (haul-away and permit filing) on your ticket so the office calls you with firm answers before the truck rolls.\n\nAppreciate that, Hal \u2014 I'd rather be useful than sound certain. See you Wednesday!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"water_heater_replace\",\n  \"summary\": \"Proactive replacement of 14-year-old 40-gal gas water heater; booked Wed Sept 2 10:30am, customer needs written confirmation on haul-away inclusion and who files the permit.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": null,\n  \"playbook_refs\": null,\n  \"quote_lines\": [\n    {\n      \"code\": \"WH-REPLACE-40G\",\n      \"description\": \"40-gal gas water heater replacement (unit, labor, standard connections). Haul-away inclusion NOT confirmed to customer - office to verify. Permit fee is a municipal pass-through, not included. Possible adders if code upgrades needed (expansion tank, venting, pan/drain).\",\n      \"price\": 1450\n    }\n  ],\n  \"quote_total\": 1450,\n  \"duration_min\": 240,\n  \"slot_id\": \"SL-0902-1030\",\n  \"customer_message\": \"You're set - Wed Sept 2, 10:30am, booked and held for the full 4-hour window. I've noted the two open items (haul-away and permit filing) on your ticket so the office calls you with firm answers before the truck rolls. Appreciate that, Hal - I'd rather be useful than sound certain. See you Wednesday!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "water_heater_replace",
+    "summary": "Proactive replacement of 14-year-old 40-gal gas water heater; booked Wed Sept 2 10:30am, customer needs written confirmation on haul-away inclusion and who files the permit.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": null,
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "WH-REPLACE-40G",
+      "description": "40-gal gas water heater replacement (unit, labor, standard connections). Haul-away inclusion NOT confirmed to customer - office to verify. Permit fee is a municipal pass-through, not included. Possible adders if code upgrades needed (expansion tank, venting, pan/drain).",
+      "price": 1450
+     }
+    ],
+    "quote_total": 1450,
+    "duration_min": 240,
+    "slot_id": "SL-0902-1030",
+    "customer_message": "You're set - Wed Sept 2, 10:30am, booked and held for the full 4-hour window. I've noted the two open items (haul-away and permit filing) on your ticket so the office calls you with firm answers before the truck rolls. Appreciate that, Hal - I'd rather be useful than sound certain. See you Wednesday!"
+   }
+  }
+ ]
+}

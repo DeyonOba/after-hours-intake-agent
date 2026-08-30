@@ -1,0 +1,71 @@
+{
+ "config": "rung1",
+ "case": "c04_ceiling_leak_shutoff_fail",
+ "system_prompt_chars": 9223,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Water is pouring through my dining room ceiling light fixture, I think from the upstairs bathroom. I put a bucket. What do I do??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Stay clear of that ceiling \u2014 water-heavy drywall can come down, so keep everyone out of the dining room [PB-08]. Don't touch the light switch for that fixture.\n\nRight now: shut off the house main \u2014 usually where the water line enters (basement front wall, crawl space, garage, or at the meter box). Turn the wheel clockwise or the lever perpendicular to the pipe [PB-02]. Then open the lowest cold tap in the house (basement sink or outdoor spigot) to drain the pressure out of the lines [PB-03].\n\nI'm paging our on-call plumber now. What's your service address, and can you confirm you found the main shutoff?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok got it, staying out of the dining room. 31 Halcyon Ct. \n\nlooking for the main now... checked the basement, I can't find anything like that. no meter box either that I can see. should I keep looking??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Don't spend long on it \u2014 on-call is already being dispatched to 31 Halcyon Ct.\n\nTwo quick things while you wait: check the garage or crawl space near the front wall for the main [PB-02]. And upstairs, if you can tell which fixture it's under, close that fixture's own shutoff \u2014 the small oval/football handle on the supply line under the sink or behind the toilet, clockwise until snug [PB-01]. Keep everything upstairs unused either way.\n\nIf neither works in the next couple of minutes, stop looking \u2014 the tech will handle it. Is water still coming through, or has it slowed?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "oh wait, garage! yeah I see it now \u2014 there's a valve thingy next to the water heater. turning it clockwise... it's moving... ok it stopped! water's not pouring anymore, just like dripping now.\n\nupstairs toilet supply line looks corroded though, that might be the problem?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect \u2014 that's the main, great find. Leave it off. Now open the lowest cold tap in the house (basement sink or outdoor spigot) to bleed the remaining pressure \u2014 that's what the dripping is, and it'll ease off [PB-03]. Keep the dining room clear and that light off [PB-08].\n\nThe corroded toilet supply is a very likely culprit \u2014 don't touch it, just leave the toilet unused and let the tech confirm. Our on-call plumber is dispatched to 31 Halcyon Ct now and will call you when he's close. After-hours dispatch is $150; the repair itself gets quoted once he's seen it. Text back if anything changes before he arrives.\n\n```json\n{\n  \"severity\": \"S1\",\n  \"category\": \"ceiling_leak_active\",\n  \"summary\": \"Active water pouring through dining room ceiling light fixture at 31 Halcyon Ct, likely from corroded upstairs toilet supply line; customer shut house main in garage and flow stopped \u2014 on-call dispatched.\",\n  \"escalate_now\": true,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Keep everyone out of the dining room, away from the sagging water-logged ceiling, and do not operate the affected light fixture [PB-08]\",\n    \"Shut off the house main (found next to water heater in garage) \u2014 turned clockwise, flow stopped [PB-02]\",\n    \"Attempt fixture-level shutoff on suspect upstairs toilet supply line (oval handle, clockwise) [PB-01]\",\n    \"Open the lowest cold tap in the house to drain remaining pressure from the lines [PB-03]\"\n  ],\n  \"playbook_refs\": [\"PB-01\", \"PB-02\", \"PB-03\", \"PB-08\"],\n  \"quote_lines\": [\n    {\"code\": \"EMERG-CALLOUT\", \"description\": \"After-hours emergency dispatch surcharge; repair quoted after technician assessment\", \"price\": 150}\n  ],\n  \"quote_total\": 150,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"Perfect \u2014 that's the main, great find. Leave it off. Now open the lowest cold tap in the house (basement sink or outdoor spigot) to bleed the remaining pressure \u2014 that's what the dripping is, and it'll ease off [PB-03]. Keep the dining room clear and that light off [PB-08]. The corroded toilet supply is a very likely culprit \u2014 don't touch it, just leave the toilet unused and let the tech confirm. Our on-call plumber is dispatched to 31 Halcyon Ct now and will call you when he's close. After-hours dispatch is $150; the repair itself gets quoted once he's seen it. Text back if anything changes before he arrives.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "ceiling_leak_active",
+    "summary": "Active water pouring through dining room ceiling light fixture at 31 Halcyon Ct, likely from corroded upstairs toilet supply line; customer shut house main in garage and flow stopped \u2014 on-call dispatched.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Keep everyone out of the dining room, away from the sagging water-logged ceiling, and do not operate the affected light fixture [PB-08]",
+     "Shut off the house main (found next to water heater in garage) \u2014 turned clockwise, flow stopped [PB-02]",
+     "Attempt fixture-level shutoff on suspect upstairs toilet supply line (oval handle, clockwise) [PB-01]",
+     "Open the lowest cold tap in the house to drain remaining pressure from the lines [PB-03]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02",
+     "PB-03",
+     "PB-08"
+    ],
+    "quote_lines": [
+     {
+      "code": "EMERG-CALLOUT",
+      "description": "After-hours emergency dispatch surcharge; repair quoted after technician assessment",
+      "price": 150
+     }
+    ],
+    "quote_total": 150,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "Perfect \u2014 that's the main, great find. Leave it off. Now open the lowest cold tap in the house (basement sink or outdoor spigot) to bleed the remaining pressure \u2014 that's what the dripping is, and it'll ease off [PB-03]. Keep the dining room clear and that light off [PB-08]. The corroded toilet supply is a very likely culprit \u2014 don't touch it, just leave the toilet unused and let the tech confirm. Our on-call plumber is dispatched to 31 Halcyon Ct now and will call you when he's close. After-hours dispatch is $150; the repair itself gets quoted once he's seen it. Text back if anything changes before he arrives."
+   }
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "config": "rung2",
+ "case": "c17_hose_bib",
+ "system_prompt_chars": 10293,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "The outdoor spigot on the side of the house sprays from the handle whenever I turn it on. House built in the 90s so it's probably the original. Not urgent - garden can wait a few days."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks Faye \u2014 that's a classic worn-out hose bib. Spraying from the handle when it's on usually means the packing nut/stem seal is shot, and on a 90s original it's generally better to replace the whole bib than keep re-packing it. Keep it turned off in the meantime, and if it ever drips with the handle closed, shut the indoor supply valve that feeds that line (small handle on the pipe just inside the wall, clockwise until snug) [PB-01].\n\nFlat rate is $169 (HOSE-BIB-REPLACE) \u2014 labor and standard parts included, about 1.5 hours for an older setup. I can get you tomorrow, Sept 1 at 10:30 AM. Want me to lock that in?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Sounds good! Yeah, I'll keep it off for now. Tomorrow at 10:30 works perfect for me. Go ahead and book it in! \ud83d\udc4d"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Faye \u2014 booked for Tuesday, Sept 1 at 10:30 AM. Your tech will replace the outdoor hose bib for the flat rate of $169, and we'll text when they're on the way. Keep the spigot closed until then, and thanks for texting us!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"hose_bib\",\n  \"summary\": \"Outdoor hose bib (1990s original) sprays from the handle when opened; worn stem/packing \u2014 replace bib, non-urgent, spigot kept closed.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Keep the spigot turned off until the visit\",\n    \"If it drips with the handle closed, close the indoor supply valve feeding that line (clockwise until snug) [PB-01]\"\n  ],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [\n    {\n      \"code\": \"HOSE-BIB-REPLACE\",\n      \"description\": \"Outdoor hose bib replacement (original 1990s bib, leaking at handle)\",\n      \"price\": 169\n    }\n  ],\n  \"quote_total\": 169,\n  \"duration_min\": 86,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You're all set, Faye \u2014 booked for Tuesday, Sept 1 at 10:30 AM. Your tech will replace the outdoor hose bib for the flat rate of $169, and we'll text when they're on the way. Keep the spigot closed until then, and thanks for texting us!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "hose_bib",
+    "summary": "Outdoor hose bib (1990s original) sprays from the handle when opened; worn stem/packing \u2014 replace bib, non-urgent, spigot kept closed.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Keep the spigot turned off until the visit",
+     "If it drips with the handle closed, close the indoor supply valve feeding that line (clockwise until snug) [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "HOSE-BIB-REPLACE",
+      "description": "Outdoor hose bib replacement (original 1990s bib, leaking at handle)",
+      "price": 169
+     }
+    ],
+    "quote_total": 169,
+    "duration_min": 86,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set, Faye \u2014 booked for Tuesday, Sept 1 at 10:30 AM. Your tech will replace the outdoor hose bib for the flat rate of $169, and we'll text when they're on the way. Keep the spigot closed until then, and thanks for texting us!"
+   }
+  }
+ ]
+}

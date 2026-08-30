@@ -1,0 +1,55 @@
+{
+ "config": "rung1",
+ "case": "c11_damp_spot",
+ "system_prompt_chars": 9222,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "There's a damp patch on my bedroom ceiling, maybe the size of a dinner plate. Not dripping, just damp and a bit yellow. Upstairs neighbor says nothing is leaking at theirs. Should I worry?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Not an emergency \u2014 a damp, non-dripping stain that size can wait for a normal appointment. Two quick things to watch: if it starts to bulge, sag, or drip, stay out from under it and call us right away [PB-08].\n\nCouple of questions so I can plan the visit: is there a bathroom, kitchen, or laundry directly above that spot? And has the patch grown or darkened over the last day or two?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah good to know, thanks for that. It's below my upstairs neighbor's bathroom. And nah, it's been the same size for like 3 days now, hasn't gotten worse."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That pattern fits an intermittent leak from the bathroom above \u2014 often a shower pan, tub/shower drain seal, or toilet flange that only seeps when it's used, which is why your neighbor may not see anything. Stable size for 3 days is a good sign, so standard scheduling is fine.\n\nI've held you a slot tomorrow, Tue Sep 1 at 10:30 AM. We'd start with a diagnostic ($89, ~45 min, applied toward the repair if we do it that day) to trace the source; any actual repair gets quoted before we start. Heads up: if it's coming from the unit above, we'll likely need your neighbor to let us in too \u2014 worth giving them a nudge tonight.\n\nWant me to lock in 10:30 AM tomorrow?\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"damp_spot\",\n  \"summary\": \"Stable dinner-plate-sized damp/yellow ceiling stain in bedroom directly below upstairs neighbor's bathroom, no drip, unchanged for 3 days; needs leak-source diagnostic and possibly access to unit above.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Monitor the patch; if it bulges, sags, or starts dripping, stay clear of the area beneath it and call us immediately [PB-08]\"\n  ],\n  \"playbook_refs\": [\"PB-08\"],\n  \"quote_lines\": [\n    {\"code\": \"DIAG\", \"description\": \"Diagnostic visit to trace ceiling leak source (repair quoted separately after assessment)\", \"price\": 89}\n  ],\n  \"quote_total\": 89,\n  \"duration_min\": 45,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"That pattern fits an intermittent leak from the bathroom above \u2014 often a shower pan, tub/shower drain seal, or toilet flange that only leaks when used, which is why your neighbor may not see anything. Stable size for 3 days is a good sign, so standard scheduling is fine. I've held you tomorrow, Tue Sep 1 at 10:30 AM: diagnostic is $89 (~45 min), applied toward the repair if we do it that day, and any repair is quoted before we start. We may need access to your neighbor's unit as well. Watch for bulging, sagging, or dripping \u2014 if that happens, stay out from under it and call us right away.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "damp_spot",
+    "summary": "Stable dinner-plate-sized damp/yellow ceiling stain in bedroom directly below upstairs neighbor's bathroom, no drip, unchanged for 3 days; needs leak-source diagnostic and possibly access to unit above.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Monitor the patch; if it bulges, sags, or starts dripping, stay clear of the area beneath it and call us immediately [PB-08]"
+    ],
+    "playbook_refs": [
+     "PB-08"
+    ],
+    "quote_lines": [
+     {
+      "code": "DIAG",
+      "description": "Diagnostic visit to trace ceiling leak source (repair quoted separately after assessment)",
+      "price": 89
+     }
+    ],
+    "quote_total": 89,
+    "duration_min": 45,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "That pattern fits an intermittent leak from the bathroom above \u2014 often a shower pan, tub/shower drain seal, or toilet flange that only leaks when used, which is why your neighbor may not see anything. Stable size for 3 days is a good sign, so standard scheduling is fine. I've held you tomorrow, Tue Sep 1 at 10:30 AM: diagnostic is $89 (~45 min), applied toward the repair if we do it that day, and any repair is quoted before we start. We may need access to your neighbor's unit as well. Watch for bulging, sagging, or dripping \u2014 if that happens, stay out from under it and call us right away."
+   }
+  }
+ ]
+}

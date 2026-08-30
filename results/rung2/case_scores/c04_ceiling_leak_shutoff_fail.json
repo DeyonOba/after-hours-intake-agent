@@ -1,0 +1,60 @@
+{
+ "case": "c04_ceiling_leak_shutoff_fail",
+ "ticket": {
+  "severity": "S1",
+  "category": "ceiling_leak_active",
+  "summary": "Water pouring through dining room ceiling light fixture from suspected upstairs bathroom leak; customer located and closed house main in garage, on-call dispatch requested.",
+  "escalate_now": true,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Shut off the house main - checked basement, then garage/meter box; found wheel valve by water heater in garage and closed it clockwise [PB-02]",
+   "Open the lowest cold tap in the house to drain pressure from the lines [PB-03]",
+   "Stay out from under the sagging water-logged ceiling and away from the soaked light fixture; do not operate it [PB-08]"
+  ],
+  "playbook_refs": [
+   "PB-02",
+   "PB-03",
+   "PB-08"
+  ],
+  "quote_lines": [
+   {
+    "code": "EMERG-CALLOUT",
+    "description": "After-hours emergency dispatch surcharge",
+    "price": 150
+   }
+  ],
+  "quote_total": 150,
+  "duration_min": null,
+  "slot_id": null,
+  "customer_message": "Great work! Water will keep dripping a few minutes as the upstairs pipes drain - open the lowest cold tap to bleed pressure [PB-03]; if it's still pouring after ~10 min the main isn't fully closed, tighten it more. Keep everyone out from under the ceiling and don't touch the soaked light fixture or its switch [PB-08]. I'm paging the on-call plumber now - they'll call you at 555-0104 with an ETA. After-hours dispatch is $150 (EMERG-CALLOUT); repair costs are quoted after they see the source."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c04_ceiling_leak_shutoff_fail",
+  "tier": "S1",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": true,
+  "escalated": true,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "quote_ok": true,
+  "code_f1": null,
+  "total_err_pct": null,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": null,
+  "duration_ok": null,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.116,
+  "wall_s": 27.4
+ }
+}

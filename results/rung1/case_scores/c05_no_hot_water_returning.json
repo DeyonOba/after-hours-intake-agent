@@ -1,0 +1,58 @@
+{
+ "case": "c05_no_hot_water_returning",
+ "ticket": {
+  "severity": "S2",
+  "category": "water_heater_no_hot",
+  "summary": "Repeat pilot outage on gas water heater installed by us last year; no hot water, infant in home, no gas smell or leak \u2014 booked first priority slot 9/1 8:00 AM for thermocouple/pilot service.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [
+   "Confirmed no gas odor; if any gas smell appears, evacuate everyone and call the gas utility or 911 from outside without touching switches or phones indoors [PB-06]",
+   "Stop repeated re-lighting attempts and turn the gas control dial to OFF until the technician arrives [PB-04]"
+  ],
+  "playbook_refs": [
+   "PB-06",
+   "PB-04"
+  ],
+  "quote_lines": [
+   {
+    "code": "WH-PILOT",
+    "description": "Water heater pilot/thermocouple service",
+    "price": 169
+   }
+  ],
+  "quote_total": 169,
+  "duration_min": 66,
+  "slot_id": "SL-0901-0800",
+  "customer_message": "You're all set \u2014 first priority slot tomorrow, Tuesday Sept 1, 8:00 AM (SL-0901-0800). Our tech will have thermocouple/pilot assembly parts on the truck. Tonight: rather than re-lighting repeatedly, turn the gas control dial to OFF and leave it off until we arrive [PB-04]. Heating small amounts of water on the stove is fine for the baby's needs in the meantime. Expected cost is $169 flat rate for pilot/thermocouple service \u2014 no after-hours surcharge since we're coming during regular hours."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c05_no_hot_water_returning",
+  "tier": "S2",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 6,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": true,
+  "cost_usd": 0.0784,
+  "wall_s": 21.6
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "case": "c16_recurring_main_returning",
+ "ticket": {
+  "severity": "S3",
+  "category": "drain_main_recurring",
+  "summary": "Repeat kitchen-branch drain clog (3rd this year, snaked Jan and May) \u2014 draining slowly with gurgling, no other fixtures affected; camera inspection + snaking booked to find root cause.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [
+   "Minimize use of the kitchen line tonight \u2014 no dishwasher, no disposal, run water sparingly so the sink doesn't overflow (no playbook entry applies; slow drain, not an active leak or sewage backup)",
+   "Confirmed no cross-fixture symptoms (toilets/laundry/bath clear), so no main-line/sewage protocol needed"
+  ],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "DIAG",
+    "description": "Camera inspection of kitchen branch line to identify recurrence cause",
+    "price": 89
+   },
+   {
+    "code": "DRAIN-SNAKE-KITCHEN",
+    "description": "Kitchen drain snaking",
+    "price": 179
+   }
+  ],
+  "quote_total": 268,
+  "duration_min": 120,
+  "slot_id": "SL-0901-1500",
+  "customer_message": "That's actually good news \u2014 since your toilets, laundry and bathroom are all fine, the main line is clear. The problem is the kitchen branch, and a third clog in one year almost always means grease/soap scale rebuilding on the pipe wall, or a sag/damaged section catching debris. Snaking punches a hole through it and it re-closes in a few months. So this time it's snake PLUS camera: Camera inspection (DIAG) $89 + Kitchen drain snaking (DRAIN-SNAKE-KITCHEN) $179 = $268 total, about 2 hours. If the camera shows something bigger (power auger or a damaged section), the tech shows you the footage and quotes before doing extra work. I've got you down for tomorrow, Tue Sept 1 at 3:00 PM. Keep it light on that sink until then \u2014 no dishwasher, no disposal, run water sparingly. Reply 'yes' to confirm, or I can move you to a morning."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c16_recurring_main_returning",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 0.5,
+  "total_err_pct": 38.8,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 12,
+  "duration_ok": true,
+  "slot_ok": false,
+  "known_customer_ok": true,
+  "cost_usd": 0.1173,
+  "wall_s": 270.8
+ }
+}

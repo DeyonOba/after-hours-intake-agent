@@ -1,0 +1,57 @@
+{
+ "config": "rung1",
+ "case": "c05_no_hot_water_returning",
+ "system_prompt_chars": 9221,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi, this is Sam Okafor - you guys installed our water heater last year. The pilot light keeps going out tonight and we have no hot water. We have a 4-month-old at home. Can someone come first thing?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Sam \u2014 sorry you're dealing with this, especially with a little one at home. Two quick safety checks first:\n\n1. Do you smell any gas near the heater or in the room?\n2. Is there any water pooling under or around the tank?\n\nIf you smell gas at all, don't touch switches \u2014 get everyone outside and call the gas utility/911 from outside [PB-06]. Otherwise, don't keep re-lighting it more than once or twice; I can hold you the first slot tomorrow morning."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No gas smell at all, and no water on the floor either. We're good on those fronts. Yeah, I'd really appreciate that first slot tomorrow \u2014 having no hot water with a 4-month-old is rough. What time should we expect someone?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set \u2014 first priority slot tomorrow, **Tuesday Sept 1, 8:00 AM** (SL-0901-0800). Our tech will have thermocouple/pilot assembly parts on the truck.\n\nTonight: rather than re-lighting repeatedly, turn the gas control dial to OFF and leave it off until we arrive [PB-04]. Heating small amounts of water on the stove is fine for the baby's needs in the meantime.\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"water_heater_no_hot\",\n  \"summary\": \"Repeat pilot outage on gas water heater installed by us last year; no hot water, infant in home, no gas smell or leak \u2014 booked first priority slot 9/1 8:00 AM for thermocouple/pilot service.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [\n    \"Confirmed no gas odor; if any gas smell appears, evacuate everyone and call the gas utility or 911 from outside without touching switches or phones indoors [PB-06]\",\n    \"Stop repeated re-lighting attempts and turn the gas control dial to OFF until the technician arrives [PB-04]\"\n  ],\n  \"playbook_refs\": [\"PB-06\", \"PB-04\"],\n  \"quote_lines\": [\n    {\"code\": \"WH-PILOT\", \"description\": \"Water heater pilot/thermocouple service\", \"price\": 169}\n  ],\n  \"quote_total\": 169,\n  \"duration_min\": 66,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're all set \u2014 first priority slot tomorrow, Tuesday Sept 1, 8:00 AM (SL-0901-0800). Our tech will have thermocouple/pilot assembly parts on the truck. Tonight: rather than re-lighting repeatedly, turn the gas control dial to OFF and leave it off until we arrive [PB-04]. Heating small amounts of water on the stove is fine for the baby's needs in the meantime. Expected cost is $169 flat rate for pilot/thermocouple service \u2014 no after-hours surcharge since we're coming during regular hours.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "water_heater_no_hot",
+    "summary": "Repeat pilot outage on gas water heater installed by us last year; no hot water, infant in home, no gas smell or leak \u2014 booked first priority slot 9/1 8:00 AM for thermocouple/pilot service.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Confirmed no gas odor; if any gas smell appears, evacuate everyone and call the gas utility or 911 from outside without touching switches or phones indoors [PB-06]",
+     "Stop repeated re-lighting attempts and turn the gas control dial to OFF until the technician arrives [PB-04]"
+    ],
+    "playbook_refs": [
+     "PB-06",
+     "PB-04"
+    ],
+    "quote_lines": [
+     {
+      "code": "WH-PILOT",
+      "description": "Water heater pilot/thermocouple service",
+      "price": 169
+     }
+    ],
+    "quote_total": 169,
+    "duration_min": 66,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're all set \u2014 first priority slot tomorrow, Tuesday Sept 1, 8:00 AM (SL-0901-0800). Our tech will have thermocouple/pilot assembly parts on the truck. Tonight: rather than re-lighting repeatedly, turn the gas control dial to OFF and leave it off until we arrive [PB-04]. Heating small amounts of water on the stove is fine for the baby's needs in the meantime. Expected cost is $169 flat rate for pilot/thermocouple service \u2014 no after-hours surcharge since we're coming during regular hours."
+   }
+  }
+ ]
+}

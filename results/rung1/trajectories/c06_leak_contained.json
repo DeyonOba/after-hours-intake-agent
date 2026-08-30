@@ -1,0 +1,58 @@
+{
+ "config": "rung1",
+ "case": "c06_leak_contained",
+ "system_prompt_chars": 9222,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "The braided hose under my bathroom sink started leaking tonight. I already closed the little valve under the sink so it stopped. But I have no water in that bathroom now - how soon can someone replace the hose?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Nice work shutting that valve \u2014 that's exactly right [PB-01], and it's fine to leave that bathroom's water off overnight.\n\nQuick check: is it fully dry now with the valve closed, or still dripping? And is any water still showing under the cabinet?\n\nIf it's holding, a braided supply line swap is a flat $129 (about 45 min). I can put you in our first priority slot tomorrow, Tue Sep 1 at 8:00 AM \u2014 want me to hold it?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Good to know, thanks. Yeah, it's holding now\u2014no drips, and the area under the cabinet is dry. And honestly 8 AM tomorrow works perfect for me. Go ahead and book it."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Booked \u2014 Tue Sep 1, 8:00 AM, supply line replacement, $129 flat (about 45 min). Leave the valve closed until we arrive, and if it ever starts dripping again with the valve shut, close the house main and open a low tap to drain pressure [PB-02][PB-03], then text us. See you in the morning, Jess!\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"leak_contained\",\n  \"summary\": \"Braided supply line under bathroom sink leaking; customer closed fixture shutoff, leak contained and area dry, bathroom water off until hose replaced.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Confirmed customer closed the fixture shutoff valve under the sink and advised leaving it closed until the visit [PB-01]\",\n    \"If dripping resumes with the fixture valve closed, shut off the house main [PB-02] and open the lowest cold tap to drain line pressure [PB-03]\"\n  ],\n  \"playbook_refs\": [\"PB-01\", \"PB-02\", \"PB-03\"],\n  \"quote_lines\": [\n    {\n      \"code\": \"SUPPLY-LINE-REPLACE\",\n      \"description\": \"Replace failed braided supply line under bathroom sink\",\n      \"price\": 129\n    }\n  ],\n  \"quote_total\": 129,\n  \"duration_min\": 45,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"Booked \u2014 Tue Sep 1, 8:00 AM, supply line replacement, $129 flat (about 45 min). Leave the valve closed until we arrive, and if it ever starts dripping again with the valve shut, close the house main and open a low tap to drain pressure [PB-02][PB-03], then text us. See you in the morning, Jess!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "leak_contained",
+    "summary": "Braided supply line under bathroom sink leaking; customer closed fixture shutoff, leak contained and area dry, bathroom water off until hose replaced.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Confirmed customer closed the fixture shutoff valve under the sink and advised leaving it closed until the visit [PB-01]",
+     "If dripping resumes with the fixture valve closed, shut off the house main [PB-02] and open the lowest cold tap to drain line pressure [PB-03]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02",
+     "PB-03"
+    ],
+    "quote_lines": [
+     {
+      "code": "SUPPLY-LINE-REPLACE",
+      "description": "Replace failed braided supply line under bathroom sink",
+      "price": 129
+     }
+    ],
+    "quote_total": 129,
+    "duration_min": 45,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "Booked \u2014 Tue Sep 1, 8:00 AM, supply line replacement, $129 flat (about 45 min). Leave the valve closed until we arrive, and if it ever starts dripping again with the valve shut, close the house main and open a low tap to drain pressure [PB-02][PB-03], then text us. See you in the morning, Jess!"
+   }
+  }
+ ]
+}
