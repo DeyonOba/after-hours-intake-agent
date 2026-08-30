@@ -88,6 +88,18 @@ def load_memory_store() -> dict:
     return json.loads((DATA_DIR / "memory_store.json").read_text())["customers"]
 
 
+def make_client():
+    """Anthropic client that accepts either credential type in ANTHROPIC_API_KEY:
+    a Console API key (sk-ant-api...) or an OAuth access token (sk-ant-oat...,
+    which must be sent as a Bearer auth_token)."""
+    import anthropic
+    load_dotenv()
+    cred = os.environ.get("ANTHROPIC_API_KEY", "")
+    if cred.startswith("sk-ant-oat"):
+        return anthropic.Anthropic(api_key=None, auth_token=cred)
+    return anthropic.Anthropic()
+
+
 def estimate_cost(model: str, input_tokens: int, output_tokens: int) -> float:
     inp, out = MODEL_PRICES.get(model, (0.0, 0.0))
     return (input_tokens * inp + output_tokens * out) / 1_000_000

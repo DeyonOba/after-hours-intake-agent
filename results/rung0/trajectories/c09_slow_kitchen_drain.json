@@ -1,0 +1,12 @@
+{
+ "config": "rung0",
+ "case": "c09_slow_kitchen_drain",
+ "system_prompt_chars": 2115,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Kitchen sink is draining really slowly, takes 10 minutes to empty. I tried baking soda and vinegar, didn't help. Can you send someone this week?"
+  }
+ ]
+}

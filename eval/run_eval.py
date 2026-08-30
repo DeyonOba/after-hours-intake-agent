@@ -43,8 +43,8 @@ def run(cfg_path: str, case_filter: list[str] | None, dry_run: bool) -> int:
               f"qpolicy={cfg.question_policy} verifier={cfg.verifier} memory={cfg.memory}")
         return scoring.selfcheck()
 
-    import anthropic
-    client = anthropic.Anthropic()
+    import anthropic  # noqa: F401 (error types)
+    client = config.make_client()
 
     all_scores, records = [], []
     total_cost = 0.0

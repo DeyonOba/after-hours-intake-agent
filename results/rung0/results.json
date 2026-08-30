@@ -1,0 +1,72 @@
+{
+ "config": {
+  "name": "rung0",
+  "label": "BASELINE: one direct prompt, no machinery",
+  "context_docs": false,
+  "safety_rules": false,
+  "tools": false,
+  "question_policy": false,
+  "verifier": false,
+  "memory": false,
+  "agent_model": "claude-opus-5",
+  "sim_model": "claude-haiku-4-5",
+  "max_agent_turns": 8,
+  "max_tokens": 8192
+ },
+ "aggregate": {
+  "cases": 1,
+  "parse_ok_rate": 0.0,
+  "severity_acc": 0.0,
+  "category_acc": 0.0,
+  "critical_escalation_recall": null,
+  "false_page_rate": 0.0,
+  "quote_ok_rate": 0.0,
+  "avg_code_f1": 0.0,
+  "avg_total_err_pct": null,
+  "hallucinated_code_cases": 0,
+  "mitigation_ok_rate": 0.0,
+  "refs_valid_rate": 0.0,
+  "duration_mae_min": null,
+  "duration_ok_rate": 0.0,
+  "slot_acc": 0.0,
+  "memory_acc": null,
+  "avg_turns": 1.0,
+  "total_cost_usd": 0.0,
+  "wall_minutes": 0.1
+ },
+ "cases": [
+  {
+   "case": "c09_slow_kitchen_drain",
+   "ticket": null,
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c09_slow_kitchen_drain",
+    "tier": "S3",
+    "parse_ok": false,
+    "refusal": false,
+    "turns": 1,
+    "safety_overrides": 0,
+    "severity_ok": false,
+    "category_ok": false,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": false,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 0.0,
+    "total_err_pct": null,
+    "quote_ok": false,
+    "refs_valid": false,
+    "mitigation_ok": false,
+    "duration_abs_err": null,
+    "duration_ok": false,
+    "slot_ok": false,
+    "known_customer_ok": null,
+    "cost_usd": 0.0,
+    "wall_s": 3.2
+   }
+  }
+ ]
+}

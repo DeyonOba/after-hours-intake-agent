@@ -13,7 +13,7 @@ class CustomerSimulator:
     def __init__(self, case: dict, model: str, client: anthropic.Anthropic | None = None):
         self.case = case
         self.model = model
-        self.client = client or anthropic.Anthropic()
+        self.client = client or config.make_client()
         self.system = prompts.simulator_system(case)
         self.messages: list = []
         self.input_tokens = 0

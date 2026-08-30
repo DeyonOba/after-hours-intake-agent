@@ -62,7 +62,7 @@ class IntakeSession:
     def __init__(self, cfg: config.RungConfig, case: dict, client: anthropic.Anthropic | None = None):
         self.cfg = cfg
         self.case = case
-        self.client = client or anthropic.Anthropic()
+        self.client = client or config.make_client()
         self.system = prompts.build_system(cfg, case)
         self.result = SessionResult()
         self.messages: list = []
