@@ -1,0 +1,58 @@
+{
+ "case": "c18_wh_noise",
+ "ticket": {
+  "severity": "S3",
+  "category": "water_heater_noise",
+  "summary": "Rumbling/popping from water heater during heat cycle \u2014 classic sediment buildup, no leaks, no T&P discharge, normal water temp; booked for drain-and-flush plus safety inspection.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Confirmed no water pooling at tank base and no discharge from T&P line",
+   "Confirmed hot water temperature normal, no hissing or steam at taps",
+   "Advised it is safe to leave the heater powered on overnight and use hot water normally",
+   "Advised to text immediately if water pools, T&P valve discharges, or water becomes scalding",
+   "Asked customer to clear ~3 ft of access around the heater before the appointment"
+  ],
+  "playbook_refs": null,
+  "quote_lines": [
+   {
+    "code": "WH-FLUSH",
+    "description": "Water heater drain & sediment flush, plus safety inspection (T&P valve, anode rod, thermostat)",
+    "price": 165
+   }
+  ],
+  "quote_total": 165,
+  "duration_min": 90,
+  "slot_id": "2026-09-01-PM-1300",
+  "customer_message": "Just leave it alone tonight \u2014 no need to shut anything off, and it's fine to use hot water normally. If anything changes before we arrive (water pooling at the base, the T&P pipe discharging, or scalding water), text me and we'll bump it up the list. You're booked for Mon 9/1, 1\u20133pm, $165 flat for the flush and safety inspection. If you can clear a few feet of space around the heater before we get there, that'll speed things along. Sleep well, Denis!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c18_wh_noise",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 18.7,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 15,
+  "duration_ok": true,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.0709,
+  "wall_s": 660.7
+ }
+}

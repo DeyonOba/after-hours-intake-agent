@@ -1,0 +1,76 @@
+{
+ "config": "rung0",
+ "case": "c16_recurring_main_returning",
+ "system_prompt_chars": 2118,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Marcus Bell here. Kitchen line is backing up AGAIN - third time this year. You snaked it in January and May. It's draining a little but gurgling. What now?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hey Marcus \u2014 thanks for texting. Third time in eight months means we're likely past a simple snake; grease buildup is probably re-coating the pipe wall, or there's a belly/root issue in the line.\n\nQuick check: is it only the kitchen sink, or are other drains (bathroom sink, tub, toilet) slow or gurgling too? And do you have a dishwasher running into that same line?\n\nIn the meantime: stop running water into that sink, skip the dishwasher tonight, and don't pour any chemical drain cleaner down it \u2014 it won't touch grease and it makes the line hazardous for us to work on."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "just the kitchen sink backing up - bathroom drains are fine. yeah, dishwasher dumps into the kitchen line too. haven't used it since this started, and no chemicals down there. so what's the actual fix here? not trying to pay for another snake if it's just gonna back up again in three months."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Fair \u2014 you shouldn't pay for a third snake. A cable snake just punches a hole through grease; the walls stay coated and it closes back up in a few months. That matches your January/May pattern exactly.\n\nThe actual fix is **hydro jetting** \u2014 high-pressure water that scours the pipe wall back to bare metal \u2014 plus a **camera inspection** so we can see if there's a belly, a bad joint, or roots that's making it recur. Camera first tells us whether jetting solves it or the line needs a repair.\n\nBallpark:\n- Camera inspection of kitchen branch \u2014 $195 (credited toward the jetting if we do it same visit)\n- Hydro jet kitchen branch line \u2014 $475\n- **Total, same-visit: $475**, about 2 hours\n\nIf the camera shows a broken or bellied section, I'll stop and quote you the repair before doing anything else \u2014 no surprises.\n\nSince it's still draining, this isn't an emergency call-out. I can get you in tomorrow (Tue 9/1) at 8:00\u201310:00 AM or 1:00\u20133:00 PM. Which works? And keep the dishwasher off until we're there."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "tomorrow 1-3 works. and yeah, that makes sense \u2014 camera first so we know what we're actually dealing with. way better than throwing another $300 at a snake that won't stick. appreciate you laying it out straight."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're booked \u2014 Tuesday 9/1, 1:00\u20133:00 PM. You'll get a text when the tech is en route. Please keep the kitchen sink and dishwasher unused until then so the line is clear for the camera, and clear out the under-sink cabinet if you can \u2014 saves us time. If it backs up fully before then and won't drain at all, text this number and we'll bump you up. Thanks Marcus, and sorry it took three rounds to get to the right fix.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"drain_main_recurring\",\n  \"summary\": \"Repeat kitchen branch backup (3rd this year, snaked Jan and May) \u2014 still draining slowly with gurgling; booked camera inspection + hydro jet for Tue 9/1 PM.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [\n    \"Stop running water into the kitchen sink and do not run the dishwasher until the tech arrives\",\n    \"Do not use chemical drain cleaner \u2014 ineffective on grease and creates a hazard for the tech\",\n    \"Clear the under-sink cabinet before the appointment\",\n    \"Text back for priority bump if the line stops draining entirely\"\n  ],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"CAM-BRANCH\",\n      \"description\": \"Camera inspection of kitchen branch line (credited toward same-visit hydro jetting)\",\n      \"price\": 195\n    },\n    {\n      \"code\": \"JET-BRANCH\",\n      \"description\": \"Hydro jet kitchen branch line to remove grease buildup\",\n      \"price\": 475\n    },\n    {\n      \"code\": \"CREDIT-CAM\",\n      \"description\": \"Camera fee credited \u2014 jetting performed same visit\",\n      \"price\": -195\n    }\n  ],\n  \"quote_total\": 475,\n  \"duration_min\": 120,\n  \"slot_id\": \"2026-09-01-PM-1300\",\n  \"customer_message\": \"You're booked \u2014 Tuesday 9/1, 1:00\u20133:00 PM. You'll get a text when the tech is en route. Please keep the kitchen sink and dishwasher unused until then so the line is clear for the camera, and clear out the under-sink cabinet if you can \u2014 saves us time. If it backs up fully before then and won't drain at all, text this number and we'll bump you up. Thanks Marcus, and sorry it took three rounds to get to the right fix.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "drain_main_recurring",
+    "summary": "Repeat kitchen branch backup (3rd this year, snaked Jan and May) \u2014 still draining slowly with gurgling; booked camera inspection + hydro jet for Tue 9/1 PM.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Stop running water into the kitchen sink and do not run the dishwasher until the tech arrives",
+     "Do not use chemical drain cleaner \u2014 ineffective on grease and creates a hazard for the tech",
+     "Clear the under-sink cabinet before the appointment",
+     "Text back for priority bump if the line stops draining entirely"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "CAM-BRANCH",
+      "description": "Camera inspection of kitchen branch line (credited toward same-visit hydro jetting)",
+      "price": 195
+     },
+     {
+      "code": "JET-BRANCH",
+      "description": "Hydro jet kitchen branch line to remove grease buildup",
+      "price": 475
+     },
+     {
+      "code": "CREDIT-CAM",
+      "description": "Camera fee credited \u2014 jetting performed same visit",
+      "price": -195
+     }
+    ],
+    "quote_total": 475,
+    "duration_min": 120,
+    "slot_id": "2026-09-01-PM-1300",
+    "customer_message": "You're booked \u2014 Tuesday 9/1, 1:00\u20133:00 PM. You'll get a text when the tech is en route. Please keep the kitchen sink and dishwasher unused until then so the line is clear for the camera, and clear out the under-sink cabinet if you can \u2014 saves us time. If it backs up fully before then and won't drain at all, text this number and we'll bump you up. Thanks Marcus, and sorry it took three rounds to get to the right fix."
+   }
+  }
+ ]
+}

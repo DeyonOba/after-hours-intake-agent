@@ -1,0 +1,67 @@
+{
+ "config": "rung0",
+ "case": "c18_wh_noise",
+ "system_prompt_chars": 2116,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My water heater is making a loud rumbling/popping noise when it heats. Googled it and now I'm worried it will explode?? Should I shut it off?? It's 11pm."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news first: that rumbling/popping is almost always sediment on the tank bottom \u2014 water boiling under the sludge layer. It's noisy and hard on the heater, but it's not a \"boom\" risk. Every tank has a T&P safety valve that vents long before pressure gets dangerous.\n\nTwo quick checks so I can rule out the rare stuff:\n1. Is there any water dripping/pooling around the base of the tank, or coming from the pipe on the side/top (the T&P discharge line)?\n2. Is your hot water suddenly scalding hotter than usual, or hissing/steaming from the tap?\n\nIf both are no, you can safely leave it running tonight and sleep."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "omg thank you, that actually makes sense. no leaks that i can see, and the water temp feels normal when i use it. no hissing or anything weird from the taps either.\n\nso it's just... buildup? that's SO much less scary than what google said lol. okay i can sleep now \ud83d\ude05"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Exactly \u2014 just buildup. \ud83d\ude04 Google always jumps straight to the worst case.\n\nWorth fixing though: that sediment layer makes the heater work harder, drives up your bill, and shortens tank life. We do a drain-and-flush plus a full safety check (T&P valve, anode rod, thermostat) for **$165 flat**, about 60\u201390 minutes.\n\nI've got tomorrow (Mon 9/1) **8\u201310am** or **1\u20133pm** open. Want me to grab one?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "yeah that sounds good, i'd rather not wait and have it get worse. the 1-3pm slot works better for me tomorrow. should i do anything with the heater tonight, or just leave it?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Just leave it alone tonight \u2014 no need to shut anything off, and it's fine to use hot water normally. If anything changes before we arrive (water pooling at the base, the T&P pipe discharging, or scalding water), text me and we'll bump it up the list.\n\nYou're booked for **Mon 9/1, 1\u20133pm**, $165 flat for the flush and safety inspection. If you can clear a few feet of space around the heater before we get there, that'll speed things along. Sleep well, Denis!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"water_heater_noise\",\n  \"summary\": \"Rumbling/popping from water heater during heat cycle \u2014 classic sediment buildup, no leaks, no T&P discharge, normal water temp; booked for drain-and-flush plus safety inspection.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Confirmed no water pooling at tank base and no discharge from T&P line\",\n    \"Confirmed hot water temperature normal, no hissing or steam at taps\",\n    \"Advised it is safe to leave the heater powered on overnight and use hot water normally\",\n    \"Advised to text immediately if water pools, T&P valve discharges, or water becomes scalding\",\n    \"Asked customer to clear ~3 ft of access around the heater before the appointment\"\n  ],\n  \"playbook_refs\": null,\n  \"quote_lines\": [\n    {\n      \"code\": \"WH-FLUSH\",\n      \"description\": \"Water heater drain & sediment flush, plus safety inspection (T&P valve, anode rod, thermostat)\",\n      \"price\": 165\n    }\n  ],\n  \"quote_total\": 165,\n  \"duration_min\": 90,\n  \"slot_id\": \"2026-09-01-PM-1300\",\n  \"customer_message\": \"Just leave it alone tonight \u2014 no need to shut anything off, and it's fine to use hot water normally. If anything changes before we arrive (water pooling at the base, the T&P pipe discharging, or scalding water), text me and we'll bump it up the list. You're booked for Mon 9/1, 1\u20133pm, $165 flat for the flush and safety inspection. If you can clear a few feet of space around the heater before we get there, that'll speed things along. Sleep well, Denis!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "water_heater_noise",
+    "summary": "Rumbling/popping from water heater during heat cycle \u2014 classic sediment buildup, no leaks, no T&P discharge, normal water temp; booked for drain-and-flush plus safety inspection.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Confirmed no water pooling at tank base and no discharge from T&P line",
+     "Confirmed hot water temperature normal, no hissing or steam at taps",
+     "Advised it is safe to leave the heater powered on overnight and use hot water normally",
+     "Advised to text immediately if water pools, T&P valve discharges, or water becomes scalding",
+     "Asked customer to clear ~3 ft of access around the heater before the appointment"
+    ],
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "WH-FLUSH",
+      "description": "Water heater drain & sediment flush, plus safety inspection (T&P valve, anode rod, thermostat)",
+      "price": 165
+     }
+    ],
+    "quote_total": 165,
+    "duration_min": 90,
+    "slot_id": "2026-09-01-PM-1300",
+    "customer_message": "Just leave it alone tonight \u2014 no need to shut anything off, and it's fine to use hot water normally. If anything changes before we arrive (water pooling at the base, the T&P pipe discharging, or scalding water), text me and we'll bump it up the list. You're booked for Mon 9/1, 1\u20133pm, $165 flat for the flush and safety inspection. If you can clear a few feet of space around the heater before we get there, that'll speed things along. Sleep well, Denis!"
+   }
+  }
+ ]
+}

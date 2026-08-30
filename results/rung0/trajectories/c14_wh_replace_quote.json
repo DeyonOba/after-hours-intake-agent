@@ -1,0 +1,74 @@
+{
+ "config": "rung0",
+ "case": "c14_wh_replace_quote",
+ "system_prompt_chars": 2119,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No emergency - our gas water heater is 14 years old and I'd rather replace it before it dies. Ballpark for a standard 40 gallon gas unit, installed? And do you handle the permit?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Smart move replacing it on your terms instead of at 2am on a Sunday. \ud83d\udc4d\n\nBallpark for a standard 40-gallon atmospheric-vent gas heater, installed: **roughly $1,750\u2013$2,300**. That covers the unit, new water/gas flex connectors, shutoff, drip pan, haul-away of the old tank, and labor (about 3\u20134 hours). Add-ons that sometimes come up: thermal expansion tank (~$200) or venting/gas-line corrections if the old install isn't to current code.\n\nAnd yes \u2014 we pull the permit and meet the inspector; that's typically **$150\u2013$250** depending on your municipality, billed at cost.\n\nWant me to pencil in a free on-site estimate? A tech confirms the exact model, venting, and clearances, then you get a firm number with no obligation. I've got Wednesday 9/2 at 8\u201310am or Thursday 9/3 at 1\u20133pm open."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Thanks, yeah that makes sense. Those prices look reasonable. Quick q - does that $1750-2300 already include the permit stuff, or is that on top?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Permit's on top \u2014 the $1,750\u2013$2,300 is unit + labor + materials + haul-away, then the permit fee gets added at cost ($150\u2013$250, no markup). So all-in you're realistically looking at **$1,900\u2013$2,550**.\n\nSorry for the ambiguity there. Want me to hold Wednesday 9/2, 8\u201310am for the estimate?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No worries. Yeah, Wednesday 8-10am works for me. Just to confirm - the tech will give me a final quote that day before anything gets ordered, right? Don't want any surprises."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Absolutely \u2014 nothing gets ordered or installed without your sign-off. The tech will do the walkthrough, confirm the model and any code items, and hand you a firm written quote on the spot. You decide from there.\n\nYou're booked: **Wednesday, September 2, 8\u201310am**. I'll send a reminder Tuesday, and the tech will text when they're on the way. If you spot rust-colored water, puddling at the base, or hear rumbling before then, give us a shout \u2014 that's a \"sooner rather than later\" sign. See you Wednesday, Hal!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"water_heater_replace\",\n  \"summary\": \"Proactive replacement of 14-year-old 40-gal gas water heater; free on-site estimate booked Wed 9/2 8-10am, customer wants firm written quote before anything is ordered.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"No active leak or emergency; unit is functioning, replacement is preventative\",\n    \"Watch for rust-colored water, puddling at the tank base, or rumbling noises and call sooner if any appear\"\n  ],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"EST-VISIT\",\n      \"description\": \"On-site estimate visit - no charge\",\n      \"price\": 0\n    },\n    {\n      \"code\": \"WH-40G-GAS-INSTALL\",\n      \"description\": \"BALLPARK ONLY (verbal range $1,750-$2,300): standard 40-gal atmospheric-vent gas water heater supplied and installed, incl. water/gas flex connectors, shutoff, drip pan, haul-away of old unit, 3-4 hrs labor\",\n      \"price\": 2025\n    },\n    {\n      \"code\": \"PERMIT\",\n      \"description\": \"BALLPARK ONLY: municipal permit + inspection, billed at cost ($150-$250); quoted to customer as separate from install price\",\n      \"price\": 200\n    }\n  ],\n  \"quote_total\": 2225,\n  \"duration_min\": 120,\n  \"slot_id\": \"WED-2026-09-02-0800\",\n  \"customer_message\": \"Absolutely - nothing gets ordered or installed without your sign-off. The tech will do the walkthrough, confirm the model and any code items, and hand you a firm written quote on the spot. You decide from there. You're booked: Wednesday, September 2, 8-10am. I'll send a reminder Tuesday, and the tech will text when they're on the way. If you spot rust-colored water, puddling at the base, or hear rumbling before then, give us a shout - that's a 'sooner rather than later' sign. See you Wednesday, Hal!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "water_heater_replace",
+    "summary": "Proactive replacement of 14-year-old 40-gal gas water heater; free on-site estimate booked Wed 9/2 8-10am, customer wants firm written quote before anything is ordered.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "No active leak or emergency; unit is functioning, replacement is preventative",
+     "Watch for rust-colored water, puddling at the tank base, or rumbling noises and call sooner if any appear"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "EST-VISIT",
+      "description": "On-site estimate visit - no charge",
+      "price": 0
+     },
+     {
+      "code": "WH-40G-GAS-INSTALL",
+      "description": "BALLPARK ONLY (verbal range $1,750-$2,300): standard 40-gal atmospheric-vent gas water heater supplied and installed, incl. water/gas flex connectors, shutoff, drip pan, haul-away of old unit, 3-4 hrs labor",
+      "price": 2025
+     },
+     {
+      "code": "PERMIT",
+      "description": "BALLPARK ONLY: municipal permit + inspection, billed at cost ($150-$250); quoted to customer as separate from install price",
+      "price": 200
+     }
+    ],
+    "quote_total": 2225,
+    "duration_min": 120,
+    "slot_id": "WED-2026-09-02-0800",
+    "customer_message": "Absolutely - nothing gets ordered or installed without your sign-off. The tech will do the walkthrough, confirm the model and any code items, and hand you a firm written quote on the spot. You decide from there. You're booked: Wednesday, September 2, 8-10am. I'll send a reminder Tuesday, and the tech will text when they're on the way. If you spot rust-colored water, puddling at the base, or hear rumbling before then, give us a shout - that's a 'sooner rather than later' sign. See you Wednesday, Hal!"
+   }
+  }
+ ]
+}

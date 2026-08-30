@@ -1,0 +1,52 @@
+{
+ "case": "c12_disposal_jam",
+ "ticket": {
+  "severity": "S4",
+  "category": "disposal_jam",
+  "summary": "Customer's garbage disposal hummed without spinning; talked her through safe self-clear and she removed a peach pit \u2014 unit fully working, no visit needed.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Switch off and unplug the disposal (or trip its breaker) and never reach into the drain by hand",
+   "Insert a 1/4\" hex/Allen wrench into the hole on the underside center of the unit and rock it back and forth until the impeller spins freely",
+   "Remove any visible debris with tongs, restore power, press the red reset button, then run cold water and test",
+   "Prevention: keep pits, bones, fibrous scraps and grease out; run cold water before, during and ~20 seconds after grinding",
+   "Call back if it hums again after wrenching or repeatedly trips the reset \u2014 likely a failing motor needing replacement"
+  ],
+  "playbook_refs": [],
+  "quote_lines": [],
+  "quote_total": 0,
+  "duration_min": 0,
+  "slot_id": null,
+  "customer_message": "Woohoo \u2014 a peach pit! Classic disposal killer. Nicely done, you fixed it yourself. Two quick tips so it doesn't happen again: keep pits, bones, fibrous stuff (celery, corn husks) and grease out, and always run cold water before, during, and ~20 seconds after grinding. If it ever hums again and the wrench doesn't free it, or it trips the reset repeatedly, that usually means the motor's going \u2014 give us a call and we'll take a look. No charge tonight, and we'll be back at the phones tomorrow at 8am. Take care!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c12_disposal_jam",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": false,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 0.0,
+  "total_err_pct": 100.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": false,
+  "duration_abs_err": 30,
+  "duration_ok": false,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.046,
+  "wall_s": 22.1
+ }
+}

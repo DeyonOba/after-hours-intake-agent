@@ -1,0 +1,69 @@
+{
+ "case": "c14_wh_replace_quote",
+ "ticket": {
+  "severity": "S3",
+  "category": "water_heater_replace",
+  "summary": "Proactive replacement of 14-year-old 40-gal gas water heater; free on-site estimate booked Wed 9/2 8-10am, customer wants firm written quote before anything is ordered.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "No active leak or emergency; unit is functioning, replacement is preventative",
+   "Watch for rust-colored water, puddling at the tank base, or rumbling noises and call sooner if any appear"
+  ],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "EST-VISIT",
+    "description": "On-site estimate visit - no charge",
+    "price": 0
+   },
+   {
+    "code": "WH-40G-GAS-INSTALL",
+    "description": "BALLPARK ONLY (verbal range $1,750-$2,300): standard 40-gal atmospheric-vent gas water heater supplied and installed, incl. water/gas flex connectors, shutoff, drip pan, haul-away of old unit, 3-4 hrs labor",
+    "price": 2025
+   },
+   {
+    "code": "PERMIT",
+    "description": "BALLPARK ONLY: municipal permit + inspection, billed at cost ($150-$250); quoted to customer as separate from install price",
+    "price": 200
+   }
+  ],
+  "quote_total": 2225,
+  "duration_min": 120,
+  "slot_id": "WED-2026-09-02-0800",
+  "customer_message": "Absolutely - nothing gets ordered or installed without your sign-off. The tech will do the walkthrough, confirm the model and any code items, and hand you a firm written quote on the spot. You decide from there. You're booked: Wednesday, September 2, 8-10am. I'll send a reminder Tuesday, and the tech will text when they're on the way. If you spot rust-colored water, puddling at the base, or hear rumbling before then, give us a shout - that's a 'sooner rather than later' sign. See you Wednesday, Hal!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c14_wh_replace_quote",
+  "tier": "S4",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": false,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [
+   "EST-VISIT",
+   "PERMIT",
+   "WH-40G-GAS-INSTALL"
+  ],
+  "code_f1": 0.0,
+  "total_err_pct": 53.4,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 120,
+  "duration_ok": false,
+  "slot_ok": null,
+  "known_customer_ok": null,
+  "cost_usd": 0.0813,
+  "wall_s": 36.8
+ }
+}

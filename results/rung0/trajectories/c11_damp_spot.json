@@ -1,0 +1,67 @@
+{
+ "config": "rung0",
+ "case": "c11_damp_spot",
+ "system_prompt_chars": 2118,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "There's a damp patch on my bedroom ceiling, maybe the size of a dinner plate. Not dripping, just damp and a bit yellow. Upstairs neighbor says nothing is leaking at theirs. Should I worry?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Not an emergency \u2014 a damp, non-dripping patch usually means a slow leak that's been wicking for a while, so you've got time to get it looked at properly rather than tonight.\n\nA couple of quick things so I can size up the job:\n1. Is there a bathroom, kitchen, or laundry directly above that spot (in the neighbor's unit or elsewhere)?\n2. Has the patch grown or darkened over the last day or two, and does it feel soft/sagging if you press it gently?\n\nIn the meantime: put a towel or bucket underneath in case it opens up overnight, keep the room ventilated, and don't poke a hole in it yet \u2014 if it's holding water that turns a small job into a big one."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Thanks for the reassurance, that helps. Yeah there's a bathroom right above it in my neighbor's place. And nope, it's been the same size for like 3 days now \u2014 not growing or anything. Feels firm when I touch it, no sagging."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good signs \u2014 stable size, firm, no sagging points to a slow seep rather than an active break. With a bathroom directly above, the usual suspects are a shower pan or tile/grout failure, a leaky drain or trap connection, or a loose toilet seal. Those can weep just a little each time it's used, which is why your neighbor sees nothing.\n\nHeads up: the fix will almost certainly be on their side of the ceiling, so it's worth giving them (and building management/your landlord, if applicable) a heads up now \u2014 we'll likely need access to that bathroom.\n\nWe'd start with a leak diagnostic: moisture-meter the ceiling, run/isolate the fixtures above, and confirm the source before opening anything. That's $149 flat (about an hour), and it's credited toward the repair if we do the work.\n\nI've got tomorrow at 9:00\u201311:00 AM or 1:00\u20133:00 PM. Which works, and what's the address?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "9-11 AM works perfect for me. It's 230 Quarry Rd, Apt 5C. And yeah, I'll give my neighbor a heads up tonight so they're not surprised when someone needs to check their bathroom. Thanks for walking me through this."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Omar \u2014 thanks for the clear details, that makes the visit much smoother.\n\n**Booked: Tomorrow, Mon Sep 1, 9:00\u201311:00 AM \u2014 230 Quarry Rd, Apt 5C.** Leak diagnostic, $149 flat, credited toward any repair we do. Tonight: keep a towel or bucket handy, leave the patch alone, and confirm your neighbor can allow access to their bathroom during that window (if they can't, text us and we'll reshuffle). If it starts actively dripping or the ceiling begins to sag before then, call us right away and we'll treat it as urgent.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"damp_spot\",\n  \"summary\": \"Dinner-plate-sized damp/yellow ceiling stain in bedroom, stable 3 days, firm and not dripping; bathroom in upstairs neighbor's unit (Apt above 5C) is the likely source \u2014 needs leak diagnostic and access to neighbor's bathroom.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Place a towel or bucket under the patch in case it opens up overnight\",\n    \"Do not puncture or poke the ceiling \u2014 it may be holding water\",\n    \"Keep the room ventilated\",\n    \"Notify upstairs neighbor and building management/landlord tonight to arrange access to the bathroom above\",\n    \"Call immediately if the patch starts dripping, grows, or begins to sag\"\n  ],\n  \"playbook_refs\": null,\n  \"quote_lines\": [\n    {\n      \"code\": \"DIAG-LEAK\",\n      \"description\": \"Leak diagnostic: moisture-meter ceiling, isolate/test fixtures in unit above, confirm source (credited toward repair)\",\n      \"price\": 149\n    }\n  ],\n  \"quote_total\": 149,\n  \"duration_min\": 60,\n  \"slot_id\": \"2026-09-01-0900-1100\",\n  \"customer_message\": \"You're all set, Omar \u2014 booked tomorrow, Mon Sep 1, 9:00\u201311:00 AM at 230 Quarry Rd, Apt 5C. Leak diagnostic $149 flat, credited toward any repair. Tonight: keep a towel or bucket handy, leave the patch alone, and confirm your neighbor can allow access to their bathroom during that window. If it starts actively dripping or the ceiling sags before then, call us right away and we'll treat it as urgent.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "damp_spot",
+    "summary": "Dinner-plate-sized damp/yellow ceiling stain in bedroom, stable 3 days, firm and not dripping; bathroom in upstairs neighbor's unit (Apt above 5C) is the likely source \u2014 needs leak diagnostic and access to neighbor's bathroom.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Place a towel or bucket under the patch in case it opens up overnight",
+     "Do not puncture or poke the ceiling \u2014 it may be holding water",
+     "Keep the room ventilated",
+     "Notify upstairs neighbor and building management/landlord tonight to arrange access to the bathroom above",
+     "Call immediately if the patch starts dripping, grows, or begins to sag"
+    ],
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "DIAG-LEAK",
+      "description": "Leak diagnostic: moisture-meter ceiling, isolate/test fixtures in unit above, confirm source (credited toward repair)",
+      "price": 149
+     }
+    ],
+    "quote_total": 149,
+    "duration_min": 60,
+    "slot_id": "2026-09-01-0900-1100",
+    "customer_message": "You're all set, Omar \u2014 booked tomorrow, Mon Sep 1, 9:00\u201311:00 AM at 230 Quarry Rd, Apt 5C. Leak diagnostic $149 flat, credited toward any repair. Tonight: keep a towel or bucket handy, leave the patch alone, and confirm your neighbor can allow access to their bathroom during that window. If it starts actively dripping or the ceiling sags before then, call us right away and we'll treat it as urgent."
+   }
+  }
+ ]
+}

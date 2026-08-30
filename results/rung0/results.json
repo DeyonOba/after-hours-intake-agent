@@ -14,58 +14,1181 @@
   "max_tokens": 8192
  },
  "aggregate": {
-  "cases": 1,
-  "parse_ok_rate": 0.0,
-  "severity_acc": 0.0,
-  "category_acc": 0.0,
-  "critical_escalation_recall": null,
+  "cases": 18,
+  "parse_ok_rate": 1.0,
+  "severity_acc": 0.778,
+  "category_acc": 0.944,
+  "critical_escalation_recall": 0.75,
   "false_page_rate": 0.0,
-  "quote_ok_rate": 0.0,
-  "avg_code_f1": 0.0,
-  "avg_total_err_pct": null,
-  "hallucinated_code_cases": 0,
-  "mitigation_ok_rate": 0.0,
-  "refs_valid_rate": 0.0,
-  "duration_mae_min": null,
-  "duration_ok_rate": 0.0,
-  "slot_acc": 0.0,
-  "memory_acc": null,
-  "avg_turns": 1.0,
-  "total_cost_usd": 0.0,
-  "wall_minutes": 0.1
+  "quote_ok_rate": 0.056,
+  "avg_code_f1": 0.119,
+  "avg_total_err_pct": 27.5,
+  "hallucinated_code_cases": 16,
+  "mitigation_ok_rate": 0.667,
+  "refs_valid_rate": 1.0,
+  "duration_mae_min": 25.2,
+  "duration_ok_rate": 0.5,
+  "slot_acc": 0.235,
+  "memory_acc": 0.667,
+  "avg_turns": 2.89,
+  "total_cost_usd": 1.39,
+  "wall_minutes": 15.8
  },
  "cases": [
   {
+   "case": "c01_burst_supply",
+   "ticket": {
+    "severity": "S2",
+    "category": "leak_contained",
+    "summary": "Split braided cold-water supply line at the kitchen faucet connection sprayed under the sink; customer successfully closed both angle stops and the leak is contained, needs supply line replacement first thing tomorrow.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Close both angle stop valves under the kitchen sink (clockwise) to isolate the leak",
+     "Open the kitchen faucet hot and cold to bleed residual line pressure - dripping stopped",
+     "Clear out and towel-dry the sink cabinet, keep doors open overnight to air-dry, use a fan if available",
+     "Do not touch nearby outlets or power strips while wet",
+     "Leave both valves off and the faucet off until the technician arrives",
+     "Photograph any water damage to floor or space below",
+     "If spraying resumes, shut off the main water supply and text back for on-call dispatch"
+    ],
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "SVC-AH-DIAG",
+      "description": "After-hours diagnostic / trip charge",
+      "price": 89
+     },
+     {
+      "code": "SUP-LINE-REPL",
+      "description": "Replace braided cold water supply line at kitchen faucet",
+      "price": 110
+     },
+     {
+      "code": "SUP-LINE-REPL-ADD",
+      "description": "OPTIONAL - replace matching hot water supply line while on site (customer to confirm)",
+      "price": 45
+     }
+    ],
+    "quote_total": 199,
+    "duration_min": 60,
+    "slot_id": "SLOT-2026-09-01-0800",
+    "customer_message": "Booked - Tuesday 9/1, 8:00-10:00 AM. Tonight: leave both valves off and the faucet off. Towel-dry the cabinet, remove stored items, and leave the doors open overnight to air out (a fan helps) to prevent swelling and mildew. Photograph any water damage to the floor or the space below. If anything sprays again, shut off the main and text me and I'll page the on-call plumber."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c01_burst_supply",
+    "tier": "S1",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 4,
+    "safety_overrides": 0,
+    "severity_ok": false,
+    "category_ok": false,
+    "escalation_required": true,
+    "escalated": false,
+    "escalation_ok": false,
+    "false_page": false,
+    "hallucinated_codes": [
+     "SUP-LINE-REPL",
+     "SUP-LINE-REPL-ADD",
+     "SVC-AH-DIAG"
+    ],
+    "quote_ok": false,
+    "code_f1": null,
+    "total_err_pct": null,
+    "refs_valid": true,
+    "mitigation_ok": false,
+    "duration_abs_err": null,
+    "duration_ok": null,
+    "slot_ok": false,
+    "known_customer_ok": null,
+    "cost_usd": 0.1,
+    "wall_s": null
+   }
+  },
+  {
+   "case": "c02_sewage_backup",
+   "ticket": {
+    "severity": "S1",
+    "category": "sewage_backup",
+    "summary": "Sewage backing up through bathtub drain with toilet gurgling on kitchen sink use at 9 Delmore St \u2014 main sewer line blockage, on-call plumber paged for tonight.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Stop all water use immediately \u2014 no flushing, sinks, showers, washer or dishwasher",
+     "Keep children and pets out of the affected bathroom; treat standing water as a biohazard and avoid skin contact",
+     "Ventilate the bathroom (window/exhaust fan) for sewer gas odor",
+     "Do not use chemical drain cleaner \u2014 ineffective on a main line and hazardous to the tech opening the cleanout",
+     "Do not open the exterior cleanout cap yourself; tech will locate and open it on arrival"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "AH-DISPATCH",
+      "description": "After-hours emergency dispatch fee",
+      "price": 189
+     },
+     {
+      "code": "MAIN-CABLE",
+      "description": "Cable/auger main sewer line via exterior cleanout",
+      "price": 375
+     }
+    ],
+    "quote_total": 564,
+    "duration_min": 120,
+    "slot_id": null,
+    "customer_message": "No need to go hunting in the dark \u2014 our tech will find the cleanout (usually a 3-4\" capped pipe near the foundation). You're on the on-call plumber's list for 9 Delmore St; dispatch will text an ETA shortly, typically 60-90 minutes. Keep all water off until he arrives. Ballpark tonight: $189 after-hours dispatch + $375 to cable the main line = ~$564, confirmed before any work starts. If the line won't clear or roots/collapse are suspected, he'll recommend a $250 camera inspection \u2014 your call. Keep everyone out of that bathroom."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c02_sewage_backup",
+    "tier": "S1",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": true,
+    "escalated": true,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "AH-DISPATCH",
+     "MAIN-CABLE"
+    ],
+    "quote_ok": false,
+    "code_f1": null,
+    "total_err_pct": null,
+    "refs_valid": true,
+    "mitigation_ok": false,
+    "duration_abs_err": null,
+    "duration_ok": null,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.06,
+    "wall_s": null
+   }
+  },
+  {
+   "case": "c03_gas_smell_hidden",
+   "ticket": {
+    "severity": "S1",
+    "category": "gas_emergency",
+    "summary": "Intermittent strong sulfur odor in air around gas water heater in basement (no symptoms reported); customer directed to gas utility emergency line, on-call plumber paged; secondary slow basement floor drain + musty smell to be snaked once house is cleared.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Evacuate basement/house and keep pets out",
+     "Do not operate light switches, plugs, or garage door opener",
+     "Call 911 or gas utility 24/7 emergency line from outside (free response)",
+     "Do not relight pilot or attempt gas shutoff unless utility directs",
+     "After clearance, pour ~1 gallon of water down the basement floor drain to refill a possibly dry trap",
+     "Text back immediately if utility finds a leak or red-tags an appliance for same-night dispatch"
+    ],
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "GAS-DIAG-AH",
+      "description": "After-hours gas leak diagnostic and leak test at water heater / gas line (repairs quoted after diagnosis)",
+      "price": 189
+     },
+     {
+      "code": "DRAIN-SNAKE-75",
+      "description": "Basement floor drain cable clearing, up to 75 ft (to be scheduled this week, separate visit)",
+      "price": 285
+     }
+    ],
+    "quote_total": 474,
+    "duration_min": 120,
+    "slot_id": null,
+    "customer_message": "Take this seriously: intermittent, sometimes-strong rotten egg smell in the air near a gas water heater is the classic sign of a gas leak. Get everyone and pets out of the basement (ideally the house), don't flip switches/unplug anything/use the garage door, and from outside call 911 or your gas utility's free 24/7 emergency line. Don't relight the pilot or touch the gas valve unless they tell you to. Note: sewer gas from a dried-out floor drain trap smells similar and fits your slow drain too, but let the utility rule out the dangerous one first. I'm paging our on-call plumber now to follow up after they clear the house, or tonight if they find a leak. For the drain: $285 flat to snake it (60-90 min) and I'll book you later this week; if it's just a dry trap, a gallon of water down the drain may fix the smell."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c03_gas_smell_hidden",
+    "tier": "S1",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": true,
+    "escalated": true,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "DRAIN-SNAKE-75",
+     "GAS-DIAG-AH"
+    ],
+    "quote_ok": false,
+    "code_f1": null,
+    "total_err_pct": null,
+    "refs_valid": true,
+    "mitigation_ok": false,
+    "duration_abs_err": null,
+    "duration_ok": null,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.09,
+    "wall_s": null
+   }
+  },
+  {
+   "case": "c04_ceiling_leak_shutoff_fail",
+   "ticket": {
+    "severity": "S1",
+    "category": "ceiling_leak_active",
+    "summary": "Active water pouring through dining room ceiling light fixture from upstairs bathroom (suspected toilet); customer's toilet angle stop was seized, main shutoff located at water heater in garage and closed \u2014 flow stopped, on-call tech dispatched.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Do not touch the light fixture or standing water; shut off the dining room lighting breaker (water through an energized fixture)",
+     "Attempted toilet angle stop behind toilet \u2014 seized; advised NOT to force it to avoid snapping the valve",
+     "Advised holding/wedging the tank flapper closed and lifting the fill valve float as an interim stop",
+     "Located and closed main shutoff lever at water heater in garage (quarter turn, crosswise)",
+     "Opened lowest-floor cold faucet (kitchen sink) to depressurize and drain lines \u2014 ceiling drip reduced significantly",
+     "Keep bucket in place for residual trapped water; move furniture and rugs clear",
+     "Checked for ceiling bulge/sag \u2014 none present, ceiling wet only, no relief puncture needed",
+     "Photograph/video ceiling and wet area for insurance",
+     "No fixture use or flushing until tech restores water"
+    ],
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "EMRG-AH-DISPATCH",
+      "description": "After-hours emergency call-out, includes trip and on-site diagnosis (firm)",
+      "price": 189
+     },
+     {
+      "code": "EST-ANGLE-STOP",
+      "description": "Estimated replacement of seized toilet angle stop, $145-185 range, to be confirmed on site before work",
+      "price": 165
+     }
+    ],
+    "quote_total": 354,
+    "duration_min": 90,
+    "slot_id": null,
+    "customer_message": "You've earned that bucket-sitting break. Here's where we stand: Tech is en route - ETA ~35-45 min from now. He'll call your cell (+1-555-0104) when he's close. Keep the dining room breaker off until he clears the fixture, and leave the house water off until he restores it. He'll find the source upstairs, quote the repair before touching anything, and can dry-check the ceiling cavity so you know what your insurance is dealing with. You're all set - text back if anything changes before he arrives."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c04_ceiling_leak_shutoff_fail",
+    "tier": "S1",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 7,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": true,
+    "escalated": true,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "EMRG-AH-DISPATCH",
+     "EST-ANGLE-STOP"
+    ],
+    "quote_ok": false,
+    "code_f1": null,
+    "total_err_pct": null,
+    "refs_valid": true,
+    "mitigation_ok": false,
+    "duration_abs_err": null,
+    "duration_ok": null,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.19,
+    "wall_s": null
+   }
+  },
+  {
+   "case": "c05_no_hot_water_returning",
+   "ticket": {
+    "severity": "S2",
+    "category": "water_heater_no_hot",
+    "summary": "No hot water \u2014 gas water heater pilot lights then self-extinguishes after ~10 min (likely failed thermocouple); no gas odor, no leak; infant in home, needs first morning slot.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Confirmed no gas odor; instructed to leave home and call gas utility/911 from outside if gas smell ever occurs",
+     "Turn gas control knob to OFF instead of repeatedly relighting the pilot",
+     "Heat water on stove and mix to warm for the 4-month-old, test temperature on wrist before use",
+     "Confirmed no water pooling at base of tank \u2014 no active leak"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DIAG-STD",
+      "description": "After-hours-booked standard diagnostic, gas water heater",
+      "price": 89
+     },
+     {
+      "code": "WH-THERMOCOUPLE",
+      "description": "Thermocouple replacement, parts + labor (estimate, pending on-site diagnosis)",
+      "price": 145
+     }
+    ],
+    "quote_total": 234,
+    "duration_min": 90,
+    "slot_id": "2026-09-01-0800",
+    "customer_message": "That's a relief \u2014 no gas smell and no water on the floor means this isn't an emergency, so we don't need to page the on-call plumber tonight. A pilot that burns ~10 minutes and dies is the classic sign of a failing thermocouple. Tonight: turn the gas control to OFF rather than relighting repeatedly; heat water on the stove and mix to warm for the baby, testing on your wrist first; if you ever smell gas, call the gas utility or 911 from outside. I've put you in the first priority slot tomorrow, Tuesday Sept 1, 8:00\u201310:00 AM arrival (60\u201390 min on site). Pricing: thermocouple replacement typically $89 diagnostic + $145 parts/labor = $234 \u2014 but since we installed your heater last year this is very likely warranty-covered ($0 to you). The office will verify the warranty first thing and confirm before charging anything. Dispatch will text confirmation around 7:00 AM."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c05_no_hot_water_returning",
+    "tier": "S2",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "DIAG-STD",
+     "WH-THERMOCOUPLE"
+    ],
+    "code_f1": 0.0,
+    "total_err_pct": 38.5,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 30,
+    "duration_ok": false,
+    "slot_ok": false,
+    "known_customer_ok": false,
+    "cost_usd": 0.08,
+    "wall_s": null
+   }
+  },
+  {
+   "case": "c06_leak_contained",
+   "ticket": {
+    "severity": "S2",
+    "category": "leak_contained",
+    "summary": "Leaking braided supply line under bathroom sink; customer shut the angle stop and leak fully stopped, but it's their only full bathroom so that sink is out of service \u2014 needs first morning slot.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Leave the angle stop closed until the tech arrives",
+     "Towel-dry the cabinet base and area under the sink to prevent swelling/damage",
+     "Confirmed no residual drip from the valve itself"
+    ],
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "SUPPLY-LINE-REPL",
+      "description": "Replace braided faucet supply line (parts + labor, regular hours)",
+      "price": 145
+     }
+    ],
+    "quote_total": 145,
+    "duration_min": 45,
+    "slot_id": "2026-09-01-0800-1000",
+    "customer_message": "You're all set \u2014 8:00\u201310:00 AM tomorrow (Mon Sept 1) is locked in, and you'll get a text when the tech is on the way. Keep that valve closed tonight; the rest of the house is unaffected. See you in the morning, Jess!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c06_leak_contained",
+    "tier": "S2",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "SUPPLY-LINE-REPL"
+    ],
+    "code_f1": 0.0,
+    "total_err_pct": 12.4,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 0,
+    "duration_ok": true,
+    "slot_ok": false,
+    "known_customer_ok": null,
+    "cost_usd": 0.04,
+    "wall_s": null
+   }
+  },
+  {
+   "case": "c07_only_toilet_blocked",
+   "ticket": {
+    "severity": "S2",
+    "category": "toilet_clog",
+    "summary": "Sole toilet in home fully blocked, nearly overflowed; plunger failed, no other fixtures affected \u2014 local trap clog, booked first morning slot.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Stop flushing to avoid overflow",
+     "Close the toilet supply shutoff valve (clockwise) \u2014 customer confirmed done",
+     "Bail bowl down to roughly half level into a bucket",
+     "Attempt dish soap plus hot-not-boiling water poured from height, let sit 20 minutes",
+     "Do not use chemical drain cleaner in the toilet",
+     "Leave supply valve off overnight; text to cancel if clog clears",
+     "Report any gurgling in tub/sinks or recurrence to tech \u2014 would indicate main line issue"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "TOILET-AUGER",
+      "description": "Toilet auger / clog clear, standard hours",
+      "price": 145
+     },
+     {
+      "code": "TOILET-PULL-RESET",
+      "description": "Contingent only if object lodged in trap: pull and reset toilet incl. new wax ring \u2014 customer approval required on site",
+      "price": 120
+     }
+    ],
+    "quote_total": 145,
+    "duration_min": 60,
+    "slot_id": "TUE-2026-09-01-0700",
+    "customer_message": "You're on the list \u2014 I've locked you into the 7\u20139am slot tomorrow (Tue Sep 1), first call of the day. No callback needed to confirm. If the hot water trick works tonight, just text this number and I'll cancel it, no charge. And if it drains but backs up again in a day or two, or the tub/sinks start gurgling, tell the tech \u2014 that changes the picture to a main line issue. One heads-up on price: $145 covers clearing it with the auger, which handles the large majority of these. If something solid is wedged in the trap (the classic toy scenario) and the tech has to pull and reset the toilet, that's +$120 including a new wax ring. He'll show you before doing anything extra. Leave the supply valve off overnight, and thanks for your patience with the after-hours line."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c07_only_toilet_blocked",
+    "tier": "S2",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 3,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "TOILET-AUGER",
+     "TOILET-PULL-RESET"
+    ],
+    "code_f1": 0.0,
+    "total_err_pct": 2.7,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": false,
+    "duration_abs_err": 15,
+    "duration_ok": true,
+    "slot_ok": false,
+    "known_customer_ok": null,
+    "cost_usd": 0.09,
+    "wall_s": null
+   }
+  },
+  {
+   "case": "c08_running_toilet",
+   "ticket": {
+    "severity": "S3",
+    "category": "toilet_running",
+    "summary": "Upstairs toilet runs continuously for several days; likely worn flapper or fill valve, customer shutting off supply valve overnight.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Turn the toilet's supply shutoff valve clockwise to stop water flow between uses until the repair",
+     "Reopen the valve only when a flush is needed to limit water waste"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "SVC-CALL",
+      "description": "Service call / diagnostic",
+      "price": 89
+     },
+     {
+      "code": "TOILET-REBUILD",
+      "description": "Flapper or fill valve replacement, parts and labor (range $100-$140)",
+      "price": 110
+     }
+    ],
+    "quote_total": 199,
+    "duration_min": 60,
+    "slot_id": "2026-09-01-PM-1",
+    "customer_message": "Yes - that price covers the service call, labor, and the standard part (flapper or fill valve). The only time it'd go higher is if we find something unusual, like a cracked tank or a corroded shutoff valve, and we'd show you and get your OK before doing any extra work. No surprise charges. You're booked for Tue Sep 1, 1-3pm. Just make sure we can get to the toilet and that someone 18+ is home; we'll text when the tech is on the way. Keep that valve closed overnight and flip it back open only when you need to flush. See you tomorrow, Nora!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c08_running_toilet",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "SVC-CALL"
+    ],
+    "code_f1": 0.667,
+    "total_err_pct": 5.3,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 0,
+    "duration_ok": true,
+    "slot_ok": false,
+    "known_customer_ok": null,
+    "cost_usd": 0.05,
+    "wall_s": null
+   }
+  },
+  {
    "case": "c09_slow_kitchen_drain",
-   "ticket": null,
+   "ticket": {
+    "severity": "S3",
+    "category": "drain_slow",
+    "summary": "Both kitchen sink basins draining slowly (~10 min to empty); rest of house drains fine, so likely grease/food clog in kitchen branch line downstream of disposal \u2014 needs cabling.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Stop using chemical drain cleaners \u2014 ineffective on grease and hazardous for the tech cabling the line",
+     "Run disposal with cold water only and keep grease/oil out of the drain",
+     "Avoid filling both basins at once, since a restricted line can push water back up the other side",
+     "Text us if the sink backs up completely or water appears under the cabinet, and we'll move the appointment up"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DRAIN-CLEAR-STD",
+      "description": "Standard drain clearing \u2014 cable kitchen branch line, up to 90 min, includes flow test",
+      "price": 189
+     }
+    ],
+    "quote_total": 189,
+    "duration_min": 90,
+    "slot_id": "2026-09-02-PM-1300-1500",
+    "customer_message": "You're all set, Tom \u2014 Wednesday, Sept 2, 1\u20133pm for kitchen drain clearing at $189 flat. The tech will text when they're on the way. If the sink backs up completely or you see water under the cabinet before then, text us and we'll bump you up. Thanks for your patience tonight!"
+   },
    "safety_overrides": [],
    "verifier_issues_initial": [],
    "verifier_issues_final": [],
    "score": {
     "case_id": "c09_slow_kitchen_drain",
     "tier": "S3",
-    "parse_ok": false,
+    "parse_ok": true,
     "refusal": false,
-    "turns": 1,
+    "turns": 3,
     "safety_overrides": 0,
-    "severity_ok": false,
-    "category_ok": false,
+    "severity_ok": true,
+    "category_ok": true,
     "escalation_required": false,
     "escalated": false,
-    "escalation_ok": false,
+    "escalation_ok": true,
     "false_page": false,
-    "hallucinated_codes": [],
+    "hallucinated_codes": [
+     "DRAIN-CLEAR-STD"
+    ],
     "code_f1": 0.0,
-    "total_err_pct": null,
+    "total_err_pct": 5.6,
     "quote_ok": false,
-    "refs_valid": false,
-    "mitigation_ok": false,
-    "duration_abs_err": null,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 30,
     "duration_ok": false,
     "slot_ok": false,
     "known_customer_ok": null,
-    "cost_usd": 0.0,
-    "wall_s": 3.2
+    "cost_usd": 0.0632,
+    "wall_s": 29.3
+   }
+  },
+  {
+   "case": "c10_dripping_faucet",
+   "ticket": {
+    "severity": "S3",
+    "category": "faucet_drip",
+    "summary": "Two-handle bathroom lavatory faucet (1990s original) dripping from hot side; customer closed angle stops overnight, wants earliest normal appointment.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Close both angle-stop shutoff valves under the sink (clockwise) to stop the drip overnight",
+     "Leave the faucet handle in the off position and keep the stops closed until the tech arrives",
+     "Report to the tech if either stop fails to fully stop the drip (worn stop, cheap add-on replacement)"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "FAUCET-REPAIR-2H",
+      "description": "Two-handle lavatory faucet repair - stem washer/seat kit, hot side, includes diagnosis and standard parts",
+      "price": 155
+     },
+     {
+      "code": "ALT-FAUCET-REPLACE",
+      "description": "Contingency if 90s internals are unavailable/corroded: faucet replacement labor, fixture billed separately",
+      "price": 285
+     }
+    ],
+    "quote_total": 155,
+    "duration_min": 60,
+    "slot_id": "TUE-2026-09-01-0900-1100",
+    "customer_message": "Perfect - two-handle means it's almost certainly a worn stem washer or seat on the hot side, the easy cheap end of the range: roughly $145-165, about an hour on site. We carry stems and seat kits for most 90s two-handle fixtures. Not weeks out at all - Tuesday Sept 1, 9:00-11:00 AM, or 1:00-3:00 PM if afternoon is better. I've penciled you in for 9-11 and dispatch will text to confirm in the morning. Leave the shutoff valves closed until we arrive, and tell the tech if either one doesn't fully stop the drip - that means the valve is worn too and it's a cheap fix while we're under there."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c10_dripping_faucet",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "ALT-FAUCET-REPLACE",
+     "FAUCET-REPAIR-2H"
+    ],
+    "code_f1": 0.0,
+    "total_err_pct": 2.5,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 9,
+    "duration_ok": true,
+    "slot_ok": false,
+    "known_customer_ok": null,
+    "cost_usd": 0.0569,
+    "wall_s": 27.8
+   }
+  },
+  {
+   "case": "c11_damp_spot",
+   "ticket": {
+    "severity": "S3",
+    "category": "damp_spot",
+    "summary": "Dinner-plate-sized damp/yellow ceiling stain in bedroom, stable 3 days, firm and not dripping; bathroom in upstairs neighbor's unit (Apt above 5C) is the likely source \u2014 needs leak diagnostic and access to neighbor's bathroom.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Place a towel or bucket under the patch in case it opens up overnight",
+     "Do not puncture or poke the ceiling \u2014 it may be holding water",
+     "Keep the room ventilated",
+     "Notify upstairs neighbor and building management/landlord tonight to arrange access to the bathroom above",
+     "Call immediately if the patch starts dripping, grows, or begins to sag"
+    ],
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "DIAG-LEAK",
+      "description": "Leak diagnostic: moisture-meter ceiling, isolate/test fixtures in unit above, confirm source (credited toward repair)",
+      "price": 149
+     }
+    ],
+    "quote_total": 149,
+    "duration_min": 60,
+    "slot_id": "2026-09-01-0900-1100",
+    "customer_message": "You're all set, Omar \u2014 booked tomorrow, Mon Sep 1, 9:00\u201311:00 AM at 230 Quarry Rd, Apt 5C. Leak diagnostic $149 flat, credited toward any repair. Tonight: keep a towel or bucket handy, leave the patch alone, and confirm your neighbor can allow access to their bathroom during that window. If it starts actively dripping or the ceiling sags before then, call us right away and we'll treat it as urgent."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c11_damp_spot",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 3,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "DIAG-LEAK"
+    ],
+    "code_f1": 0.0,
+    "total_err_pct": 67.4,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 15,
+    "duration_ok": true,
+    "slot_ok": false,
+    "known_customer_ok": null,
+    "cost_usd": 0.0751,
+    "wall_s": 34.0
+   }
+  },
+  {
+   "case": "c12_disposal_jam",
+   "ticket": {
+    "severity": "S4",
+    "category": "disposal_jam",
+    "summary": "Customer's garbage disposal hummed without spinning; talked her through safe self-clear and she removed a peach pit \u2014 unit fully working, no visit needed.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Switch off and unplug the disposal (or trip its breaker) and never reach into the drain by hand",
+     "Insert a 1/4\" hex/Allen wrench into the hole on the underside center of the unit and rock it back and forth until the impeller spins freely",
+     "Remove any visible debris with tongs, restore power, press the red reset button, then run cold water and test",
+     "Prevention: keep pits, bones, fibrous scraps and grease out; run cold water before, during and ~20 seconds after grinding",
+     "Call back if it hums again after wrenching or repeatedly trips the reset \u2014 likely a failing motor needing replacement"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [],
+    "quote_total": 0,
+    "duration_min": 0,
+    "slot_id": null,
+    "customer_message": "Woohoo \u2014 a peach pit! Classic disposal killer. Nicely done, you fixed it yourself. Two quick tips so it doesn't happen again: keep pits, bones, fibrous stuff (celery, corn husks) and grease out, and always run cold water before, during, and ~20 seconds after grinding. If it ever hums again and the wrench doesn't free it, or it trips the reset repeatedly, that usually means the motor's going \u2014 give us a call and we'll take a look. No charge tonight, and we'll be back at the phones tomorrow at 8am. Take care!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c12_disposal_jam",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": false,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 0.0,
+    "total_err_pct": 100.0,
+    "quote_ok": true,
+    "refs_valid": true,
+    "mitigation_ok": false,
+    "duration_abs_err": 30,
+    "duration_ok": false,
+    "slot_ok": true,
+    "known_customer_ok": null,
+    "cost_usd": 0.046,
+    "wall_s": 22.1
+   }
+  },
+  {
+   "case": "c13_low_pressure_returning",
+   "ticket": {
+    "severity": "S3",
+    "category": "low_pressure_shower",
+    "summary": "Repeat low pressure at master shower (both hot and cold, other fixtures normal) on older Delta valve \u2014 confirmed weak flow with showerhead removed, so cartridge/pressure-balance spool is the cause; previously serviced in March.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Removed showerhead and ran the valve into a bucket to isolate head vs. valve \u2014 flow still weak, confirming the cartridge rather than a clogged head/screen",
+     "Confirmed both hot and cold are affected and other fixtures are normal, ruling out a whole-house supply or water heater issue",
+     "No temporary fix attempted tonight; advised to leave the valve as-is until the tech arrives"
+    ],
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "DIAG-STD",
+      "description": "Service call / diagnostic (waived with repair)",
+      "price": 0
+     },
+     {
+      "code": "SHWR-CART-DELTA",
+      "description": "Delta shower cartridge replacement, parts + labor (bring rebuild kit: seats/springs, O-rings)",
+      "price": 245
+     }
+    ],
+    "quote_total": 245,
+    "duration_min": 90,
+    "slot_id": "SLOT-2026-09-01-1300",
+    "customer_message": "You're booked, Priya \u2014 Tuesday Sep 1, 1\u20133pm. The tech will bring Delta cartridges and a rebuild kit so it gets sorted in one visit, and we've flagged your March ticket so they know this is a repeat and will check for what's chewing up the cartridge (debris, worn seats/springs) rather than just swapping it. Quote is $245 all-in for the cartridge repair; anything beyond that gets your approval first. Text this number if anything changes \u2014 see you tomorrow afternoon!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c13_low_pressure_returning",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 4,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "DIAG-STD",
+     "SHWR-CART-DELTA"
+    ],
+    "code_f1": 0.0,
+    "total_err_pct": 54.1,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 21,
+    "duration_ok": false,
+    "slot_ok": false,
+    "known_customer_ok": true,
+    "cost_usd": 0.099,
+    "wall_s": 45.7
+   }
+  },
+  {
+   "case": "c14_wh_replace_quote",
+   "ticket": {
+    "severity": "S3",
+    "category": "water_heater_replace",
+    "summary": "Proactive replacement of 14-year-old 40-gal gas water heater; free on-site estimate booked Wed 9/2 8-10am, customer wants firm written quote before anything is ordered.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "No active leak or emergency; unit is functioning, replacement is preventative",
+     "Watch for rust-colored water, puddling at the tank base, or rumbling noises and call sooner if any appear"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "EST-VISIT",
+      "description": "On-site estimate visit - no charge",
+      "price": 0
+     },
+     {
+      "code": "WH-40G-GAS-INSTALL",
+      "description": "BALLPARK ONLY (verbal range $1,750-$2,300): standard 40-gal atmospheric-vent gas water heater supplied and installed, incl. water/gas flex connectors, shutoff, drip pan, haul-away of old unit, 3-4 hrs labor",
+      "price": 2025
+     },
+     {
+      "code": "PERMIT",
+      "description": "BALLPARK ONLY: municipal permit + inspection, billed at cost ($150-$250); quoted to customer as separate from install price",
+      "price": 200
+     }
+    ],
+    "quote_total": 2225,
+    "duration_min": 120,
+    "slot_id": "WED-2026-09-02-0800",
+    "customer_message": "Absolutely - nothing gets ordered or installed without your sign-off. The tech will do the walkthrough, confirm the model and any code items, and hand you a firm written quote on the spot. You decide from there. You're booked: Wednesday, September 2, 8-10am. I'll send a reminder Tuesday, and the tech will text when they're on the way. If you spot rust-colored water, puddling at the base, or hear rumbling before then, give us a shout - that's a 'sooner rather than later' sign. See you Wednesday, Hal!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c14_wh_replace_quote",
+    "tier": "S4",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 3,
+    "safety_overrides": 0,
+    "severity_ok": false,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "EST-VISIT",
+     "PERMIT",
+     "WH-40G-GAS-INSTALL"
+    ],
+    "code_f1": 0.0,
+    "total_err_pct": 53.4,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 120,
+    "duration_ok": false,
+    "slot_ok": null,
+    "known_customer_ok": null,
+    "cost_usd": 0.0813,
+    "wall_s": 36.8
+   }
+  },
+  {
+   "case": "c15_disposal_install",
+   "ticket": {
+    "severity": "S3",
+    "category": "disposal_install",
+    "summary": "15-year-old garbage disposal seized/dead; customer wants like-for-like replacement, we supply 1/2 HP unit. Sink otherwise drains fine, no leak.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Leave disposal switch off and unplug/breaker-off the unit until the tech arrives",
+     "Do not use chemical drain cleaners in that sink basin",
+     "Clear the under-sink cabinet before the appointment",
+     "Sink can be used normally since it still drains"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DISP-050",
+      "description": "1/2 HP continuous-feed garbage disposal, standard grade (supplied)",
+      "price": 140
+     },
+     {
+      "code": "DISP-SWAP-LAB",
+      "description": "Labor: remove seized disposal, install replacement, test drain/connections",
+      "price": 185
+     }
+    ],
+    "quote_total": 325,
+    "duration_min": 60,
+    "slot_id": "2026-09-01-0800-1000",
+    "customer_message": "You're all set, Yuki! Booked for tomorrow, Tue Sep 1, 8-10am - we'll supply and install a new 1/2 HP continuous-feed disposal. Total $325 ($140 unit + $185 labor), about an hour on site. Until then: leave the disposal switch off (and unplug it or flip its breaker if easy), don't pour any drain chemicals down that side, and if you could clear out the under-sink cabinet before we arrive, that speeds things up. You can keep using the sink normally since it drains fine."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c15_disposal_install",
+    "tier": "S4",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 2,
+    "safety_overrides": 0,
+    "severity_ok": false,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "DISP-050",
+     "DISP-SWAP-LAB"
+    ],
+    "code_f1": 0.0,
+    "total_err_pct": 1.2,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 30,
+    "duration_ok": false,
+    "slot_ok": false,
+    "known_customer_ok": null,
+    "cost_usd": 0.0505,
+    "wall_s": 23.5
+   }
+  },
+  {
+   "case": "c16_recurring_main_returning",
+   "ticket": {
+    "severity": "S3",
+    "category": "drain_main_recurring",
+    "summary": "Repeat kitchen branch backup (3rd this year, snaked Jan and May) \u2014 still draining slowly with gurgling; booked camera inspection + hydro jet for Tue 9/1 PM.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Stop running water into the kitchen sink and do not run the dishwasher until the tech arrives",
+     "Do not use chemical drain cleaner \u2014 ineffective on grease and creates a hazard for the tech",
+     "Clear the under-sink cabinet before the appointment",
+     "Text back for priority bump if the line stops draining entirely"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "CAM-BRANCH",
+      "description": "Camera inspection of kitchen branch line (credited toward same-visit hydro jetting)",
+      "price": 195
+     },
+     {
+      "code": "JET-BRANCH",
+      "description": "Hydro jet kitchen branch line to remove grease buildup",
+      "price": 475
+     },
+     {
+      "code": "CREDIT-CAM",
+      "description": "Camera fee credited \u2014 jetting performed same visit",
+      "price": -195
+     }
+    ],
+    "quote_total": 475,
+    "duration_min": 120,
+    "slot_id": "2026-09-01-PM-1300",
+    "customer_message": "You're booked \u2014 Tuesday 9/1, 1:00\u20133:00 PM. You'll get a text when the tech is en route. Please keep the kitchen sink and dishwasher unused until then so the line is clear for the camera, and clear out the under-sink cabinet if you can \u2014 saves us time. If it backs up fully before then and won't drain at all, text this number and we'll bump you up. Thanks Marcus, and sorry it took three rounds to get to the right fix."
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c16_recurring_main_returning",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 3,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "CAM-BRANCH",
+     "CREDIT-CAM",
+     "JET-BRANCH"
+    ],
+    "code_f1": 0.0,
+    "total_err_pct": 8.4,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 12,
+    "duration_ok": true,
+    "slot_ok": false,
+    "known_customer_ok": true,
+    "cost_usd": 0.0742,
+    "wall_s": 34.3
+   }
+  },
+  {
+   "case": "c17_hose_bib",
+   "ticket": {
+    "severity": "S3",
+    "category": "hose_bib",
+    "summary": "Outdoor standard hose bib (original, ~1990s) sprays from the handle when opened \u2014 likely worn packing; repack, replace if stem/seat is shot.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Only run the spigot when needed until the repair",
+     "Close the interior shutoff valve on the line feeding the spigot if one can be located",
+     "Optional DIY: with the handle closed, snug the packing nut about a quarter turn clockwise with a wrench"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "HB-REPACK",
+      "description": "Hose bib valve stem repack (packing washer/graphite), includes trip and labor \u2014 primary path",
+      "price": 145
+     },
+     {
+      "code": "HB-REPLACE",
+      "description": "Full standard hose bib replacement incl. valve \u2014 alternative if stem/seat is worn beyond repack; customer approval required before proceeding",
+      "price": 245
+     }
+    ],
+    "quote_total": 145,
+    "duration_min": 60,
+    "slot_id": "WED-2026-09-02-0800",
+    "customer_message": "You're all set, Faye \u2014 Wednesday Sept 2, 8\u201310 AM, at the number on file. Our tech will text when they're on the way. No charge if you cancel beforehand, so definitely let us know if that wrench turn does the trick. Have a good night!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c17_hose_bib",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 3,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [
+     "HB-REPACK",
+     "HB-REPLACE"
+    ],
+    "code_f1": 0.0,
+    "total_err_pct": 14.2,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 26,
+    "duration_ok": false,
+    "slot_ok": false,
+    "known_customer_ok": null,
+    "cost_usd": 0.075,
+    "wall_s": 35.0
+   }
+  },
+  {
+   "case": "c18_wh_noise",
+   "ticket": {
+    "severity": "S3",
+    "category": "water_heater_noise",
+    "summary": "Rumbling/popping from water heater during heat cycle \u2014 classic sediment buildup, no leaks, no T&P discharge, normal water temp; booked for drain-and-flush plus safety inspection.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Confirmed no water pooling at tank base and no discharge from T&P line",
+     "Confirmed hot water temperature normal, no hissing or steam at taps",
+     "Advised it is safe to leave the heater powered on overnight and use hot water normally",
+     "Advised to text immediately if water pools, T&P valve discharges, or water becomes scalding",
+     "Asked customer to clear ~3 ft of access around the heater before the appointment"
+    ],
+    "playbook_refs": null,
+    "quote_lines": [
+     {
+      "code": "WH-FLUSH",
+      "description": "Water heater drain & sediment flush, plus safety inspection (T&P valve, anode rod, thermostat)",
+      "price": 165
+     }
+    ],
+    "quote_total": 165,
+    "duration_min": 90,
+    "slot_id": "2026-09-01-PM-1300",
+    "customer_message": "Just leave it alone tonight \u2014 no need to shut anything off, and it's fine to use hot water normally. If anything changes before we arrive (water pooling at the base, the T&P pipe discharging, or scalding water), text me and we'll bump it up the list. You're booked for Mon 9/1, 1\u20133pm, $165 flat for the flush and safety inspection. If you can clear a few feet of space around the heater before we get there, that'll speed things along. Sleep well, Denis!"
+   },
+   "safety_overrides": [],
+   "verifier_issues_initial": [],
+   "verifier_issues_final": [],
+   "score": {
+    "case_id": "c18_wh_noise",
+    "tier": "S3",
+    "parse_ok": true,
+    "refusal": false,
+    "turns": 3,
+    "safety_overrides": 0,
+    "severity_ok": true,
+    "category_ok": true,
+    "escalation_required": false,
+    "escalated": false,
+    "escalation_ok": true,
+    "false_page": false,
+    "hallucinated_codes": [],
+    "code_f1": 1.0,
+    "total_err_pct": 18.7,
+    "quote_ok": false,
+    "refs_valid": true,
+    "mitigation_ok": true,
+    "duration_abs_err": 15,
+    "duration_ok": true,
+    "slot_ok": false,
+    "known_customer_ok": null,
+    "cost_usd": 0.0709,
+    "wall_s": 660.7
    }
   }
  ]

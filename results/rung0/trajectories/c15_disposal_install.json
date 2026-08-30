@@ -1,0 +1,61 @@
+{
+ "config": "rung0",
+ "case": "c15_disposal_install",
+ "system_prompt_chars": 2116,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi! Our disposal died (15 years old, seized solid). We just want a new one installed, nothing fancy. Price and earliest slot?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Sorry your disposal quit on you! Quick check: do you want us to supply the unit (standard 1/2 HP continuous-feed, good for most homes), or do you already have one on hand? Also \u2014 is the sink draining okay otherwise, or is water backing up?\n\nBallpark either way: swap-out labor runs about $185, plus ~$140 if we supply the unit \u2014 so roughly $325 all-in, about an hour on site. Earliest opening is tomorrow (Tue Sep 1) 8\u201310am."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Thanks! Yeah, it's frustrating. We don't have a unit, so just supply one \u2014 the 1/2 HP sounds perfect. Sink drains fine otherwise, just the disposal is dead. Tomorrow 8-10am works great for us, let's lock that in!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Yuki! Booked for tomorrow, Tue Sep 1, 8\u201310am \u2014 we'll supply and install a new 1/2 HP continuous-feed disposal. Total $325 ($140 unit + $185 labor), about an hour on site.\n\nUntil then: leave the disposal switch off (and unplug it or flip its breaker if easy), don't pour any drain chemicals down that side, and if you could clear out the under-sink cabinet before we arrive, that speeds things up. You can keep using the sink normally since it drains fine.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"disposal_install\",\n  \"summary\": \"15-year-old garbage disposal seized/dead; customer wants like-for-like replacement, we supply 1/2 HP unit. Sink otherwise drains fine, no leak.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Leave disposal switch off and unplug/breaker-off the unit until the tech arrives\",\n    \"Do not use chemical drain cleaners in that sink basin\",\n    \"Clear the under-sink cabinet before the appointment\",\n    \"Sink can be used normally since it still drains\"\n  ],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\"code\": \"DISP-050\", \"description\": \"1/2 HP continuous-feed garbage disposal, standard grade (supplied)\", \"price\": 140},\n    {\"code\": \"DISP-SWAP-LAB\", \"description\": \"Labor: remove seized disposal, install replacement, test drain/connections\", \"price\": 185}\n  ],\n  \"quote_total\": 325,\n  \"duration_min\": 60,\n  \"slot_id\": \"2026-09-01-0800-1000\",\n  \"customer_message\": \"You're all set, Yuki! Booked for tomorrow, Tue Sep 1, 8-10am - we'll supply and install a new 1/2 HP continuous-feed disposal. Total $325 ($140 unit + $185 labor), about an hour on site. Until then: leave the disposal switch off (and unplug it or flip its breaker if easy), don't pour any drain chemicals down that side, and if you could clear out the under-sink cabinet before we arrive, that speeds things up. You can keep using the sink normally since it drains fine.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "disposal_install",
+    "summary": "15-year-old garbage disposal seized/dead; customer wants like-for-like replacement, we supply 1/2 HP unit. Sink otherwise drains fine, no leak.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Leave disposal switch off and unplug/breaker-off the unit until the tech arrives",
+     "Do not use chemical drain cleaners in that sink basin",
+     "Clear the under-sink cabinet before the appointment",
+     "Sink can be used normally since it still drains"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DISP-050",
+      "description": "1/2 HP continuous-feed garbage disposal, standard grade (supplied)",
+      "price": 140
+     },
+     {
+      "code": "DISP-SWAP-LAB",
+      "description": "Labor: remove seized disposal, install replacement, test drain/connections",
+      "price": 185
+     }
+    ],
+    "quote_total": 325,
+    "duration_min": 60,
+    "slot_id": "2026-09-01-0800-1000",
+    "customer_message": "You're all set, Yuki! Booked for tomorrow, Tue Sep 1, 8-10am - we'll supply and install a new 1/2 HP continuous-feed disposal. Total $325 ($140 unit + $185 labor), about an hour on site. Until then: leave the disposal switch off (and unplug it or flip its breaker if easy), don't pour any drain chemicals down that side, and if you could clear out the under-sink cabinet before we arrive, that speeds things up. You can keep using the sink normally since it drains fine."
+   }
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "case": "c15_disposal_install",
+ "ticket": {
+  "severity": "S3",
+  "category": "disposal_install",
+  "summary": "15-year-old garbage disposal seized/dead; customer wants like-for-like replacement, we supply 1/2 HP unit. Sink otherwise drains fine, no leak.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Leave disposal switch off and unplug/breaker-off the unit until the tech arrives",
+   "Do not use chemical drain cleaners in that sink basin",
+   "Clear the under-sink cabinet before the appointment",
+   "Sink can be used normally since it still drains"
+  ],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "DISP-050",
+    "description": "1/2 HP continuous-feed garbage disposal, standard grade (supplied)",
+    "price": 140
+   },
+   {
+    "code": "DISP-SWAP-LAB",
+    "description": "Labor: remove seized disposal, install replacement, test drain/connections",
+    "price": 185
+   }
+  ],
+  "quote_total": 325,
+  "duration_min": 60,
+  "slot_id": "2026-09-01-0800-1000",
+  "customer_message": "You're all set, Yuki! Booked for tomorrow, Tue Sep 1, 8-10am - we'll supply and install a new 1/2 HP continuous-feed disposal. Total $325 ($140 unit + $185 labor), about an hour on site. Until then: leave the disposal switch off (and unplug it or flip its breaker if easy), don't pour any drain chemicals down that side, and if you could clear out the under-sink cabinet before we arrive, that speeds things up. You can keep using the sink normally since it drains fine."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c15_disposal_install",
+  "tier": "S4",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": false,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [
+   "DISP-050",
+   "DISP-SWAP-LAB"
+  ],
+  "code_f1": 0.0,
+  "total_err_pct": 1.2,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 30,
+  "duration_ok": false,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.0505,
+  "wall_s": 23.5
+ }
+}

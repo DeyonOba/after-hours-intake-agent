@@ -7,6 +7,60 @@
    "role": "customer",
    "kind": "text",
    "content": "Kitchen sink is draining really slowly, takes 10 minutes to empty. I tried baking soda and vinegar, didn't help. Can you send someone this week?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hey Tom \u2014 thanks for texting. Slow kitchen drain is a standard service call, so we can definitely get you in this week.\n\nQuick check so I bring the right gear: is it *only* the kitchen sink, or are other drains (bathroom sink, tub, toilet) slow too? And do you have a garbage disposal?\n\nIn the meantime, skip the chemical drain cleaners \u2014 they rarely clear grease clogs and they can make cabling messier for the tech."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Good to know about the chemicals, thanks. Kitchen sink's the main issue but yeah, I do have a disposal \u2014 both basins drain slow actually, not just one side. Other drains in the house seem fine though."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's a helpful clue \u2014 both basins slow but the rest of the house fine means the clog is in the kitchen branch line (usually grease/food buildup past the disposal), not your main sewer. Good news: that's a routine cable-and-clear job.\n\nStandard drain clearing runs **$189** flat (up to 90 min, includes cabling the line and testing). If the line turns out to need hydro-jetting for heavy grease, that's quoted separately before we touch anything \u2014 no surprises.\n\nTips until then: run the disposal with cold water only, avoid pouring grease down it, and don't fill both basins (a slow line can push water back up the other side).\n\nI've got **Wed Sep 2, 8\u201310am** or **Wed Sep 2, 1\u20133pm** open. Which works better?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Wed afternoon works better for me \u2014 1\u20133pm is good. And yeah, I'll lay off the grease and stick to cold water. Thanks for walking me through this, appreciate it."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Tom \u2014 **Wednesday, Sept 2, 1\u20133pm** for kitchen drain clearing at $189 flat. The tech will text when they're on the way. If the sink backs up completely or you see water under the cabinet before then, text us and we'll bump you up. Thanks for your patience tonight!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"drain_slow\",\n  \"summary\": \"Both kitchen sink basins draining slowly (~10 min to empty); rest of house drains fine, so likely grease/food clog in kitchen branch line downstream of disposal \u2014 needs cabling.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Stop using chemical drain cleaners \u2014 ineffective on grease and hazardous for the tech cabling the line\",\n    \"Run disposal with cold water only and keep grease/oil out of the drain\",\n    \"Avoid filling both basins at once, since a restricted line can push water back up the other side\",\n    \"Text us if the sink backs up completely or water appears under the cabinet, and we'll move the appointment up\"\n  ],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"DRAIN-CLEAR-STD\",\n      \"description\": \"Standard drain clearing \u2014 cable kitchen branch line, up to 90 min, includes flow test\",\n      \"price\": 189\n    }\n  ],\n  \"quote_total\": 189,\n  \"duration_min\": 90,\n  \"slot_id\": \"2026-09-02-PM-1300-1500\",\n  \"customer_message\": \"You're all set, Tom \u2014 Wednesday, Sept 2, 1\u20133pm for kitchen drain clearing at $189 flat. The tech will text when they're on the way. If the sink backs up completely or you see water under the cabinet before then, text us and we'll bump you up. Thanks for your patience tonight!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "drain_slow",
+    "summary": "Both kitchen sink basins draining slowly (~10 min to empty); rest of house drains fine, so likely grease/food clog in kitchen branch line downstream of disposal \u2014 needs cabling.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Stop using chemical drain cleaners \u2014 ineffective on grease and hazardous for the tech cabling the line",
+     "Run disposal with cold water only and keep grease/oil out of the drain",
+     "Avoid filling both basins at once, since a restricted line can push water back up the other side",
+     "Text us if the sink backs up completely or water appears under the cabinet, and we'll move the appointment up"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DRAIN-CLEAR-STD",
+      "description": "Standard drain clearing \u2014 cable kitchen branch line, up to 90 min, includes flow test",
+      "price": 189
+     }
+    ],
+    "quote_total": 189,
+    "duration_min": 90,
+    "slot_id": "2026-09-02-PM-1300-1500",
+    "customer_message": "You're all set, Tom \u2014 Wednesday, Sept 2, 1\u20133pm for kitchen drain clearing at $189 flat. The tech will text when they're on the way. If the sink backs up completely or you see water under the cabinet before then, text us and we'll bump you up. Thanks for your patience tonight!"
+   }
   }
  ]
 }

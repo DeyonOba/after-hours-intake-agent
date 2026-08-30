@@ -1,0 +1,51 @@
+{
+ "config": "rung0",
+ "case": "c12_disposal_jam",
+ "system_prompt_chars": 2117,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My garbage disposal just hums and doesn't spin, I think something's stuck. Do I need a visit or is there something I can try safely?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news \u2014 that hum usually means the motor's fine but the impeller is jammed, and it's often a DIY fix. Here's the safe way:\n\n1. Switch the disposal off and unplug it (or flip its breaker) \u2014 never put your hand in the drain.\n2. Find the hex/Allen wrench that came with it (usually 1/4\"), insert it in the hole on the underside center of the unit, and work it back and forth a few full turns until it spins freely.\n3. Fish out anything visible with tongs, restore power, press the red reset button on the bottom, then run cold water and test.\n\nGive that a try and let me know \u2014 if it still just hums or trips again, it's likely a seized motor and we'd come out."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "omg perfect, i have an allen key! let me try this rn \ud83e\udd1e\n\n*few mins later*\n\nokay so i unplugged it, found the hole, worked the wrench back and forth... and it's spinning! got out a peach pit lol. reset the button, ran water and it's working again!!\n\nthank you so much, seriously saved me a service call. appreciate you walking me through that \ud83d\udc4d"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Woohoo \u2014 a peach pit! \ud83c\udf51 Classic disposal killer. Nicely done, you fixed it yourself.\n\nTwo quick tips so it doesn't happen again: keep pits, bones, fibrous stuff (celery, corn husks) and grease out, and always run cold water before, during, and ~20 seconds after grinding. If it ever hums again and the wrench doesn't free it, or it trips the reset repeatedly, that usually means the motor's going \u2014 give us a call and we'll take a look. No charge tonight, and we'll be back at the phones tomorrow at 8am. Take care!\n\n```json\n{\n  \"severity\": \"S4\",\n  \"category\": \"disposal_jam\",\n  \"summary\": \"Customer's garbage disposal hummed without spinning; talked her through safe self-clear and she removed a peach pit \u2014 unit fully working, no visit needed.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Switch off and unplug the disposal (or trip its breaker) and never reach into the drain by hand\",\n    \"Insert a 1/4\\\" hex/Allen wrench into the hole on the underside center of the unit and rock it back and forth until the impeller spins freely\",\n    \"Remove any visible debris with tongs, restore power, press the red reset button, then run cold water and test\",\n    \"Prevention: keep pits, bones, fibrous scraps and grease out; run cold water before, during and ~20 seconds after grinding\",\n    \"Call back if it hums again after wrenching or repeatedly trips the reset \u2014 likely a failing motor needing replacement\"\n  ],\n  \"playbook_refs\": [],\n  \"quote_lines\": [],\n  \"quote_total\": 0,\n  \"duration_min\": 0,\n  \"slot_id\": null,\n  \"customer_message\": \"Woohoo \u2014 a peach pit! Classic disposal killer. Nicely done, you fixed it yourself. Two quick tips so it doesn't happen again: keep pits, bones, fibrous stuff (celery, corn husks) and grease out, and always run cold water before, during, and ~20 seconds after grinding. If it ever hums again and the wrench doesn't free it, or it trips the reset repeatedly, that usually means the motor's going \u2014 give us a call and we'll take a look. No charge tonight, and we'll be back at the phones tomorrow at 8am. Take care!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S4",
+    "category": "disposal_jam",
+    "summary": "Customer's garbage disposal hummed without spinning; talked her through safe self-clear and she removed a peach pit \u2014 unit fully working, no visit needed.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Switch off and unplug the disposal (or trip its breaker) and never reach into the drain by hand",
+     "Insert a 1/4\" hex/Allen wrench into the hole on the underside center of the unit and rock it back and forth until the impeller spins freely",
+     "Remove any visible debris with tongs, restore power, press the red reset button, then run cold water and test",
+     "Prevention: keep pits, bones, fibrous scraps and grease out; run cold water before, during and ~20 seconds after grinding",
+     "Call back if it hums again after wrenching or repeatedly trips the reset \u2014 likely a failing motor needing replacement"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [],
+    "quote_total": 0,
+    "duration_min": 0,
+    "slot_id": null,
+    "customer_message": "Woohoo \u2014 a peach pit! Classic disposal killer. Nicely done, you fixed it yourself. Two quick tips so it doesn't happen again: keep pits, bones, fibrous stuff (celery, corn husks) and grease out, and always run cold water before, during, and ~20 seconds after grinding. If it ever hums again and the wrench doesn't free it, or it trips the reset repeatedly, that usually means the motor's going \u2014 give us a call and we'll take a look. No charge tonight, and we'll be back at the phones tomorrow at 8am. Take care!"
+   }
+  }
+ ]
+}

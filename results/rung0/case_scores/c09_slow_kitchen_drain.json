@@ -1,0 +1,59 @@
+{
+ "case": "c09_slow_kitchen_drain",
+ "ticket": {
+  "severity": "S3",
+  "category": "drain_slow",
+  "summary": "Both kitchen sink basins draining slowly (~10 min to empty); rest of house drains fine, so likely grease/food clog in kitchen branch line downstream of disposal \u2014 needs cabling.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Stop using chemical drain cleaners \u2014 ineffective on grease and hazardous for the tech cabling the line",
+   "Run disposal with cold water only and keep grease/oil out of the drain",
+   "Avoid filling both basins at once, since a restricted line can push water back up the other side",
+   "Text us if the sink backs up completely or water appears under the cabinet, and we'll move the appointment up"
+  ],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "DRAIN-CLEAR-STD",
+    "description": "Standard drain clearing \u2014 cable kitchen branch line, up to 90 min, includes flow test",
+    "price": 189
+   }
+  ],
+  "quote_total": 189,
+  "duration_min": 90,
+  "slot_id": "2026-09-02-PM-1300-1500",
+  "customer_message": "You're all set, Tom \u2014 Wednesday, Sept 2, 1\u20133pm for kitchen drain clearing at $189 flat. The tech will text when they're on the way. If the sink backs up completely or you see water under the cabinet before then, text us and we'll bump you up. Thanks for your patience tonight!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c09_slow_kitchen_drain",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [
+   "DRAIN-CLEAR-STD"
+  ],
+  "code_f1": 0.0,
+  "total_err_pct": 5.6,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 30,
+  "duration_ok": false,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.0632,
+  "wall_s": 29.3
+ }
+}

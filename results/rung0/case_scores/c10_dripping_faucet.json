@@ -1,0 +1,64 @@
+{
+ "case": "c10_dripping_faucet",
+ "ticket": {
+  "severity": "S3",
+  "category": "faucet_drip",
+  "summary": "Two-handle bathroom lavatory faucet (1990s original) dripping from hot side; customer closed angle stops overnight, wants earliest normal appointment.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Close both angle-stop shutoff valves under the sink (clockwise) to stop the drip overnight",
+   "Leave the faucet handle in the off position and keep the stops closed until the tech arrives",
+   "Report to the tech if either stop fails to fully stop the drip (worn stop, cheap add-on replacement)"
+  ],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "FAUCET-REPAIR-2H",
+    "description": "Two-handle lavatory faucet repair - stem washer/seat kit, hot side, includes diagnosis and standard parts",
+    "price": 155
+   },
+   {
+    "code": "ALT-FAUCET-REPLACE",
+    "description": "Contingency if 90s internals are unavailable/corroded: faucet replacement labor, fixture billed separately",
+    "price": 285
+   }
+  ],
+  "quote_total": 155,
+  "duration_min": 60,
+  "slot_id": "TUE-2026-09-01-0900-1100",
+  "customer_message": "Perfect - two-handle means it's almost certainly a worn stem washer or seat on the hot side, the easy cheap end of the range: roughly $145-165, about an hour on site. We carry stems and seat kits for most 90s two-handle fixtures. Not weeks out at all - Tuesday Sept 1, 9:00-11:00 AM, or 1:00-3:00 PM if afternoon is better. I've penciled you in for 9-11 and dispatch will text to confirm in the morning. Leave the shutoff valves closed until we arrive, and tell the tech if either one doesn't fully stop the drip - that means the valve is worn too and it's a cheap fix while we're under there."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c10_dripping_faucet",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [
+   "ALT-FAUCET-REPLACE",
+   "FAUCET-REPAIR-2H"
+  ],
+  "code_f1": 0.0,
+  "total_err_pct": 2.5,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 9,
+  "duration_ok": true,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.0569,
+  "wall_s": 27.8
+ }
+}

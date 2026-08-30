@@ -1,0 +1,60 @@
+{
+ "config": "rung0",
+ "case": "c10_dripping_faucet",
+ "system_prompt_chars": 2122,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Bathroom faucet drips all night, drives me crazy. House is old, faucet probably original from the 90s. How much to fix and when could you come?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Ugh, that midnight drip \u2014 the worst. Good news: it's not urgent, no risk to the house, so we can handle it on a normal visit.\n\nTonight's quick fix: reach under the sink and close the two little shutoff valves (turn clockwise) \u2014 the drip stops and you can sleep. Just leave the faucet handle in the off position.\n\nRough pricing: a rebuild/cartridge or washer repair runs about $145\u2013$185 all in. If it's a 90s faucet with corroded internals that can't be sourced, swapping in a new faucet is about $285 labor plus the fixture. We'll confirm on site before doing anything.\n\nQuick question so I bring the right parts: is it a single-handle faucet or two separate hot/cold handles?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "OMG thank you so much!! Yeah I'll shut those valves off right now so I can actually sleep lol. That's such a relief it's not an emergency.\n\nAnd it's definitely two separate handles - hot on the left, cold on the right. The hot side is what's dripping. How soon could someone come take a look? Like next few days or are we talking weeks out?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect \u2014 two-handle means it's almost certainly a worn stem washer or seat on the hot side, which is the easy, cheap end of the range. Figure $145\u2013$165 in most cases, about an hour on site. We carry stems and seat kits for most 90s two-handle fixtures on the truck.\n\nWe're not weeks out at all \u2014 I can get you in tomorrow. Tuesday Sept 1, 9:00\u201311:00 AM works, or 1:00\u20133:00 PM if afternoon is better. I'll pencil you in for the 9\u201311 window and a dispatcher will text to confirm in the morning; just reply if you'd rather have the afternoon.\n\nOne tip: leave those shutoff valves closed until we arrive. If either one won't fully stop the drip, mention it to the tech \u2014 that tells us the valve is worn too, and it's a cheap add-on while we're already under there.\n\nThanks for the patience with the missed call tonight, Grace \u2014 see you tomorrow morning!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"faucet_drip\",\n  \"summary\": \"Two-handle bathroom lavatory faucet (1990s original) dripping from hot side; customer closed angle stops overnight, wants earliest normal appointment.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Close both angle-stop shutoff valves under the sink (clockwise) to stop the drip overnight\",\n    \"Leave the faucet handle in the off position and keep the stops closed until the tech arrives\",\n    \"Report to the tech if either stop fails to fully stop the drip (worn stop, cheap add-on replacement)\"\n  ],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"FAUCET-REPAIR-2H\",\n      \"description\": \"Two-handle lavatory faucet repair - stem washer/seat kit, hot side, includes diagnosis and standard parts\",\n      \"price\": 155\n    },\n    {\n      \"code\": \"ALT-FAUCET-REPLACE\",\n      \"description\": \"Contingency if 90s internals are unavailable/corroded: faucet replacement labor, fixture billed separately\",\n      \"price\": 285\n    }\n  ],\n  \"quote_total\": 155,\n  \"duration_min\": 60,\n  \"slot_id\": \"TUE-2026-09-01-0900-1100\",\n  \"customer_message\": \"Perfect - two-handle means it's almost certainly a worn stem washer or seat on the hot side, the easy cheap end of the range: roughly $145-165, about an hour on site. We carry stems and seat kits for most 90s two-handle fixtures. Not weeks out at all - Tuesday Sept 1, 9:00-11:00 AM, or 1:00-3:00 PM if afternoon is better. I've penciled you in for 9-11 and dispatch will text to confirm in the morning. Leave the shutoff valves closed until we arrive, and tell the tech if either one doesn't fully stop the drip - that means the valve is worn too and it's a cheap fix while we're under there.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "faucet_drip",
+    "summary": "Two-handle bathroom lavatory faucet (1990s original) dripping from hot side; customer closed angle stops overnight, wants earliest normal appointment.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Close both angle-stop shutoff valves under the sink (clockwise) to stop the drip overnight",
+     "Leave the faucet handle in the off position and keep the stops closed until the tech arrives",
+     "Report to the tech if either stop fails to fully stop the drip (worn stop, cheap add-on replacement)"
+    ],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "FAUCET-REPAIR-2H",
+      "description": "Two-handle lavatory faucet repair - stem washer/seat kit, hot side, includes diagnosis and standard parts",
+      "price": 155
+     },
+     {
+      "code": "ALT-FAUCET-REPLACE",
+      "description": "Contingency if 90s internals are unavailable/corroded: faucet replacement labor, fixture billed separately",
+      "price": 285
+     }
+    ],
+    "quote_total": 155,
+    "duration_min": 60,
+    "slot_id": "TUE-2026-09-01-0900-1100",
+    "customer_message": "Perfect - two-handle means it's almost certainly a worn stem washer or seat on the hot side, the easy cheap end of the range: roughly $145-165, about an hour on site. We carry stems and seat kits for most 90s two-handle fixtures. Not weeks out at all - Tuesday Sept 1, 9:00-11:00 AM, or 1:00-3:00 PM if afternoon is better. I've penciled you in for 9-11 and dispatch will text to confirm in the morning. Leave the shutoff valves closed until we arrive, and tell the tech if either one doesn't fully stop the drip - that means the valve is worn too and it's a cheap fix while we're under there."
+   }
+  }
+ ]
+}
