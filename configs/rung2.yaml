@@ -1,0 +1,10 @@
+name: rung2
+label: "+ deterministic safety rules & severity policy"
+context_docs: true
+safety_rules: true
+tools: false
+question_policy: false
+verifier: false
+memory: false
+agent_model: claude-opus-5
+sim_model: claude-haiku-4-5

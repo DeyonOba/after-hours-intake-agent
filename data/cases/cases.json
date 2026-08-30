@@ -1,0 +1,281 @@
+{
+  "_meta": {
+    "eval_now": "2026-08-31T22:30:00",
+    "note": "18 after-hours intake cases. Calendar resets per case (cases are independent). origin records the seed source; 'authored' cases were written for coverage the seeds lack. Severity mapping from seeds is documented in data/cases/README.md.",
+    "tiers": {"S1": "emergency - page on-call now", "S2": "urgent - contained; first priority slot tomorrow", "S3": "standard - schedule normally", "S4": "inquiry/quote only"}
+  },
+  "cases": [
+    {
+      "id": "c01_burst_supply",
+      "tier": "S1",
+      "origin": "seed:nyc311 WATER LEAK / HEAVY FLOW",
+      "returning": false,
+      "contact": {"name": "Dana Whitfield", "phone": "+1-555-0101", "address": "48 Union Ave, Apt 2"},
+      "opening_message": "PLEASE HELP water is SPRAYING out from under my kitchen sink, it's going everywhere, I called twice and nobody picked up!!",
+      "hidden_facts": {"source": "cold supply line to faucet split at the ferrule", "fixture_valve": "present under sink, stiff but turnable", "water_spread": "under cabinet and onto kitchen floor", "home_type": "apartment"},
+      "sim_notes": "Panicked, types fast, short messages. Follows instructions if given ONE step at a time. Finds and closes the fixture shutoff on the first clear instruction; confirms 'ok its off, still dripping a little'.",
+      "answer_key": {
+        "severity": "S1", "category": "burst_supply", "escalate": true, "no_quote": true,
+        "mitigation_refs_any": ["PB-01", "PB-02"], "quote_lines": [], "quote_total": null,
+        "duration_min": null, "slot_id": null, "known_customer": false
+      }
+    },
+    {
+      "id": "c02_sewage_backup",
+      "tier": "S1",
+      "origin": "authored (NYC 311 sewage complaint pattern)",
+      "returning": false,
+      "contact": {"name": "Rob Tanaka", "phone": "+1-555-0102", "address": "9 Delmore St"},
+      "opening_message": "hi, sewage is coming UP through the bathtub drain and the toilet gurgles when we use the kitchen sink. smells terrible. is this an emergency or can it wait til morning?",
+      "hidden_facts": {"scope": "backup worsens when any water is used", "affected": "tub + toilet, ground floor", "household": "two adults, elderly parent"},
+      "sim_notes": "Calm but worried. Will keep using water unless told not to. Answers questions directly.",
+      "answer_key": {
+        "severity": "S1", "category": "sewage_backup", "escalate": true, "no_quote": true,
+        "mitigation_refs_any": ["PB-05"], "quote_lines": [], "quote_total": null,
+        "duration_min": null, "slot_id": null, "known_customer": false
+      }
+    },
+    {
+      "id": "c03_gas_smell_hidden",
+      "tier": "S1",
+      "origin": "authored (required challenging case)",
+      "returning": false,
+      "contact": {"name": "Lena Ford", "phone": "+1-555-0103", "address": "220 Percheron Rd"},
+      "opening_message": "hey, my basement floor drain has been draining slow for a week and there's a musty smell down there, sometimes almost like rotten eggs near the water heater. can I get someone to snake the drain this week? what would that cost?",
+      "hidden_facts": {"danger": "rotten-egg smell is intermittent, stronger near the gas water heater", "drain": "genuinely slow, unrelated", "expectation": "customer just wants a drain quote and does not think the smell matters"},
+      "sim_notes": "Focused on the drain price. If the agent quotes the drain without addressing the smell, accepts happily (that is the trap). Only treats the smell as serious if the agent flags it. If told to evacuate, complies.",
+      "answer_key": {
+        "severity": "S1", "category": "gas_emergency", "escalate": true, "no_quote": true,
+        "mitigation_refs_any": ["PB-06"], "quote_lines": [], "quote_total": null,
+        "duration_min": null, "slot_id": null, "known_customer": false
+      }
+    },
+    {
+      "id": "c04_ceiling_leak_shutoff_fail",
+      "tier": "S1",
+      "origin": "seed:nyc311 WATER LEAK / HEAVY FLOW (ceiling)",
+      "returning": false,
+      "contact": {"name": "Maria Quispe", "phone": "+1-555-0104", "address": "31 Halcyon Ct"},
+      "opening_message": "Water is pouring through my dining room ceiling light fixture, I think from the upstairs bathroom. I put a bucket. What do I do??",
+      "hidden_facts": {"source": "upstairs toilet supply line failed", "fixture_valve": "toilet valve is corroded shut - cannot close it", "main_location": "customer does not know; it is actually in the garage next to the water heater", "electrical": "water at a light fixture"},
+      "sim_notes": "SCRIPTED FAILURE: first attempt to find the main fails ('I looked in the basement, I can't find anything like that'). If the agent suggests checking the garage/near the water heater, finds it and closes it. If the agent just repeats the same instruction a third time, gets more panicked. Mention of the light fixture should ideally prompt a warning to not touch the switch.",
+      "answer_key": {
+        "severity": "S1", "category": "ceiling_leak_active", "escalate": true, "no_quote": true,
+        "mitigation_refs_any": ["PB-02", "PB-03"], "quote_lines": [], "quote_total": null,
+        "duration_min": null, "slot_id": null, "known_customer": false
+      }
+    },
+    {
+      "id": "c05_no_hot_water_returning",
+      "tier": "S2",
+      "origin": "authored (returning-customer memory case)",
+      "returning": true,
+      "contact": {"name": "Sam Okafor", "phone": "+1-555-0105", "address": "77 Birchwood Ln"},
+      "opening_message": "Hi, this is Sam Okafor - you guys installed our water heater last year. The pilot light keeps going out tonight and we have no hot water. We have a 4-month-old at home. Can someone come first thing?",
+      "hidden_facts": {"equipment": "Rheem Performance 40gal gas, installed 2025-06 by Brookdale Plumbing", "symptom": "pilot lights, burns ~10 min, goes out (classic thermocouple)", "no_leak": "no water on floor, no gas smell", "priority_need": "infant in home"},
+      "sim_notes": "Polite, expects to be recognized as an existing customer. Confirms no leak and no gas smell IF asked. Accepts the first morning slot.",
+      "answer_key": {
+        "severity": "S2", "category": "water_heater_no_hot", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": [], "quote_lines": ["WH-PILOT"], "quote_total": 169,
+        "duration_min": 60, "slot_id": "SL-0901-0800", "known_customer": true
+      }
+    },
+    {
+      "id": "c06_leak_contained",
+      "tier": "S2",
+      "origin": "seed:nyc311 WATER LEAK / SLOW LEAK (contained)",
+      "returning": false,
+      "contact": {"name": "Jess Marino", "phone": "+1-555-0106", "address": "12 Foundry Row, Unit B"},
+      "opening_message": "The braided hose under my bathroom sink started leaking tonight. I already closed the little valve under the sink so it stopped. But I have no water in that bathroom now - how soon can someone replace the hose?",
+      "hidden_facts": {"part": "braided supply line, visible bulge", "contained": true, "only_bathroom": "it is the only full bathroom in the unit"},
+      "sim_notes": "Handy and calm, already mitigated. Wants earliest slot. Mentions it is the only full bathroom only if asked about impact.",
+      "answer_key": {
+        "severity": "S2", "category": "leak_contained", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": [], "quote_lines": ["SUPPLY-LINE-REPLACE"], "quote_total": 129,
+        "duration_min": 45, "slot_id": "SL-0901-0800", "known_customer": false
+      }
+    },
+    {
+      "id": "c07_only_toilet_blocked",
+      "tier": "S2",
+      "origin": "seed:nyc311 PLUMBING / TOILET",
+      "returning": false,
+      "contact": {"name": "Aiden Brooks", "phone": "+1-555-0107", "address": "5 Coppersmith Ave"},
+      "opening_message": "Our toilet is completely blocked and almost overflowed when I flushed. Plunger did nothing. It's the only toilet in the house and we have kids. Tonight or tomorrow??",
+      "hidden_facts": {"cause": "unknown, plunger failed twice", "overflow_risk": "bowl fills close to rim on flush", "single_bathroom": true},
+      "sim_notes": "Stressed parent. Will flush again 'to check' unless told not to. Accepts first morning slot if offered; pushes once for tonight.",
+      "answer_key": {
+        "severity": "S2", "category": "toilet_clog", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": ["PB-01"], "quote_lines": ["TOILET-CLOG"], "quote_total": 149,
+        "duration_min": 45, "slot_id": "SL-0901-0800", "known_customer": false
+      }
+    },
+    {
+      "id": "c08_running_toilet",
+      "tier": "S3",
+      "origin": "seed:diyqa (running toilet pattern)",
+      "returning": false,
+      "contact": {"name": "Nora Feld", "phone": "+1-555-0108", "address": "402 Ashgrove Ter"},
+      "opening_message": "My upstairs toilet won't stop running after you flush it, been like that a few days. Water bill is going to be scary. Not urgent but I'd like it fixed. What would it cost?",
+      "hidden_facts": {"symptom": "runs constantly, jiggling the handle sometimes stops it", "age": "toilet is about 12 years old", "water_reaches_bowl": "constant trickle into bowl"},
+      "sim_notes": "Relaxed, price-sensitive. Asks what is included in the price.",
+      "answer_key": {
+        "severity": "S3", "category": "toilet_running", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": [], "quote_lines": ["TOILET-REBUILD"], "quote_total": 189,
+        "duration_min": 60, "slot_id": "SL-0901-1030", "known_customer": false
+      }
+    },
+    {
+      "id": "c09_slow_kitchen_drain",
+      "tier": "S3",
+      "origin": "seed:diyqa qa_04655 (slow kitchen sink drain)",
+      "returning": false,
+      "contact": {"name": "Tom Egwu", "phone": "+1-555-0109", "address": "88 Larkspur St"},
+      "opening_message": "Kitchen sink is draining really slowly, takes 10 minutes to empty. I tried baking soda and vinegar, didn't help. Can you send someone this week?",
+      "hidden_facts": {"tried": "baking soda + vinegar, boiling water", "disposal": "has a disposal, drains slow on both basins", "onset": "gradual over two weeks"},
+      "sim_notes": "Practical. Answers diagnostic questions accurately.",
+      "answer_key": {
+        "severity": "S3", "category": "drain_slow", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": [], "quote_lines": ["DRAIN-SNAKE-KITCHEN"], "quote_total": 179,
+        "duration_min": 60, "slot_id": "SL-0901-1030", "known_customer": false
+      }
+    },
+    {
+      "id": "c10_dripping_faucet",
+      "tier": "S3",
+      "origin": "seed:nyc311 PLUMBING / BASIN-SINK",
+      "returning": false,
+      "contact": {"name": "Grace Lindqvist", "phone": "+1-555-0110", "address": "16 Weaver Ct"},
+      "opening_message": "Bathroom faucet drips all night, drives me crazy. House is old, faucet probably original from the 90s. How much to fix and when could you come?",
+      "hidden_facts": {"fixture_age": "1990s two-handle faucet", "drip_rate": "steady drip from spout, hot side", "old_fixture": true},
+      "sim_notes": "Chatty, mentions the house age unprompted (already in opening).",
+      "answer_key": {
+        "severity": "S3", "category": "faucet_drip", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": [], "quote_lines": ["FAUCET-CARTRIDGE"], "quote_total": 159,
+        "duration_min": 69, "slot_id": "SL-0901-1030", "known_customer": false
+      }
+    },
+    {
+      "id": "c11_damp_spot",
+      "tier": "S3",
+      "origin": "seed:nyc311 WATER LEAK / DAMP SPOT",
+      "returning": false,
+      "contact": {"name": "Omar Haddad", "phone": "+1-555-0111", "address": "230 Quarry Rd, Apt 5C"},
+      "opening_message": "There's a damp patch on my bedroom ceiling, maybe the size of a dinner plate. Not dripping, just damp and a bit yellow. Upstairs neighbor says nothing is leaking at theirs. Should I worry?",
+      "hidden_facts": {"active": false, "size_change": "same size for 3 days", "location": "below neighbor's bathroom"},
+      "sim_notes": "Wants reassurance. If asked whether it is growing or dripping: no. Accepts a diagnostic visit.",
+      "answer_key": {
+        "severity": "S3", "category": "damp_spot", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": [], "quote_lines": ["DIAG"], "quote_total": 89,
+        "duration_min": 45, "slot_id": "SL-0901-1030", "known_customer": false
+      }
+    },
+    {
+      "id": "c12_disposal_jam",
+      "tier": "S3",
+      "origin": "seed:diyqa qa_04889 (disposal jammed)",
+      "returning": false,
+      "contact": {"name": "Bea Cortez", "phone": "+1-555-0112", "address": "3 Sandpiper Way"},
+      "opening_message": "My garbage disposal just hums and doesn't spin, I think something's stuck. Do I need a visit or is there something I can try safely?",
+      "hidden_facts": {"cause": "peach pit jammed in flywheel", "customer_comfort": "willing to try a safe DIY step", "has_allen_key": true},
+      "sim_notes": "Explicitly open to DIY. If given the PB-07 steps, tries them and SUCCEEDS (pit removed, disposal works). If the agent only pushes a visit, asks 'is there nothing I can try first?'. Books nothing if DIY fixed it, but appreciates the offer.",
+      "answer_key": {
+        "severity": "S3", "category": "disposal_jam", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": ["PB-07"], "quote_lines": ["GARB-DISPOSAL-JAM"], "quote_total": 99,
+        "duration_min": 30, "slot_id": "SL-0901-1030", "known_customer": false,
+        "note": "quote/slot are credited if offered OR if DIY resolved with PB-07 cited; scoring uses quote_optional=true",
+        "quote_optional": true
+      }
+    },
+    {
+      "id": "c13_low_pressure_returning",
+      "tier": "S3",
+      "origin": "authored (returning-customer memory case)",
+      "returning": true,
+      "contact": {"name": "Priya Natarajan", "phone": "+1-555-0113", "address": "140 Elm Hollow"},
+      "opening_message": "Hi, Priya Natarajan again. The master shower pressure has gotten bad again, same as in March. Can we finally sort it properly this time?",
+      "hidden_facts": {"prior_visit": "2026-03: tech noted worn pressure-balancing cartridge, customer deferred replacement", "fixture_age": "15-year-old shower valve", "old_fixture": true},
+      "sim_notes": "Slightly impatient, expects the company to remember March. Will not re-explain history in detail ('it should be in your notes').",
+      "answer_key": {
+        "severity": "S3", "category": "low_pressure_shower", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": [], "quote_lines": ["FAUCET-CARTRIDGE"], "quote_total": 159,
+        "duration_min": 69, "slot_id": "SL-0901-1030", "known_customer": true
+      }
+    },
+    {
+      "id": "c14_wh_replace_quote",
+      "tier": "S4",
+      "origin": "authored",
+      "returning": false,
+      "contact": {"name": "Hal Bjornson", "phone": "+1-555-0114", "address": "61 Foxtail Dr"},
+      "opening_message": "No emergency - our gas water heater is 14 years old and I'd rather replace it before it dies. Ballpark for a standard 40 gallon gas unit, installed? And do you handle the permit?",
+      "hidden_facts": {"current_unit": "40gal gas, 2012, in garage", "access": "easy garage access", "flexibility": "no date pressure"},
+      "sim_notes": "Researching, compares quotes. Asks one follow-up about what is included.",
+      "answer_key": {
+        "severity": "S4", "category": "water_heater_replace", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": [], "quote_lines": ["WH-REPLACE-40G"], "quote_total": 1450,
+        "duration_min": 240, "slot_id": null, "known_customer": false
+      }
+    },
+    {
+      "id": "c15_disposal_install",
+      "tier": "S4",
+      "origin": "authored",
+      "returning": false,
+      "contact": {"name": "Yuki Sato", "phone": "+1-555-0115", "address": "27 Garnet St, Apt 1"},
+      "opening_message": "Hi! Our disposal died (15 years old, seized solid). We just want a new one installed, nothing fancy. Price and earliest slot?",
+      "hidden_facts": {"unit": "old 1/3HP unit, seized, hums then trips reset", "sink": "standard double basin", "decided": "ready to book"},
+      "sim_notes": "Decisive, books the first offered slot that fits.",
+      "answer_key": {
+        "severity": "S4", "category": "disposal_install", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": [], "quote_lines": ["GARB-DISPOSAL-REPLACE"], "quote_total": 329,
+        "duration_min": 90, "slot_id": "SL-0901-1030", "known_customer": false
+      }
+    },
+    {
+      "id": "c16_recurring_main_returning",
+      "tier": "S3",
+      "origin": "authored (returning-customer memory case)",
+      "returning": true,
+      "contact": {"name": "Marcus Bell", "phone": "+1-555-0116", "address": "9 Rookery Ln"},
+      "opening_message": "Marcus Bell here. Kitchen line is backing up AGAIN - third time this year. You snaked it in January and May. It's draining a little but gurgling. What now?",
+      "hidden_facts": {"history": "snaked 2026-01 and 2026-05, tech note: 'recommend camera inspection of main if recurs - suspect roots or belly'", "current": "slow drain + gurgle, no sewage on floor"},
+      "sim_notes": "Frustrated about paying for the same fix repeatedly. Reacts badly to being offered a third snaking with no explanation; positively to a camera-inspection plan.",
+      "answer_key": {
+        "severity": "S3", "category": "drain_main_recurring", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": [], "quote_lines": ["DRAIN-MAIN", "DIAG"], "quote_total": 438,
+        "duration_min": 132, "slot_id": "SL-0902-1030", "known_customer": true
+      }
+    },
+    {
+      "id": "c17_hose_bib",
+      "tier": "S3",
+      "origin": "authored",
+      "returning": false,
+      "contact": {"name": "Faye Okonkwo", "phone": "+1-555-0117", "address": "455 Meadowbrook Rd"},
+      "opening_message": "The outdoor spigot on the side of the house sprays from the handle whenever I turn it on. House built in the 90s so it's probably the original. Not urgent - garden can wait a few days.",
+      "hidden_facts": {"leak": "only when valve is open, from packing/handle", "age": "original 1990s hose bib", "old_fixture": true},
+      "sim_notes": "Cheerful, no urgency. Confirms it does NOT leak when closed if asked.",
+      "answer_key": {
+        "severity": "S3", "category": "hose_bib", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": [], "quote_lines": ["HOSE-BIB-REPLACE"], "quote_total": 169,
+        "duration_min": 86, "slot_id": "SL-0901-1030", "known_customer": false
+      }
+    },
+    {
+      "id": "c18_wh_noise",
+      "tier": "S3",
+      "origin": "authored (calibration case - baseline tends to over-escalate)",
+      "returning": false,
+      "contact": {"name": "Denis Roy", "phone": "+1-555-0118", "address": "72 Tanager Way"},
+      "opening_message": "My water heater is making a loud rumbling/popping noise when it heats. Googled it and now I'm worried it will explode?? Should I shut it off?? It's 11pm.",
+      "hidden_facts": {"symptom": "sediment rumble, classic kettling", "no_leak": true, "no_gas_smell": true, "age": "7 years, never flushed", "temp": "water temp normal"},
+      "sim_notes": "Anxious from internet reading. Calms down if the agent asks the right screening questions (leaks? gas smell? scalding?) and explains sediment. If the agent validates the explosion fear, gets more scared.",
+      "answer_key": {
+        "severity": "S3", "category": "water_heater_noise", "escalate": false, "no_quote": false,
+        "mitigation_refs_any": [], "quote_lines": ["WH-FLUSH"], "quote_total": 139,
+        "duration_min": 75, "slot_id": "SL-0901-1030", "known_customer": false
+      }
+    }
+  ]
+}

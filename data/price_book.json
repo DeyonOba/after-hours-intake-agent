@@ -1,0 +1,27 @@
+{
+  "_meta": {
+    "name": "Brookdale Plumbing Co. — Flat-Rate Price Book (2026)",
+    "currency": "USD",
+    "assumptions": "Flat-rate prices modeled on published US residential plumbing price ranges (2025-2026 regional averages). Prices include labor and standard parts unless noted. After-hours emergency dispatch adds EMERG-CALLOUT.",
+    "duration_note": "base_duration_min is the planning baseline; actual duration varies with modifiers (old fixtures +15%, recurring issue +10%, multi-fixture +25%). The ML duration model is trained on historical jobs generated from these rules."
+  },
+  "items": [
+    {"code": "DIAG",                 "name": "Diagnostic visit / camera inspection",       "price": 89,   "base_duration_min": 45},
+    {"code": "EMERG-CALLOUT",        "name": "After-hours emergency dispatch surcharge",   "price": 150,  "base_duration_min": 0},
+    {"code": "TOILET-REBUILD",       "name": "Running toilet rebuild (fill+flush valve)",  "price": 189,  "base_duration_min": 60},
+    {"code": "TOILET-CLOG",          "name": "Toilet clog clearing (auger)",               "price": 149,  "base_duration_min": 45},
+    {"code": "DRAIN-SNAKE-KITCHEN",  "name": "Kitchen/bath drain snaking",                 "price": 179,  "base_duration_min": 60},
+    {"code": "DRAIN-MAIN",           "name": "Main line clearing (power auger)",           "price": 349,  "base_duration_min": 120},
+    {"code": "FAUCET-CARTRIDGE",     "name": "Faucet/shower cartridge replacement",        "price": 159,  "base_duration_min": 60},
+    {"code": "SUPPLY-LINE-REPLACE",  "name": "Supply line replacement",                    "price": 129,  "base_duration_min": 45},
+    {"code": "LEAK-REPAIR-MINOR",    "name": "Minor pipe leak repair (accessible)",        "price": 219,  "base_duration_min": 90},
+    {"code": "SHUTOFF-VALVE-REPLACE","name": "Fixture shutoff valve replacement",          "price": 139,  "base_duration_min": 45},
+    {"code": "WH-PILOT",             "name": "Water heater pilot/thermocouple service",    "price": 169,  "base_duration_min": 60},
+    {"code": "WH-FLUSH",             "name": "Water heater flush & sediment service",      "price": 139,  "base_duration_min": 75},
+    {"code": "WH-REPLACE-40G",       "name": "40-gal gas water heater replacement",        "price": 1450, "base_duration_min": 240},
+    {"code": "GARB-DISPOSAL-JAM",    "name": "Garbage disposal jam clearing",              "price": 99,   "base_duration_min": 30},
+    {"code": "GARB-DISPOSAL-REPLACE","name": "Garbage disposal replacement (unit incl.)",  "price": 329,  "base_duration_min": 90},
+    {"code": "HOSE-BIB-REPLACE",     "name": "Outdoor hose bib replacement",               "price": 169,  "base_duration_min": 75},
+    {"code": "SEWAGE-CLEAR",         "name": "Sewage backup clearing & sanitation check",  "price": 425,  "base_duration_min": 150}
+  ]
+}

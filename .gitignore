@@ -4,6 +4,9 @@ __pycache__/
 .venv/
 venv/
 
+# Regenerated artifacts (scripts/train_duration_model.py)
+models/
+
 # Secrets
 .env
 *.key

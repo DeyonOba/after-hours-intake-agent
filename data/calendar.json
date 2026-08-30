@@ -1,0 +1,15 @@
+{
+  "_meta": {
+    "note": "Deterministic scheduling calendar for eval week. Resets per case. Policy: priority slots are reserved for S2 urgent jobs; S3/S4 book the earliest free NON-priority slot whose capacity fits the predicted duration. S1 never books a slot (on-call dispatch).",
+    "timezone": "local"
+  },
+  "slots": [
+    {"id": "SL-0901-0800", "start": "2026-09-01T08:00:00", "capacity_min": 240, "priority": true,  "booked": false},
+    {"id": "SL-0901-1030", "start": "2026-09-01T10:30:00", "capacity_min": 90,  "priority": false, "booked": false},
+    {"id": "SL-0901-1300", "start": "2026-09-01T13:00:00", "capacity_min": 120, "priority": false, "booked": true},
+    {"id": "SL-0901-1500", "start": "2026-09-01T15:00:00", "capacity_min": 120, "priority": false, "booked": false},
+    {"id": "SL-0902-0800", "start": "2026-09-02T08:00:00", "capacity_min": 240, "priority": true,  "booked": false},
+    {"id": "SL-0902-1030", "start": "2026-09-02T10:30:00", "capacity_min": 240, "priority": false, "booked": false},
+    {"id": "SL-0902-1400", "start": "2026-09-02T14:00:00", "capacity_min": 120, "priority": false, "booked": false}
+  ]
+}

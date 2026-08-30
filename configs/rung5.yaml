@@ -1,0 +1,10 @@
+name: rung5
+label: "+ programmatic verifier with one revision round-trip"
+context_docs: false
+safety_rules: true
+tools: true
+question_policy: true
+verifier: true
+memory: false
+agent_model: claude-opus-5
+sim_model: claude-haiku-4-5

@@ -1,0 +1,10 @@
+name: rung1
+label: "+ better context: price book, playbook, calendar pasted"
+context_docs: true
+safety_rules: false
+tools: false
+question_policy: false
+verifier: false
+memory: false
+agent_model: claude-opus-5
+sim_model: claude-haiku-4-5

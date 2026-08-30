@@ -1,0 +1,10 @@
+name: rung3
+label: "+ tools: price lookup, slots, ML duration model"
+context_docs: false   # price book & calendar move behind tools
+safety_rules: true
+tools: true
+question_policy: false
+verifier: false
+memory: false
+agent_model: claude-opus-5
+sim_model: claude-haiku-4-5

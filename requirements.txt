@@ -1,0 +1,6 @@
+# Tested with Python 3.12
+anthropic==1.2.0
+scikit-learn==1.9.0
+PyYAML>=6.0
+# adapters/discord_bot only (not needed for eval):
+# discord.py>=2.4

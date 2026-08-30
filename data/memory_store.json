@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "note": "Customer memory store, keyed by phone number (the contact ID). Pre-seeded with history for the three returning-customer eval cases. All records are synthetic. The memory tool reads this; owner corrections would append here in production."
+  },
+  "customers": {
+    "+1-555-0105": {
+      "name": "Sam Okafor",
+      "address": "77 Birchwood Ln",
+      "equipment": [
+        {"type": "water_heater", "model": "Rheem Performance 40gal gas", "installed": "2025-06-14", "installed_by_us": true, "warranty": "6yr tank / 2yr labor"}
+      ],
+      "history": [
+        {"date": "2025-06-14", "job": "WH-REPLACE-40G", "notes": "New install, garage location, easy access."}
+      ]
+    },
+    "+1-555-0113": {
+      "name": "Priya Natarajan",
+      "address": "140 Elm Hollow",
+      "equipment": [
+        {"type": "shower_valve", "model": "pressure-balancing valve, ~15yr old", "installed": null, "installed_by_us": false}
+      ],
+      "history": [
+        {"date": "2026-03-09", "job": "DIAG", "notes": "Master shower low pressure. Suspect worn pressure-balancing cartridge; recommended FAUCET-CARTRIDGE replacement. Customer deferred."}
+      ]
+    },
+    "+1-555-0116": {
+      "name": "Marcus Bell",
+      "address": "9 Rookery Ln",
+      "equipment": [],
+      "history": [
+        {"date": "2026-01-22", "job": "DRAIN-SNAKE-KITCHEN", "notes": "Kitchen line snaked, heavy grease."},
+        {"date": "2026-05-30", "job": "DRAIN-SNAKE-KITCHEN", "notes": "Same line again. RECOMMEND camera inspection of main (DIAG) if it recurs - suspect roots or belly in main."}
+      ]
+    }
+  }
+}

@@ -1,0 +1,1069 @@
+{
+ "num_rows_total": 804,
+ "rows": [
+  {
+   "row_idx": 4,
+   "id": "qa_04655",
+   "category": "plumbing_repair",
+   "question": "My kitchen sink is draining very slowly. Is this a DIY repair or do I need a professional?",
+   "answer": "This is usually a straightforward fix. You will need baking soda, white vinegar, kettle, and drain snake.\n\nFollow these steps to resolve it:\n1. Remove the sink stopper or strainer from the drain opening\n2. Now, pour half a cup of baking soda followed by half a cup of white vinegar down the drain\n3. Let the mixture fizz and work for 15 minutes to break down grease and buildup\n4. Flush with a full kettle of boiling water poured slowly down the drain\n5. If the drain is still slow, insert a drain snake into the drain opening\n\nImportant: Use caution when pouring boiling water \u2014 pour slowly to avoid splashing. Do not use boiling water if you have PVC drain pipes, as extreme heat can soften them.\n\nOne more thing \u2014 Baking soda and vinegar is the safest first-line treatment for slow drains before resorting to chemical cleaners.",
+   "equipment_problem": "Kitchen sink draining very slowly",
+   "tools_required": [
+    "baking soda",
+    "white vinegar",
+    "kettle",
+    "drain snake"
+   ],
+   "steps": [
+    "Remove the sink stopper or strainer from the drain opening",
+    "Now, pour half a cup of baking soda followed by half a cup of white vinegar down the drain",
+    "Let the mixture fizz and work for 15 minutes to break down grease and buildup",
+    "Flush with a full kettle of boiling water poured slowly down the drain",
+    "If the drain is still slow, insert a drain snake into the drain opening"
+   ],
+   "safety_info": "Use caution when pouring boiling water \u2014 pour slowly to avoid splashing. Do not use boiling water if you have PVC drain pipes, as extreme heat can soften them.",
+   "tips": [
+    "Baking soda and vinegar is the safest first-line treatment for slow drains before resorting to chemical cleaners"
+   ]
+  },
+  {
+   "row_idx": 21,
+   "id": "qa_04889",
+   "category": "plumbing_repair",
+   "question": "My garbage disposal is jammed and not spinning \u2014 is this something I can handle myself?",
+   "answer": "Before you begin, an important safety note: NEVER put your hand inside a garbage disposal, even when it is turned off. Always use tongs or pliers to remove stuck objects.\n\nGather these tools: quarter-inch Allen wrench and flashlight.\n\nHere is how to fix this:\n1. Turn off the garbage disposal at the wall switch and unplug it or shut off the circuit breaker\n2. Insert a quarter-inch Allen wrench into the hex socket at the bottom center of the disposal unit\n3. Then, turn the wrench back and forth to manually rotate the grinding plate and free the jam\n4. Use long tongs or pliers to reach in and remove any object stuck between the impellers \u2014 never use your hand\n5. Press the red reset button on the bottom of the disposal unit\n6. Turn power back on, run cold water, and test the disposal\n\nMost disposals come with an Allen wrench designed to fit the bottom hex socket \u2014 check under the sink or in your junk drawer. Also, always run cold water when using the disposal \u2014 cold water solidifies grease so it can be chopped up rather than coating the pipes.",
+   "equipment_problem": "Garbage disposal jammed and not spinning",
+   "tools_required": [
+    "quarter-inch Allen wrench",
+    "flashlight"
+   ],
+   "steps": [
+    "Turn off the garbage disposal at the wall switch and unplug it or shut off the circuit breaker",
+    "Insert a quarter-inch Allen wrench into the hex socket at the bottom center of the disposal unit",
+    "Then, turn the wrench back and forth to manually rotate the grinding plate and free the jam",
+    "Use long tongs or pliers to reach in and remove any object stuck between the impellers \u2014 never use your hand",
+    "Press the red reset button on the bottom of the disposal unit",
+    "Turn power back on, run cold water, and test the disposal"
+   ],
+   "safety_info": "NEVER put your hand inside a garbage disposal, even when it is turned off. Always use tongs or pliers to remove stuck objects.",
+   "tips": [
+    "Most disposals come with an Allen wrench designed to fit the bottom hex socket \u2014 check under the sink or in your junk drawer",
+    "Always run cold water when using the disposal \u2014 cold water solidifies grease so it can be chopped up rather than coating the pipes"
+   ]
+  },
+  {
+   "row_idx": 23,
+   "id": "qa_02981",
+   "category": "plumbing_repair",
+   "question": "The P-trap under my bathroom sink is leaking at the joints \u2014 what is causing this and how do I fix it?",
+   "answer": "Yes, this is something you can fix yourself. Here is what to do.\n\nTools needed: bucket, channel-lock pliers, replacement slip joint washers, and towels\n\n1. Place a bucket directly under the P-trap to catch water\n2. Unscrew the slip nuts on both ends of the P-trap by hand or with channel-lock pliers\n3. Lower the P-trap and empty its contents into the bucket\n4. Inspect the nylon compression washers inside each slip nut for cracks or compression\n5. Replace worn washers and clean debris from inside the trap and connecting pipes\n6. Reassemble the P-trap, hand-tighten the slip nuts, and add a quarter turn with pliers \u2014 run water to check for leaks\n\nBe safe: Place a bucket under the P-trap before loosening any connections. Even a small amount of trapped water can damage cabinet interiors.\n\nHelpful tips: Leaky P-trap joints are almost always caused by worn-out nylon washers \u2014 they cost pennies and take minutes to replace.",
+   "equipment_problem": "P-trap under bathroom sink leaking at the joints",
+   "tools_required": [
+    "bucket",
+    "channel-lock pliers",
+    "replacement slip joint washers",
+    "towels"
+   ],
+   "steps": [
+    "Place a bucket directly under the P-trap to catch water",
+    "Unscrew the slip nuts on both ends of the P-trap by hand or with channel-lock pliers",
+    "Lower the P-trap and empty its contents into the bucket",
+    "Inspect the nylon compression washers inside each slip nut for cracks or compression",
+    "Replace worn washers and clean debris from inside the trap and connecting pipes",
+    "Reassemble the P-trap, hand-tighten the slip nuts, and add a quarter turn with pliers \u2014 run water to check for leaks"
+   ],
+   "safety_info": "Place a bucket under the P-trap before loosening any connections. Even a small amount of trapped water can damage cabinet interiors.",
+   "tips": [
+    "Leaky P-trap joints are almost always caused by worn-out nylon washers \u2014 they cost pennies and take minutes to replace"
+   ]
+  },
+  {
+   "row_idx": 27,
+   "id": "qa_02721",
+   "category": "plumbing_repair",
+   "question": "The bathtub faucet has a slow drip even when the handle is fully turned off. How do I fix this?",
+   "answer": "Before you begin, an important safety note: Know the location of your main water shutoff valve before starting \u2014 bathtubs often lack individual supply valves.\n\nGather these tools: screwdriver, adjustable wrench, replacement stem washer, plumber's grease, and towels.\n\nHere is how to fix this:\n1. Turn off the water supply \u2014 bathtub valves may require shutting off the main water supply if there are no dedicated valves\n2. Remove the faucet handle by prying off the decorative cap and removing the handle screw\n3. Unscrew the packing nut with a wrench and pull out the valve stem\n4. Inspect the rubber washer at the bottom of the stem \u2014 replace it if it is worn, flattened, or cracked\n5. Apply plumber's grease to the stem O-rings and the new washer before reassembling\n6. Reinstall the stem, packing nut, and handle, then restore water supply and test\n\nA dripping bathtub faucet usually just needs a new stem washer \u2014 bring the old one to the hardware store for an exact match. Also, if the drip returns quickly after washer replacement, the valve seat may be damaged and needs resurfacing with a seat grinding tool.",
+   "equipment_problem": "Bathtub faucet dripping when fully turned off",
+   "tools_required": [
+    "screwdriver",
+    "adjustable wrench",
+    "replacement stem washer",
+    "plumber's grease",
+    "towels"
+   ],
+   "steps": [
+    "Turn off the water supply \u2014 bathtub valves may require shutting off the main water supply if there are no dedicated valves",
+    "Remove the faucet handle by prying off the decorative cap and removing the handle screw",
+    "Unscrew the packing nut with a wrench and pull out the valve stem",
+    "Inspect the rubber washer at the bottom of the stem \u2014 replace it if it is worn, flattened, or cracked",
+    "Apply plumber's grease to the stem O-rings and the new washer before reassembling",
+    "Reinstall the stem, packing nut, and handle, then restore water supply and test"
+   ],
+   "safety_info": "Know the location of your main water shutoff valve before starting \u2014 bathtubs often lack individual supply valves.",
+   "tips": [
+    "A dripping bathtub faucet usually just needs a new stem washer \u2014 bring the old one to the hardware store for an exact match",
+    "If the drip returns quickly after washer replacement, the valve seat may be damaged and needs resurfacing with a seat grinding tool"
+   ]
+  },
+  {
+   "row_idx": 28,
+   "id": "qa_00810",
+   "category": "plumbing_repair",
+   "question": "My faucet aerator is clogged with mineral deposits, causing low flow. What should I do?",
+   "answer": "You can handle this repair at home. Grab pliers, white vinegar, toothbrush, bowl, and cloth and follow these steps:\n\n1. Unscrew the aerator from the tip of the faucet spout by turning counterclockwise\n2. If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it\n3. Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing\n4. Soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits\n5. Scrub each part with a toothbrush to remove remaining buildup\n6. Rinse, reassemble in order, and screw the aerator back onto the faucet hand-tight\n\nA few things to keep in mind: Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish. Aerator clogs are the most common cause of low faucet water pressure \u2014 this fix takes 10 minutes.",
+   "equipment_problem": "Faucet aerator clogged with mineral deposits causing low flow",
+   "tools_required": [
+    "pliers",
+    "white vinegar",
+    "toothbrush",
+    "bowl",
+    "cloth"
+   ],
+   "steps": [
+    "Unscrew the aerator from the tip of the faucet spout by turning counterclockwise",
+    "If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it",
+    "Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing",
+    "Soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits",
+    "Scrub each part with a toothbrush to remove remaining buildup",
+    "Rinse, reassemble in order, and screw the aerator back onto the faucet hand-tight"
+   ],
+   "safety_info": "Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish.",
+   "tips": [
+    "Aerator clogs are the most common cause of low faucet water pressure \u2014 this fix takes 10 minutes"
+   ]
+  },
+  {
+   "row_idx": 29,
+   "id": "qa_00834",
+   "category": "plumbing_repair",
+   "question": "My bathtub faucet is dripping when fully turned off. Can I fix this without calling a professional?",
+   "answer": "You can handle this repair at home. Grab screwdriver, adjustable wrench, replacement stem washer, plumber's grease, and towels and follow these steps:\n\n1. Turn off the water supply \u2014 bathtub valves may require shutting off the main water supply if there are no dedicated valves\n2. Remove the faucet handle by prying off the decorative cap and removing the handle screw\n3. Unscrew the packing nut with a wrench and pull out the valve stem\n4. Inspect the rubber washer at the bottom of the stem \u2014 replace it if it is worn, flattened, or cracked\n5. Apply plumber's grease to the stem O-rings and the new washer before reassembling\n6. Reinstall the stem, packing nut, and handle, then restore water supply and test\n\nA few things to keep in mind: Know the location of your main water shutoff valve before starting \u2014 bathtubs often lack individual supply valves. If the drip returns quickly after washer replacement, the valve seat may be damaged and needs resurfacing with a seat grinding tool. Also, a dripping bathtub faucet usually just needs a new stem washer \u2014 bring the old one to the hardware store for an exact match.",
+   "equipment_problem": "Bathtub faucet dripping when fully turned off",
+   "tools_required": [
+    "screwdriver",
+    "adjustable wrench",
+    "replacement stem washer",
+    "plumber's grease",
+    "towels"
+   ],
+   "steps": [
+    "Turn off the water supply \u2014 bathtub valves may require shutting off the main water supply if there are no dedicated valves",
+    "Remove the faucet handle by prying off the decorative cap and removing the handle screw",
+    "Unscrew the packing nut with a wrench and pull out the valve stem",
+    "Inspect the rubber washer at the bottom of the stem \u2014 replace it if it is worn, flattened, or cracked",
+    "Apply plumber's grease to the stem O-rings and the new washer before reassembling",
+    "Reinstall the stem, packing nut, and handle, then restore water supply and test"
+   ],
+   "safety_info": "Know the location of your main water shutoff valve before starting \u2014 bathtubs often lack individual supply valves.",
+   "tips": [
+    "If the drip returns quickly after washer replacement, the valve seat may be damaged and needs resurfacing with a seat grinding tool",
+    "A dripping bathtub faucet usually just needs a new stem washer \u2014 bring the old one to the hardware store for an exact match"
+   ]
+  },
+  {
+   "row_idx": 33,
+   "id": "qa_01447",
+   "category": "plumbing_repair",
+   "question": "My water heater is not producing hot water \u2014 how can I fix this myself?",
+   "answer": "This is usually a straightforward fix. You will need garden hose, screwdriver, multimeter, and flashlight.\n\nFollow these steps to resolve it:\n1. Check the water heater thermostat \u2014 it should be set to 120\u00b0F\n2. For gas heaters, check if the pilot light is lit \u2014 follow the relighting instructions on the unit's label\n3. For electric heaters, check if the circuit breaker has tripped and reset it if needed\n4. Test the hot water at the nearest faucet \u2014 run it for 2 minutes to see if it warms up\n5. If the unit is old (10+ years) and sediment has built up, flush it by connecting a garden hose to the drain valve\n6. If none of these steps help, the heating element (electric) or thermocouple (gas) likely needs replacement\n\nImportant: Turn off the power (breaker for electric, gas valve for gas) before performing any water heater maintenance. Never set the thermostat above 120\u00b0F \u2014 higher settings pose a serious scalding risk.\n\nOne more thing \u2014 Flush the water heater annually by draining a few gallons from the bottom valve to remove sediment buildup. Also, if the pilot light keeps going out, the thermocouple is likely worn \u2014 it is a common and inexpensive replacement.",
+   "equipment_problem": "Water heater not producing hot water",
+   "tools_required": [
+    "garden hose",
+    "screwdriver",
+    "multimeter",
+    "flashlight"
+   ],
+   "steps": [
+    "Check the water heater thermostat \u2014 it should be set to 120\u00b0F",
+    "For gas heaters, check if the pilot light is lit \u2014 follow the relighting instructions on the unit's label",
+    "For electric heaters, check if the circuit breaker has tripped and reset it if needed",
+    "Test the hot water at the nearest faucet \u2014 run it for 2 minutes to see if it warms up",
+    "If the unit is old (10+ years) and sediment has built up, flush it by connecting a garden hose to the drain valve",
+    "If none of these steps help, the heating element (electric) or thermocouple (gas) likely needs replacement"
+   ],
+   "safety_info": "Turn off the power (breaker for electric, gas valve for gas) before performing any water heater maintenance. Never set the thermostat above 120\u00b0F \u2014 higher settings pose a serious scalding risk.",
+   "tips": [
+    "Flush the water heater annually by draining a few gallons from the bottom valve to remove sediment buildup",
+    "If the pilot light keeps going out, the thermocouple is likely worn \u2014 it is a common and inexpensive replacement"
+   ]
+  },
+  {
+   "row_idx": 34,
+   "id": "qa_03884",
+   "category": "plumbing_repair",
+   "question": "My faucet aerator is clogged with mineral deposits, causing low flow \u2014 what is causing this and how do I fix it?",
+   "answer": "This is a repair most homeowners can do themselves with pliers, white vinegar, toothbrush, bowl, and cloth.\n\n1. Unscrew the aerator from the tip of the faucet spout by turning counterclockwise\n2. If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it\n3. Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing\n4. Soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits\n5. Scrub each part with a toothbrush to remove remaining buildup\n6. Rinse, reassemble in order, and screw the aerator back onto the faucet hand-tight\n\nKeep in mind: Aerator clogs are the most common cause of low faucet water pressure \u2014 this fix takes 10 minutes. Also, photograph the aerator parts before disassembly so you can reassemble them in the correct order.\n\nSafety reminder: Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish.",
+   "equipment_problem": "Faucet aerator clogged with mineral deposits causing low flow",
+   "tools_required": [
+    "pliers",
+    "white vinegar",
+    "toothbrush",
+    "bowl",
+    "cloth"
+   ],
+   "steps": [
+    "Unscrew the aerator from the tip of the faucet spout by turning counterclockwise",
+    "If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it",
+    "Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing",
+    "Soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits",
+    "Scrub each part with a toothbrush to remove remaining buildup",
+    "Rinse, reassemble in order, and screw the aerator back onto the faucet hand-tight"
+   ],
+   "safety_info": "Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish.",
+   "tips": [
+    "Aerator clogs are the most common cause of low faucet water pressure \u2014 this fix takes 10 minutes",
+    "Photograph the aerator parts before disassembly so you can reassemble them in the correct order"
+   ]
+  },
+  {
+   "row_idx": 38,
+   "id": "qa_00016",
+   "category": "plumbing_repair",
+   "question": "My toilet is leaking water at the base onto the floor. How do I troubleshoot this at home?",
+   "answer": "Before you start, here are some useful things to know: A toilet that leaks only when flushed almost always has a failed wax ring.\n\nNow, gather adjustable wrench, replacement wax ring, sponge, putty knife, rubber gloves, and towels and follow these steps:\n\n1. Tighten the closet bolts (the two bolts at the base of the toilet) gently with a wrench\n2. If tightening does not stop the leak, the wax ring seal has failed and must be replaced\n3. Turn off the water supply, flush the toilet, and sponge out all remaining water\n4. Disconnect the water supply line and remove the closet bolt nuts\n5. Rock the toilet gently to break the old wax seal, then lift the toilet straight up and set it on cardboard\n6. Next, scrape the old wax ring off the floor flange, press a new wax ring onto the flange, and lower the toilet straight down with firm pressure\n\nSafety note: Wear rubber gloves \u2014 the area around the floor flange is unsanitary. Toilets weigh 60-80 pounds \u2014 lift with your legs or get a helper.",
+   "equipment_problem": "Toilet leaking water at the base onto the floor",
+   "tools_required": [
+    "adjustable wrench",
+    "replacement wax ring",
+    "sponge",
+    "putty knife",
+    "rubber gloves",
+    "towels"
+   ],
+   "steps": [
+    "Tighten the closet bolts (the two bolts at the base of the toilet) gently with a wrench",
+    "If tightening does not stop the leak, the wax ring seal has failed and must be replaced",
+    "Turn off the water supply, flush the toilet, and sponge out all remaining water",
+    "Disconnect the water supply line and remove the closet bolt nuts",
+    "Rock the toilet gently to break the old wax seal, then lift the toilet straight up and set it on cardboard",
+    "Next, scrape the old wax ring off the floor flange, press a new wax ring onto the flange, and lower the toilet straight down with firm pressure"
+   ],
+   "safety_info": "Wear rubber gloves \u2014 the area around the floor flange is unsanitary. Toilets weigh 60-80 pounds \u2014 lift with your legs or get a helper.",
+   "tips": [
+    "A toilet that leaks only when flushed almost always has a failed wax ring"
+   ]
+  },
+  {
+   "row_idx": 49,
+   "id": "qa_00934",
+   "category": "plumbing_repair",
+   "question": "My toilet is running continuously and won't stop filling. How do I troubleshoot this at home?",
+   "answer": "Tools: replacement flapper, food coloring, sponge, and towels\n\n1. Remove the toilet tank lid and observe the mechanism inside while it runs\n2. Check the flapper \u2014 drop a few drops of food coloring into the tank and wait 15 minutes\n3. If colored water appears in the bowl, the flapper is leaking and needs replacement\n4. Turn off the water supply valve, flush to empty the tank, and sponge out remaining water\n5. Unhook the old flapper from the overflow tube pegs and disconnect the chain\n6. Install the new flapper, attach the chain with about half an inch of slack, and turn the water back on\n\nSafety warning: Turn off the water supply valve before replacing internal tank components to prevent flooding.\n\nAdditional advice: Adjust the chain so it has just enough slack \u2014 too long and it gets caught under the flapper, too short and the flapper can't seat.",
+   "equipment_problem": "Toilet running continuously and won't stop filling",
+   "tools_required": [
+    "replacement flapper",
+    "food coloring",
+    "sponge",
+    "towels"
+   ],
+   "steps": [
+    "Remove the toilet tank lid and observe the mechanism inside while it runs",
+    "Check the flapper \u2014 drop a few drops of food coloring into the tank and wait 15 minutes",
+    "If colored water appears in the bowl, the flapper is leaking and needs replacement",
+    "Turn off the water supply valve, flush to empty the tank, and sponge out remaining water",
+    "Unhook the old flapper from the overflow tube pegs and disconnect the chain",
+    "Install the new flapper, attach the chain with about half an inch of slack, and turn the water back on"
+   ],
+   "safety_info": "Turn off the water supply valve before replacing internal tank components to prevent flooding.",
+   "tips": [
+    "Adjust the chain so it has just enough slack \u2014 too long and it gets caught under the flapper, too short and the flapper can't seat"
+   ]
+  },
+  {
+   "row_idx": 50,
+   "id": "qa_00631",
+   "category": "plumbing_repair",
+   "question": "My toilet is running continuously and won't stop filling. What is the best approach to fix this?",
+   "answer": "This is usually a straightforward fix. You will need replacement flapper, food coloring, and sponge.\n\nFollow these steps to resolve it:\n1. Remove the toilet tank lid and observe the mechanism inside while it runs\n2. Check the flapper \u2014 drop a few drops of food coloring into the tank and wait 15 minutes\n3. If colored water appears in the bowl, the flapper is leaking and needs replacement\n4. Turn off the water supply valve, flush to empty the tank, and sponge out remaining water\n5. Unhook the old flapper from the overflow tube pegs and disconnect the chain\n6. Install the new flapper, attach the chain with about half an inch of slack, and turn the water back on\n\nImportant: Turn off the water supply valve before replacing internal tank components to prevent flooding.\n\nOne more thing \u2014 A leaking flapper is the most common cause of a running toilet and costs under $5 to fix.",
+   "equipment_problem": "Toilet running continuously and won't stop filling",
+   "tools_required": [
+    "replacement flapper",
+    "food coloring",
+    "sponge"
+   ],
+   "steps": [
+    "Remove the toilet tank lid and observe the mechanism inside while it runs",
+    "Check the flapper \u2014 drop a few drops of food coloring into the tank and wait 15 minutes",
+    "If colored water appears in the bowl, the flapper is leaking and needs replacement",
+    "Turn off the water supply valve, flush to empty the tank, and sponge out remaining water",
+    "Unhook the old flapper from the overflow tube pegs and disconnect the chain",
+    "Install the new flapper, attach the chain with about half an inch of slack, and turn the water back on"
+   ],
+   "safety_info": "Turn off the water supply valve before replacing internal tank components to prevent flooding.",
+   "tips": [
+    "A leaking flapper is the most common cause of a running toilet and costs under $5 to fix"
+   ]
+  },
+  {
+   "row_idx": 56,
+   "id": "qa_00493",
+   "category": "plumbing_repair",
+   "question": "What causes a bathroom faucet handle stiff and hard to turn and how do I fix it?",
+   "answer": "Yes, this is something you can fix yourself. Here is what to do.\n\nTools needed: adjustable wrench, screwdriver, white vinegar, plumber's grease, and replacement O-rings\n\n1. Turn off the water supply valves under the bathroom sink\n2. Remove the faucet handle by unscrewing the set screw (often hidden under a decorative cap)\n3. Unscrew the packing nut beneath the handle with an adjustable wrench\n4. Pull out the valve stem and inspect it for mineral buildup or corroded O-rings\n5. Clean mineral deposits with white vinegar and a soft brush, and replace worn O-rings\n6. Coat the stem with plumber's grease, reassemble, and test \u2014 the handle should turn smoothly\n\nBe safe: Turn off water supply valves before disassembling. Avoid overtightening the packing nut when reassembling \u2014 it should be snug, not forced.\n\nHelpful tips: Hard water mineral buildup is the most common cause of a stiff faucet handle.",
+   "equipment_problem": "Bathroom faucet handle stiff and hard to turn",
+   "tools_required": [
+    "adjustable wrench",
+    "screwdriver",
+    "white vinegar",
+    "plumber's grease",
+    "replacement O-rings"
+   ],
+   "steps": [
+    "Turn off the water supply valves under the bathroom sink",
+    "Remove the faucet handle by unscrewing the set screw (often hidden under a decorative cap)",
+    "Unscrew the packing nut beneath the handle with an adjustable wrench",
+    "Pull out the valve stem and inspect it for mineral buildup or corroded O-rings",
+    "Clean mineral deposits with white vinegar and a soft brush, and replace worn O-rings",
+    "Coat the stem with plumber's grease, reassemble, and test \u2014 the handle should turn smoothly"
+   ],
+   "safety_info": "Turn off water supply valves before disassembling. Avoid overtightening the packing nut when reassembling \u2014 it should be snug, not forced.",
+   "tips": [
+    "Hard water mineral buildup is the most common cause of a stiff faucet handle"
+   ]
+  },
+  {
+   "row_idx": 62,
+   "id": "qa_04708",
+   "category": "plumbing_repair",
+   "question": "My bathtub faucet is dripping when fully turned off. Can I fix this without calling a professional?",
+   "answer": "This is a repair most homeowners can do themselves with screwdriver, adjustable wrench, replacement stem washer, plumber's grease, and towels.\n\n1. Turn off the water supply \u2014 bathtub valves may require shutting off the main water supply if there are no dedicated valves\n2. Then, remove the faucet handle by prying off the decorative cap and removing the handle screw\n3. Unscrew the packing nut with a wrench and pull out the valve stem\n4. Inspect the rubber washer at the bottom of the stem \u2014 replace it if it is worn, flattened, or cracked\n5. Apply plumber's grease to the stem O-rings and the new washer before reassembling\n6. Reinstall the stem, packing nut, and handle, then restore water supply and test\n\nKeep in mind: If the drip returns quickly after washer replacement, the valve seat may be damaged and needs resurfacing with a seat grinding tool.\n\nSafety reminder: Know the location of your main water shutoff valve before starting \u2014 bathtubs often lack individual supply valves.",
+   "equipment_problem": "Bathtub faucet dripping when fully turned off",
+   "tools_required": [
+    "screwdriver",
+    "adjustable wrench",
+    "replacement stem washer",
+    "plumber's grease",
+    "towels"
+   ],
+   "steps": [
+    "Turn off the water supply \u2014 bathtub valves may require shutting off the main water supply if there are no dedicated valves",
+    "Then, remove the faucet handle by prying off the decorative cap and removing the handle screw",
+    "Unscrew the packing nut with a wrench and pull out the valve stem",
+    "Inspect the rubber washer at the bottom of the stem \u2014 replace it if it is worn, flattened, or cracked",
+    "Apply plumber's grease to the stem O-rings and the new washer before reassembling",
+    "Reinstall the stem, packing nut, and handle, then restore water supply and test"
+   ],
+   "safety_info": "Know the location of your main water shutoff valve before starting \u2014 bathtubs often lack individual supply valves.",
+   "tips": [
+    "If the drip returns quickly after washer replacement, the valve seat may be damaged and needs resurfacing with a seat grinding tool"
+   ]
+  },
+  {
+   "row_idx": 65,
+   "id": "qa_01760",
+   "category": "plumbing_repair",
+   "question": "My shower head has very low water pressure. Can I fix this without calling a professional?",
+   "answer": "Before you start, here are some useful things to know: If pressure is low at all fixtures in the house, the problem is at the main supply, not the shower head.\n\nNow, gather adjustable wrench, white vinegar, toothbrush, plumber's tape, and bowl and follow these steps:\n\n1. Unscrew the shower head by turning it counterclockwise \u2014 use a wrench with a cloth for grip if needed\n2. Check the shower arm pipe for debris or buildup inside the opening\n3. Soak the shower head in a bowl of white vinegar for 2 to 4 hours to dissolve mineral deposits\n4. Use a toothbrush to scrub the spray nozzles and clear any remaining clogs\n5. Wrap fresh plumber's tape clockwise around the shower arm threads (3 to 5 wraps)\n6. Reattach the shower head hand-tight, then test the water pressure\n\nSafety note: Use a cloth or rubber grip when loosening the shower head to avoid damaging the shower arm inside the wall.",
+   "equipment_problem": "Shower head has very low water pressure",
+   "tools_required": [
+    "adjustable wrench",
+    "white vinegar",
+    "toothbrush",
+    "plumber's tape",
+    "bowl"
+   ],
+   "steps": [
+    "Unscrew the shower head by turning it counterclockwise \u2014 use a wrench with a cloth for grip if needed",
+    "Check the shower arm pipe for debris or buildup inside the opening",
+    "Soak the shower head in a bowl of white vinegar for 2 to 4 hours to dissolve mineral deposits",
+    "Use a toothbrush to scrub the spray nozzles and clear any remaining clogs",
+    "Wrap fresh plumber's tape clockwise around the shower arm threads (3 to 5 wraps)",
+    "Reattach the shower head hand-tight, then test the water pressure"
+   ],
+   "safety_info": "Use a cloth or rubber grip when loosening the shower head to avoid damaging the shower arm inside the wall.",
+   "tips": [
+    "If pressure is low at all fixtures in the house, the problem is at the main supply, not the shower head"
+   ]
+  },
+  {
+   "row_idx": 69,
+   "id": "qa_02150",
+   "category": "plumbing_repair",
+   "question": "The P-trap under my bathroom sink is leaking at the joints \u2014 how can I fix this myself?",
+   "answer": "Tools: bucket, channel-lock pliers, replacement slip joint washers, and towels\n\n1. Place a bucket directly under the P-trap to catch water\n2. Unscrew the slip nuts on both ends of the P-trap by hand or with channel-lock pliers\n3. Lower the P-trap and empty its contents into the bucket\n4. Inspect the nylon compression washers inside each slip nut for cracks or compression\n5. Replace worn washers and clean debris from inside the trap and connecting pipes\n6. Reassemble the P-trap, hand-tighten the slip nuts, and add a quarter turn with pliers \u2014 run water to check for leaks\n\nSafety warning: Place a bucket under the P-trap before loosening any connections. Even a small amount of trapped water can damage cabinet interiors.\n\nAdditional advice: Hand-tighten slip nuts plus a quarter turn \u2014 overtightening cracks the nuts and makes leaks worse. Also, leaky P-trap joints are almost always caused by worn-out nylon washers \u2014 they cost pennies and take minutes to replace.",
+   "equipment_problem": "P-trap under bathroom sink leaking at the joints",
+   "tools_required": [
+    "bucket",
+    "channel-lock pliers",
+    "replacement slip joint washers",
+    "towels"
+   ],
+   "steps": [
+    "Place a bucket directly under the P-trap to catch water",
+    "Unscrew the slip nuts on both ends of the P-trap by hand or with channel-lock pliers",
+    "Lower the P-trap and empty its contents into the bucket",
+    "Inspect the nylon compression washers inside each slip nut for cracks or compression",
+    "Replace worn washers and clean debris from inside the trap and connecting pipes",
+    "Reassemble the P-trap, hand-tighten the slip nuts, and add a quarter turn with pliers \u2014 run water to check for leaks"
+   ],
+   "safety_info": "Place a bucket under the P-trap before loosening any connections. Even a small amount of trapped water can damage cabinet interiors.",
+   "tips": [
+    "Hand-tighten slip nuts plus a quarter turn \u2014 overtightening cracks the nuts and makes leaks worse",
+    "Leaky P-trap joints are almost always caused by worn-out nylon washers \u2014 they cost pennies and take minutes to replace"
+   ]
+  },
+  {
+   "row_idx": 70,
+   "id": "qa_02622",
+   "category": "plumbing_repair",
+   "question": "My shower drain is clogged with hair and soap buildup. What should I do?",
+   "answer": "Tools: zip-it drain tool, drain snake, and rubber gloves\n\n1. Remove the drain cover or strainer by unscrewing it or prying it up\n2. Insert a zip-it drain cleaning tool straight down into the drain opening\n3. Slowly pull the tool back up \u2014 it will grab accumulated hair and soap scum on its barbs\n4. Repeat several times until no more debris comes out\n5. For deeper clogs, feed a drain snake into the opening and crank clockwise until the clog clears\n\nSafety warning: Wear rubber gloves when pulling hair and debris from drains. Dispose of the debris in a trash bag, not back down the drain.\n\nAdditional advice: Install a drain hair catcher to prevent future clogs \u2014 they catch hair before it enters the pipe.",
+   "equipment_problem": "Shower drain clogged with hair and soap buildup",
+   "tools_required": [
+    "zip-it drain tool",
+    "drain snake",
+    "rubber gloves"
+   ],
+   "steps": [
+    "Remove the drain cover or strainer by unscrewing it or prying it up",
+    "Insert a zip-it drain cleaning tool straight down into the drain opening",
+    "Slowly pull the tool back up \u2014 it will grab accumulated hair and soap scum on its barbs",
+    "Repeat several times until no more debris comes out",
+    "For deeper clogs, feed a drain snake into the opening and crank clockwise until the clog clears"
+   ],
+   "safety_info": "Wear rubber gloves when pulling hair and debris from drains. Dispose of the debris in a trash bag, not back down the drain.",
+   "tips": [
+    "Install a drain hair catcher to prevent future clogs \u2014 they catch hair before it enters the pipe"
+   ]
+  },
+  {
+   "row_idx": 82,
+   "id": "qa_02437",
+   "category": "plumbing_repair",
+   "question": "My faucet aerator is clogged with mineral deposits, causing low flow. What should I do?",
+   "answer": "Yes, this is something you can fix yourself. Here is what to do.\n\nTools needed: pliers, white vinegar, toothbrush, bowl, and cloth\n\n1. Unscrew the aerator from the tip of the faucet spout by turning counterclockwise\n2. If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it\n3. Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing\n4. Soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits\n5. Scrub each part with a toothbrush to remove remaining buildup\n\nBe safe: Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish.\n\nHelpful tips: Photograph the aerator parts before disassembly so you can reassemble them in the correct order. Also, aerator clogs are the most common cause of low faucet water pressure \u2014 this fix takes 10 minutes.",
+   "equipment_problem": "Faucet aerator clogged with mineral deposits causing low flow",
+   "tools_required": [
+    "pliers",
+    "white vinegar",
+    "toothbrush",
+    "bowl",
+    "cloth"
+   ],
+   "steps": [
+    "Unscrew the aerator from the tip of the faucet spout by turning counterclockwise",
+    "If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it",
+    "Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing",
+    "Soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits",
+    "Scrub each part with a toothbrush to remove remaining buildup"
+   ],
+   "safety_info": "Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish.",
+   "tips": [
+    "Photograph the aerator parts before disassembly so you can reassemble them in the correct order",
+    "Aerator clogs are the most common cause of low faucet water pressure \u2014 this fix takes 10 minutes"
+   ]
+  },
+  {
+   "row_idx": 87,
+   "id": "qa_02107",
+   "category": "plumbing_repair",
+   "question": "My kitchen sink is draining very slowly. How do I troubleshoot this at home?",
+   "answer": "What you will need: baking soda, white vinegar, and kettle\n\nSteps:\n1. Remove the sink stopper or strainer from the drain opening\n2. Pour half a cup of baking soda followed by half a cup of white vinegar down the drain\n3. Let the mixture fizz and work for 15 minutes to break down grease and buildup\n4. Flush with a full kettle of boiling water poured slowly down the drain\n5. If the drain is still slow, insert a drain snake into the drain opening\n6. Crank the snake handle clockwise while pushing forward until the clog breaks free, then flush with hot water\n\nSafety: Use caution when pouring boiling water \u2014 pour slowly to avoid splashing. Do not use boiling water if you have PVC drain pipes, as extreme heat can soften them.\n\nPro tips: Prevent future clogs by pouring hot water down the kitchen drain weekly to dissolve grease buildup. Also, baking soda and vinegar is the safest first-line treatment for slow drains before resorting to chemical cleaners.",
+   "equipment_problem": "Kitchen sink draining very slowly",
+   "tools_required": [
+    "baking soda",
+    "white vinegar",
+    "kettle"
+   ],
+   "steps": [
+    "Remove the sink stopper or strainer from the drain opening",
+    "Pour half a cup of baking soda followed by half a cup of white vinegar down the drain",
+    "Let the mixture fizz and work for 15 minutes to break down grease and buildup",
+    "Flush with a full kettle of boiling water poured slowly down the drain",
+    "If the drain is still slow, insert a drain snake into the drain opening",
+    "Crank the snake handle clockwise while pushing forward until the clog breaks free, then flush with hot water"
+   ],
+   "safety_info": "Use caution when pouring boiling water \u2014 pour slowly to avoid splashing. Do not use boiling water if you have PVC drain pipes, as extreme heat can soften them.",
+   "tips": [
+    "Prevent future clogs by pouring hot water down the kitchen drain weekly to dissolve grease buildup",
+    "Baking soda and vinegar is the safest first-line treatment for slow drains before resorting to chemical cleaners"
+   ]
+  },
+  {
+   "row_idx": 90,
+   "id": "qa_01244",
+   "category": "plumbing_repair",
+   "question": "My faucet aerator is clogged with mineral deposits, causing low flow. What is the best approach to fix this?",
+   "answer": "This is a repair most homeowners can do themselves with pliers, white vinegar, toothbrush, bowl, and cloth.\n\n1. Unscrew the aerator from the tip of the faucet spout by turning counterclockwise\n2. If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it\n3. Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing\n4. After that, soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits\n5. Scrub each part with a toothbrush to remove remaining buildup\n6. Rinse, reassemble in order, and screw the aerator back onto the faucet hand-tight\n\nKeep in mind: Photograph the aerator parts before disassembly so you can reassemble them in the correct order.\n\nSafety reminder: Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish.",
+   "equipment_problem": "Faucet aerator clogged with mineral deposits causing low flow",
+   "tools_required": [
+    "pliers",
+    "white vinegar",
+    "toothbrush",
+    "bowl",
+    "cloth"
+   ],
+   "steps": [
+    "Unscrew the aerator from the tip of the faucet spout by turning counterclockwise",
+    "If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it",
+    "Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing",
+    "After that, soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits",
+    "Scrub each part with a toothbrush to remove remaining buildup",
+    "Rinse, reassemble in order, and screw the aerator back onto the faucet hand-tight"
+   ],
+   "safety_info": "Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish.",
+   "tips": [
+    "Photograph the aerator parts before disassembly so you can reassemble them in the correct order"
+   ]
+  },
+  {
+   "row_idx": 91,
+   "id": "qa_00858",
+   "category": "plumbing_repair",
+   "question": "My kitchen faucet is dripping constantly when turned off. What is the best approach to fix this?",
+   "answer": "You can handle this repair at home. Grab adjustable wrench, screwdriver set, replacement cartridge or O-rings, and plumber's grease and follow these steps:\n\n1. Turn off the hot and cold water supply valves under the sink\n2. Open the faucet to release remaining water pressure\n3. Remove the faucet handle by prying off the decorative cap and unscrewing the handle screw\n4. Pull out the cartridge or stem assembly \u2014 note its orientation for reinstallation\n5. Replace the worn O-rings or the entire cartridge with a matching replacement from the hardware store\n6. Reassemble the handle, turn on the supply valves, and test for leaks\n\nA few things to keep in mind: Always shut off the water supply before disassembling any faucet. Have towels ready to catch residual water in the lines. Apply plumber's grease to new O-rings before installing them for easier assembly and a better seal.",
+   "equipment_problem": "Kitchen faucet dripping constantly when turned off",
+   "tools_required": [
+    "adjustable wrench",
+    "screwdriver set",
+    "replacement cartridge or O-rings",
+    "plumber's grease"
+   ],
+   "steps": [
+    "Turn off the hot and cold water supply valves under the sink",
+    "Open the faucet to release remaining water pressure",
+    "Remove the faucet handle by prying off the decorative cap and unscrewing the handle screw",
+    "Pull out the cartridge or stem assembly \u2014 note its orientation for reinstallation",
+    "Replace the worn O-rings or the entire cartridge with a matching replacement from the hardware store",
+    "Reassemble the handle, turn on the supply valves, and test for leaks"
+   ],
+   "safety_info": "Always shut off the water supply before disassembling any faucet. Have towels ready to catch residual water in the lines.",
+   "tips": [
+    "Apply plumber's grease to new O-rings before installing them for easier assembly and a better seal"
+   ]
+  },
+  {
+   "row_idx": 98,
+   "id": "qa_02000",
+   "category": "plumbing_repair",
+   "question": "My shower drain is clogged with hair and soap buildup. What are the steps to repair this?",
+   "answer": "Before you start, here are some useful things to know: A zip-it tool costs about $3 and is the most effective tool for shower hair clogs. Also, install a drain hair catcher to prevent future clogs \u2014 they catch hair before it enters the pipe.\n\nNow, gather zip-it drain tool, drain snake, rubber gloves, and plastic bag for debris and follow these steps:\n\n1. Remove the drain cover or strainer by unscrewing it or prying it up\n2. Insert a zip-it drain cleaning tool straight down into the drain opening\n3. Slowly pull the tool back up \u2014 it will grab accumulated hair and soap scum on its barbs\n4. Repeat several times until no more debris comes out\n5. For deeper clogs, feed a drain snake into the opening and crank clockwise until the clog clears\n6. Flush the drain with very hot water for 2 minutes and replace the drain cover\n\nSafety note: Wear rubber gloves when pulling hair and debris from drains. Dispose of the debris in a trash bag, not back down the drain.",
+   "equipment_problem": "Shower drain clogged with hair and soap buildup",
+   "tools_required": [
+    "zip-it drain tool",
+    "drain snake",
+    "rubber gloves",
+    "plastic bag for debris"
+   ],
+   "steps": [
+    "Remove the drain cover or strainer by unscrewing it or prying it up",
+    "Insert a zip-it drain cleaning tool straight down into the drain opening",
+    "Slowly pull the tool back up \u2014 it will grab accumulated hair and soap scum on its barbs",
+    "Repeat several times until no more debris comes out",
+    "For deeper clogs, feed a drain snake into the opening and crank clockwise until the clog clears",
+    "Flush the drain with very hot water for 2 minutes and replace the drain cover"
+   ],
+   "safety_info": "Wear rubber gloves when pulling hair and debris from drains. Dispose of the debris in a trash bag, not back down the drain.",
+   "tips": [
+    "A zip-it tool costs about $3 and is the most effective tool for shower hair clogs",
+    "Install a drain hair catcher to prevent future clogs \u2014 they catch hair before it enters the pipe"
+   ]
+  },
+  {
+   "row_idx": 101,
+   "id": "qa_04060",
+   "category": "plumbing_repair",
+   "question": "Can I repair a bathroom faucet handle stiff and hard to turn without calling a professional?",
+   "answer": "This is a repair most homeowners can do themselves with adjustable wrench, white vinegar, plumber's grease, and replacement O-rings.\n\n1. Turn off the water supply valves under the bathroom sink\n2. Remove the faucet handle by unscrewing the set screw (often hidden under a decorative cap)\n3. Unscrew the packing nut beneath the handle with an adjustable wrench\n4. Pull out the valve stem and inspect it for mineral buildup or corroded O-rings\n5. Clean mineral deposits with white vinegar and a soft brush, and replace worn O-rings\n6. Coat the stem with plumber's grease, reassemble, and test \u2014 the handle should turn smoothly\n\nKeep in mind: Soaking the stem in vinegar for 30 minutes dissolves most mineral deposits.\n\nSafety reminder: Turn off water supply valves before disassembling. Avoid overtightening the packing nut when reassembling \u2014 it should be snug, not forced.",
+   "equipment_problem": "Bathroom faucet handle stiff and hard to turn",
+   "tools_required": [
+    "adjustable wrench",
+    "white vinegar",
+    "plumber's grease",
+    "replacement O-rings"
+   ],
+   "steps": [
+    "Turn off the water supply valves under the bathroom sink",
+    "Remove the faucet handle by unscrewing the set screw (often hidden under a decorative cap)",
+    "Unscrew the packing nut beneath the handle with an adjustable wrench",
+    "Pull out the valve stem and inspect it for mineral buildup or corroded O-rings",
+    "Clean mineral deposits with white vinegar and a soft brush, and replace worn O-rings",
+    "Coat the stem with plumber's grease, reassemble, and test \u2014 the handle should turn smoothly"
+   ],
+   "safety_info": "Turn off water supply valves before disassembling. Avoid overtightening the packing nut when reassembling \u2014 it should be snug, not forced.",
+   "tips": [
+    "Soaking the stem in vinegar for 30 minutes dissolves most mineral deposits"
+   ]
+  },
+  {
+   "row_idx": 103,
+   "id": "qa_03808",
+   "category": "plumbing_repair",
+   "question": "My faucet aerator is clogged with mineral deposits, causing low flow. What should I do?",
+   "answer": "Before you start, here are some useful things to know: Aerator clogs are the most common cause of low faucet water pressure \u2014 this fix takes 10 minutes.\n\nNow, gather pliers, white vinegar, toothbrush, bowl, and cloth and follow these steps:\n\n1. Unscrew the aerator from the tip of the faucet spout by turning counterclockwise\n2. If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it\n3. Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing\n4. Soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits\n5. Scrub each part with a toothbrush to remove remaining buildup\n6. After that, rinse, reassemble in order, and screw the aerator back onto the faucet hand-tight\n\nSafety note: Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish.",
+   "equipment_problem": "Faucet aerator clogged with mineral deposits causing low flow",
+   "tools_required": [
+    "pliers",
+    "white vinegar",
+    "toothbrush",
+    "bowl",
+    "cloth"
+   ],
+   "steps": [
+    "Unscrew the aerator from the tip of the faucet spout by turning counterclockwise",
+    "If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it",
+    "Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing",
+    "Soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits",
+    "Scrub each part with a toothbrush to remove remaining buildup",
+    "After that, rinse, reassemble in order, and screw the aerator back onto the faucet hand-tight"
+   ],
+   "safety_info": "Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish.",
+   "tips": [
+    "Aerator clogs are the most common cause of low faucet water pressure \u2014 this fix takes 10 minutes"
+   ]
+  },
+  {
+   "row_idx": 106,
+   "id": "qa_00552",
+   "category": "plumbing_repair",
+   "question": "My toilet is leaking water at the base onto the floor. Step-by-step guide to fix this?",
+   "answer": "Before you start, here are some useful things to know: A toilet that leaks only when flushed almost always has a failed wax ring. Also, consider a wax-free rubber gasket as a replacement \u2014 they are easier to install and reusable if you ever need to remove the toilet again.\n\nNow, gather adjustable wrench, replacement wax ring, sponge, putty knife, rubber gloves, and towels and follow these steps:\n\n1. Tighten the closet bolts (the two bolts at the base of the toilet) gently with a wrench\n2. If tightening does not stop the leak, the wax ring seal has failed and must be replaced\n3. Turn off the water supply, flush the toilet, and sponge out all remaining water\n4. Disconnect the water supply line and remove the closet bolt nuts\n5. Rock the toilet gently to break the old wax seal, then lift the toilet straight up and set it on cardboard\n6. Scrape the old wax ring off the floor flange, press a new wax ring onto the flange, and lower the toilet straight down with firm pressure\n\nSafety note: Wear rubber gloves \u2014 the area around the floor flange is unsanitary. Toilets weigh 60-80 pounds \u2014 lift with your legs or get a helper.",
+   "equipment_problem": "Toilet leaking water at the base onto the floor",
+   "tools_required": [
+    "adjustable wrench",
+    "replacement wax ring",
+    "sponge",
+    "putty knife",
+    "rubber gloves",
+    "towels"
+   ],
+   "steps": [
+    "Tighten the closet bolts (the two bolts at the base of the toilet) gently with a wrench",
+    "If tightening does not stop the leak, the wax ring seal has failed and must be replaced",
+    "Turn off the water supply, flush the toilet, and sponge out all remaining water",
+    "Disconnect the water supply line and remove the closet bolt nuts",
+    "Rock the toilet gently to break the old wax seal, then lift the toilet straight up and set it on cardboard",
+    "Scrape the old wax ring off the floor flange, press a new wax ring onto the flange, and lower the toilet straight down with firm pressure"
+   ],
+   "safety_info": "Wear rubber gloves \u2014 the area around the floor flange is unsanitary. Toilets weigh 60-80 pounds \u2014 lift with your legs or get a helper.",
+   "tips": [
+    "A toilet that leaks only when flushed almost always has a failed wax ring",
+    "Consider a wax-free rubber gasket as a replacement \u2014 they are easier to install and reusable if you ever need to remove the toilet again"
+   ]
+  },
+  {
+   "row_idx": 110,
+   "id": "qa_04607",
+   "category": "plumbing_repair",
+   "question": "The P-trap under my bathroom sink is leaking at the joints \u2014 how can I fix this myself?",
+   "answer": "This is usually a straightforward fix. You will need bucket, channel-lock pliers, replacement slip joint washers, and towels.\n\nFollow these steps to resolve it:\n1. Place a bucket directly under the P-trap to catch water\n2. Unscrew the slip nuts on both ends of the P-trap by hand or with channel-lock pliers\n3. Lower the P-trap and empty its contents into the bucket\n4. Inspect the nylon compression washers inside each slip nut for cracks or compression\n5. Replace worn washers and clean debris from inside the trap and connecting pipes\n6. Reassemble the P-trap, hand-tighten the slip nuts, and add a quarter turn with pliers \u2014 run water to check for leaks\n\nImportant: Place a bucket under the P-trap before loosening any connections. Even a small amount of trapped water can damage cabinet interiors.\n\nOne more thing \u2014 Leaky P-trap joints are almost always caused by worn-out nylon washers \u2014 they cost pennies and take minutes to replace.",
+   "equipment_problem": "P-trap under bathroom sink leaking at the joints",
+   "tools_required": [
+    "bucket",
+    "channel-lock pliers",
+    "replacement slip joint washers",
+    "towels"
+   ],
+   "steps": [
+    "Place a bucket directly under the P-trap to catch water",
+    "Unscrew the slip nuts on both ends of the P-trap by hand or with channel-lock pliers",
+    "Lower the P-trap and empty its contents into the bucket",
+    "Inspect the nylon compression washers inside each slip nut for cracks or compression",
+    "Replace worn washers and clean debris from inside the trap and connecting pipes",
+    "Reassemble the P-trap, hand-tighten the slip nuts, and add a quarter turn with pliers \u2014 run water to check for leaks"
+   ],
+   "safety_info": "Place a bucket under the P-trap before loosening any connections. Even a small amount of trapped water can damage cabinet interiors.",
+   "tips": [
+    "Leaky P-trap joints are almost always caused by worn-out nylon washers \u2014 they cost pennies and take minutes to replace"
+   ]
+  },
+  {
+   "row_idx": 112,
+   "id": "qa_02234",
+   "category": "plumbing_repair",
+   "question": "My toilet fill valve is making a whistling or hissing noise. How do I fix this?",
+   "answer": "You can handle this repair at home. Grab replacement fill valve, adjustable wrench, sponge, towels, and bucket and follow these steps:\n\n1. Remove the tank lid and identify the fill valve \u2014 it is the tall mechanism on the left side of the tank\n2. Turn off the water supply valve and flush the toilet to empty the tank\n3. Remove the fill valve cap and clean the diaphragm seal \u2014 rinse debris under running water\n4. If cleaning does not stop the noise, the fill valve should be replaced entirely\n5. Disconnect the water supply line and unscrew the lock nut under the tank to remove the old valve\n6. Install the new fill valve, adjust height, reconnect the supply line, and set the water level to the tank line mark\n\nA few things to keep in mind: Turn off the water supply before working inside the tank. Place a towel under the supply line connection to catch drips. Adjust the float so the water level sits about 1 inch below the top of the overflow tube. Also, a whistling fill valve means the internal diaphragm is worn \u2014 replacement is easier and more reliable than repair.",
+   "equipment_problem": "Toilet fill valve making whistling or hissing noise",
+   "tools_required": [
+    "replacement fill valve",
+    "adjustable wrench",
+    "sponge",
+    "towels",
+    "bucket"
+   ],
+   "steps": [
+    "Remove the tank lid and identify the fill valve \u2014 it is the tall mechanism on the left side of the tank",
+    "Turn off the water supply valve and flush the toilet to empty the tank",
+    "Remove the fill valve cap and clean the diaphragm seal \u2014 rinse debris under running water",
+    "If cleaning does not stop the noise, the fill valve should be replaced entirely",
+    "Disconnect the water supply line and unscrew the lock nut under the tank to remove the old valve",
+    "Install the new fill valve, adjust height, reconnect the supply line, and set the water level to the tank line mark"
+   ],
+   "safety_info": "Turn off the water supply before working inside the tank. Place a towel under the supply line connection to catch drips.",
+   "tips": [
+    "Adjust the float so the water level sits about 1 inch below the top of the overflow tube",
+    "A whistling fill valve means the internal diaphragm is worn \u2014 replacement is easier and more reliable than repair"
+   ]
+  },
+  {
+   "row_idx": 113,
+   "id": "qa_02476",
+   "category": "plumbing_repair",
+   "question": "My toilet is draining slowly or flushing weakly. What is the best approach to fix this?",
+   "answer": "This is a repair most homeowners can do themselves with toilet plunger with flange, toilet auger, rubber gloves, and bucket.\n\n1. Place a toilet plunger over the drain opening so the flange fits inside the hole\n2. Push down slowly to form a tight seal, then pull up sharply to create strong suction\n3. Repeat the plunge motion 15 to 20 times vigorously\n4. If plunging does not clear the clog, insert a toilet auger into the bowl drain\n5. Crank the auger handle clockwise while feeding the cable in until you feel the obstruction\n6. Pull the auger back out, flush the toilet, and repeat if drainage is still slow\n\nKeep in mind: If the toilet clogs frequently, there may be a partial obstruction deeper in the drain line \u2014 a toilet auger can reach several feet into the pipe.\n\nSafety reminder: Wear rubber gloves when plunging or using an auger. Do not use chemical drain cleaners in a toilet \u2014 they can damage the wax ring and are ineffective on most toilet clogs.",
+   "equipment_problem": "Toilet bowl draining slowly or flushing weakly",
+   "tools_required": [
+    "toilet plunger with flange",
+    "toilet auger",
+    "rubber gloves",
+    "bucket"
+   ],
+   "steps": [
+    "Place a toilet plunger over the drain opening so the flange fits inside the hole",
+    "Push down slowly to form a tight seal, then pull up sharply to create strong suction",
+    "Repeat the plunge motion 15 to 20 times vigorously",
+    "If plunging does not clear the clog, insert a toilet auger into the bowl drain",
+    "Crank the auger handle clockwise while feeding the cable in until you feel the obstruction",
+    "Pull the auger back out, flush the toilet, and repeat if drainage is still slow"
+   ],
+   "safety_info": "Wear rubber gloves when plunging or using an auger. Do not use chemical drain cleaners in a toilet \u2014 they can damage the wax ring and are ineffective on most toilet clogs.",
+   "tips": [
+    "If the toilet clogs frequently, there may be a partial obstruction deeper in the drain line \u2014 a toilet auger can reach several feet into the pipe"
+   ]
+  },
+  {
+   "row_idx": 116,
+   "id": "qa_02995",
+   "category": "plumbing_repair",
+   "question": "My shower drain is clogged with hair and soap buildup. Is this a DIY repair or do I need a professional?",
+   "answer": "What you will need: zip-it drain tool, drain snake, and rubber gloves\n\nSteps:\n1. Remove the drain cover or strainer by unscrewing it or prying it up\n2. Insert a zip-it drain cleaning tool straight down into the drain opening\n3. Slowly pull the tool back up \u2014 it will grab accumulated hair and soap scum on its barbs\n4. Repeat several times until no more debris comes out\n5. For deeper clogs, feed a drain snake into the opening and crank clockwise until the clog clears\n6. Flush the drain with very hot water for 2 minutes and replace the drain cover\n\nSafety: Wear rubber gloves when pulling hair and debris from drains. Dispose of the debris in a trash bag, not back down the drain.\n\nPro tips: Install a drain hair catcher to prevent future clogs \u2014 they catch hair before it enters the pipe. Also, a zip-it tool costs about $3 and is the most effective tool for shower hair clogs.",
+   "equipment_problem": "Shower drain clogged with hair and soap buildup",
+   "tools_required": [
+    "zip-it drain tool",
+    "drain snake",
+    "rubber gloves"
+   ],
+   "steps": [
+    "Remove the drain cover or strainer by unscrewing it or prying it up",
+    "Insert a zip-it drain cleaning tool straight down into the drain opening",
+    "Slowly pull the tool back up \u2014 it will grab accumulated hair and soap scum on its barbs",
+    "Repeat several times until no more debris comes out",
+    "For deeper clogs, feed a drain snake into the opening and crank clockwise until the clog clears",
+    "Flush the drain with very hot water for 2 minutes and replace the drain cover"
+   ],
+   "safety_info": "Wear rubber gloves when pulling hair and debris from drains. Dispose of the debris in a trash bag, not back down the drain.",
+   "tips": [
+    "Install a drain hair catcher to prevent future clogs \u2014 they catch hair before it enters the pipe",
+    "A zip-it tool costs about $3 and is the most effective tool for shower hair clogs"
+   ]
+  },
+  {
+   "row_idx": 127,
+   "id": "qa_00873",
+   "category": "plumbing_repair",
+   "question": "My bathtub faucet is dripping when fully turned off. What are the steps to repair this?",
+   "answer": "Before you begin, an important safety note: Know the location of your main water shutoff valve before starting \u2014 bathtubs often lack individual supply valves.\n\nGather these tools: screwdriver, replacement stem washer, plumber's grease, and towels.\n\nHere is how to fix this:\n1. Turn off the water supply \u2014 bathtub valves may require shutting off the main water supply if there are no dedicated valves\n2. Remove the faucet handle by prying off the decorative cap and removing the handle screw\n3. Unscrew the packing nut with a wrench and pull out the valve stem\n4. Inspect the rubber washer at the bottom of the stem \u2014 replace it if it is worn, flattened, or cracked\n5. Then, apply plumber's grease to the stem O-rings and the new washer before reassembling\n6. Reinstall the stem, packing nut, and handle, then restore water supply and test\n\nIf the drip returns quickly after washer replacement, the valve seat may be damaged and needs resurfacing with a seat grinding tool.",
+   "equipment_problem": "Bathtub faucet dripping when fully turned off",
+   "tools_required": [
+    "screwdriver",
+    "replacement stem washer",
+    "plumber's grease",
+    "towels"
+   ],
+   "steps": [
+    "Turn off the water supply \u2014 bathtub valves may require shutting off the main water supply if there are no dedicated valves",
+    "Remove the faucet handle by prying off the decorative cap and removing the handle screw",
+    "Unscrew the packing nut with a wrench and pull out the valve stem",
+    "Inspect the rubber washer at the bottom of the stem \u2014 replace it if it is worn, flattened, or cracked",
+    "Then, apply plumber's grease to the stem O-rings and the new washer before reassembling",
+    "Reinstall the stem, packing nut, and handle, then restore water supply and test"
+   ],
+   "safety_info": "Know the location of your main water shutoff valve before starting \u2014 bathtubs often lack individual supply valves.",
+   "tips": [
+    "If the drip returns quickly after washer replacement, the valve seat may be damaged and needs resurfacing with a seat grinding tool"
+   ]
+  },
+  {
+   "row_idx": 136,
+   "id": "qa_02273",
+   "category": "plumbing_repair",
+   "question": "My faucet aerator is clogged with mineral deposits, causing low flow. What is the best approach to fix this?",
+   "answer": "Before you begin, an important safety note: Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish.\n\nGather these tools: pliers, white vinegar, toothbrush, bowl, and cloth.\n\nHere is how to fix this:\n1. Unscrew the aerator from the tip of the faucet spout by turning counterclockwise\n2. If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it\n3. Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing\n4. Soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits\n5. Scrub each part with a toothbrush to remove remaining buildup\n\nPhotograph the aerator parts before disassembly so you can reassemble them in the correct order.",
+   "equipment_problem": "Faucet aerator clogged with mineral deposits causing low flow",
+   "tools_required": [
+    "pliers",
+    "white vinegar",
+    "toothbrush",
+    "bowl",
+    "cloth"
+   ],
+   "steps": [
+    "Unscrew the aerator from the tip of the faucet spout by turning counterclockwise",
+    "If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it",
+    "Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing",
+    "Soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits",
+    "Scrub each part with a toothbrush to remove remaining buildup"
+   ],
+   "safety_info": "Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish.",
+   "tips": [
+    "Photograph the aerator parts before disassembly so you can reassemble them in the correct order"
+   ]
+  },
+  {
+   "row_idx": 138,
+   "id": "qa_01013",
+   "category": "plumbing_repair",
+   "question": "What causes a bathroom faucet handle stiff and hard to turn and how do I fix it?",
+   "answer": "Yes, this is something you can fix yourself. Here is what to do.\n\nTools needed: adjustable wrench, white vinegar, plumber's grease, and replacement O-rings\n\n1. Turn off the water supply valves under the bathroom sink\n2. Remove the faucet handle by unscrewing the set screw (often hidden under a decorative cap)\n3. Unscrew the packing nut beneath the handle with an adjustable wrench\n4. Then, pull out the valve stem and inspect it for mineral buildup or corroded O-rings\n5. Clean mineral deposits with white vinegar and a soft brush, and replace worn O-rings\n6. Coat the stem with plumber's grease, reassemble, and test \u2014 the handle should turn smoothly\n\nBe safe: Turn off water supply valves before disassembling. Avoid overtightening the packing nut when reassembling \u2014 it should be snug, not forced.\n\nHelpful tips: Hard water mineral buildup is the most common cause of a stiff faucet handle. Also, soaking the stem in vinegar for 30 minutes dissolves most mineral deposits.",
+   "equipment_problem": "Bathroom faucet handle stiff and hard to turn",
+   "tools_required": [
+    "adjustable wrench",
+    "white vinegar",
+    "plumber's grease",
+    "replacement O-rings"
+   ],
+   "steps": [
+    "Turn off the water supply valves under the bathroom sink",
+    "Remove the faucet handle by unscrewing the set screw (often hidden under a decorative cap)",
+    "Unscrew the packing nut beneath the handle with an adjustable wrench",
+    "Then, pull out the valve stem and inspect it for mineral buildup or corroded O-rings",
+    "Clean mineral deposits with white vinegar and a soft brush, and replace worn O-rings",
+    "Coat the stem with plumber's grease, reassemble, and test \u2014 the handle should turn smoothly"
+   ],
+   "safety_info": "Turn off water supply valves before disassembling. Avoid overtightening the packing nut when reassembling \u2014 it should be snug, not forced.",
+   "tips": [
+    "Hard water mineral buildup is the most common cause of a stiff faucet handle",
+    "Soaking the stem in vinegar for 30 minutes dissolves most mineral deposits"
+   ]
+  },
+  {
+   "row_idx": 143,
+   "id": "qa_00892",
+   "category": "plumbing_repair",
+   "question": "My kitchen sink is draining very slowly \u2014 how can I fix this myself?",
+   "answer": "This is a repair most homeowners can do themselves with baking soda, white vinegar, kettle, and drain snake.\n\n1. Remove the sink stopper or strainer from the drain opening\n2. Pour half a cup of baking soda followed by half a cup of white vinegar down the drain\n3. Let the mixture fizz and work for 15 minutes to break down grease and buildup\n4. Flush with a full kettle of boiling water poured slowly down the drain\n5. If the drain is still slow, insert a drain snake into the drain opening\n6. Crank the snake handle clockwise while pushing forward until the clog breaks free, then flush with hot water\n\nKeep in mind: Baking soda and vinegar is the safest first-line treatment for slow drains before resorting to chemical cleaners.\n\nSafety reminder: Use caution when pouring boiling water \u2014 pour slowly to avoid splashing. Do not use boiling water if you have PVC drain pipes, as extreme heat can soften them.",
+   "equipment_problem": "Kitchen sink draining very slowly",
+   "tools_required": [
+    "baking soda",
+    "white vinegar",
+    "kettle",
+    "drain snake"
+   ],
+   "steps": [
+    "Remove the sink stopper or strainer from the drain opening",
+    "Pour half a cup of baking soda followed by half a cup of white vinegar down the drain",
+    "Let the mixture fizz and work for 15 minutes to break down grease and buildup",
+    "Flush with a full kettle of boiling water poured slowly down the drain",
+    "If the drain is still slow, insert a drain snake into the drain opening",
+    "Crank the snake handle clockwise while pushing forward until the clog breaks free, then flush with hot water"
+   ],
+   "safety_info": "Use caution when pouring boiling water \u2014 pour slowly to avoid splashing. Do not use boiling water if you have PVC drain pipes, as extreme heat can soften them.",
+   "tips": [
+    "Baking soda and vinegar is the safest first-line treatment for slow drains before resorting to chemical cleaners"
+   ]
+  },
+  {
+   "row_idx": 145,
+   "id": "qa_00855",
+   "category": "plumbing_repair",
+   "question": "My kitchen faucet is dripping constantly when turned off. How do I fix this?",
+   "answer": "This is usually a straightforward fix. You will need adjustable wrench, screwdriver set, replacement cartridge or O-rings, and plumber's grease.\n\nFollow these steps to resolve it:\n1. Turn off the hot and cold water supply valves under the sink\n2. Open the faucet to release remaining water pressure\n3. Remove the faucet handle by prying off the decorative cap and unscrewing the handle screw\n4. Pull out the cartridge or stem assembly \u2014 note its orientation for reinstallation\n5. Replace the worn O-rings or the entire cartridge with a matching replacement from the hardware store\n6. Reassemble the handle, turn on the supply valves, and test for leaks\n\nImportant: Always shut off the water supply before disassembling any faucet. Have towels ready to catch residual water in the lines.\n\nOne more thing \u2014 Take the old cartridge to the hardware store to find an exact replacement \u2014 parts are not universal between brands. Also, apply plumber's grease to new O-rings before installing them for easier assembly and a better seal.",
+   "equipment_problem": "Kitchen faucet dripping constantly when turned off",
+   "tools_required": [
+    "adjustable wrench",
+    "screwdriver set",
+    "replacement cartridge or O-rings",
+    "plumber's grease"
+   ],
+   "steps": [
+    "Turn off the hot and cold water supply valves under the sink",
+    "Open the faucet to release remaining water pressure",
+    "Remove the faucet handle by prying off the decorative cap and unscrewing the handle screw",
+    "Pull out the cartridge or stem assembly \u2014 note its orientation for reinstallation",
+    "Replace the worn O-rings or the entire cartridge with a matching replacement from the hardware store",
+    "Reassemble the handle, turn on the supply valves, and test for leaks"
+   ],
+   "safety_info": "Always shut off the water supply before disassembling any faucet. Have towels ready to catch residual water in the lines.",
+   "tips": [
+    "Take the old cartridge to the hardware store to find an exact replacement \u2014 parts are not universal between brands",
+    "Apply plumber's grease to new O-rings before installing them for easier assembly and a better seal"
+   ]
+  },
+  {
+   "row_idx": 147,
+   "id": "qa_04396",
+   "category": "plumbing_repair",
+   "question": "Help! My garbage disposal is jammed and not spinning. What should I check first?",
+   "answer": "This is a repair most homeowners can do themselves with quarter-inch Allen wrench, tongs or pliers, and flashlight.\n\n1. Turn off the garbage disposal at the wall switch and unplug it or shut off the circuit breaker\n2. Insert a quarter-inch Allen wrench into the hex socket at the bottom center of the disposal unit\n3. Turn the wrench back and forth to manually rotate the grinding plate and free the jam\n4. Use long tongs or pliers to reach in and remove any object stuck between the impellers \u2014 never use your hand\n5. Press the red reset button on the bottom of the disposal unit\n6. Next, turn power back on, run cold water, and test the disposal\n\nKeep in mind: Most disposals come with an Allen wrench designed to fit the bottom hex socket \u2014 check under the sink or in your junk drawer.\n\nSafety reminder: NEVER put your hand inside a garbage disposal, even when it is turned off. Always use tongs or pliers to remove stuck objects.",
+   "equipment_problem": "Garbage disposal jammed and not spinning",
+   "tools_required": [
+    "quarter-inch Allen wrench",
+    "tongs or pliers",
+    "flashlight"
+   ],
+   "steps": [
+    "Turn off the garbage disposal at the wall switch and unplug it or shut off the circuit breaker",
+    "Insert a quarter-inch Allen wrench into the hex socket at the bottom center of the disposal unit",
+    "Turn the wrench back and forth to manually rotate the grinding plate and free the jam",
+    "Use long tongs or pliers to reach in and remove any object stuck between the impellers \u2014 never use your hand",
+    "Press the red reset button on the bottom of the disposal unit",
+    "Next, turn power back on, run cold water, and test the disposal"
+   ],
+   "safety_info": "NEVER put your hand inside a garbage disposal, even when it is turned off. Always use tongs or pliers to remove stuck objects.",
+   "tips": [
+    "Most disposals come with an Allen wrench designed to fit the bottom hex socket \u2014 check under the sink or in your junk drawer"
+   ]
+  },
+  {
+   "row_idx": 156,
+   "id": "qa_01336",
+   "category": "plumbing_repair",
+   "question": "What is the best way to fix a bathroom faucet handle stiff and hard to turn?",
+   "answer": "Before you start, here are some useful things to know: Hard water mineral buildup is the most common cause of a stiff faucet handle. Also, soaking the stem in vinegar for 30 minutes dissolves most mineral deposits.\n\nNow, gather adjustable wrench, screwdriver, white vinegar, plumber's grease, and replacement O-rings and follow these steps:\n\n1. Turn off the water supply valves under the bathroom sink\n2. Remove the faucet handle by unscrewing the set screw (often hidden under a decorative cap)\n3. Unscrew the packing nut beneath the handle with an adjustable wrench\n4. Pull out the valve stem and inspect it for mineral buildup or corroded O-rings\n5. Clean mineral deposits with white vinegar and a soft brush, and replace worn O-rings\n6. Coat the stem with plumber's grease, reassemble, and test \u2014 the handle should turn smoothly\n\nSafety note: Turn off water supply valves before disassembling. Avoid overtightening the packing nut when reassembling \u2014 it should be snug, not forced.",
+   "equipment_problem": "Bathroom faucet handle stiff and hard to turn",
+   "tools_required": [
+    "adjustable wrench",
+    "screwdriver",
+    "white vinegar",
+    "plumber's grease",
+    "replacement O-rings"
+   ],
+   "steps": [
+    "Turn off the water supply valves under the bathroom sink",
+    "Remove the faucet handle by unscrewing the set screw (often hidden under a decorative cap)",
+    "Unscrew the packing nut beneath the handle with an adjustable wrench",
+    "Pull out the valve stem and inspect it for mineral buildup or corroded O-rings",
+    "Clean mineral deposits with white vinegar and a soft brush, and replace worn O-rings",
+    "Coat the stem with plumber's grease, reassemble, and test \u2014 the handle should turn smoothly"
+   ],
+   "safety_info": "Turn off water supply valves before disassembling. Avoid overtightening the packing nut when reassembling \u2014 it should be snug, not forced.",
+   "tips": [
+    "Hard water mineral buildup is the most common cause of a stiff faucet handle",
+    "Soaking the stem in vinegar for 30 minutes dissolves most mineral deposits"
+   ]
+  },
+  {
+   "row_idx": 158,
+   "id": "qa_01502",
+   "category": "plumbing_repair",
+   "question": "My faucet aerator is clogged with mineral deposits, causing low flow. Is this a DIY repair or do I need a professional?",
+   "answer": "Tools: pliers, white vinegar, toothbrush, and cloth\n\n1. Unscrew the aerator from the tip of the faucet spout by turning counterclockwise\n2. If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it\n3. Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing\n4. Soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits\n5. Scrub each part with a toothbrush to remove remaining buildup\n6. Rinse, reassemble in order, and screw the aerator back onto the faucet hand-tight\n\nSafety warning: Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish.\n\nAdditional advice: Aerator clogs are the most common cause of low faucet water pressure \u2014 this fix takes 10 minutes.",
+   "equipment_problem": "Faucet aerator clogged with mineral deposits causing low flow",
+   "tools_required": [
+    "pliers",
+    "white vinegar",
+    "toothbrush",
+    "cloth"
+   ],
+   "steps": [
+    "Unscrew the aerator from the tip of the faucet spout by turning counterclockwise",
+    "If the aerator is stuck, wrap it with a cloth and use pliers to grip and turn it",
+    "Disassemble the aerator \u2014 note the order of the screens, flow restrictor, and housing",
+    "Soak all parts in white vinegar for 30 to 60 minutes to dissolve mineral deposits",
+    "Scrub each part with a toothbrush to remove remaining buildup",
+    "Rinse, reassemble in order, and screw the aerator back onto the faucet hand-tight"
+   ],
+   "safety_info": "Wrap the aerator with a cloth before using pliers to avoid scratching the chrome finish.",
+   "tips": [
+    "Aerator clogs are the most common cause of low faucet water pressure \u2014 this fix takes 10 minutes"
+   ]
+  },
+  {
+   "row_idx": 162,
+   "id": "qa_02742",
+   "category": "plumbing_repair",
+   "question": "The P-trap under my bathroom sink is leaking at the joints \u2014 what is causing this and how do I fix it?",
+   "answer": "Tools: bucket, channel-lock pliers, replacement slip joint washers, and towels\n\n1. Place a bucket directly under the P-trap to catch water\n2. Unscrew the slip nuts on both ends of the P-trap by hand or with channel-lock pliers\n3. Lower the P-trap and empty its contents into the bucket\n4. Inspect the nylon compression washers inside each slip nut for cracks or compression\n5. Replace worn washers and clean debris from inside the trap and connecting pipes\n6. Reassemble the P-trap, hand-tighten the slip nuts, and add a quarter turn with pliers \u2014 run water to check for leaks\n\nSafety warning: Place a bucket under the P-trap before loosening any connections. Even a small amount of trapped water can damage cabinet interiors.\n\nAdditional advice: Hand-tighten slip nuts plus a quarter turn \u2014 overtightening cracks the nuts and makes leaks worse.",
+   "equipment_problem": "P-trap under bathroom sink leaking at the joints",
+   "tools_required": [
+    "bucket",
+    "channel-lock pliers",
+    "replacement slip joint washers",
+    "towels"
+   ],
+   "steps": [
+    "Place a bucket directly under the P-trap to catch water",
+    "Unscrew the slip nuts on both ends of the P-trap by hand or with channel-lock pliers",
+    "Lower the P-trap and empty its contents into the bucket",
+    "Inspect the nylon compression washers inside each slip nut for cracks or compression",
+    "Replace worn washers and clean debris from inside the trap and connecting pipes",
+    "Reassemble the P-trap, hand-tighten the slip nuts, and add a quarter turn with pliers \u2014 run water to check for leaks"
+   ],
+   "safety_info": "Place a bucket under the P-trap before loosening any connections. Even a small amount of trapped water can damage cabinet interiors.",
+   "tips": [
+    "Hand-tighten slip nuts plus a quarter turn \u2014 overtightening cracks the nuts and makes leaks worse"
+   ]
+  },
+  {
+   "row_idx": 167,
+   "id": "qa_00257",
+   "category": "plumbing_repair",
+   "question": "How to resolve a bathroom faucet handle stiff and hard to turn without professional help?",
+   "answer": "Before you begin, an important safety note: Turn off water supply valves before disassembling. Avoid overtightening the packing nut when reassembling \u2014 it should be snug, not forced.\n\nGather these tools: adjustable wrench, screwdriver, white vinegar, plumber's grease, and replacement O-rings.\n\nHere is how to fix this:\n1. Turn off the water supply valves under the bathroom sink\n2. Remove the faucet handle by unscrewing the set screw (often hidden under a decorative cap)\n3. Unscrew the packing nut beneath the handle with an adjustable wrench\n4. Pull out the valve stem and inspect it for mineral buildup or corroded O-rings\n5. Clean mineral deposits with white vinegar and a soft brush, and replace worn O-rings\n6. Coat the stem with plumber's grease, reassemble, and test \u2014 the handle should turn smoothly\n\nHard water mineral buildup is the most common cause of a stiff faucet handle.",
+   "equipment_problem": "Bathroom faucet handle stiff and hard to turn",
+   "tools_required": [
+    "adjustable wrench",
+    "screwdriver",
+    "white vinegar",
+    "plumber's grease",
+    "replacement O-rings"
+   ],
+   "steps": [
+    "Turn off the water supply valves under the bathroom sink",
+    "Remove the faucet handle by unscrewing the set screw (often hidden under a decorative cap)",
+    "Unscrew the packing nut beneath the handle with an adjustable wrench",
+    "Pull out the valve stem and inspect it for mineral buildup or corroded O-rings",
+    "Clean mineral deposits with white vinegar and a soft brush, and replace worn O-rings",
+    "Coat the stem with plumber's grease, reassemble, and test \u2014 the handle should turn smoothly"
+   ],
+   "safety_info": "Turn off water supply valves before disassembling. Avoid overtightening the packing nut when reassembling \u2014 it should be snug, not forced.",
+   "tips": [
+    "Hard water mineral buildup is the most common cause of a stiff faucet handle"
+   ]
+  },
+  {
+   "row_idx": 177,
+   "id": "qa_03099",
+   "category": "plumbing_repair",
+   "question": "My bathroom faucet handle is stiff and hard to turn \u2014 how can I fix this myself?",
+   "answer": "What you will need: adjustable wrench, screwdriver, white vinegar, plumber's grease, and replacement O-rings\n\nSteps:\n1. Turn off the water supply valves under the bathroom sink\n2. Remove the faucet handle by unscrewing the set screw (often hidden under a decorative cap)\n3. Unscrew the packing nut beneath the handle with an adjustable wrench\n4. Pull out the valve stem and inspect it for mineral buildup or corroded O-rings\n5. Clean mineral deposits with white vinegar and a soft brush, and replace worn O-rings\n6. Then, coat the stem with plumber's grease, reassemble, and test \u2014 the handle should turn smoothly\n\nSafety: Turn off water supply valves before disassembling. Avoid overtightening the packing nut when reassembling \u2014 it should be snug, not forced.\n\nPro tips: Hard water mineral buildup is the most common cause of a stiff faucet handle.",
+   "equipment_problem": "Bathroom faucet handle stiff and hard to turn",
+   "tools_required": [
+    "adjustable wrench",
+    "screwdriver",
+    "white vinegar",
+    "plumber's grease",
+    "replacement O-rings"
+   ],
+   "steps": [
+    "Turn off the water supply valves under the bathroom sink",
+    "Remove the faucet handle by unscrewing the set screw (often hidden under a decorative cap)",
+    "Unscrew the packing nut beneath the handle with an adjustable wrench",
+    "Pull out the valve stem and inspect it for mineral buildup or corroded O-rings",
+    "Clean mineral deposits with white vinegar and a soft brush, and replace worn O-rings",
+    "Then, coat the stem with plumber's grease, reassemble, and test \u2014 the handle should turn smoothly"
+   ],
+   "safety_info": "Turn off water supply valves before disassembling. Avoid overtightening the packing nut when reassembling \u2014 it should be snug, not forced.",
+   "tips": [
+    "Hard water mineral buildup is the most common cause of a stiff faucet handle"
+   ]
+  },
+  {
+   "row_idx": 180,
+   "id": "qa_03260",
+   "category": "plumbing_repair",
+   "question": "My shower drain is clogged with hair and soap buildup. Can I fix this without calling a professional?",
+   "answer": "This is a repair most homeowners can do themselves with zip-it drain tool, drain snake, rubber gloves, and plastic bag for debris.\n\n1. Remove the drain cover or strainer by unscrewing it or prying it up\n2. Insert a zip-it drain cleaning tool straight down into the drain opening\n3. Slowly pull the tool back up \u2014 it will grab accumulated hair and soap scum on its barbs\n4. Repeat several times until no more debris comes out\n5. For deeper clogs, feed a drain snake into the opening and crank clockwise until the clog clears\n6. Flush the drain with very hot water for 2 minutes and replace the drain cover\n\nKeep in mind: Install a drain hair catcher to prevent future clogs \u2014 they catch hair before it enters the pipe. Also, a zip-it tool costs about $3 and is the most effective tool for shower hair clogs.\n\nSafety reminder: Wear rubber gloves when pulling hair and debris from drains. Dispose of the debris in a trash bag, not back down the drain.",
+   "equipment_problem": "Shower drain clogged with hair and soap buildup",
+   "tools_required": [
+    "zip-it drain tool",
+    "drain snake",
+    "rubber gloves",
+    "plastic bag for debris"
+   ],
+   "steps": [
+    "Remove the drain cover or strainer by unscrewing it or prying it up",
+    "Insert a zip-it drain cleaning tool straight down into the drain opening",
+    "Slowly pull the tool back up \u2014 it will grab accumulated hair and soap scum on its barbs",
+    "Repeat several times until no more debris comes out",
+    "For deeper clogs, feed a drain snake into the opening and crank clockwise until the clog clears",
+    "Flush the drain with very hot water for 2 minutes and replace the drain cover"
+   ],
+   "safety_info": "Wear rubber gloves when pulling hair and debris from drains. Dispose of the debris in a trash bag, not back down the drain.",
+   "tips": [
+    "Install a drain hair catcher to prevent future clogs \u2014 they catch hair before it enters the pipe",
+    "A zip-it tool costs about $3 and is the most effective tool for shower hair clogs"
+   ]
+  }
+ ]
+}
