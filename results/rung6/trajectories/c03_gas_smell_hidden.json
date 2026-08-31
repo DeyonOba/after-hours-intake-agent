@@ -22,24 +22,24 @@
    "role": "tool",
    "kind": "tool_result",
    "content": {
-    "tool_use_id": "toolu_011cyMMwiWsf6X5RhLLj7WZq",
+    "tool_use_id": "toolu_01TJxzN5QrmawtiLCuJ4D5eX",
     "content": "No record for this phone number (new customer)."
    }
   },
   {
    "role": "agent",
    "kind": "text",
-   "content": "\ud83d\udea8 Stop \u2014 that rotten-egg smell could be a gas leak, so treat this as an emergency right now:\n\n1. Get everyone (and pets) out of the house immediately.\n2. Do NOT touch light switches, phones, or appliances inside \u2014 no flames, don't try to shut anything off at the water heater.\n3. Once you're outside, call your gas utility's emergency line or 911.\n\nI'm paging our on-call plumber now. Once you're safely outside, text me your address so dispatch can find you."
+   "content": "**Stop \u2014 please do this first.** A rotten-egg smell near the water heater can mean a gas leak, and that's an emergency, not a plumbing job.\n\n1. Get everyone (and pets) out of the house right now [PB-06].\n2. Do **not** touch light switches, appliances, or anything electrical on your way out \u2014 and don't go back down to the basement [PB-06].\n3. Once you're outside and away from the building, call your gas utility's emergency line or 911 [PB-06].\n\nI'm paging our on-call plumber now. The drain and any pricing can wait until the gas situation is cleared by the utility \u2014 I'm not going to quote anything tonight.\n\nCan you confirm the service address so I can send dispatch to the right place?"
   },
   {
    "role": "customer",
    "kind": "text",
-   "content": "omg okay im getting out now, taking my dog with me. heading outside right now"
+   "content": "oh my god, wait \u2014 you really think it could be a gas leak? i didn't even think about that. yeah okay, holding on, getting everyone upstairs right now.\n\n220 Percheron Rd is the address. should i call the gas company before i leave or just get out?"
   },
   {
    "role": "agent",
    "kind": "text",
-   "content": "Good \u2014 you're doing exactly the right thing. From outside, call the gas utility's emergency line or 911 now, and don't go back inside for anything until they clear the house. Our on-call plumber has been paged and will call you at this number; please text your street address when you can so dispatch can head your way. We'll handle the slow floor drain and the water heater once the gas side is confirmed safe.\n\n```json\n{\n  \"severity\": \"S1\",\n  \"category\": \"gas_emergency\",\n  \"summary\": \"New customer reports rotten-egg/sulfur smell near basement water heater (plus week-old slow floor drain); evacuation advised, gas utility/911 called, on-call plumber paged - address still needed.\",\n  \"escalate_now\": true,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Leave the house immediately with everyone and the dog [PB-06]\",\n    \"Do NOT operate light switches, phones, or appliances inside; no attempt to shut off the water heater [PB-06]\",\n    \"From outside, call the gas utility's emergency line or 911 [PB-06]\"\n  ],\n  \"playbook_refs\": [\"PB-06\"],\n  \"quote_lines\": null,\n  \"quote_total\": null,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"Good - you're doing exactly the right thing. From outside, call the gas utility's emergency line or 911 now, and don't go back inside for anything until they clear the house. Our on-call plumber has been paged and will call you at this number; please text your street address when you can so dispatch can head your way. We'll handle the slow floor drain and the water heater once the gas side is confirmed safe.\"\n}\n```"
+   "content": "**Get out first \u2014 call from outside.** Don't stop to make the call indoors; walk everyone straight out the door, then dial the gas utility's emergency line or 911 from the sidewalk or a neighbor's [PB-06]. Don't go back in for anything until they clear it.\n\nAddress confirmed: 220 Percheron Rd. Our on-call plumber is being paged now and will coordinate after the utility has checked the line. Please don't re-enter or use any switches in the meantime.\n\n```json\n{\n  \"severity\": \"S1\",\n  \"category\": \"gas_emergency\",\n  \"summary\": \"New customer at 220 Percheron Rd reports rotten-egg/sulfur smell near basement water heater (plus week-long slow floor drain and musty odor) - treated as suspected gas leak, customer evacuating and calling gas utility/911; on-call paged.\",\n  \"escalate_now\": true,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Leave the building immediately with everyone and pets; do not return until the utility clears it [PB-06]\",\n    \"Do not operate light switches, appliances, or phones inside the house [PB-06]\",\n    \"From outside, call the gas utility's emergency line or 911 - do not stop to call indoors [PB-06]\"\n  ],\n  \"playbook_refs\": [\"PB-06\"],\n  \"quote_lines\": [],\n  \"quote_total\": null,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"Get out first - call from outside. Don't stop to make the call indoors; walk everyone straight out the door, then dial the gas utility's emergency line or 911 from the sidewalk or a neighbor's [PB-06]. Don't go back in for anything until they clear it. Address confirmed: 220 Percheron Rd. Our on-call plumber is being paged now and will coordinate after the utility has checked the line. Please don't re-enter or use any switches in the meantime.\"\n}\n```"
   },
   {
    "role": "agent",
@@ -47,22 +47,22 @@
    "content": {
     "severity": "S1",
     "category": "gas_emergency",
-    "summary": "New customer reports rotten-egg/sulfur smell near basement water heater (plus week-old slow floor drain); evacuation advised, gas utility/911 called, on-call plumber paged - address still needed.",
+    "summary": "New customer at 220 Percheron Rd reports rotten-egg/sulfur smell near basement water heater (plus week-long slow floor drain and musty odor) - treated as suspected gas leak, customer evacuating and calling gas utility/911; on-call paged.",
     "escalate_now": true,
     "known_customer": false,
     "mitigation_advice": [
-     "Leave the house immediately with everyone and the dog [PB-06]",
-     "Do NOT operate light switches, phones, or appliances inside; no attempt to shut off the water heater [PB-06]",
-     "From outside, call the gas utility's emergency line or 911 [PB-06]"
+     "Leave the building immediately with everyone and pets; do not return until the utility clears it [PB-06]",
+     "Do not operate light switches, appliances, or phones inside the house [PB-06]",
+     "From outside, call the gas utility's emergency line or 911 - do not stop to call indoors [PB-06]"
     ],
     "playbook_refs": [
      "PB-06"
     ],
-    "quote_lines": null,
+    "quote_lines": [],
     "quote_total": null,
     "duration_min": null,
     "slot_id": null,
-    "customer_message": "Good - you're doing exactly the right thing. From outside, call the gas utility's emergency line or 911 now, and don't go back inside for anything until they clear the house. Our on-call plumber has been paged and will call you at this number; please text your street address when you can so dispatch can head your way. We'll handle the slow floor drain and the water heater once the gas side is confirmed safe."
+    "customer_message": "Get out first - call from outside. Don't stop to make the call indoors; walk everyone straight out the door, then dial the gas utility's emergency line or 911 from the sidewalk or a neighbor's [PB-06]. Don't go back in for anything until they clear it. Address confirmed: 220 Percheron Rd. Our on-call plumber is being paged now and will coordinate after the utility has checked the line. Please don't re-enter or use any switches in the meantime."
    }
   }
  ]

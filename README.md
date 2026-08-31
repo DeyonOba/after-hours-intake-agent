@@ -24,8 +24,8 @@ a slot that fits the job. At night nobody does any of them. The agent fills an
 empty seat rather than replacing anyone's judgment.
 
 **03 — Does the agent solve it well?**
-Measured against an 18-case evaluation with lawyered answer keys
-(machine-checked for internal consistency), the final agent hits **100%
+Measured against an 18-case evaluation whose answer keys are machine-checked
+for internal consistency, the final agent hits **100%
 critical-escalation recall with 0% false pages**, quotes exclusively from the
 real price book (hallucinated billing codes: structurally impossible — every
 code comes from a tool), cites every mitigation step to an approved safety
@@ -81,6 +81,19 @@ Full table with metrics, costs, and evidence paths: [CHANGELOG.md](CHANGELOG.md)
 Machine-readable results per rung: `results/<rung>/results.json`; every
 conversation's full trajectory (tool calls, tool results, safety overrides):
 `results/<rung>/trajectories/`.
+
+### Why each engineering choice, in business terms
+
+| Engineering choice | Business reason |
+|---|---|
+| Deterministic severity floor — code, not prompt | One missed gas or flood escalation is an existential liability. Code floors are testable and auditable; prompt policies are promises. |
+| False-page rate as a guardrail metric | Waking the on-call plumber for a dripping faucet kills trust in week one. Adoption dies socially before it dies technically — so over-escalation is measured, not assumed away. |
+| Quotes only through price-book tools | Every invented line item is a future invoice dispute. Making hallucinated codes *structurally impossible* beats being 99% accurate. |
+| Draft tickets + morning approval queue | The owner stays the decision-maker; the agent covers an empty seat at 11 PM rather than replacing anyone's judgment. That is the adoption path for a 5-person shop. |
+| Mitigation limited to a citable playbook | "Why did your bot tell my customer to do that?" must have a one-line answer: *it cited PB-06.* |
+| Customer memory keyed by phone number | Repeat customers are the margin. On c16, memory is what stopped the *third* identical billing mistake — the kind that loses an account quietly. |
+| Channel-agnostic core (Discord = demo adapter) | Swap in SMS/WhatsApp without touching the agent or re-running the eval. The judged results never depend on a transport. |
+| ~$0.24 per intake on the strongest model | Against a $150–500 job captured instead of lost at 11 PM, model cost is noise. Triage judgment is the wrong place to economize. |
 
 ### The ML component
 
