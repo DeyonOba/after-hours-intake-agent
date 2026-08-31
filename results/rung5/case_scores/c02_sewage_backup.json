@@ -1,0 +1,57 @@
+{
+ "case": "c02_sewage_backup",
+ "ticket": {
+  "severity": "S1",
+  "category": "sewage_backup",
+  "summary": "Sewage backing up through bathtub drain with toilet gurgling when kitchen sink runs - likely main line blockage at 9 Delmore St; on-call plumber paged.",
+  "escalate_now": true,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Stop using ALL water in the home - no flushing, sinks, laundry or dishwasher [PB-05]",
+   "Keep people and pets away from the affected area and do not touch standing sewage [PB-05]"
+  ],
+  "playbook_refs": [
+   "PB-05"
+  ],
+  "quote_lines": [
+   {
+    "code": "EMERG-CALLOUT",
+    "description": "After-hours emergency dispatch surcharge",
+    "price": 150
+   }
+  ],
+  "quote_total": 150,
+  "duration_min": null,
+  "slot_id": null,
+  "customer_message": "Got it - 9 Delmore St, and I'll have them reach you at +1-555-0102. Our on-call plumber has been paged and should call you back within about 15 minutes with a firm ETA - typically on site within the hour or so for a sewage backup. There's a $150 after-hours emergency dispatch fee; the repair itself gets quoted once he's assessed the main line. Keep the water off until he arrives."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c02_sewage_backup",
+  "tier": "S1",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 2,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": true,
+  "escalated": true,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "quote_ok": true,
+  "code_f1": null,
+  "total_err_pct": null,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": null,
+  "duration_ok": null,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.096,
+  "wall_s": 127.1
+ }
+}

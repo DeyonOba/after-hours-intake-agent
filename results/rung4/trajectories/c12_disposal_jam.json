@@ -1,0 +1,72 @@
+{
+ "config": "rung4",
+ "case": "c12_disposal_jam",
+ "system_prompt_chars": 7167,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My garbage disposal just hums and doesn't spin, I think something's stuck. Do I need a visit or is there something I can try safely?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news \u2014 a humming disposal usually means the flywheel is jammed, and that's often a DIY fix. Safety first: **never** put your hand in the unit, even off. Unplug it under the sink or flip its breaker, then use tongs/pliers to pull out anything visible, and use the hex/Allen wrench in the socket on the bottom of the unit to rock the flywheel free [PB-07].\n\nQuick check before we go further: is there any water leaking or spraying under the sink that you can't stop?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No leaks that I can see, just the humming when I turn it on. So I unplug it first, then try to grab whatever's stuck with tongs? And I have an Allen key, so I can do the hex wrench thing on the bottom. Let me give it a shot real quick."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Exactly right \u2014 unplug it first, then tongs from above, then the Allen key in the hex socket underneath and rock it back and forth a few times until it turns freely [PB-07]. Plug it back in and give it a try. Take your time, I'm here."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Okay, unplugging now... got the tongs ready. Poking around in there... oh wait, I see something! Looks like a peach pit wedged in there. Got it! \n\nNow trying the Allen key on the bottom... rocking it back and forth... yeah, it's moving easier now. Plugging it back in and... YES! It's spinning! The disposal's working again! \ud83c\udf89\n\nThanks so much, that actually worked!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Nice work, Bea \u2014 peach pits are a classic culprit! \ud83c\udf51 Two tips: skip pits, bones, and fruit stones in the disposal, and run cold water while it's grinding.\n\nSince it's fixed there's nothing to book and no charge for tonight. One last thing for our records: can you confirm the service address (and that +1-555-0112 is the best number)?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, address is 3 Sandpiper Way and that number's good. Thanks again for talking me through it \u2014 saved me a service call! Really appreciate the help. \ud83d\udc4d"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Happy to help, Bea! Glad it was a quick fix. If it ever hums again or you notice a leak under the sink, text us and we'll get someone out. Have a good night! \ud83d\udc4d\n\n```json\n{\n  \"severity\": \"S4\",\n  \"category\": \"disposal_jam\",\n  \"summary\": \"Customer's garbage disposal hummed without spinning due to a peach pit jam; talked through PB-07 self-clear over text and unit is working again \u2014 no visit needed.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Never put hands inside the disposal, even when switched off [PB-07]\",\n    \"Unplug the unit (or switch off its breaker) before working on it [PB-07]\",\n    \"Remove the visible obstruction (peach pit) with tongs/pliers [PB-07]\",\n    \"Use the hex/Allen socket under the unit to rock the flywheel free, then restore power and test [PB-07]\"\n  ],\n  \"playbook_refs\": [\"PB-07\"],\n  \"quote_lines\": [],\n  \"quote_total\": 0,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"Happy to help, Bea! Glad it was a quick fix. If it ever hums again or you notice a leak under the sink, text us and we'll get someone out. Have a good night! Address confirmed: 3 Sandpiper Way, phone +1-555-0112. No charge for tonight.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S4",
+    "category": "disposal_jam",
+    "summary": "Customer's garbage disposal hummed without spinning due to a peach pit jam; talked through PB-07 self-clear over text and unit is working again \u2014 no visit needed.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Never put hands inside the disposal, even when switched off [PB-07]",
+     "Unplug the unit (or switch off its breaker) before working on it [PB-07]",
+     "Remove the visible obstruction (peach pit) with tongs/pliers [PB-07]",
+     "Use the hex/Allen socket under the unit to rock the flywheel free, then restore power and test [PB-07]"
+    ],
+    "playbook_refs": [
+     "PB-07"
+    ],
+    "quote_lines": [],
+    "quote_total": 0,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "Happy to help, Bea! Glad it was a quick fix. If it ever hums again or you notice a leak under the sink, text us and we'll get someone out. Have a good night! Address confirmed: 3 Sandpiper Way, phone +1-555-0112. No charge for tonight."
+   }
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "case": "c05_no_hot_water_returning",
+ "ticket": {
+  "severity": "S2",
+  "category": "water_heater_no_hot",
+  "summary": "Repeat customer's gas water heater pilot won't stay lit (started tonight, dies ~10 min after lighting) - no hot water, infant in home; no gas smell, no leak. Booked first priority slot for thermocouple service.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "WH-PILOT",
+    "description": "Water heater pilot/thermocouple service - flat rate; unit installed by us last year, check parts warranty on site",
+    "price": 169
+   }
+  ],
+  "quote_total": 169,
+  "duration_min": 69,
+  "slot_id": "SL-0901-0800",
+  "customer_message": "You're all set, Sam - booked for Tuesday, Sep 1 at 8:00 AM at 77 Birchwood Ln, first stop of the day. Tonight you can leave the heater as is; there's no leak or gas odor, so nothing needs shutting off. For the baby's bottles, warming water on the stove is your best bet until we're there. See you in the morning!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c05_no_hot_water_returning",
+  "tier": "S2",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 4,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 9,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": true,
+  "cost_usd": 0.2198,
+  "wall_s": 41.7
+ }
+}

@@ -1,0 +1,144 @@
+{
+ "config": "rung6",
+ "case": "c14_wh_replace_quote",
+ "system_prompt_chars": 7479,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No emergency - our gas water heater is 14 years old and I'd rather replace it before it dies. Ballpark for a standard 40 gallon gas unit, installed? And do you handle the permit?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I'll pull up your account and the pricing."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "lookup_customer",
+    "input": {
+     "phone": "+1-555-0114"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "water heater replace 40 gallon gas"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01DVuMBLnuGTHPH9TpuAh7oS",
+    "content": "No record for this phone number (new customer)."
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01BmQoe6QHGAp9o3BVWYb1Qv",
+    "content": "[{\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}, {\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks for reaching out \u2014 good instinct replacing it proactively at 14 years. A standard 40-gal gas water heater swap is **WH-REPLACE-40G, $1,450 flat** (unit + install + haul-away of the old tank), assuming it stays in the same spot with existing gas/vent/water connections.\n\nOn the permit: yes, we pull it as the licensed contractor \u2014 the office confirms the exact municipal permit fee when we book, since that's billed at cost on top of the flat rate.\n\nQuick question: is the current heater still working normally (no leaking or loss of hot water), or is it showing symptoms?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, it's still working fine \u2014 no leaks or anything. Just don't want to get caught without hot water when it finally goes, you know? \n\n$1,450 sounds reasonable. Just to clarify \u2014 is that $1,450 the total I'd pay, or is the permit fee on top of that? And do I need to be there when you pull the permit?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "WH-REPLACE-40G",
+     "old_fixture": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_011b4e7eS5nZYxbCYwLNVqit",
+    "content": "{\"job_code\": \"WH-REPLACE-40G\", \"predicted_duration_min\": 272}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 272,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_014LRah3zJiYwAuQ6Dc66Kgd",
+    "content": "No slots fit. Try priority=false, a shorter duration, or tell the customer the office will call."
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Great question \u2014 the $1,450 is our flat rate for the install; the municipal permit fee is billed separately at cost (typically modest, and the office confirms the exact amount when scheduling). So $1,450 + permit.\n\nYou don't need to be present for the permit \u2014 we pull it in our name as the licensed contractor and handle the inspection scheduling with you.\n\nOne scheduling note: the job runs about 4.5 hours, and I don't have a half-day block open on the after-hours calendar. Since you're a new customer for us, can you send the service address? The office will call you in the morning to lock in a half-day slot that works."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Perfect, that makes sense. Yeah, no rush on my end \u2014 I'm flexible with timing.\n\nAddress is **61 Foxtail Dr.** Water heater's in the garage, so access is easy. Go ahead and have them call me tomorrow and we'll find a time that works."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect \u2014 got it: **61 Foxtail Dr., water heater in the garage.** I've filed a ticket for a proactive 40-gal gas water heater replacement (WH-REPLACE-40G, $1,450 flat + permit at cost, ~4.5 hrs on site), and the office will call you tomorrow morning to book a half-day block. Since your unit is still working fine, there's nothing you need to do tonight \u2014 but if you ever spot water pooling under the tank, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank, then call us [PB-04]. Thanks for choosing Brookdale!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"water_heater_replace\",\n  \"summary\": \"New customer at 61 Foxtail Dr. wants proactive replacement of a working 14-year-old 40-gal gas water heater in the garage; quoted WH-REPLACE-40G $1,450 + permit at cost, needs a half-day block \u2014 no after-hours slot fit, office to call in the morning.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\"No mitigation needed - unit is working with no leaks; advised that if water ever pools under the tank, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank, and do not drain it themselves [PB-04]\"],\n  \"playbook_refs\": [\"PB-04\"],\n  \"quote_lines\": [{\"code\": \"WH-REPLACE-40G\", \"description\": \"40-gal gas water heater replacement (same location, existing gas/vent/water connections, includes haul-away)\", \"price\": 1450}],\n  \"quote_total\": 1450,\n  \"duration_min\": 272,\n  \"slot_id\": null,\n  \"customer_message\": \"Perfect - got it: 61 Foxtail Dr., water heater in the garage. I've filed a ticket for a proactive 40-gal gas water heater replacement (WH-REPLACE-40G, $1,450 flat + permit at cost, ~4.5 hrs on site), and the office will call you tomorrow morning to book a half-day block. Since your unit is still working fine, there's nothing you need to do tonight - but if you ever spot water pooling under the tank, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank, then call us [PB-04]. Thanks for choosing Brookdale!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "water_heater_replace",
+    "summary": "New customer at 61 Foxtail Dr. wants proactive replacement of a working 14-year-old 40-gal gas water heater in the garage; quoted WH-REPLACE-40G $1,450 + permit at cost, needs a half-day block \u2014 no after-hours slot fit, office to call in the morning.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "No mitigation needed - unit is working with no leaks; advised that if water ever pools under the tank, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank, and do not drain it themselves [PB-04]"
+    ],
+    "playbook_refs": [
+     "PB-04"
+    ],
+    "quote_lines": [
+     {
+      "code": "WH-REPLACE-40G",
+      "description": "40-gal gas water heater replacement (same location, existing gas/vent/water connections, includes haul-away)",
+      "price": 1450
+     }
+    ],
+    "quote_total": 1450,
+    "duration_min": 272,
+    "slot_id": null,
+    "customer_message": "Perfect - got it: 61 Foxtail Dr., water heater in the garage. I've filed a ticket for a proactive 40-gal gas water heater replacement (WH-REPLACE-40G, $1,450 flat + permit at cost, ~4.5 hrs on site), and the office will call you tomorrow morning to book a half-day block. Since your unit is still working fine, there's nothing you need to do tonight - but if you ever spot water pooling under the tank, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank, then call us [PB-04]. Thanks for choosing Brookdale!"
+   }
+  }
+ ]
+}

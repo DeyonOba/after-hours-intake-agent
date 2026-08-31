@@ -1,0 +1,52 @@
+{
+ "case": "c13_low_pressure_returning",
+ "ticket": {
+  "severity": "S3",
+  "category": "low_pressure_shower",
+  "summary": "Repeat low pressure at master shower only (first diagnosed 2026-03-09, cartridge replacement deferred); no leak, other fixtures fine - replace worn pressure-balancing cartridge on ~15yr-old valve.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "FAUCET-CARTRIDGE",
+    "description": "Faucet/shower cartridge replacement - master shower pressure-balancing valve",
+    "price": 159
+   }
+  ],
+  "quote_total": 159,
+  "duration_min": 67,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "You're all set, Priya - Tuesday Sep 1 at 10:30 AM at 140 Elm Hollow. Shower cartridge replacement, $159 flat rate, about 70 minutes. I've flagged the ticket with March's diagnosis so the tech arrives with a pressure-balancing cartridge for your valve and can finish in one visit. If the pressure drops to nothing or you spot any leaking before then, text us right away."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c13_low_pressure_returning",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 4,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 2,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": true,
+  "cost_usd": 0.2443,
+  "wall_s": 39.3
+ }
+}

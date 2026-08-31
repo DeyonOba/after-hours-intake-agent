@@ -1,0 +1,57 @@
+{
+ "case": "c09_slow_kitchen_drain",
+ "ticket": {
+  "severity": "S3",
+  "category": "drain_slow",
+  "summary": "Kitchen sink (both basins, disposal side included) draining very slowly for 2 weeks and worsening; no other fixtures affected, no leaks or odors - needs kitchen branch line snaked.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Avoid chemical drain cleaners until the tech arrives",
+   "If the garbage disposal jams, unplug it or switch off its breaker first and never put a hand inside; use tongs or the hex socket underneath [PB-07]"
+  ],
+  "playbook_refs": [
+   "PB-07"
+  ],
+  "quote_lines": [
+   {
+    "code": "DRAIN-SNAKE-KITCHEN",
+    "description": "Kitchen/bath drain snaking",
+    "price": 179
+   }
+  ],
+  "quote_total": 179,
+  "duration_min": 60,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "You're all set, Tom - see you tomorrow morning! Booked: Mon Sep 1, 10:30 AM at 88 Larkspur St for kitchen drain snaking, $179 flat rate (~1 hour). Please clear out the space under the sink before we arrive if you can. If anything changes overnight - water backing up or leaking - text us and we'll adjust."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c09_slow_kitchen_drain",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 5,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.2397,
+  "wall_s": 43.9
+ }
+}

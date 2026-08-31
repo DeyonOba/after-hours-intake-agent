@@ -1,0 +1,64 @@
+{
+ "case": "c01_burst_supply",
+ "ticket": {
+  "severity": "S1",
+  "category": "burst_supply",
+  "summary": "Burst braided supply hose under kitchen sink sprayed ~2-3 min; customer closed both fixture shutoffs per PB-01 so leak is now CONTAINED (downgraded from S1 intake to S2) - kitchen sink out of service pending supply line replacement.",
+  "escalate_now": true,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Closed both hot and cold fixture shutoff valves under the kitchen sink (clockwise until snug) - spray stopped [PB-01]",
+   "Keep both valves closed and do not use the kitchen sink until the tech arrives [PB-01]",
+   "Dry out the cabinet and floor with towels/fan overnight to limit mildew",
+   "If water sprays again, shut the house main and call us [PB-02]"
+  ],
+  "playbook_refs": [
+   "PB-01",
+   "PB-02"
+  ],
+  "quote_lines": [],
+  "quote_total": null,
+  "duration_min": 44,
+  "slot_id": null,
+  "customer_message": "You're all set, and you did great tonight - catching those valves fast saved you a lot of damage. Booked: Mon Sept 1, 8:00 AM - 48 Union Ave, Apt 2. Job: kitchen sink supply line replacement, $129 flat rate (~45 min). Keep both under-sink valves closed until we arrive, and towel/fan the cabinet tonight. If anything starts spraying again before then, shut your house main and text us right away."
+ },
+ "safety_overrides": [
+  "severity S2 -> S1 (rules: ['uncontained_water'])",
+  "escalate_now forced true",
+  "severity S2 -> S1 (rules: ['uncontained_water'])",
+  "escalate_now forced true",
+  "[verifier] stripped 1 repair line(s) from S1 ticket",
+  "[verifier] removed calendar slot from S1 ticket (on-call dispatch)"
+ ],
+ "verifier_issues_initial": [
+  "S1 ticket must not contain repair quote lines (only EMERG-CALLOUT)",
+  "S1 ticket must not book a calendar slot (on-call dispatch)"
+ ],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c01_burst_supply",
+  "tier": "S1",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 7,
+  "safety_overrides": 6,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": true,
+  "escalated": true,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "quote_ok": true,
+  "code_f1": null,
+  "total_err_pct": null,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": null,
+  "duration_ok": null,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.4392,
+  "wall_s": 93.4
+ }
+}

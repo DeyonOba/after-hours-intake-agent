@@ -1,0 +1,136 @@
+{
+ "config": "rung4",
+ "case": "c08_running_toilet",
+ "system_prompt_chars": 7166,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My upstairs toilet won't stop running after you flush it, been like that a few days. Water bill is going to be scary. Not urgent but I'd like it fixed. What would it cost?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "toilet running fill valve flapper"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01SDEudJt9a3KXvb6zsT7DPT",
+    "content": "[{\"code\": \"TOILET-REBUILD\", \"name\": \"Running toilet rebuild (fill+flush valve)\", \"price\": 189, \"base_duration_min\": 60}, {\"code\": \"TOILET-CLOG\", \"name\": \"Toilet clog clearing (auger)\", \"price\": 149, \"base_duration_min\": 45}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks Nora \u2014 a constantly running toilet is usually a worn flapper or fill valve, and it's fixable. Quick safety check first: is any water spilling onto the floor or overflowing the bowl, or is it all staying inside the tank/bowl?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No overflow or anything, just a constant trickle into the bowl. Been like this for a few days now and it's driving me crazy lol"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Ha, I get it \u2014 that trickle is like a dripping faucet at 3am. Do you know roughly how old that toilet is (15+ years, or fairly new)?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "It's gotta be around 12 years old at this point. Still works otherwise, just won't stop running lol"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "TOILET-REBUILD"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Ubksih68WtfYccC1sVzMMQ",
+    "content": "{\"job_code\": \"TOILET-REBUILD\", \"predicted_duration_min\": 65}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 65,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01BNFDbk97gayRQQULJa1SC5",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news \u2014 at 12 years it's almost certainly just the tank guts. Our flat rate is **$189 (TOILET-REBUILD)** \u2014 rebuilds both the fill and flush valve, parts and labor included, about an hour on site. I have tomorrow (Sep 1) at 10:30 AM or 3:00 PM \u2014 which works better?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "That sounds reasonable honestly. Quick question though \u2014 does that $189 cover everything or are there any extra charges I should know about? And 3:00 PM tomorrow works better for me."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That $189 is all-in \u2014 parts, labor, no after-hours or trip fee since it's a regular daytime visit. The only thing that could add on: if the shutoff valve under the toilet is corroded and won't hold, that's a separate **$139 (SHUTOFF-VALVE-REPLACE)** \u2014 and the tech would ask your OK before doing it.\n\n3:00 PM tomorrow is yours. Can you confirm the service address for the ticket?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah that makes sense. And yeah, address is 402 Ashgrove Ter. See you tomorrow at 3!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Nora! \ud83d\udd27\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"toilet_running\",\n  \"summary\": \"Upstairs toilet runs continuously into bowl for several days; ~12-year-old fixture, no overflow or water damage \u2014 flat-rate tank rebuild booked Sep 1 at 3:00 PM.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\"code\": \"TOILET-REBUILD\", \"description\": \"Running toilet rebuild (fill + flush valve), parts and labor\", \"price\": 189}\n  ],\n  \"quote_total\": 189,\n  \"duration_min\": 65,\n  \"slot_id\": \"SL-0901-1500\",\n  \"customer_message\": \"You're all set, Nora! Tomorrow (Mon Sep 1) at 3:00 PM, 402 Ashgrove Ter \u2014 running toilet rebuild, $189 flat rate covering parts and labor, about an hour on site. Only possible add-on is the $139 shutoff valve replacement if that valve is corroded, and the tech will ask first. In the meantime, if the trickle gets worse you can close the oval shutoff valve on the supply line under the toilet (clockwise until snug) [PB-01]. Thanks for texting us after hours!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "toilet_running",
+    "summary": "Upstairs toilet runs continuously into bowl for several days; ~12-year-old fixture, no overflow or water damage \u2014 flat-rate tank rebuild booked Sep 1 at 3:00 PM.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "TOILET-REBUILD",
+      "description": "Running toilet rebuild (fill + flush valve), parts and labor",
+      "price": 189
+     }
+    ],
+    "quote_total": 189,
+    "duration_min": 65,
+    "slot_id": "SL-0901-1500",
+    "customer_message": "You're all set, Nora! Tomorrow (Mon Sep 1) at 3:00 PM, 402 Ashgrove Ter \u2014 running toilet rebuild, $189 flat rate covering parts and labor, about an hour on site. Only possible add-on is the $139 shutoff valve replacement if that valve is corroded, and the tech will ask first. In the meantime, if the trickle gets worse you can close the oval shutoff valve on the supply line under the toilet (clockwise until snug) [PB-01]. Thanks for texting us after hours!"
+   }
+  }
+ ]
+}

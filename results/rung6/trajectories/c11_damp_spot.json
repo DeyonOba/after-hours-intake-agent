@@ -1,0 +1,183 @@
+{
+ "config": "rung6",
+ "case": "c11_damp_spot",
+ "system_prompt_chars": 7479,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "There's a damp patch on my bedroom ceiling, maybe the size of a dinner plate. Not dripping, just damp and a bit yellow. Upstairs neighbor says nothing is leaking at theirs. Should I worry?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I'll pull up your account first."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "lookup_customer",
+    "input": {
+     "phone": "+1-555-0111"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_011rznFPqGV9hjNgpm9o5EXQ",
+    "content": "No record for this phone number (new customer)."
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks for the details \u2014 good news is a damp, non-dripping patch usually isn't an emergency. Quick question: how long has the patch been there, and has it grown at all?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "hey thanks, that's reassuring to hear. it's been there about 3 days now and honestly it looks the same size, not getting worse or anything"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good \u2014 stable and dry-ish is a much better sign. What's directly above that spot: the neighbor's bathroom/kitchen, or is the roof or an attic space above you?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "yeah it's right below their bathroom actually. they checked their side and said everything looks fine to them though"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Understood \u2014 hidden leaks in a bathroom floor often don't show on their side. Safety check: is the ceiling sagging or bulging at all, and do you notice any sewage or gas-type smell (rotten eggs) in the room?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "nah no sagging or anything like that, ceiling looks normal otherwise. and no weird smell, just kinda musty damp if anything"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "damp spot ceiling stain leak investigation"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01AKFGQHaFeJh2xg71HMiFH9",
+    "content": "[{\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "diagnostic inspection visit"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01SzNBoNXwdVk12aWdsaxeDS",
+    "content": "[{\"code\": \"DIAG\", \"name\": \"Diagnostic visit / camera inspection\", \"price\": 89, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "DIAG"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01JbWZQ2tksRoZZ3LumnJC1P",
+    "content": "{\"job_code\": \"DIAG\", \"predicted_duration_min\": 44}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 44,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01AjhNVMiUDtzDwxcojXuyYg",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That sounds like a slow seep from their bathroom plumbing (shower pan, drain, or a supply joint) rather than anything urgent \u2014 no emergency, but worth diagnosing before it spreads or the drywall stains through.\n\nI can send a tech for a **diagnostic visit \u2014 DIAG, $89, about 45 min**; if it's an accessible pipe leak, repair is **LEAK-REPAIR-MINOR, $219**. Tomorrow (Sep 1) at **10:30 AM** works, or 3:00 PM. Heads-up: if the source is inside your neighbor's unit, we may need their access too.\n\nWhat's the service address (and unit number)?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "yeah that makes sense, I'd feel better getting it checked out. it's 230 Quarry Rd, Apt 5C. and 10:30 AM tomorrow works perfect for me"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set \u2014 **Tue Sep 1, 10:30 AM at 230 Quarry Rd, Apt 5C**, diagnostic visit ($89, ~45 min). Meanwhile: if the patch starts sagging or holding water, stay out from under it and don't poke it \u2014 call us right away [PB-08]. And if water ever starts running where you can't stop it, shut off the house/unit main (clockwise, or lever perpendicular to the pipe) [PB-02]. It'd help to let your neighbor know we may need a peek at their bathroom.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"damp_spot\",\n  \"summary\": \"Dinner-plate-sized damp yellow stain on bedroom ceiling (Apt 5C) directly below upstairs neighbor's bathroom; 3 days old, stable, no drip, no sag, no odor - needs leak diagnosis, may require neighbor access.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"If the patch begins to sag or hold water, stay clear of it and do not puncture it; call us immediately [PB-08]\",\n    \"If water ever starts running and can't be stopped, shut off the unit/house main - wheel clockwise or lever perpendicular to the pipe [PB-02]\"\n  ],\n  \"playbook_refs\": [\"PB-08\", \"PB-02\"],\n  \"quote_lines\": [\n    {\"code\": \"DIAG\", \"description\": \"Diagnostic visit / camera inspection to locate ceiling leak source\", \"price\": 89}\n  ],\n  \"quote_total\": 89,\n  \"duration_min\": 44,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You're all set - Tue Sep 1, 10:30 AM at 230 Quarry Rd, Apt 5C, diagnostic visit ($89, ~45 min). Meanwhile: if the patch starts sagging or holding water, stay out from under it and don't poke it - call us right away [PB-08]. And if water ever starts running where you can't stop it, shut off the house/unit main (clockwise, or lever perpendicular to the pipe) [PB-02]. It'd help to let your neighbor know we may need a peek at their bathroom.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "damp_spot",
+    "summary": "Dinner-plate-sized damp yellow stain on bedroom ceiling (Apt 5C) directly below upstairs neighbor's bathroom; 3 days old, stable, no drip, no sag, no odor - needs leak diagnosis, may require neighbor access.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "If the patch begins to sag or hold water, stay clear of it and do not puncture it; call us immediately [PB-08]",
+     "If water ever starts running and can't be stopped, shut off the unit/house main - wheel clockwise or lever perpendicular to the pipe [PB-02]"
+    ],
+    "playbook_refs": [
+     "PB-08",
+     "PB-02"
+    ],
+    "quote_lines": [
+     {
+      "code": "DIAG",
+      "description": "Diagnostic visit / camera inspection to locate ceiling leak source",
+      "price": 89
+     }
+    ],
+    "quote_total": 89,
+    "duration_min": 44,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set - Tue Sep 1, 10:30 AM at 230 Quarry Rd, Apt 5C, diagnostic visit ($89, ~45 min). Meanwhile: if the patch starts sagging or holding water, stay out from under it and don't poke it - call us right away [PB-08]. And if water ever starts running where you can't stop it, shut off the house/unit main (clockwise, or lever perpendicular to the pipe) [PB-02]. It'd help to let your neighbor know we may need a peek at their bathroom."
+   }
+  }
+ ]
+}

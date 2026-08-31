@@ -1,0 +1,52 @@
+{
+ "case": "c12_disposal_jam",
+ "ticket": {
+  "severity": "S4",
+  "category": "disposal_jam",
+  "summary": "New customer at 3 Sandpiper Way had a humming, non-spinning garbage disposal; self-resolved after-hours by removing a peach pit and freeing the flywheel per PB-07 \u2014 no visit needed.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Do not put hands inside the disposal; unplug the unit or switch off its breaker before working on it [PB-07]",
+   "Use tongs/pliers to remove visible obstructions (customer removed a peach pit) [PB-07]",
+   "Use the hex/Allen socket under the unit to work the flywheel free, then restore power and test with cold water running [PB-07]"
+  ],
+  "playbook_refs": [
+   "PB-07"
+  ],
+  "quote_lines": [],
+  "quote_total": null,
+  "duration_min": null,
+  "slot_id": null,
+  "customer_message": "You're all set \u2014 I've got you down as 3 Sandpiper Way. One tip going forward: keep pits, bones, and fibrous peels out of the disposal and always run cold water while it's grinding. If it ever hums again and the wrench trick doesn't free it, text us and we'll send a tech out. Have a good night!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c12_disposal_jam",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 5,
+  "safety_overrides": 0,
+  "severity_ok": false,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 0.0,
+  "total_err_pct": null,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": null,
+  "duration_ok": false,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.1803,
+  "wall_s": 39.5
+ }
+}

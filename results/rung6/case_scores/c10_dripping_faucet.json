@@ -1,0 +1,56 @@
+{
+ "case": "c10_dripping_faucet",
+ "ticket": {
+  "severity": "S3",
+  "category": "faucet_drip",
+  "summary": "New customer at 16 Weaver Court: hot side of original 1990s bathroom faucet drips constantly for 2-3 weeks, spout only, no leaks under sink; booked cartridge replacement.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Optional overnight fix: close the hot-side fixture shutoff valve under the sink (small oval handle on supply line, clockwise until snug) to stop the drip [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01"
+  ],
+  "quote_lines": [
+   {
+    "code": "FAUCET-CARTRIDGE",
+    "description": "Faucet/shower cartridge replacement - hot side of bathroom lavatory faucet",
+    "price": 159
+   }
+  ],
+  "quote_total": 159,
+  "duration_min": 69,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "You're all set - Tuesday, Sep 1 at 10:30 AM at 16 Weaver Court, about 70 minutes on site, $159 for the cartridge replacement (tech will quote a full faucet swap first if parts aren't available). If the dripping keeps you up tonight, you can close the hot-side shutoff valve under the sink - the small oval handle on the supply line, clockwise until snug [PB-01]. Thanks, and sleep well!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c10_dripping_faucet",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 4,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.2315,
+  "wall_s": 44.6
+ }
+}

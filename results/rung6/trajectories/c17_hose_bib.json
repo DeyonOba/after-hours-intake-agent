@@ -1,0 +1,150 @@
+{
+ "config": "rung6",
+ "case": "c17_hose_bib",
+ "system_prompt_chars": 7479,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "The outdoor spigot on the side of the house sprays from the handle whenever I turn it on. House built in the 90s so it's probably the original. Not urgent - garden can wait a few days."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I'll pull up your account real quick."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "lookup_customer",
+    "input": {
+     "phone": "+1-555-0117"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01UhvwxhVRTSsp3o6xFd8bRE",
+    "content": "No record for this phone number (new customer)."
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks for texting Brookdale Plumbing \u2014 sounds like a worn packing nut/stem on an old hose bib, and the good news is that's a straightforward fix.\n\nQuick safety check first: when the spigot handle is closed, does everything stay completely dry (no dripping or water showing up inside the house or on the basement/crawl space wall)?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yep, totally dry when it's closed! Only leaks when I turn it on. No dripping or anything when it's off."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "hose bib outdoor spigot repair replace"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_012exhovJuauAue25dgCbsUo",
+    "content": "[{\"code\": \"HOSE-BIB-REPLACE\", \"name\": \"Outdoor hose bib replacement\", \"price\": 169, \"base_duration_min\": 75}, {\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}, {\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "HOSE-BIB-REPLACE",
+     "old_fixture": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01RYtsDu2bxvTYgSxu2mVDzf",
+    "content": "{\"job_code\": \"HOSE-BIB-REPLACE\", \"predicted_duration_min\": 82}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 82,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Ft8hs8x4ZtbCcR6vXcySAc",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect \u2014 that means it's contained (worn stem packing), so it can absolutely wait for a normal appointment. For a 90s-era original spigot we'd replace the whole hose bib rather than just repack it: **HOSE-BIB-REPLACE \u2014 $169 flat rate**, about 80 minutes on site.\n\nI have tomorrow (Sept 1) at 10:30 AM or 3:00 PM open \u2014 which works better?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Tomorrow at 10:30 AM works great for me! Thanks so much for the quick response. \ud83d\udc4d"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Great \u2014 booking you for 10:30 AM tomorrow. Last thing: since you're new to us, what's the service address (and is this number the best one for the tech to reach you)?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, it's 455 Meadowbrook Rd \u2014 and this number's perfect, just text me when they're on the way!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, 455 Meadowbrook Rd \u2014 Monday Sept 1 at 10:30 AM, outdoor hose bib replacement, $169 flat rate (~80 min). We'll text you when the tech is on the way. Until then just leave the spigot closed and you're fine. Thanks for reaching out!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"hose_bib\",\n  \"summary\": \"Original 1990s outdoor hose bib on side of house sprays from the handle when opened; fully dry when closed, no interior water \u2014 schedule standard hose bib replacement.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"HOSE-BIB-REPLACE\",\n      \"description\": \"Outdoor hose bib replacement (original 90s-era spigot, leaking at handle/stem)\",\n      \"price\": 169\n    }\n  ],\n  \"quote_total\": 169,\n  \"duration_min\": 82,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You're all set, 455 Meadowbrook Rd \u2014 Monday Sept 1 at 10:30 AM, outdoor hose bib replacement, $169 flat rate (~80 min). We'll text you when the tech is on the way. Until then just leave the spigot closed and you're fine. Thanks for reaching out!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "hose_bib",
+    "summary": "Original 1990s outdoor hose bib on side of house sprays from the handle when opened; fully dry when closed, no interior water \u2014 schedule standard hose bib replacement.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "HOSE-BIB-REPLACE",
+      "description": "Outdoor hose bib replacement (original 90s-era spigot, leaking at handle/stem)",
+      "price": 169
+     }
+    ],
+    "quote_total": 169,
+    "duration_min": 82,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set, 455 Meadowbrook Rd \u2014 Monday Sept 1 at 10:30 AM, outdoor hose bib replacement, $169 flat rate (~80 min). We'll text you when the tech is on the way. Until then just leave the spigot closed and you're fine. Thanks for reaching out!"
+   }
+  }
+ ]
+}

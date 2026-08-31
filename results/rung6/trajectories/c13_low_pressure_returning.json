@@ -1,0 +1,169 @@
+{
+ "config": "rung6",
+ "case": "c13_low_pressure_returning",
+ "system_prompt_chars": 7479,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi, Priya Natarajan again. The master shower pressure has gotten bad again, same as in March. Can we finally sort it properly this time?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I'll pull up your account right away."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "lookup_customer",
+    "input": {
+     "phone": "+1-555-0113"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_018pjxPPQxfoEZZqJ2anzLAd",
+    "content": "{\"name\": \"Priya Natarajan\", \"address\": \"140 Elm Hollow\", \"equipment\": [{\"type\": \"shower_valve\", \"model\": \"pressure-balancing valve, ~15yr old\", \"installed\": null, \"installed_by_us\": false}], \"history\": [{\"date\": \"2026-03-09\", \"job\": \"DIAG\", \"notes\": \"Master shower low pressure. Suspect worn pressure-balancing cartridge; recommended FAUCET-CARTRIDGE replacement. Customer deferred.\"}]}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Priya! Good to hear from you \u2014 I see we looked at this in March: our tech suspected the ~15-year-old pressure-balancing cartridge in the master shower valve was worn, and recommended replacing it.\n\nQuick check: is the weak pressure only at that master shower, or are other fixtures in the house affected too?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, just the master shower. Other showers and sinks are fine. So can we finally get that cartridge replaced?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Got it \u2014 that lines up with a worn cartridge. One safety check: is there any leaking or dripping from the valve or wall around the shower, or any water you can't shut off?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No leaking or dripping that I've noticed. Water shuts off fine, just the pressure is really weak. When can someone come out?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "shower low pressure cartridge replacement"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_price",
+    "input": {
+     "code": "FAUCET-CARTRIDGE"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01QovK4LqZ1uAqKLSPGJCfZR",
+    "content": "[{\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}, {\"code\": \"GARB-DISPOSAL-REPLACE\", \"name\": \"Garbage disposal replacement (unit incl.)\", \"price\": 329, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_013yJVTgC6PvSzjxUYPQQgbD",
+    "content": "{\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "FAUCET-CARTRIDGE",
+     "old_fixture": true,
+     "recurring": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01PEwMDLVvGSavy6VACPqEPw",
+    "content": "{\"job_code\": \"FAUCET-CARTRIDGE\", \"predicted_duration_min\": 67}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 67,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_013MfW3vE7s3VSyMvVsuCAEF",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good \u2014 no leak means this isn't an emergency, so we can schedule normally. The fix is a shower cartridge replacement: **FAUCET-CARTRIDGE, $159 flat rate**, about 70 minutes on site (a bit extra since the valve is ~15 years old).\n\nI can hold tomorrow (Tue Sep 1) at 10:30 AM \u2014 does that work, and is 140 Elm Hollow still the right address?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, tomorrow at 10:30 works for me. And yeah, 140 Elm Hollow is still correct. Just get it done right this time, yeah?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Priya \u2014 Tuesday Sep 1 at 10:30 AM at 140 Elm Hollow. I've flagged the ticket with March's diagnosis so the tech arrives with a pressure-balancing cartridge for your valve and can finish in one visit. If the pressure drops to nothing or you spot any leaking before then, text us right away.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"low_pressure_shower\",\n  \"summary\": \"Repeat low pressure at master shower only (first diagnosed 2026-03-09, cartridge replacement deferred); no leak, other fixtures fine - replace worn pressure-balancing cartridge on ~15yr-old valve.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [{\"code\": \"FAUCET-CARTRIDGE\", \"description\": \"Faucet/shower cartridge replacement - master shower pressure-balancing valve\", \"price\": 159}],\n  \"quote_total\": 159,\n  \"duration_min\": 67,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You're all set, Priya - Tuesday Sep 1 at 10:30 AM at 140 Elm Hollow. Shower cartridge replacement, $159 flat rate, about 70 minutes. I've flagged the ticket with March's diagnosis so the tech arrives with a pressure-balancing cartridge for your valve and can finish in one visit. If the pressure drops to nothing or you spot any leaking before then, text us right away.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "low_pressure_shower",
+    "summary": "Repeat low pressure at master shower only (first diagnosed 2026-03-09, cartridge replacement deferred); no leak, other fixtures fine - replace worn pressure-balancing cartridge on ~15yr-old valve.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "FAUCET-CARTRIDGE",
+      "description": "Faucet/shower cartridge replacement - master shower pressure-balancing valve",
+      "price": 159
+     }
+    ],
+    "quote_total": 159,
+    "duration_min": 67,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set, Priya - Tuesday Sep 1 at 10:30 AM at 140 Elm Hollow. Shower cartridge replacement, $159 flat rate, about 70 minutes. I've flagged the ticket with March's diagnosis so the tech arrives with a pressure-balancing cartridge for your valve and can finish in one visit. If the pressure drops to nothing or you spot any leaking before then, text us right away."
+   }
+  }
+ ]
+}

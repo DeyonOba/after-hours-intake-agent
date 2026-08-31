@@ -1,0 +1,104 @@
+{
+ "config": "rung6",
+ "case": "c12_disposal_jam",
+ "system_prompt_chars": 7479,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My garbage disposal just hums and doesn't spin, I think something's stuck. Do I need a visit or is there something I can try safely?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I'll pull up your account first."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "lookup_customer",
+    "input": {
+     "phone": "+1-555-0112"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01GpCbePpzM1XeysuqUvEC5o",
+    "content": "No record for this phone number (new customer)."
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news \u2014 that hum usually means the flywheel is jammed, and there's a safe DIY fix. Never put your hand in the unit; first unplug it under the sink or switch off its breaker [PB-07]. Then use tongs/pliers to pull out anything visible, and fit the hex/Allen wrench into the socket on the underside of the unit and work it back and forth to free the flywheel [PB-07].\n\nQuick safety check: any water leaking or pooling under the sink right now?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No water pooling, looks dry under there. Ok lemme try this \u2014 unplugging now and I'll grab some tongs. Wish me luck! \ud83e\udd1e"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good luck! \ud83e\udd1e Take your time \u2014 just make sure it stays unplugged the whole time you're working in there [PB-07]."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Ok got it, staying unplugged. Found a peach pit wedged in there! Got it out with the tongs. Now trying the Allen wrench to work the flywheel back and forth... yeah it's moving! Plug it back in?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Nice work \u2014 peach pit is a classic. Yes, plug it back in (or flip the breaker on) and give it a quick test with cold water running. If it hums again instead of spinning, switch it off and don't keep running it \u2014 let me know and we'll get a tech out."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yes! It's spinning now, no more humming. Running the water and it's draining fine. Seriously thank you so much \u2014 saved me a service call! \ud83d\ude4c"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Happy to help! \ud83d\ude4c Since you're new to us, what's the service address so I can set up your record for next time?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "It's 3 Sandpiper Way. And yeah, thanks again for walking me through that \u2014 really appreciate it!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set \u2014 I've got you down as 3 Sandpiper Way. One tip going forward: keep pits, bones, and fibrous peels out of the disposal and always run cold water while it's grinding. If it ever hums again and the wrench trick doesn't free it, text us and we'll send a tech out. Have a good night!\n\n```json\n{\n  \"severity\": \"S4\",\n  \"category\": \"disposal_jam\",\n  \"summary\": \"New customer at 3 Sandpiper Way had a humming, non-spinning garbage disposal; self-resolved after-hours by removing a peach pit and freeing the flywheel per PB-07 \u2014 no visit needed.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Do not put hands inside the disposal; unplug the unit or switch off its breaker before working on it [PB-07]\",\n    \"Use tongs/pliers to remove visible obstructions (customer removed a peach pit) [PB-07]\",\n    \"Use the hex/Allen socket under the unit to work the flywheel free, then restore power and test with cold water running [PB-07]\"\n  ],\n  \"playbook_refs\": [\"PB-07\"],\n  \"quote_lines\": [],\n  \"quote_total\": null,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"You're all set \u2014 I've got you down as 3 Sandpiper Way. One tip going forward: keep pits, bones, and fibrous peels out of the disposal and always run cold water while it's grinding. If it ever hums again and the wrench trick doesn't free it, text us and we'll send a tech out. Have a good night!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S4",
+    "category": "disposal_jam",
+    "summary": "New customer at 3 Sandpiper Way had a humming, non-spinning garbage disposal; self-resolved after-hours by removing a peach pit and freeing the flywheel per PB-07 \u2014 no visit needed.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Do not put hands inside the disposal; unplug the unit or switch off its breaker before working on it [PB-07]",
+     "Use tongs/pliers to remove visible obstructions (customer removed a peach pit) [PB-07]",
+     "Use the hex/Allen socket under the unit to work the flywheel free, then restore power and test with cold water running [PB-07]"
+    ],
+    "playbook_refs": [
+     "PB-07"
+    ],
+    "quote_lines": [],
+    "quote_total": null,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "You're all set \u2014 I've got you down as 3 Sandpiper Way. One tip going forward: keep pits, bones, and fibrous peels out of the disposal and always run cold water while it's grinding. If it ever hums again and the wrench trick doesn't free it, text us and we'll send a tech out. Have a good night!"
+   }
+  }
+ ]
+}

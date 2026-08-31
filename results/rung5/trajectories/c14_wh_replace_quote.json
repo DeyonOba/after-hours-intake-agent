@@ -1,0 +1,125 @@
+{
+ "config": "rung5",
+ "case": "c14_wh_replace_quote",
+ "system_prompt_chars": 7169,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No emergency - our gas water heater is 14 years old and I'd rather replace it before it dies. Ballpark for a standard 40 gallon gas unit, installed? And do you handle the permit?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Smart to get ahead of it \u2014 14 years is right about when tanks start to fail. Let me pull our flat-rate pricing."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "water heater replace gas 40 gallon"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01V79BnQh9ntVNHqTX1GnquH",
+    "content": "[{\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}, {\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_price",
+    "input": {
+     "code": "WH-REPLACE-40G"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01RfJGTjzBMa7durn6eHzPFt",
+    "content": "{\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Ballpark for a like-for-like swap: **WH-REPLACE-40G \u2014 40-gal gas water heater replacement, $1,450 flat rate**, which covers the new tank, removal/disposal of the old one, and standard connections. Budget for a bit more if we hit code upgrades (new venting, expansion tank, or a pan/drain) \u2014 the tech confirms that on site before any work.\n\nOn permits: yes, we pull it where the municipality requires one; the actual municipal fee is passed through at cost, and our office will confirm the exact amount for your jurisdiction during business hours.\n\nWant me to hold a slot for the replacement, or just leave this as a quote for now?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Thanks for the quick response. That $1,450 sounds reasonable \u2014 is that price good for a while, or does it expire? And just to clarify, are the new connections/fittings included in that flat rate, or is that extra if anything needs replacing?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Two good questions:\n\n**Price validity:** the $1,450 is our current flat rate, not a locked-in quote \u2014 I can't hold pricing after hours since tank costs move with supplier pricing. Our office can send you a written quote that's good for a set window; ask them to confirm when they call back.\n\n**Connections:** standard new flex supply lines, gas connector, and shutoff are included in the flat rate. What's *not* included is anything beyond a like-for-like swap \u2014 new venting, an expansion tank, or a drain pan if code now requires them. The tech prices those before touching anything, so no surprises.\n\nWhat's the service address? I only have your phone number on file, and the office will need it to check permit requirements for your city."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Got it, makes sense. It's 61 Foxtail Dr. \u2014 that's where the water heater is in the garage too, so access should be easy for the tech. And yeah, I'll wait for the written quote from your office during business hours. No rush on scheduling; I'm just trying to get ahead before this unit gives up the ghost."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "WH-REPLACE-40G",
+     "old_fixture": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01BinCXT5cCwsTkB8u5rUpxp",
+    "content": "{\"job_code\": \"WH-REPLACE-40G\", \"predicted_duration_min\": 272}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect \u2014 61 Foxtail Dr., garage install, noted. I'll pass this to the office as a quote request so they can send you the written quote with the permit fee for your city and a firm price window. No appointment booked; just reach out when you're ready and we'll schedule (plan on about 4.5 hours on site).\n\nOne thing to file away: if the tank ever starts leaking or overheating before then, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank \u2014 don't try to drain it yourself \u2014 then call us [PB-04].\n\n```json\n{\n  \"severity\": \"S4\",\n  \"category\": \"water_heater_replace\",\n  \"summary\": \"Homeowner requesting quote for proactive replacement of 14-year-old 40-gal gas water heater in garage at 61 Foxtail Dr.; wants written quote and permit fee from office, no scheduling yet.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"If the tank begins leaking or overheating: turn the gas control dial to OFF, close the cold-water inlet valve on top of the tank, and do not drain it yourself [PB-04]\"\n  ],\n  \"playbook_refs\": [\"PB-04\"],\n  \"quote_lines\": [\n    {\n      \"code\": \"WH-REPLACE-40G\",\n      \"description\": \"40-gal gas water heater replacement (like-for-like swap; includes tank, old unit removal/disposal, standard supply lines, gas connector and shutoff). Excludes venting upgrades, expansion tank, pan/drain if required by code, and municipal permit fee (passed through at cost).\",\n      \"price\": 1450\n    }\n  ],\n  \"quote_total\": 1450,\n  \"duration_min\": 272,\n  \"slot_id\": null,\n  \"customer_message\": \"Perfect \u2014 61 Foxtail Dr., garage install, noted. I'll pass this to the office as a quote request so they can send you the written quote with the permit fee for your city and a firm price window. No appointment booked; just reach out when you're ready and we'll schedule (plan on about 4.5 hours on site). One thing to file away: if the tank ever starts leaking or overheating before then, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank \u2014 don't try to drain it yourself \u2014 then call us [PB-04].\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S4",
+    "category": "water_heater_replace",
+    "summary": "Homeowner requesting quote for proactive replacement of 14-year-old 40-gal gas water heater in garage at 61 Foxtail Dr.; wants written quote and permit fee from office, no scheduling yet.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "If the tank begins leaking or overheating: turn the gas control dial to OFF, close the cold-water inlet valve on top of the tank, and do not drain it yourself [PB-04]"
+    ],
+    "playbook_refs": [
+     "PB-04"
+    ],
+    "quote_lines": [
+     {
+      "code": "WH-REPLACE-40G",
+      "description": "40-gal gas water heater replacement (like-for-like swap; includes tank, old unit removal/disposal, standard supply lines, gas connector and shutoff). Excludes venting upgrades, expansion tank, pan/drain if required by code, and municipal permit fee (passed through at cost).",
+      "price": 1450
+     }
+    ],
+    "quote_total": 1450,
+    "duration_min": 272,
+    "slot_id": null,
+    "customer_message": "Perfect \u2014 61 Foxtail Dr., garage install, noted. I'll pass this to the office as a quote request so they can send you the written quote with the permit fee for your city and a firm price window. No appointment booked; just reach out when you're ready and we'll schedule (plan on about 4.5 hours on site). One thing to file away: if the tank ever starts leaking or overheating before then, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank \u2014 don't try to drain it yourself \u2014 then call us [PB-04]."
+   }
+  }
+ ]
+}

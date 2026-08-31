@@ -1,0 +1,163 @@
+{
+ "config": "rung6",
+ "case": "c16_recurring_main_returning",
+ "system_prompt_chars": 7479,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Marcus Bell here. Kitchen line is backing up AGAIN - third time this year. You snaked it in January and May. It's draining a little but gurgling. What now?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I'll pull up your account real quick."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "lookup_customer",
+    "input": {
+     "phone": "+1-555-0116"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01F8p5csWrofS9Fw7s5pzigq",
+    "content": "{\"name\": \"Marcus Bell\", \"address\": \"9 Rookery Ln\", \"equipment\": [], \"history\": [{\"date\": \"2026-01-22\", \"job\": \"DRAIN-SNAKE-KITCHEN\", \"notes\": \"Kitchen line snaked, heavy grease.\"}, {\"date\": \"2026-05-30\", \"job\": \"DRAIN-SNAKE-KITCHEN\", \"notes\": \"Same line again. RECOMMEND camera inspection of main (DIAG) if it recurs - suspect roots or belly in main.\"}]}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Marcus \u2014 good to hear from you, though sorry it's back. I see January 22 and May 30 both on the kitchen line (heavy grease first time), and our tech's note recommending a camera inspection of the main if it recurred. That's where I'd head now rather than a third snake.\n\nFirst, one safety check: is any water or waste coming up anywhere else \u2014 floor, other sinks, tub, or toilets \u2014 or any sewage smell?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Nah, no backup anywhere else and no smell. Just the kitchen sink draining slow and that annoying gurgle. So you're saying skip the snake this time and go straight to the camera thing?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "camera inspection main line diagnostic"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "kitchen drain snake recurring"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Njhymu4HMZTfSe2jehFD2R",
+    "content": "[{\"code\": \"DIAG\", \"name\": \"Diagnostic visit / camera inspection\", \"price\": 89, \"base_duration_min\": 45}, {\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}, {\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01ACrSnEs6htNLKXjR8gf6Rr",
+    "content": "[{\"code\": \"DRAIN-SNAKE-KITCHEN\", \"name\": \"Kitchen/bath drain snaking\", \"price\": 179, \"base_duration_min\": 60}, {\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "DIAG",
+     "recurring": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01V2u4YVR32dQTrrSVKGqQhg",
+    "content": "{\"job_code\": \"DIAG\", \"predicted_duration_min\": 57}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 57,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_012qwi31P4vTjZ4MBbmzUJZy",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Right \u2014 a third snake would just reset the clock. The camera inspection (DIAG) is $89 and scopes the line/main to find the actual cause: roots, a belly in the pipe, or hardened grease. If it confirms a blockage in the main, power-auger clearing (DRAIN-MAIN) is $349, and we'd tell you before doing it \u2014 no surprises.\n\nI can hold tomorrow, Sept 1 at 10:30 AM (about an hour on site). Is 9 Rookery Ln still the address?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, 9 Rookery Ln is right. Tomorrow 10:30 works for me. And honestly, I like that plan better \u2014 tired of paying for the same bandaid three times. Let's find out what's actually going on down there. You'll call before you do the big one if it comes to that?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Absolutely \u2014 the tech will scope the line first, show you what he finds, and get your OK before any auger work. You're booked for Tuesday, Sept 1 at 10:30 AM at 9 Rookery Ln, and I've flagged your January and May visits on the ticket so he arrives knowing the history. Nothing you need to do tonight; see you tomorrow, Marcus.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"drain_main_recurring\",\n  \"summary\": \"Third recurrence this year of slow-draining, gurgling kitchen line (snaked Jan 22 and May 30); booked camera inspection per prior tech's recommendation to rule out roots/belly in main.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\"code\": \"DIAG\", \"description\": \"Diagnostic visit / camera inspection of kitchen line and main\", \"price\": 89},\n    {\"code\": \"DRAIN-MAIN\", \"description\": \"Main line clearing (power auger) - CONTINGENT, only if camera confirms main blockage; customer must approve first\", \"price\": 349}\n  ],\n  \"quote_total\": 438,\n  \"duration_min\": 57,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"Absolutely - the tech will scope the line first, show you what he finds, and get your OK before any auger work. You're booked for Tuesday, Sept 1 at 10:30 AM at 9 Rookery Ln, and I've flagged your January and May visits on the ticket so he arrives knowing the history. Nothing you need to do tonight; see you tomorrow, Marcus.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "drain_main_recurring",
+    "summary": "Third recurrence this year of slow-draining, gurgling kitchen line (snaked Jan 22 and May 30); booked camera inspection per prior tech's recommendation to rule out roots/belly in main.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DIAG",
+      "description": "Diagnostic visit / camera inspection of kitchen line and main",
+      "price": 89
+     },
+     {
+      "code": "DRAIN-MAIN",
+      "description": "Main line clearing (power auger) - CONTINGENT, only if camera confirms main blockage; customer must approve first",
+      "price": 349
+     }
+    ],
+    "quote_total": 438,
+    "duration_min": 57,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "Absolutely - the tech will scope the line first, show you what he finds, and get your OK before any auger work. You're booked for Tuesday, Sept 1 at 10:30 AM at 9 Rookery Ln, and I've flagged your January and May visits on the ticket so he arrives knowing the history. Nothing you need to do tonight; see you tomorrow, Marcus."
+   }
+  }
+ ]
+}

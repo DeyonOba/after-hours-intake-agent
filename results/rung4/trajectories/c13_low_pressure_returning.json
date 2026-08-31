@@ -1,0 +1,145 @@
+{
+ "config": "rung4",
+ "case": "c13_low_pressure_returning",
+ "system_prompt_chars": 7172,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi, Priya Natarajan again. The master shower pressure has gotten bad again, same as in March. Can we finally sort it properly this time?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Priya \u2014 sorry we missed your call, and sorry the shower pressure is back to being bad. Let's get it sorted properly.\n\nFirst: is the weak pressure only at the master shower, or are other fixtures in the house affected too?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Just the master shower, yeah. Everything else is fine. And honestly, your tech already told me back in March it was that cartridge thing wearing out \u2014 I thought we were gonna replace it then but I deferred. So can we just do that now?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Got it \u2014 that matches what the tech found. Quick safety check before I quote: is there any leaking or dripping water around the shower valve or wall, and no gas/sewer smells?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No leaks that I can see, and no weird smells. Just the pressure is terrible again. So what's the fix gonna cost?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "shower low pressure cartridge replacement"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "shower valve cartridge"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_014FUQ3rFYbsw6r2YWU8Bkpu",
+    "content": "[{\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}, {\"code\": \"GARB-DISPOSAL-REPLACE\", \"name\": \"Garbage disposal replacement (unit incl.)\", \"price\": 329, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_018wp6rxFHCbnzCJN5ubajs2",
+    "content": "[{\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"TOILET-REBUILD\", \"name\": \"Running toilet rebuild (fill+flush valve)\", \"price\": 189, \"base_duration_min\": 60}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "FAUCET-CARTRIDGE",
+     "recurring": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01VTxkXXqSj3TSdKr2VLULqv",
+    "content": "{\"job_code\": \"FAUCET-CARTRIDGE\", \"predicted_duration_min\": 70}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 70,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01A1wRskKJfB2RU5P5rbg2tb",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news: the shower cartridge replacement is a flat $159 (FAUCET-CARTRIDGE), about 70 minutes on site. Since only one shower is affected and there's no leak, this is a standard-priority visit \u2014 I can do tomorrow (Sep 1) at 10:30 AM or 3:00 PM.\n\nWe only captured your phone number on this missed call \u2014 can you confirm the service address for the appointment?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, 140 Elm Hollow. Tomorrow at 10:30 works for me. Let's just get it done this time."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Priya \u2014 thanks for confirming. See you tomorrow morning!\n\nBooked: **Tue Sep 1, 10:30 AM** at 140 Elm Hollow \u2014 master shower cartridge replacement, flat $159, about 70 minutes. Our tech will text before arriving. No shutoffs or prep needed on your end since there's no leak; if anything changes overnight (dripping, water you can't stop), text us right away.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"low_pressure_shower\",\n  \"summary\": \"Repeat call (prior visit March): low water pressure at master shower only, no leaks or odors; tech previously diagnosed worn shower cartridge - customer now approving replacement.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [{\"code\": \"FAUCET-CARTRIDGE\", \"description\": \"Faucet/shower cartridge replacement - master shower valve\", \"price\": 159}],\n  \"quote_total\": 159,\n  \"duration_min\": 70,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You're all set, Priya - thanks for confirming. Booked: Tue Sep 1, 10:30 AM at 140 Elm Hollow - master shower cartridge replacement, flat $159, about 70 minutes. Our tech will text before arriving. No shutoffs or prep needed since there's no leak; if anything changes overnight (dripping, water you can't stop), text us right away.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "low_pressure_shower",
+    "summary": "Repeat call (prior visit March): low water pressure at master shower only, no leaks or odors; tech previously diagnosed worn shower cartridge - customer now approving replacement.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "FAUCET-CARTRIDGE",
+      "description": "Faucet/shower cartridge replacement - master shower valve",
+      "price": 159
+     }
+    ],
+    "quote_total": 159,
+    "duration_min": 70,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set, Priya - thanks for confirming. Booked: Tue Sep 1, 10:30 AM at 140 Elm Hollow - master shower cartridge replacement, flat $159, about 70 minutes. Our tech will text before arriving. No shutoffs or prep needed since there's no leak; if anything changes overnight (dripping, water you can't stop), text us right away."
+   }
+  }
+ ]
+}

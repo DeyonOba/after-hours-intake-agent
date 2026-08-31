@@ -1,0 +1,117 @@
+{
+ "config": "rung4",
+ "case": "c15_disposal_install",
+ "system_prompt_chars": 7166,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi! Our disposal died (15 years old, seized solid). We just want a new one installed, nothing fancy. Price and earliest slot?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "garbage disposal replace install"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01P5YTEGaSDaM8WmnE2xBbfb",
+    "content": "[{\"code\": \"GARB-DISPOSAL-REPLACE\", \"name\": \"Garbage disposal replacement (unit incl.)\", \"price\": 329, \"base_duration_min\": 90}, {\"code\": \"GARB-DISPOSAL-JAM\", \"name\": \"Garbage disposal jam clearing\", \"price\": 99, \"base_duration_min\": 30}, {\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Sorry we missed your call! Quick safety check first: any water you can't shut off, any sewage backup, or any gas/rotten-egg smell in the house?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Nope, all good on those fronts. Just the disposal won't turn on\u2014hums then trips the reset. We're ready to move forward whenever!"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "GARB-DISPOSAL-REPLACE",
+     "old_fixture": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01T66VXpBM8GvKgrhMaYCW49",
+    "content": "{\"job_code\": \"GARB-DISPOSAL-REPLACE\", \"predicted_duration_min\": 109}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 109,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01LBLXM2Eb6GmzmY1ktCapzw",
+    "content": "[{\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news \u2014 that's a straightforward swap. Flat rate is **$329 (GARB-DISPOSAL-REPLACE)**, new unit included, about 1h50m on site since the old one's 15 years old and may need extra work to free up. Earliest opening is **tomorrow, Tue Sep 1 at 3:00 PM**.\n\nOnly thing we're missing is the service address \u2014 what address should the tech come to?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Perfect, that works for us! It's 27 Garnet St, Apt 1. See you tomorrow at 3!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Yuki \u2014 booked for **Tue Sep 1, 3:00 PM at 27 Garnet St, Apt 1**. Flat rate $329 including the new disposal; the tech will confirm before starting any work beyond that. Please clear out the cabinet under the sink beforehand if you can, and we'll text when the tech is en route. Thanks for your patience tonight!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"disposal_install\",\n  \"summary\": \"15-year-old garbage disposal seized (hums then trips reset) \u2014 customer requests replacement; no leak, gas, or sewage issues.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"GARB-DISPOSAL-REPLACE\",\n      \"description\": \"Garbage disposal replacement (unit included)\",\n      \"price\": 329\n    }\n  ],\n  \"quote_total\": 329,\n  \"duration_min\": 109,\n  \"slot_id\": \"SL-0901-1500\",\n  \"customer_message\": \"You're all set, Yuki \u2014 booked for Tue Sep 1, 3:00 PM at 27 Garnet St, Apt 1. Flat rate $329 including the new disposal; the tech will confirm before starting any work beyond that. Please clear out the cabinet under the sink beforehand if you can, and we'll text when the tech is en route. Thanks for your patience tonight!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "disposal_install",
+    "summary": "15-year-old garbage disposal seized (hums then trips reset) \u2014 customer requests replacement; no leak, gas, or sewage issues.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "GARB-DISPOSAL-REPLACE",
+      "description": "Garbage disposal replacement (unit included)",
+      "price": 329
+     }
+    ],
+    "quote_total": 329,
+    "duration_min": 109,
+    "slot_id": "SL-0901-1500",
+    "customer_message": "You're all set, Yuki \u2014 booked for Tue Sep 1, 3:00 PM at 27 Garnet St, Apt 1. Flat rate $329 including the new disposal; the tech will confirm before starting any work beyond that. Please clear out the cabinet under the sink beforehand if you can, and we'll text when the tech is en route. Thanks for your patience tonight!"
+   }
+  }
+ ]
+}

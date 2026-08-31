@@ -1,0 +1,148 @@
+{
+ "config": "rung6",
+ "case": "c08_running_toilet",
+ "system_prompt_chars": 7479,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My upstairs toilet won't stop running after you flush it, been like that a few days. Water bill is going to be scary. Not urgent but I'd like it fixed. What would it cost?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "lookup_customer",
+    "input": {
+     "phone": "+1-555-0108"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "toilet running fill valve flapper"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01NJKVvuu3kaywLBZHjt6pF9",
+    "content": "No record for this phone number (new customer)."
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01M9cyy2x7JdnbZmZyavv6is",
+    "content": "[{\"code\": \"TOILET-REBUILD\", \"name\": \"Running toilet rebuild (fill+flush valve)\", \"price\": 189, \"base_duration_min\": 60}, {\"code\": \"TOILET-CLOG\", \"name\": \"Toilet clog clearing (auger)\", \"price\": 149, \"base_duration_min\": 45}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi, thanks for texting Brookdale Plumbing! A constantly running toilet is a classic fill/flush valve issue \u2014 annoying and pricey on the bill, but not an emergency.\n\nQuick safety check first: is all the water staying inside the tank and bowl, or is any water spilling onto the floor or leaking anywhere?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No water on the floor, it's all staying in the tank and bowl. Just runs constantly and sometimes if I jiggle the handle it stops for a bit, then starts back up again."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good \u2014 that's contained, so we can handle it on a normal appointment. The jiggle-fix trick points to a worn flapper/fill valve.\n\nRoughly how old is that toilet \u2014 is it 15+ years old, or fairly recent?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "It's about 12 years old, so yeah pretty worn at this point I'd guess."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "TOILET-REBUILD"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01AAYAPCLnGECUUw4NEVfF52",
+    "content": "{\"job_code\": \"TOILET-REBUILD\", \"predicted_duration_min\": 65}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 65,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01ViDMfxYkfMrxTSLTadjUkY",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "A full rebuild (new fill valve + flush valve/flapper) is our flat rate **TOILET-REBUILD \u2013 $189**, about 65 minutes on site. Tip in the meantime: you can close the small oval shutoff valve on the supply line under the toilet (clockwise until snug) to stop the water waste between uses [PB-01].\n\nI've penciled you in for tomorrow, Sept 1 at 10:30 AM (alternatives: Sept 1 at 3 PM or Sept 2 at 10:30 AM). Since you're new to us, what's the service address I should put on the ticket?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Oh nice, thanks for that shutoff tip \u2014 I'll do that right now to stop bleeding money lol. Tomorrow at 10:30 works perfect for me. Address is 402 Ashgrove Ter."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set! \ud83d\udc4d\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"toilet_running\",\n  \"summary\": \"Upstairs toilet runs continuously for several days; 12-year-old fixture, handle jiggle temporarily stops it \u2014 needs fill/flush valve rebuild. Contained, no floor water.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\"Close the toilet's supply shutoff valve (small oval handle under the fixture, clockwise until snug) to stop water waste until the visit [PB-01]\"],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [{\"code\": \"TOILET-REBUILD\", \"description\": \"Running toilet rebuild (fill + flush valve)\", \"price\": 189}],\n  \"quote_total\": 189,\n  \"duration_min\": 65,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You're all set! Booked: Tuesday, Sept 1 at 10:30 AM at 402 Ashgrove Ter for a running-toilet rebuild \u2014 TOILET-REBUILD, $189 flat rate, about 65 minutes. Keep that supply valve closed between uses to save water [PB-01], and just open it briefly when you need to flush. If anything changes overnight \u2014 water on the floor or you need to reschedule \u2014 text this number and we'll sort it out.\"\n}\n```\n\nBooked: **Tue, Sept 1 at 10:30 AM** \u2014 402 Ashgrove Ter, running-toilet rebuild, $189 flat rate (~65 min). Keep that supply valve closed between uses and just open it briefly when you need to flush [PB-01]. Text this number anytime if anything changes. Have a good night!"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "toilet_running",
+    "summary": "Upstairs toilet runs continuously for several days; 12-year-old fixture, handle jiggle temporarily stops it \u2014 needs fill/flush valve rebuild. Contained, no floor water.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Close the toilet's supply shutoff valve (small oval handle under the fixture, clockwise until snug) to stop water waste until the visit [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "TOILET-REBUILD",
+      "description": "Running toilet rebuild (fill + flush valve)",
+      "price": 189
+     }
+    ],
+    "quote_total": 189,
+    "duration_min": 65,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set! Booked: Tuesday, Sept 1 at 10:30 AM at 402 Ashgrove Ter for a running-toilet rebuild \u2014 TOILET-REBUILD, $189 flat rate, about 65 minutes. Keep that supply valve closed between uses to save water [PB-01], and just open it briefly when you need to flush. If anything changes overnight \u2014 water on the floor or you need to reschedule \u2014 text this number and we'll sort it out."
+   }
+  }
+ ]
+}

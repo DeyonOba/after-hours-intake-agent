@@ -1,0 +1,58 @@
+{
+ "case": "c06_leak_contained",
+ "ticket": {
+  "severity": "S3",
+  "category": "leak_contained",
+  "summary": "Leaking braided supply hose under bathroom sink; customer closed fixture shutoff, leak fully contained and dry, second bathroom available - needs supply line replacement.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Confirmed customer already closed the fixture's shutoff valve under the sink; leave it closed until the tech arrives [PB-01]",
+   "If leaking resumes, shut off the house main (clockwise/lever perpendicular) and call us [PB-02]"
+  ],
+  "playbook_refs": [
+   "PB-01",
+   "PB-02"
+  ],
+  "quote_lines": [
+   {
+    "code": "SUPPLY-LINE-REPLACE",
+    "description": "Supply line replacement (braided hose, bathroom sink)",
+    "price": 129
+   }
+  ],
+  "quote_total": 129,
+  "duration_min": 44,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "You're all set, Jess - 12 Foundry Row, Unit B, tomorrow (Sept 1) at 10:30 AM for the braided supply line replacement, $129 flat rate, about 45 minutes. Leave that shutoff valve closed until the tech arrives [PB-01], and if anything starts leaking again before then, shut off the house main and call us right away [PB-02]. Thanks for the clear info!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c06_leak_contained",
+  "tier": "S2",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 4,
+  "safety_overrides": 0,
+  "severity_ok": false,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 1,
+  "duration_ok": true,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.2422,
+  "wall_s": 45.8
+ }
+}

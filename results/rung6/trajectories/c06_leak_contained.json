@@ -1,0 +1,159 @@
+{
+ "config": "rung6",
+ "case": "c06_leak_contained",
+ "system_prompt_chars": 7479,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "The braided hose under my bathroom sink started leaking tonight. I already closed the little valve under the sink so it stopped. But I have no water in that bathroom now - how soon can someone replace the hose?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I'll pull up your account real quick."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "lookup_customer",
+    "input": {
+     "phone": "+1-555-0106"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01V5vvHjMGZQX7RkXHXNoerv",
+    "content": "No record for this phone number (new customer)."
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks for reaching out \u2014 and nice work closing that supply-line valve, that's exactly the right move [PB-01]. Since the valve is holding, this is contained, so no emergency dispatch needed tonight.\n\nQuick question so I can prioritize you correctly: is that the only bathroom in the home, or do you have another working one?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, it's actually the only full bathroom we have in the unit. So I'm definitely hoping to get someone out here pretty quick tomorrow if possible?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Understood \u2014 only bathroom out of service means you get our first priority slot tomorrow. Let me check the pricing."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "braided supply line hose replacement under sink leak"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01LWCVRmXdoLao6hsmdnoN4y",
+    "content": "[{\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}, {\"code\": \"HOSE-BIB-REPLACE\", \"name\": \"Outdoor hose bib replacement\", \"price\": 169, \"base_duration_min\": 75}, {\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}, {\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Our flat-rate for a supply line replacement is $129 (SUPPLY-LINE-REPLACE), parts included.\n\nOne more thing: is it just the one hose leaking, or do both the hot and cold lines look old/corroded? (Techs often swap the pair while they're under there.)"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Just the one hose that's leaking \u2014 the cold water line. The other one looks fine to me. But honestly, if your tech thinks they should both be replaced while they're under there, I'm open to it. What's the earliest you can get someone out?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "SUPPLY-LINE-REPLACE"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_016SJPUSHKoNruWzzuGpUYfb",
+    "content": "{\"job_code\": \"SUPPLY-LINE-REPLACE\", \"predicted_duration_min\": 44}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 44,
+     "priority": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01AfdH1EUZVnmC3rRdw41fJB",
+    "content": "[{\"id\": \"SL-0901-0800\", \"start\": \"2026-09-01T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}, {\"id\": \"SL-0902-0800\", \"start\": \"2026-09-02T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Earliest is tomorrow (Mon Sept 1) at **8:00 AM** \u2014 first priority slot, held for you.\n\nYou're new in our system, so I don't have an address on file yet. What's the service address (and unit #) for the tech?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "12 Foundry Row, Unit B. And yeah, 8 AM works great for me tomorrow. Thanks for getting me in that early!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, and thanks for the details!\n\n**Booked:** Mon Sept 1, 8:00 AM \u2014 12 Foundry Row, Unit B\n**Job:** Cold-water braided supply line replacement, $129 flat rate (about 45 min). If the tech recommends doing the hot line too, they'll quote that second line on-site before touching anything \u2014 your call.\n\nUntil then, just leave that shutoff valve closed [PB-01]; the rest of the home's water is unaffected. If it starts leaking again even with the valve shut, text us back right away and we'll page the on-call plumber.\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"leak_contained\",\n  \"summary\": \"Leaking cold-water braided supply hose under bathroom sink; customer closed fixture shutoff so leak is contained, but it's the unit's only full bathroom and is now out of service - booked first priority slot 9/1 8:00 AM.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Confirmed customer already closed the fixture supply shutoff valve under the sink; advised leaving it closed until the tech arrives [PB-01]\",\n    \"Advised texting back for on-call paging if the leak resumes with the valve shut [PB-01]\"\n  ],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [\n    {\n      \"code\": \"SUPPLY-LINE-REPLACE\",\n      \"description\": \"Supply line replacement - cold-water braided hose under bathroom sink (parts included)\",\n      \"price\": 129\n    }\n  ],\n  \"quote_total\": 129,\n  \"duration_min\": 44,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're all set! Booked: Mon Sept 1, 8:00 AM at 12 Foundry Row, Unit B. Job: cold-water braided supply line replacement, $129 flat rate (about 45 min). If the tech recommends doing the hot line too, they'll quote that second line on-site before touching anything - your call. Until then, just leave that shutoff valve closed [PB-01]; the rest of the home's water is unaffected. If it starts leaking again even with the valve shut, text us back right away and we'll page the on-call plumber.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "leak_contained",
+    "summary": "Leaking cold-water braided supply hose under bathroom sink; customer closed fixture shutoff so leak is contained, but it's the unit's only full bathroom and is now out of service - booked first priority slot 9/1 8:00 AM.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Confirmed customer already closed the fixture supply shutoff valve under the sink; advised leaving it closed until the tech arrives [PB-01]",
+     "Advised texting back for on-call paging if the leak resumes with the valve shut [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "SUPPLY-LINE-REPLACE",
+      "description": "Supply line replacement - cold-water braided hose under bathroom sink (parts included)",
+      "price": 129
+     }
+    ],
+    "quote_total": 129,
+    "duration_min": 44,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're all set! Booked: Mon Sept 1, 8:00 AM at 12 Foundry Row, Unit B. Job: cold-water braided supply line replacement, $129 flat rate (about 45 min). If the tech recommends doing the hot line too, they'll quote that second line on-site before touching anything - your call. Until then, just leave that shutoff valve closed [PB-01]; the rest of the home's water is unaffected. If it starts leaking again even with the valve shut, text us back right away and we'll page the on-call plumber."
+   }
+  }
+ ]
+}

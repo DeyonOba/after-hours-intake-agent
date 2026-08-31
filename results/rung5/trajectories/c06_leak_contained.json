@@ -1,0 +1,149 @@
+{
+ "config": "rung5",
+ "case": "c06_leak_contained",
+ "system_prompt_chars": 7168,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "The braided hose under my bathroom sink started leaking tonight. I already closed the little valve under the sink so it stopped. But I have no water in that bathroom now - how soon can someone replace the hose?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Nice work getting that valve closed \u2014 that's exactly right [PB-01], and it means this is contained rather than an emergency.\n\nQuick question first: is that your only bathroom, or do you have another working sink/bath in the home?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Good question - yeah, it's actually the only full bathroom I've got in the unit. I can use the kitchen sink for basic stuff, but I'd really like to get this fixed soon so I can shower and use that bathroom normally again."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Got it \u2014 only full bathroom out of service, so I'll flag this as urgent for the first priority slot tomorrow.\n\nOne safety check: is there any water still seeping that you can't stop, or any sewage or rotten-egg/gas smell anywhere in the unit?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Nope, all good on that front. Once I shut that valve, it completely stopped leaking. No weird smells either. Just that one hose under the sink that needs replacing."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "braided supply hose replacement bathroom sink leak"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "contained leak repair supply line"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Vn6MPRNrRpEGMbkmExiUsC",
+    "content": "[{\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}, {\"code\": \"HOSE-BIB-REPLACE\", \"name\": \"Outdoor hose bib replacement\", \"price\": 169, \"base_duration_min\": 75}, {\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01JbnMqiGknADHA6K9YSfnv8",
+    "content": "[{\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}, {\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}, {\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "SUPPLY-LINE-REPLACE"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01GGvQkvwgwwGZZ2kA6DUuyv",
+    "content": "{\"job_code\": \"SUPPLY-LINE-REPLACE\", \"predicted_duration_min\": 44}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 44,
+     "priority": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_018gspgKXZerd3p6fA4cQqK3",
+    "content": "[{\"id\": \"SL-0901-0800\", \"start\": \"2026-09-01T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}, {\"id\": \"SL-0902-0800\", \"start\": \"2026-09-02T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect. A braided supply-line replacement is our flat-rate **SUPPLY-LINE-REPLACE \u2014 $129**, about 45 minutes on site. I can hold you the first priority slot tomorrow, **Tue Sep 1 at 8:00 AM**.\n\nI only have your phone (+1-555-0106) on file, no address \u2014 what's the service address and unit number so I can lock in the booking?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Perfect, yeah that works for me. It's 12 Foundry Row, Unit B. Looking forward to getting this fixed tomorrow morning!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Jess \u2014 I've reserved the 8:00 AM priority slot for tomorrow and noted the address. Leave that sink valve closed overnight; the toilet and shower should still work if they're on separate valves, but no need to test the sink.\n\nTomorrow's tech will replace the braided supply line at the flat rate of $129 (they'll flag it before doing anything extra). See you at 8!\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"leak_contained\",\n  \"summary\": \"Leaking braided supply hose under bathroom sink; customer closed fixture shutoff and leak stopped, but the unit's only full bathroom is out of service - needs supply line replacement.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Confirmed customer closed the fixture shutoff valve under the sink (clockwise until snug) - leak fully stopped [PB-01]\",\n    \"Advised leaving the fixture shutoff closed overnight until the tech arrives [PB-01]\"\n  ],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [\n    {\n      \"code\": \"SUPPLY-LINE-REPLACE\",\n      \"description\": \"Supply line replacement - braided hose under bathroom sink\",\n      \"price\": 129\n    }\n  ],\n  \"quote_total\": 129,\n  \"duration_min\": 44,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're all set, Jess - I've reserved the 8:00 AM priority slot for tomorrow (Tue Sep 1) at 12 Foundry Row, Unit B. Leave that sink valve closed overnight. The tech will replace the braided supply line at the flat rate of $129 and will flag anything extra before doing it. See you at 8!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "leak_contained",
+    "summary": "Leaking braided supply hose under bathroom sink; customer closed fixture shutoff and leak stopped, but the unit's only full bathroom is out of service - needs supply line replacement.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Confirmed customer closed the fixture shutoff valve under the sink (clockwise until snug) - leak fully stopped [PB-01]",
+     "Advised leaving the fixture shutoff closed overnight until the tech arrives [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "SUPPLY-LINE-REPLACE",
+      "description": "Supply line replacement - braided hose under bathroom sink",
+      "price": 129
+     }
+    ],
+    "quote_total": 129,
+    "duration_min": 44,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're all set, Jess - I've reserved the 8:00 AM priority slot for tomorrow (Tue Sep 1) at 12 Foundry Row, Unit B. Leave that sink valve closed overnight. The tech will replace the braided supply line at the flat rate of $129 and will flag anything extra before doing it. See you at 8!"
+   }
+  }
+ ]
+}

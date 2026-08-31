@@ -1,0 +1,109 @@
+{
+ "config": "rung5",
+ "case": "c04_ceiling_leak_shutoff_fail",
+ "system_prompt_chars": 7169,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Water is pouring through my dining room ceiling light fixture, I think from the upstairs bathroom. I put a bucket. What do I do??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Turn off the house main right now \u2014 it's usually where the water line enters (basement front wall, crawl space, garage, or the meter box). Turn the wheel clockwise, or the lever perpendicular to the pipe [PB-02].\n\nStay clear of the sagging, water-heavy ceiling and don't touch that light fixture or its switch [PB-08]. Can you find the main shutoff?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok im looking rn. checked the basement front wall and crawl space - i don't see anything like that?? just old boxes and pipes. where else could it be"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Two more places to try: the garage wall, or the meter box outside near the street/sidewalk (a metal or plastic lid in the ground \u2014 the valve is inside) [PB-02].\n\nMeanwhile, if you can safely reach the upstairs bathroom, close the shutoff valve on the supply line under the toilet or sink \u2014 the small oval handle, clockwise until snug [PB-01]."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok let me try the garage. im gonna check by the water heater... OH WAIT i think i see it!! theres a valve here with a wheel on it. turning it clockwise now... its moving... okay i think its off?? water should stop soon right??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Nice work! It may drip for another minute or two as the pipes drain. Now open the lowest cold tap in the house \u2014 a basement sink or outdoor spigot \u2014 to bleed the remaining pressure [PB-03].\n\nI'm paging our on-call plumber to come out tonight. Quick check before I do: any smell of gas or sewage, and is the water clear?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok opening the basement sink faucet now. water's coming out but yeah it looks clear, no weird smell. just smells like regular water. how long till the plumber gets here? im still freaked out about that ceiling \ud83d\ude1f"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_price",
+    "input": {
+     "code": "EMERG-CALLOUT"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_012B7zEKHXocFpHnDNB7Rskb",
+    "content": "{\"code\": \"EMERG-CALLOUT\", \"name\": \"After-hours emergency dispatch surcharge\", \"price\": 150, \"base_duration_min\": 0}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You did everything right \u2014 with the main off, the leak is stopping, so the ceiling shouldn't get any worse. On-call is being paged now and typically arrives within about 60\u201390 minutes; there's a $150 after-hours emergency dispatch fee, and any repair gets quoted after he sees it.\n\nWhat's the service address so I can send him straight there? (I have your number as +1-555-0104.)"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "its 31 halcyon ct. thanks for getting someone out so fast. im gonna keep an eye on that bucket and maybe put some towels down just in case. appreciate it \ud83d\ude4f"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Maria \u2014 31 Halcyon Ct is dispatched to our on-call plumber, and he'll call your number on the way. Keep the main off and the basement tap open until he arrives, stay out from under that ceiling and leave the dining room light switch alone. Towels and the bucket are a good call \u2014 hang tight, help is on the way. \ud83d\ude4f\n\n```json\n{\n  \"severity\": \"S1\",\n  \"category\": \"ceiling_leak_active\",\n  \"summary\": \"Active water leak pouring through dining room ceiling light fixture, likely from upstairs bathroom; customer closed house main near water heater in garage and bled pressure \u2014 on-call dispatched tonight.\",\n  \"escalate_now\": true,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Shut off the house main (wheel clockwise); located it by the water heater in the garage [PB-02]\",\n    \"Stay clear of the sagging water-heavy ceiling and do not touch the light fixture or switch [PB-08]\",\n    \"Try the fixture shutoff under the upstairs toilet/sink if safely reachable [PB-01]\",\n    \"Open the lowest cold tap (basement sink) to drain remaining line pressure [PB-03]\"\n  ],\n  \"playbook_refs\": [\"PB-01\", \"PB-02\", \"PB-03\", \"PB-08\"],\n  \"quote_lines\": [\n    {\"code\": \"EMERG-CALLOUT\", \"description\": \"After-hours emergency dispatch surcharge\", \"price\": 150}\n  ],\n  \"quote_total\": 150,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"You're all set, Maria \u2014 31 Halcyon Ct is dispatched to our on-call plumber, and he'll call your number on the way. Keep the main off and the basement tap open until he arrives, stay out from under that ceiling and leave the dining room light switch alone. Towels and the bucket are a good call \u2014 hang tight, help is on the way.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "ceiling_leak_active",
+    "summary": "Active water leak pouring through dining room ceiling light fixture, likely from upstairs bathroom; customer closed house main near water heater in garage and bled pressure \u2014 on-call dispatched tonight.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Shut off the house main (wheel clockwise); located it by the water heater in the garage [PB-02]",
+     "Stay clear of the sagging water-heavy ceiling and do not touch the light fixture or switch [PB-08]",
+     "Try the fixture shutoff under the upstairs toilet/sink if safely reachable [PB-01]",
+     "Open the lowest cold tap (basement sink) to drain remaining line pressure [PB-03]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02",
+     "PB-03",
+     "PB-08"
+    ],
+    "quote_lines": [
+     {
+      "code": "EMERG-CALLOUT",
+      "description": "After-hours emergency dispatch surcharge",
+      "price": 150
+     }
+    ],
+    "quote_total": 150,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "You're all set, Maria \u2014 31 Halcyon Ct is dispatched to our on-call plumber, and he'll call your number on the way. Keep the main off and the basement tap open until he arrives, stay out from under that ceiling and leave the dining room light switch alone. Towels and the bucket are a good call \u2014 hang tight, help is on the way."
+   }
+  }
+ ]
+}

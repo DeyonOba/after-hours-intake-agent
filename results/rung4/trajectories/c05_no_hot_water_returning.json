@@ -1,0 +1,152 @@
+{
+ "config": "rung4",
+ "case": "c05_no_hot_water_returning",
+ "system_prompt_chars": 7167,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi, this is Sam Okafor - you guys installed our water heater last year. The pilot light keeps going out tonight and we have no hot water. We have a 4-month-old at home. Can someone come first thing?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Sam \u2014 sorry you're dealing with this, especially with a little one at home. Quick safety check first: do you smell anything like rotten eggs or sulfur near the water heater or anywhere in the house?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No gas smell at all, thank goodness. The pilot lights fine for about 10 minutes then just goes out. We've got no water pooling around it either if that helps."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good \u2014 that rules out the scary stuff. How long has this been going on: just tonight, or has it been dropping out over the past few days/weeks?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Just started tonight actually. Was working fine this morning when I showered. Now it keeps going out every time we try to relight it. Pretty frustrating timing with the baby needing warm water for baths and bottles."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "water heater no hot water pilot light thermocouple"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "water heater diagnostic service call"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_019HxMjHnNEKWcB5wGZpBX8y",
+    "content": "[{\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_013Qkg3uGEnVhyaHzYmj2Dkq",
+    "content": "[{\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}, {\"code\": \"DIAG\", \"name\": \"Diagnostic visit / camera inspection\", \"price\": 89, \"base_duration_min\": 45}, {\"code\": \"EMERG-CALLOUT\", \"name\": \"After-hours emergency dispatch surcharge\", \"price\": 150, \"base_duration_min\": 0}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "WH-PILOT",
+     "old_fixture": false,
+     "recurring": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01CsbeF94Vfm6yLr4dPszRzT",
+    "content": "{\"job_code\": \"WH-PILOT\", \"predicted_duration_min\": 59}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 59,
+     "priority": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_012tVrFjka64qxBLiXfmHRKQ",
+    "content": "[{\"id\": \"SL-0901-0800\", \"start\": \"2026-09-01T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}, {\"id\": \"SL-0902-0800\", \"start\": \"2026-09-02T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That sounds like a failing thermocouple \u2014 common and repairable. Since it won't stay lit, I'd stop the relight attempts and turn the gas control dial to OFF until our tech is there [PB-04]. The fix is our flat-rate **Water heater pilot/thermocouple service \u2014 $169** (about 1 hour), and since we installed the unit last year the tech will check whether the part is still under warranty, which could reduce that.\n\nI can hold our first priority slot, **tomorrow (Sept 1) at 8:00 AM**. What's the service address I should put on the ticket so I can confirm it matches your file?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Perfect, thanks for that. Yeah, I'll turn it off right now. And yeah, 77 Birchwood Ln \u2014 should be in your system from the install last year. 8 AM works great for us tomorrow. Really appreciate getting someone out so quick with the baby here."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Sam \u2014 77 Birchwood Ln, tomorrow (Tue Sept 1) at 8:00 AM, first slot of the day. Keep the gas dial off tonight [PB-04], and for the baby you can safely warm water on the stove in the meantime. If you do notice any gas smell before then, get everyone outside and call the gas utility or 911 from outside [PB-06] \u2014 then ring us. See you in the morning!\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"water_heater_no_hot\",\n  \"summary\": \"Gas water heater pilot won't stay lit (drops out ~10 min after relight) since tonight, no hot water; no gas smell, no leaking \u2014 likely thermocouple; unit installed by us last year, possible part warranty.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [\n    \"Stop repeated relight attempts and turn the water heater's gas control dial to OFF until the tech arrives [PB-04]\",\n    \"If any gas/rotten-egg smell develops, leave the building with everyone, don't touch switches or appliances, and call the gas utility or 911 from outside [PB-06]\"\n  ],\n  \"playbook_refs\": [\"PB-04\", \"PB-06\"],\n  \"quote_lines\": [\n    {\"code\": \"WH-PILOT\", \"description\": \"Water heater pilot/thermocouple service (part may be covered under install warranty - tech to verify)\", \"price\": 169}\n  ],\n  \"quote_total\": 169,\n  \"duration_min\": 59,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're all set, Sam - 77 Birchwood Ln, tomorrow (Tue Sept 1) at 8:00 AM, first slot of the day. Keep the gas dial off tonight [PB-04], and for the baby you can safely warm water on the stove in the meantime. If you do notice any gas smell before then, get everyone outside and call the gas utility or 911 from outside [PB-06] - then ring us. See you in the morning!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "water_heater_no_hot",
+    "summary": "Gas water heater pilot won't stay lit (drops out ~10 min after relight) since tonight, no hot water; no gas smell, no leaking \u2014 likely thermocouple; unit installed by us last year, possible part warranty.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [
+     "Stop repeated relight attempts and turn the water heater's gas control dial to OFF until the tech arrives [PB-04]",
+     "If any gas/rotten-egg smell develops, leave the building with everyone, don't touch switches or appliances, and call the gas utility or 911 from outside [PB-06]"
+    ],
+    "playbook_refs": [
+     "PB-04",
+     "PB-06"
+    ],
+    "quote_lines": [
+     {
+      "code": "WH-PILOT",
+      "description": "Water heater pilot/thermocouple service (part may be covered under install warranty - tech to verify)",
+      "price": 169
+     }
+    ],
+    "quote_total": 169,
+    "duration_min": 59,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're all set, Sam - 77 Birchwood Ln, tomorrow (Tue Sept 1) at 8:00 AM, first slot of the day. Keep the gas dial off tonight [PB-04], and for the baby you can safely warm water on the stove in the meantime. If you do notice any gas smell before then, get everyone outside and call the gas utility or 911 from outside [PB-06] - then ring us. See you in the morning!"
+   }
+  }
+ ]
+}

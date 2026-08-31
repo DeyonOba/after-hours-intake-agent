@@ -1,0 +1,141 @@
+{
+ "config": "rung5",
+ "case": "c07_only_toilet_blocked",
+ "system_prompt_chars": 7169,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Our toilet is completely blocked and almost overflowed when I flushed. Plunger did nothing. It's the only toilet in the house and we have kids. Tonight or tomorrow??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That sounds stressful \u2014 let's sort it out. First, safety check: is the water still rising or spilling onto the floor right now, or has the bowl settled back down on its own?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Bowl settled back down but it's sitting way too high. I'm worried if I flush again it'll overflow everywhere honestly"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good \u2014 don't flush again until we've looked at it. Are any other drains acting up too (tub, shower, or sinks gurgling, draining slowly, or backing up), or is it just the toilet?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Just the toilet as far as I can tell. Everything else seems fine. Should I try the plunger again or just leave it?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "toilet clog auger clear"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_012rmNPrKTrRabr3vQCX1kKw",
+    "content": "[{\"code\": \"TOILET-CLOG\", \"name\": \"Toilet clog clearing (auger)\", \"price\": 149, \"base_duration_min\": 45}, {\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}, {\"code\": \"TOILET-REBUILD\", \"name\": \"Running toilet rebuild (fill+flush valve)\", \"price\": 189, \"base_duration_min\": 60}, {\"code\": \"GARB-DISPOSAL-JAM\", \"name\": \"Garbage disposal jam clearing\", \"price\": 99, \"base_duration_min\": 30}, {\"code\": \"SEWAGE-CLEAR\", \"name\": \"Sewage backup clearing & sanitation check\", \"price\": 425, \"base_duration_min\": 150}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Leave the plunger alone for now \u2014 with the bowl that full you'd just risk pushing water over the rim. One quick question: has this toilet backed up like this before, or is this the first time?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "First time ever. We've lived here 3 years, never had an issue til tonight. That's what's freaking me out tbh"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "TOILET-CLOG"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01YHT3uZ37LdmEiXSY9JDnwc",
+    "content": "{\"job_code\": \"TOILET-CLOG\", \"predicted_duration_min\": 46}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 46,
+     "priority": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Fi7v5YJDfLGp59yiiECMcJ",
+    "content": "[{\"id\": \"SL-0901-0800\", \"start\": \"2026-09-01T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}, {\"id\": \"SL-0902-0800\", \"start\": \"2026-09-02T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news: since your other drains are fine, this is almost certainly a local clog in the toilet itself, not your main sewer line \u2014 so it's not an emergency tonight. I can hold you the first priority slot tomorrow, **Mon Sep 1 at 8:00 AM**, about 45 min on site. Toilet clog clearing with an auger is a flat **$149** (no after-hours surcharge).\n\nWhat's the service address so I can confirm it on the ticket?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "5 Coppersmith Ave. And yeah, 8 AM tomorrow works \u2014 just need this sorted before the kids wake up. Should I do anything with the toilet tonight or just leave it?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Just leave it be tonight \u2014 no more flushing, and no plunger. If you want insurance against a kid flushing it by accident, close the toilet's own shutoff valve: the small oval/football handle on the supply line low on the wall behind the toilet, clockwise until snug [PB-01]. You're booked for 8:00 AM.\n\nYou're all set, Aiden \u2014 a Brookdale plumber will be at 5 Coppersmith Ave tomorrow (Mon Sep 1) at 8:00 AM, about 45 minutes on site, flat $149 to auger the toilet clear. If anything changes overnight \u2014 water backing up into the tub or shower, or the bowl overflowing \u2014 text back and we'll page the on-call plumber right away.\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"toilet_clog\",\n  \"summary\": \"Only toilet in home fully blocked, bowl near overflow after flush, plunger failed; other drains draining normally so likely local clog - first priority slot booked.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Do not flush again and do not re-plunge while the bowl is full (overflow risk).\",\n    \"Optional: close the toilet's own supply shutoff valve - small oval/football handle on the supply line behind the toilet, clockwise until snug, to prevent an accidental flush overflowing [PB-01].\"\n  ],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [\n    {\"code\": \"TOILET-CLOG\", \"description\": \"Toilet clog clearing (auger)\", \"price\": 149}\n  ],\n  \"quote_total\": 149,\n  \"duration_min\": 46,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're all set, Aiden - a Brookdale plumber will be at 5 Coppersmith Ave tomorrow (Mon Sep 1) at 8:00 AM, about 45 minutes on site, flat $149 to auger the toilet clear. Tonight: no flushing, no plunger; optionally close the toilet's supply shutoff valve behind the toilet [PB-01]. If water starts backing up into the tub/shower or the bowl overflows, text back and we'll page the on-call plumber.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "toilet_clog",
+    "summary": "Only toilet in home fully blocked, bowl near overflow after flush, plunger failed; other drains draining normally so likely local clog - first priority slot booked.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Do not flush again and do not re-plunge while the bowl is full (overflow risk).",
+     "Optional: close the toilet's own supply shutoff valve - small oval/football handle on the supply line behind the toilet, clockwise until snug, to prevent an accidental flush overflowing [PB-01]."
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "TOILET-CLOG",
+      "description": "Toilet clog clearing (auger)",
+      "price": 149
+     }
+    ],
+    "quote_total": 149,
+    "duration_min": 46,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're all set, Aiden - a Brookdale plumber will be at 5 Coppersmith Ave tomorrow (Mon Sep 1) at 8:00 AM, about 45 minutes on site, flat $149 to auger the toilet clear. Tonight: no flushing, no plunger; optionally close the toilet's supply shutoff valve behind the toilet [PB-01]. If water starts backing up into the tub/shower or the bowl overflows, text back and we'll page the on-call plumber."
+   }
+  }
+ ]
+}

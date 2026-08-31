@@ -1,0 +1,57 @@
+{
+ "case": "c07_only_toilet_blocked",
+ "ticket": {
+  "severity": "S2",
+  "category": "toilet_clog",
+  "summary": "Only toilet in home is fully blocked (bowl fills near rim, plunger failed) after 6-year-old flushed something ~1hr ago; other drains flow fine, so localized trap clog/foreign object \u2014 booked first priority slot.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Stop flushing the toilet until the tech arrives",
+   "Close the toilet's supply shutoff valve (small oval handle on supply line, clockwise until snug) to prevent overflow [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01"
+  ],
+  "quote_lines": [
+   {
+    "code": "TOILET-CLOG",
+    "description": "Toilet clog clearing (auger); possible foreign object (kids' toy) \u2014 tech to confirm any additional charge if toilet must be pulled",
+    "price": 149
+   }
+  ],
+  "quote_total": 149,
+  "duration_min": 46,
+  "slot_id": "SL-0901-0800",
+  "customer_message": "You're all set \u2014 5 Coppersmith Ave, Monday Sep 1 at 8:00 AM (slot SL-0901-0800), $149 flat for toilet clog clearing. With the valve closed the bowl can't refill, so you shouldn't get an overflow overnight. If anything changes \u2014 water starts coming up in the tub/shower or spills onto the floor \u2014 text back and we'll page the on-call plumber right away. Sleep easy, and thanks for choosing Brookdale Plumbing!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c07_only_toilet_blocked",
+  "tier": "S2",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 5,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 1,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.2786,
+  "wall_s": 53.3
+ }
+}

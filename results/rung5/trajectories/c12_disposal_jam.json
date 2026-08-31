@@ -1,0 +1,82 @@
+{
+ "config": "rung5",
+ "case": "c12_disposal_jam",
+ "system_prompt_chars": 7167,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My garbage disposal just hums and doesn't spin, I think something's stuck. Do I need a visit or is there something I can try safely?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news \u2014 that hum usually means the flywheel is jammed, which is often a DIY fix. Safety first: never put your hand inside the unit, even off. Unplug it or switch off its breaker, then use tongs/pliers to pull out anything visible, and use the hex/Allen wrench in the socket under the unit to rock the flywheel free [PB-07].\n\nQuick check before we go further: is there any water leaking or backing up under the sink right now?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "no leaks or backup, looks dry under there. okay lemme try this \u2014 i have an allen key so i can do the hex wrench thing. give me a sec to unplug it and look inside \ud83d\udc4d"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect \u2014 take your time. Shine a flashlight down the drain opening while you're in there; if you spot the culprit, tongs or pliers only [PB-07].\n\nPing me when you've had a go and I'll tell you what to do next either way."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "okay so i just looked in there with a flashlight and i can actually see something orange stuck down there \u2014 looks like a peach pit maybe? gonna try the allen key to rock it loose now"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Sounds about right \u2014 peach pits are a classic. Rock the Allen key back and forth a few times to break it loose, and if you can grab the pit with pliers first, even better [PB-07].\n\nLet me know how it goes."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "omg it worked!! the pit came out with the pliers and now the disposal spins totally fine. crisis averted lol thanks so much for talking me through this instead of making me call someone out \ud83d\ude4c"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Amazing \u2014 nice work! \ud83c\udf89 One last thing for our records: can you confirm the service address we should have on file for you?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "yeah it's 3 Sandpiper Way. thanks again, seriously saved me a bunch of money tonight!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Got it \u2014 3 Sandpiper Way, noted. Glad it was a cheap fix! Going forward, keep pits, bones and fibrous stuff (celery, corn husks) out, and run cold water while it grinds. If it ever hums again and the Allen key won't budge it, text us and we'll get a tech out. Have a good night! \ud83d\ude4c\n\n```json\n{\n  \"severity\": \"S4\",\n  \"category\": \"disposal_jam\",\n  \"summary\": \"Kitchen garbage disposal hummed without spinning due to a peach pit jam; customer cleared it herself with playbook guidance, no visit needed.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Never reach into the disposal, even when switched off [PB-07]\",\n    \"Unplug the unit or switch off its breaker before working on it [PB-07]\",\n    \"Use a flashlight and tongs/pliers to remove the visible object (peach pit) [PB-07]\",\n    \"Use the hex/Allen socket under the unit to rock the flywheel free [PB-07]\"\n  ],\n  \"playbook_refs\": [\"PB-07\"],\n  \"quote_lines\": null,\n  \"quote_total\": null,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"Got it \u2014 3 Sandpiper Way, noted. Glad it was a cheap fix! Going forward, keep pits, bones and fibrous stuff (celery, corn husks) out, and run cold water while it grinds. If it ever hums again and the Allen key won't budge it, text us and we'll get a tech out. Have a good night!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S4",
+    "category": "disposal_jam",
+    "summary": "Kitchen garbage disposal hummed without spinning due to a peach pit jam; customer cleared it herself with playbook guidance, no visit needed.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Never reach into the disposal, even when switched off [PB-07]",
+     "Unplug the unit or switch off its breaker before working on it [PB-07]",
+     "Use a flashlight and tongs/pliers to remove the visible object (peach pit) [PB-07]",
+     "Use the hex/Allen socket under the unit to rock the flywheel free [PB-07]"
+    ],
+    "playbook_refs": [
+     "PB-07"
+    ],
+    "quote_lines": null,
+    "quote_total": null,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "Got it \u2014 3 Sandpiper Way, noted. Glad it was a cheap fix! Going forward, keep pits, bones and fibrous stuff (celery, corn husks) out, and run cold water while it grinds. If it ever hums again and the Allen key won't budge it, text us and we'll get a tech out. Have a good night!"
+   }
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "case": "c14_wh_replace_quote",
+ "ticket": {
+  "severity": "S4",
+  "category": "water_heater_replace",
+  "summary": "Homeowner requesting quote for proactive replacement of 14-year-old 40-gal gas water heater in garage at 61 Foxtail Dr.; wants written quote and permit fee from office, no scheduling yet.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "If the tank begins leaking or overheating: turn the gas control dial to OFF, close the cold-water inlet valve on top of the tank, and do not drain it yourself [PB-04]"
+  ],
+  "playbook_refs": [
+   "PB-04"
+  ],
+  "quote_lines": [
+   {
+    "code": "WH-REPLACE-40G",
+    "description": "40-gal gas water heater replacement (like-for-like swap; includes tank, old unit removal/disposal, standard supply lines, gas connector and shutoff). Excludes venting upgrades, expansion tank, pan/drain if required by code, and municipal permit fee (passed through at cost).",
+    "price": 1450
+   }
+  ],
+  "quote_total": 1450,
+  "duration_min": 272,
+  "slot_id": null,
+  "customer_message": "Perfect \u2014 61 Foxtail Dr., garage install, noted. I'll pass this to the office as a quote request so they can send you the written quote with the permit fee for your city and a firm price window. No appointment booked; just reach out when you're ready and we'll schedule (plan on about 4.5 hours on site). One thing to file away: if the tank ever starts leaking or overheating before then, turn the gas control dial to OFF and close the cold-water inlet valve on top of the tank \u2014 don't try to drain it yourself \u2014 then call us [PB-04]."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c14_wh_replace_quote",
+  "tier": "S4",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 32,
+  "duration_ok": false,
+  "slot_ok": null,
+  "known_customer_ok": null,
+  "cost_usd": 0.209,
+  "wall_s": 48.2
+ }
+}

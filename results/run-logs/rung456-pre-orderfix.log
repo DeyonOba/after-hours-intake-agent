@@ -1,0 +1,125 @@
+[ 1/18] c01_burst_supply ... OK  sev=S1 (key S1) turns=6 $0.29
+[ 2/18] c02_sewage_backup ... OK  sev=S1 (key S1) turns=2 $0.09
+[ 3/18] c03_gas_smell_hidden ... OK  sev=S1 (key S1) turns=3 $0.13
+[ 4/18] c04_ceiling_leak_shutoff_fail ... OK  sev=S1 (key S1) turns=6 $0.23
+[ 5/18] c05_no_hot_water_returning ... OK  sev=S2 (key S2) turns=4 $0.22
+[ 6/18] c06_leak_contained ... MISS sev=S3 (key S2) turns=4 $0.24
+[ 7/18] c07_only_toilet_blocked ... OK  sev=S2 (key S2) turns=5 $0.25
+[ 8/18] c08_running_toilet ... OK  sev=S3 (key S3) turns=5 $0.24
+[ 9/18] c09_slow_kitchen_drain ... OK  sev=S3 (key S3) turns=5 $0.24
+[10/18] c10_dripping_faucet ... OK  sev=S3 (key S3) turns=3 $0.18
+[11/18] c11_damp_spot ... OK  sev=S3 (key S3) turns=5 $0.23
+[12/18] c12_disposal_jam ... MISS sev=S4 (key S3) turns=4 $0.12
+[13/18] c13_low_pressure_returning ... OK  sev=S3 (key S3) turns=4 $0.23
+[14/18] c14_wh_replace_quote ... OK  sev=S4 (key S4) turns=3 $0.17
+[15/18] c15_disposal_install ... MISS sev=S3 (key S4) turns=3 $0.17
+[16/18] c16_recurring_main_returning ... OK  sev=S3 (key S3) turns=5 $0.35
+[17/18] c17_hose_bib ... OK  sev=S3 (key S3) turns=4 $0.22
+[18/18] c18_wh_noise ... OK  sev=S3 (key S3) turns=5 $0.29
+
+=== AGGREGATE: rung4 ===
+  cases: 18
+  parse_ok_rate: 1.0
+  severity_acc: 0.833
+  category_acc: 0.944
+  critical_escalation_recall: 1.0
+  false_page_rate: 0.0
+  quote_ok_rate: 0.889
+  avg_code_f1: 0.905
+  avg_total_err_pct: 12.8
+  hallucinated_code_cases: 0
+  mitigation_ok_rate: 1.0
+  refs_valid_rate: 1.0
+  duration_mae_min: 10.9
+  duration_ok_rate: 0.714
+  slot_acc: 0.647
+  memory_acc: 1.0
+  avg_turns: 4.22
+  total_cost_usd: 3.91
+  wall_minutes: 12.8
+
+Saved: /Users/gideonoba/WorkSpace/OpenSource/frontier_engineering_challenge_2026/results/rung4/results.json, summary.md, trajectories/
+[ 1/18] c01_burst_supply ... OK  sev=S1 (key S1) turns=6 $0.33
+[ 2/18] c02_sewage_backup ... OK  sev=S1 (key S1) turns=2 $0.10
+[ 3/18] c03_gas_smell_hidden ... OK  sev=S1 (key S1) turns=2 $0.08
+[ 4/18] c04_ceiling_leak_shutoff_fail ... OK  sev=S1 (key S1) turns=5 $0.21
+[ 5/18] c05_no_hot_water_returning ... OK  sev=S2 (key S2) turns=4 $0.22
+[ 6/18] c06_leak_contained ... OK  sev=S2 (key S2) turns=4 $0.23
+[ 7/18] c07_only_toilet_blocked ... OK  sev=S2 (key S2) turns=5 $0.26
+[ 8/18] c08_running_toilet ... OK  sev=S3 (key S3) turns=4 $0.21
+[ 9/18] c09_slow_kitchen_drain ... OK  sev=S3 (key S3) turns=6 $0.25
+[10/18] c10_dripping_faucet ... OK  sev=S3 (key S3) turns=3 $0.19
+[11/18] c11_damp_spot ... OK  sev=S3 (key S3) turns=5 $0.25
+[12/18] c12_disposal_jam ... MISS sev=S4 (key S3) turns=5 $0.25
+[13/18] c13_low_pressure_returning ... OK  sev=S3 (key S3) turns=5 $0.27
+[14/18] c14_wh_replace_quote ... OK  sev=S4 (key S4) turns=3 $0.21
+[15/18] c15_disposal_install ... MISS sev=S3 (key S4) turns=4 $0.20
+[16/18] c16_recurring_main_returning ... OK  sev=S3 (key S3) turns=5 $0.44
+[17/18] c17_hose_bib ... MISS sev=S1 (key S3) turns=4 $0.20
+[18/18] c18_wh_noise ... OK  sev=S3 (key S3) turns=5 $0.25
+
+=== AGGREGATE: rung5 ===
+  cases: 18
+  parse_ok_rate: 1.0
+  severity_acc: 0.833
+  category_acc: 0.944
+  critical_escalation_recall: 1.0
+  false_page_rate: 0.071
+  quote_ok_rate: 0.833
+  avg_code_f1: 0.952
+  avg_total_err_pct: 9.7
+  hallucinated_code_cases: 0
+  mitigation_ok_rate: 1.0
+  refs_valid_rate: 1.0
+  duration_mae_min: 14.1
+  duration_ok_rate: 0.714
+  slot_acc: 0.647
+  memory_acc: 1.0
+  avg_turns: 4.28
+  total_cost_usd: 4.12
+  wall_minutes: 14.0
+
+Saved: /Users/gideonoba/WorkSpace/OpenSource/frontier_engineering_challenge_2026/results/rung5/results.json, summary.md, trajectories/
+[ 1/18] c01_burst_supply ... OK  sev=S1 (key S1) turns=6 $0.34
+[ 2/18] c02_sewage_backup ... OK  sev=S1 (key S1) turns=2 $0.11
+[ 3/18] c03_gas_smell_hidden ... OK  sev=S1 (key S1) turns=2 $0.13
+[ 4/18] c04_ceiling_leak_shutoff_fail ... OK  sev=S1 (key S1) turns=4 $0.19
+[ 5/18] c05_no_hot_water_returning ... OK  sev=S2 (key S2) turns=4 $0.26
+[ 6/18] c06_leak_contained ... OK  sev=S2 (key S2) turns=4 $0.25
+[ 7/18] c07_only_toilet_blocked ... OK  sev=S2 (key S2) turns=5 $0.28
+[ 8/18] c08_running_toilet ... OK  sev=S3 (key S3) turns=4 $0.21
+[ 9/18] c09_slow_kitchen_drain ... OK  sev=S3 (key S3) turns=5 $0.27
+[10/18] c10_dripping_faucet ... OK  sev=S3 (key S3) turns=4 $0.23
+[11/18] c11_damp_spot ... OK  sev=S3 (key S3) turns=5 $0.30
+[12/18] c12_disposal_jam ... MISS sev=S4 (key S3) turns=5 $0.21
+[13/18] c13_low_pressure_returning ... OK  sev=S3 (key S3) turns=4 $0.24
+[14/18] c14_wh_replace_quote ... MISS sev=S3 (key S4) turns=3 $0.21
+[15/18] c15_disposal_install ... MISS sev=S3 (key S4) turns=3 $0.19
+[16/18] c16_recurring_main_returning ... OK  sev=S3 (key S3) turns=3 $0.24
+[17/18] c17_hose_bib ... OK  sev=S3 (key S3) turns=3 $0.20
+[18/18] c18_wh_noise ... OK  sev=S3 (key S3) turns=4 $0.26
+
+=== AGGREGATE: rung6 ===
+  cases: 18
+  parse_ok_rate: 1.0
+  severity_acc: 0.833
+  category_acc: 0.944
+  critical_escalation_recall: 1.0
+  false_page_rate: 0.0
+  quote_ok_rate: 0.944
+  avg_code_f1: 1.0
+  avg_total_err_pct: 0.0
+  hallucinated_code_cases: 0
+  mitigation_ok_rate: 1.0
+  refs_valid_rate: 1.0
+  duration_mae_min: 11.8
+  duration_ok_rate: 0.714
+  slot_acc: 0.824
+  memory_acc: 1.0
+  avg_turns: 3.89
+  total_cost_usd: 4.14
+  wall_minutes: 13.3
+
+Saved: /Users/gideonoba/WorkSpace/OpenSource/frontier_engineering_challenge_2026/results/rung6/results.json, summary.md, trajectories/
+
+[exited with code 0]

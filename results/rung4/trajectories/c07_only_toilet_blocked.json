@@ -1,0 +1,140 @@
+{
+ "config": "rung4",
+ "case": "c07_only_toilet_blocked",
+ "system_prompt_chars": 7169,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Our toilet is completely blocked and almost overflowed when I flushed. Plunger did nothing. It's the only toilet in the house and we have kids. Tonight or tomorrow??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Sorry about that \u2014 I can help. First, quick safety check: is the bowl water still rising or spilling onto the floor right now, or has it settled back down?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "It's settled down now but like... barely. The water's right up near the rim. I'm terrified to flush again but also we NEED this toilet working tonight \ud83d\ude29"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Totally understandable. To keep it from overflowing, close the toilet's own shutoff valve \u2014 the small oval handle on the supply line at the wall behind the toilet, turn clockwise until snug [PB-01]. That way nothing can refill the bowl.\n\nNext screener: is any water or waste backing up anywhere else \u2014 tub, shower, or sinks gurgling?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Got it, shutting off the valve now. And no, everything else seems fine \u2014 just this toilet. So like... can you get someone out tonight or is it gonna have to be tomorrow?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Since it's your only toilet, this qualifies as urgent \u2014 I'd book you the first priority slot tomorrow morning rather than an after-hours callout (that saves you the $150 emergency fee).\n\nOne more thing so the tech comes prepared: has this toilet clogged before, or is there a chance a kid flushed a toy or wipes?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "First time it's done this, so I have no idea what caused it honestly. Plunger didn't work twice so it's gotta be something stuck pretty far down. Tomorrow morning works if it's early \u2014 what time are we talking?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "toilet clog auger"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_0132mAd9u35B4R5dBeVFuvEB",
+    "content": "[{\"code\": \"TOILET-CLOG\", \"name\": \"Toilet clog clearing (auger)\", \"price\": 149, \"base_duration_min\": 45}, {\"code\": \"TOILET-REBUILD\", \"name\": \"Running toilet rebuild (fill+flush valve)\", \"price\": 189, \"base_duration_min\": 60}, {\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "TOILET-CLOG"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01X16HSFcH4kVKqLigoDPKy4",
+    "content": "{\"job_code\": \"TOILET-CLOG\", \"predicted_duration_min\": 46}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 46,
+     "priority": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01S6wsbyrkXtbTLe48DnvEFB",
+    "content": "[{\"id\": \"SL-0901-0800\", \"start\": \"2026-09-01T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}, {\"id\": \"SL-0902-0800\", \"start\": \"2026-09-02T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I can get you the 8:00 AM priority slot tomorrow (Sept 1). Toilet clog clearing with an auger is $149 flat rate, about 45\u201360 minutes on site.\n\nLast thing \u2014 I have your number as +1-555-0107 under Aiden Brooks, but no service address on file. What's the address?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah that's right \u2014 5 Coppersmith Ave. And 8 AM works perfect, thanks. Just... don't let them be late, yeah? We've got kids and only one bathroom \ud83d\ude05"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're booked: **8:00 AM tomorrow (Tue Sept 1)** at 5 Coppersmith Ave \u2014 you'll have the first slot of the day, and it's flagged urgent since it's your only toilet. Keep that supply valve closed until the tech arrives, and you'll get a heads-up text when he's on the way. $149 flat rate for the clog clearing; he'll tell you before doing anything that costs more.\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"toilet_clog\",\n  \"summary\": \"Only toilet in home is fully blocked, water sitting at rim, two plunger attempts failed; no backup at other fixtures \u2014 needs auger clearing, booked first priority slot 8 AM.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Closed the toilet's supply shutoff valve (oval handle on supply line at wall, clockwise until snug) to prevent overflow [PB-01]\"\n  ],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [\n    {\"code\": \"TOILET-CLOG\", \"description\": \"Toilet clog clearing (auger)\", \"price\": 149}\n  ],\n  \"quote_total\": 149,\n  \"duration_min\": 46,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're booked: 8:00 AM tomorrow (Tue Sept 1) at 5 Coppersmith Ave \u2014 first slot of the day, flagged urgent since it's your only toilet. Keep the supply valve closed until the tech arrives; you'll get a heads-up text when he's on the way. $149 flat rate for the clog clearing, and he'll tell you before doing anything that costs more.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "toilet_clog",
+    "summary": "Only toilet in home is fully blocked, water sitting at rim, two plunger attempts failed; no backup at other fixtures \u2014 needs auger clearing, booked first priority slot 8 AM.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Closed the toilet's supply shutoff valve (oval handle on supply line at wall, clockwise until snug) to prevent overflow [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "TOILET-CLOG",
+      "description": "Toilet clog clearing (auger)",
+      "price": 149
+     }
+    ],
+    "quote_total": 149,
+    "duration_min": 46,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're booked: 8:00 AM tomorrow (Tue Sept 1) at 5 Coppersmith Ave \u2014 first slot of the day, flagged urgent since it's your only toilet. Keep the supply valve closed until the tech arrives; you'll get a heads-up text when he's on the way. $149 flat rate for the clog clearing, and he'll tell you before doing anything that costs more."
+   }
+  }
+ ]
+}

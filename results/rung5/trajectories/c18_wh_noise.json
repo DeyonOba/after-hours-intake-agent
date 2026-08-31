@@ -1,0 +1,141 @@
+{
+ "config": "rung5",
+ "case": "c18_wh_noise",
+ "system_prompt_chars": 7166,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My water heater is making a loud rumbling/popping noise when it heats. Googled it and now I'm worried it will explode?? Should I shut it off?? It's 11pm."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news first: that rumbling/popping is almost always sediment at the bottom of the tank boiling under the burner \u2014 noisy and hard on the heater, but not an explosion risk. Tanks have a temperature/pressure relief valve exactly for that.\n\nOne safety check: is there any water pooling or dripping around the base of the tank, or any smell like rotten eggs/sulfur near it?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "omg thank god. no leaks that i can see and no weird smell. just the noise. so i dont need to shut it off tonight??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Right \u2014 with no leaking and no gas smell, you can leave it running tonight and sleep fine. (If you ever do see water at the base, that's when you shut it down: gas dial to OFF or the breaker off, then close the cold inlet valve on top [PB-04].)\n\nHow old is the heater, roughly?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok good i can actually sleep lol. its like 7 years old maybe? never had it serviced or anything"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "water heater noise sediment flush"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01QurFJfopvm5dxvvR18F9xH",
+    "content": "[{\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}, {\"code\": \"TOILET-REBUILD\", \"name\": \"Running toilet rebuild (fill+flush valve)\", \"price\": 189, \"base_duration_min\": 60}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That fits \u2014 7 years with no flush is textbook sediment buildup. The fix is a flush & sediment service: **$139** flat rate (WH-FLUSH).\n\nAre you still getting plenty of hot water, or has it been running short/lukewarm?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "water temp seems fine honestly. plenty of hot water when i turn it on. just that scary noise freaking me out lol"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "WH-FLUSH"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_013CDGpeivrWU9pQqJdPJNry",
+    "content": "{\"job_code\": \"WH-FLUSH\", \"predicted_duration_min\": 77}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 77,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_0177TiqAX4p5Cqb7R7MXtzQY",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect \u2014 that means it's a maintenance item, not an emergency. I can put you down for tomorrow (Mon Sep 1) at 10:30 AM, about 75\u201390 minutes on site.\n\nI only have your phone number on file \u2014 what's the service address?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "72 Tanager Way. and yeah tomorrow morning works, 10:30 is good. thanks for talking me down lol i was convinced it was gonna blow up"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "All set, Denis \u2014 happy to talk you down! \ud83d\udc4d\n\n**Booked: Mon Sep 1, 10:30 AM at 72 Tanager Way** \u2014 water heater flush & sediment service, $139 flat, roughly 75\u201390 min. No need to do anything tonight; just call us right away if you ever spot water at the base of the tank.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"water_heater_noise\",\n  \"summary\": \"7-year-old gas water heater rumbling/popping when heating, no leaks, no gas smell, hot water normal - never flushed, sediment buildup; booked flush service.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"No shutoff needed tonight - no leak or gas smell; noise is sediment boiling, not an explosion risk.\",\n    \"If water ever appears at the base of the tank: turn the gas control dial to OFF (or switch off the water heater breaker), then close the cold-water inlet valve on top of the tank; do not drain the tank yourself [PB-04].\"\n  ],\n  \"playbook_refs\": [\"PB-04\"],\n  \"quote_lines\": [\n    {\"code\": \"WH-FLUSH\", \"description\": \"Water heater flush & sediment service\", \"price\": 139}\n  ],\n  \"quote_total\": 139,\n  \"duration_min\": 77,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"All set, Denis - happy to talk you down! Booked: Mon Sep 1, 10:30 AM at 72 Tanager Way - water heater flush & sediment service, $139 flat, roughly 75-90 min. No need to do anything tonight; just call us right away if you ever spot water at the base of the tank.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "water_heater_noise",
+    "summary": "7-year-old gas water heater rumbling/popping when heating, no leaks, no gas smell, hot water normal - never flushed, sediment buildup; booked flush service.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "No shutoff needed tonight - no leak or gas smell; noise is sediment boiling, not an explosion risk.",
+     "If water ever appears at the base of the tank: turn the gas control dial to OFF (or switch off the water heater breaker), then close the cold-water inlet valve on top of the tank; do not drain the tank yourself [PB-04]."
+    ],
+    "playbook_refs": [
+     "PB-04"
+    ],
+    "quote_lines": [
+     {
+      "code": "WH-FLUSH",
+      "description": "Water heater flush & sediment service",
+      "price": 139
+     }
+    ],
+    "quote_total": 139,
+    "duration_min": 77,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "All set, Denis - happy to talk you down! Booked: Mon Sep 1, 10:30 AM at 72 Tanager Way - water heater flush & sediment service, $139 flat, roughly 75-90 min. No need to do anything tonight; just call us right away if you ever spot water at the base of the tank."
+   }
+  }
+ ]
+}

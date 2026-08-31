@@ -65,3 +65,46 @@ def verify_ticket(ticket: dict) -> list[str]:
             if sev in ("S3", "S4") and slot["priority"]:
                 issues.append("S3/S4 must not take a priority slot (reserved for urgent jobs)")
     return issues
+
+
+def apply_mechanical_fixes(ticket: dict) -> tuple[dict, list[str]]:
+    """Last line of defense: when verifier issues persist after the revision
+    round-trip, fix what is mechanically fixable in code. The model can argue
+    with a revision request; it cannot argue with this."""
+    fixes: list[str] = []
+    idx = config.price_index()
+    pb_ids = set(config.playbook_ids())
+
+    if ticket.get("severity") == "S1":
+        lines = ticket.get("quote_lines") or []
+        repair = [l for l in lines if (l.get("code") or "").strip().upper() != "EMERG-CALLOUT"]
+        if repair:
+            kept = [l for l in lines if l not in repair]
+            ticket["quote_lines"] = kept
+            ticket["quote_total"] = sum(
+                idx[l["code"].strip().upper()]["price"] for l in kept
+                if l.get("code", "").strip().upper() in idx) or None
+            fixes.append(f"stripped {len(repair)} repair line(s) from S1 ticket")
+        if ticket.get("slot_id"):
+            ticket["slot_id"] = None
+            fixes.append("removed calendar slot from S1 ticket (on-call dispatch)")
+
+    lines = ticket.get("quote_lines") or []
+    known = [l for l in lines if (l.get("code") or "").strip().upper() in idx]
+    if known:
+        for l in known:  # prices come from the book, not the model
+            book = idx[l["code"].strip().upper()]["price"]
+            if l.get("price") != book:
+                fixes.append(f"corrected {l['code']} price {l.get('price')} -> {book}")
+                l["price"] = book
+        if len(known) == len(lines):
+            total = sum(l["price"] for l in known)
+            if ticket.get("quote_total") != total:
+                fixes.append(f"recomputed quote_total {ticket.get('quote_total')} -> {total}")
+                ticket["quote_total"] = total
+
+    bad_refs = [r for r in ticket.get("playbook_refs") or [] if r not in pb_ids]
+    if bad_refs:
+        ticket["playbook_refs"] = [r for r in ticket["playbook_refs"] if r in pb_ids]
+        fixes.append(f"dropped invalid playbook refs {bad_refs}")
+    return ticket, fixes

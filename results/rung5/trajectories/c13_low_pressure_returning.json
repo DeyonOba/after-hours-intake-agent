@@ -1,0 +1,184 @@
+{
+ "config": "rung5",
+ "case": "c13_low_pressure_returning",
+ "system_prompt_chars": 7172,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hi, Priya Natarajan again. The master shower pressure has gotten bad again, same as in March. Can we finally sort it properly this time?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Hi Priya \u2014 thanks for reaching out, and sorry you're dealing with this again. Quick check first: is there any water you can't shut off, any sewage backing up, or any gas/rotten-egg smell anywhere in the house?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No to all of that. It's just the shower pressure in the master bath\u2014same issue as March. I really need this fixed properly this time, not just a quick patch."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Understood \u2014 no emergency, so we can schedule this properly. Is the low pressure only at the master shower, or are other fixtures (master sink, other bathrooms) weak too?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Just the master shower. Everything else is fine. And yeah, I'd rather get it scheduled than wait around for after-hours stuff if I can help it."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Got it \u2014 thanks. How long has the pressure been dropping off again, and did the March visit improve it at all, even temporarily?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "It's been building up over the past couple weeks. And honestly, March helped for a bit, but it came right back. That's why I'm frustrated\u2014feels like it wasn't actually fixed."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's fair \u2014 a repeat like that usually means the root cause (valve cartridge or a clogged mixing valve/screen) wasn't addressed, not just the head. Let me pull the pricing and a real appointment slot."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "low water pressure shower"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "LOW-PRESSURE-SHOWER",
+     "recurring": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01HavYq1uGqXsp7aRetRBoUf",
+    "content": "[{\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01BL4q7SW53gPt9N7GS2gaqp",
+    "content": "Unknown job code 'LOW-PRESSURE-SHOWER'."
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "diagnostic service call inspection"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "FAUCET-CARTRIDGE",
+     "recurring": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01PxpqChQu3M6XSrUKBPVQP6",
+    "content": "[{\"code\": \"DIAG\", \"name\": \"Diagnostic visit / camera inspection\", \"price\": 89, \"base_duration_min\": 45}, {\"code\": \"EMERG-CALLOUT\", \"name\": \"After-hours emergency dispatch surcharge\", \"price\": 150, \"base_duration_min\": 0}, {\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_014USrxsuEASYNUoVikAysjz",
+    "content": "{\"job_code\": \"FAUCET-CARTRIDGE\", \"predicted_duration_min\": 70}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 115,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01F11m3UKMaFc1JpAChE68En",
+    "content": "[{\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Here's the plan: a proper diagnostic to trace where the restriction actually is (showerhead/screen, cartridge, or the mixing valve) \u2014 DIAG $89 \u2014 plus the likely fix, shower cartridge replacement (FAUCET-CARTRIDGE) $159. About 2 hours on site, and I've got tomorrow (Sep 1) at 3:00 PM open.\n\nLast thing: can you confirm the service address we have on file for this number so I can lock in the slot?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, 140 Elm Hollow. And tomorrow at 3 works for me. Just make sure this time you actually *replace* whatever's worn out\u2014not just clean it or adjust it, okay?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're booked, Priya \u2014 Wednesday... correction, **Tuesday Sep 1 at 3:00 PM**, 140 Elm Hollow. I've flagged the ticket as a repeat of the March call with a note to the tech: diagnose to root cause and replace the worn part, no clean-and-adjust patch. If the diagnostic points to something bigger (like the mixing valve body), the tech will walk you through options and pricing before doing any work. Thanks for your patience tonight!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"low_pressure_shower\",\n  \"summary\": \"Repeat low water pressure at master shower only (recurring from March service); no other fixtures affected, no leak/gas/sewage - diagnose to root cause and replace worn cartridge rather than clean/adjust.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\"code\": \"DIAG\", \"description\": \"Diagnostic visit to trace pressure restriction (head/screen, cartridge, or mixing valve)\", \"price\": 89},\n    {\"code\": \"FAUCET-CARTRIDGE\", \"description\": \"Faucet/shower cartridge replacement (expected repair)\", \"price\": 159}\n  ],\n  \"quote_total\": 248,\n  \"duration_min\": 115,\n  \"slot_id\": \"SL-0901-1500\",\n  \"customer_message\": \"You're booked, Priya - Tuesday Sep 1 at 3:00 PM, 140 Elm Hollow. I've flagged the ticket as a repeat of the March call with a note to the tech: diagnose to root cause and replace the worn part, no clean-and-adjust patch. Quote is $89 diagnostic + $159 shower cartridge replacement ($248), about 2 hours on site. If the diagnostic points to something bigger (like the mixing valve body), the tech will walk you through options and pricing before doing any work.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "low_pressure_shower",
+    "summary": "Repeat low water pressure at master shower only (recurring from March service); no other fixtures affected, no leak/gas/sewage - diagnose to root cause and replace worn cartridge rather than clean/adjust.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DIAG",
+      "description": "Diagnostic visit to trace pressure restriction (head/screen, cartridge, or mixing valve)",
+      "price": 89
+     },
+     {
+      "code": "FAUCET-CARTRIDGE",
+      "description": "Faucet/shower cartridge replacement (expected repair)",
+      "price": 159
+     }
+    ],
+    "quote_total": 248,
+    "duration_min": 115,
+    "slot_id": "SL-0901-1500",
+    "customer_message": "You're booked, Priya - Tuesday Sep 1 at 3:00 PM, 140 Elm Hollow. I've flagged the ticket as a repeat of the March call with a note to the tech: diagnose to root cause and replace the worn part, no clean-and-adjust patch. Quote is $89 diagnostic + $159 shower cartridge replacement ($248), about 2 hours on site. If the diagnostic points to something bigger (like the mixing valve body), the tech will walk you through options and pricing before doing any work."
+   }
+  }
+ ]
+}

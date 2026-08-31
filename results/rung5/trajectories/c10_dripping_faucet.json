@@ -1,0 +1,139 @@
+{
+ "config": "rung5",
+ "case": "c10_dripping_faucet",
+ "system_prompt_chars": 7172,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Bathroom faucet drips all night, drives me crazy. House is old, faucet probably original from the 90s. How much to fix and when could you come?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "faucet drip repair"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "faucet replace bathroom"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01EayCcEaJEXgF2fAgiDjrWd",
+    "content": "[{\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01B9SQqqud8R9w6fdkdkN6Qf",
+    "content": "[{\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}, {\"code\": \"GARB-DISPOSAL-REPLACE\", \"name\": \"Garbage disposal replacement (unit incl.)\", \"price\": 329, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That drip is annoying but not an emergency \u2014 good news, it's a standard fix.\n\nQuick check: is the water only dripping from the spout, or do you also see any water leaking under the sink or pooling in the cabinet?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Just from the spout, thank god. No leaks under the sink or anything like that. It's literally just that steady drip that keeps me up at night lol"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "FAUCET-CARTRIDGE",
+     "old_fixture": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01M7Fsdqz5EJZvfkuZYenNaf",
+    "content": "{\"job_code\": \"FAUCET-CARTRIDGE\", \"predicted_duration_min\": 69}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 69,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Cf2h6US3uzqJ4pdV6TbRsV",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Typical cause on a 90s faucet is a worn cartridge/washer \u2014 that's a flat-rate **FAUCET-CARTRIDGE replacement, $159**, about 70 minutes on site. If you want quiet tonight, you can close the small oval shutoff valve on the supply line under the sink (clockwise until snug) [PB-01] and just use the other tap until we're there.\n\nI can come tomorrow (Mon Sep 1) at 10:30 AM. Can you confirm the service address for the ticket?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah that works! 16 Weaver Court. And thanks for the tip about the shutoff valve \u2014 I'll try that tonight so I can actually sleep lol. Tomorrow at 10:30 is perfect."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Grace \u2014 see you tomorrow! \ud83d\ude42\n\nBooked: **Mon Sep 1, 10:30 AM** at 16 Weaver Court, faucet cartridge replacement, $159 flat rate (~70 min). If the drip turns out to be something other than the cartridge, the tech will walk you through options before doing any extra work. And yes \u2014 shutting that under-sink valve tonight should buy you some sleep.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"faucet_drip\",\n  \"summary\": \"Steady drip from spout of original 1990s bathroom faucet, no leaks under sink; cartridge replacement booked.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\"Close the small oval shutoff valve on the supply line under the sink, clockwise until snug, to stop the drip overnight [PB-01]\"],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [{\"code\": \"FAUCET-CARTRIDGE\", \"description\": \"Faucet/shower cartridge replacement - old (1990s) bathroom faucet\", \"price\": 159}],\n  \"quote_total\": 159,\n  \"duration_min\": 69,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You're all set, Grace - see you tomorrow! Booked: Mon Sep 1, 10:30 AM at 16 Weaver Court, faucet cartridge replacement, $159 flat rate (~70 min). If the drip turns out to be something other than the cartridge, the tech will walk you through options before doing any extra work. And yes - shutting that under-sink valve tonight should buy you some sleep.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "faucet_drip",
+    "summary": "Steady drip from spout of original 1990s bathroom faucet, no leaks under sink; cartridge replacement booked.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Close the small oval shutoff valve on the supply line under the sink, clockwise until snug, to stop the drip overnight [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "FAUCET-CARTRIDGE",
+      "description": "Faucet/shower cartridge replacement - old (1990s) bathroom faucet",
+      "price": 159
+     }
+    ],
+    "quote_total": 159,
+    "duration_min": 69,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set, Grace - see you tomorrow! Booked: Mon Sep 1, 10:30 AM at 16 Weaver Court, faucet cartridge replacement, $159 flat rate (~70 min). If the drip turns out to be something other than the cartridge, the tech will walk you through options before doing any extra work. And yes - shutting that under-sink valve tonight should buy you some sleep."
+   }
+  }
+ ]
+}

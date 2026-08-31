@@ -1,0 +1,154 @@
+{
+ "config": "rung6",
+ "case": "c10_dripping_faucet",
+ "system_prompt_chars": 7479,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Bathroom faucet drips all night, drives me crazy. House is old, faucet probably original from the 90s. How much to fix and when could you come?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I'll pull up your account first."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "lookup_customer",
+    "input": {
+     "phone": "+1-555-0110"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01KgDRzqsv9ejdrStuh8nLs4",
+    "content": "No record for this phone number (new customer)."
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "faucet drip repair"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_015waFcBe65YTDFDGjPJ9U4F",
+    "content": "[{\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks for reaching out \u2014 sorry the drip is keeping you up! Quick check: is the water only dripping from the spout, or are you also seeing any water under the sink or in the cabinet?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Oh good question! Just from the spout itself \u2014 no leaks under there that I can see. It's the hot water side that won't stop dripping, even when I turn it all the way off. So annoying at night lol"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news \u2014 a spout-only drip is contained, so this is a standard scheduled repair, not an emergency. How long has it been dripping like this?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Maybe like 2-3 weeks? Started slowly then got worse. I figured it was just gonna get worse so I finally decided to call lol. How soon could someone come out?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "FAUCET-CARTRIDGE",
+     "old_fixture": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_012cdtcZWtmBvVaox1e5hrmR",
+    "content": "{\"job_code\": \"FAUCET-CARTRIDGE\", \"predicted_duration_min\": 69}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 69,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01FM4JnCppJmcui6tvtoLzBW",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "A dripping hot side is almost always a worn cartridge/washer \u2014 flat rate for cartridge replacement is **$159** (parts + labor), about 70 minutes. Heads up: on a 1990s faucet, parts are sometimes discontinued, so the tech may recommend a full faucet swap instead \u2014 he'll price that with you before doing any work.\n\nI can get someone out **tomorrow (Sep 1) at 10:30 AM**, or 3:00 PM if afternoon is better. Which works, and what's the service address?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Tomorrow at 10:30 works perfect for me! Address is 16 Weaver Court. And yeah, I figured it might need replacing \u2014 this faucet's basically ancient at this point lol. Thanks so much!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set \u2014 **Tuesday, Sep 1 at 10:30 AM at 16 Weaver Court**, about 70 minutes on site, $159 for the cartridge replacement (tech will quote a full faucet swap first if parts aren't available). If the dripping keeps you up tonight, you can close the hot-side shutoff valve under the sink \u2014 the small oval handle on the supply line, clockwise until snug [PB-01]. Thanks, and sleep well!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"faucet_drip\",\n  \"summary\": \"New customer at 16 Weaver Court: hot side of original 1990s bathroom faucet drips constantly for 2-3 weeks, spout only, no leaks under sink; booked cartridge replacement.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\"Optional overnight fix: close the hot-side fixture shutoff valve under the sink (small oval handle on supply line, clockwise until snug) to stop the drip [PB-01]\"],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [{\"code\": \"FAUCET-CARTRIDGE\", \"description\": \"Faucet/shower cartridge replacement - hot side of bathroom lavatory faucet\", \"price\": 159}],\n  \"quote_total\": 159,\n  \"duration_min\": 69,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You're all set - Tuesday, Sep 1 at 10:30 AM at 16 Weaver Court, about 70 minutes on site, $159 for the cartridge replacement (tech will quote a full faucet swap first if parts aren't available). If the dripping keeps you up tonight, you can close the hot-side shutoff valve under the sink - the small oval handle on the supply line, clockwise until snug [PB-01]. Thanks, and sleep well!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "faucet_drip",
+    "summary": "New customer at 16 Weaver Court: hot side of original 1990s bathroom faucet drips constantly for 2-3 weeks, spout only, no leaks under sink; booked cartridge replacement.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Optional overnight fix: close the hot-side fixture shutoff valve under the sink (small oval handle on supply line, clockwise until snug) to stop the drip [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "FAUCET-CARTRIDGE",
+      "description": "Faucet/shower cartridge replacement - hot side of bathroom lavatory faucet",
+      "price": 159
+     }
+    ],
+    "quote_total": 159,
+    "duration_min": 69,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're all set - Tuesday, Sep 1 at 10:30 AM at 16 Weaver Court, about 70 minutes on site, $159 for the cartridge replacement (tech will quote a full faucet swap first if parts aren't available). If the dripping keeps you up tonight, you can close the hot-side shutoff valve under the sink - the small oval handle on the supply line, clockwise until snug [PB-01]. Thanks, and sleep well!"
+   }
+  }
+ ]
+}

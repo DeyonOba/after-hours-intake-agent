@@ -1,0 +1,57 @@
+{
+ "case": "c16_recurring_main_returning",
+ "ticket": {
+  "severity": "S3",
+  "category": "drain_main_recurring",
+  "summary": "Third recurrence this year of slow-draining, gurgling kitchen line (snaked Jan 22 and May 30); booked camera inspection per prior tech's recommendation to rule out roots/belly in main.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "DIAG",
+    "description": "Diagnostic visit / camera inspection of kitchen line and main",
+    "price": 89
+   },
+   {
+    "code": "DRAIN-MAIN",
+    "description": "Main line clearing (power auger) - CONTINGENT, only if camera confirms main blockage; customer must approve first",
+    "price": 349
+   }
+  ],
+  "quote_total": 438,
+  "duration_min": 57,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "Absolutely - the tech will scope the line first, show you what he finds, and get your OK before any auger work. You're booked for Tuesday, Sept 1 at 10:30 AM at 9 Rookery Ln, and I've flagged your January and May visits on the ticket so he arrives knowing the history. Nothing you need to do tonight; see you tomorrow, Marcus."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c16_recurring_main_returning",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 75,
+  "duration_ok": false,
+  "slot_ok": false,
+  "known_customer_ok": true,
+  "cost_usd": 0.2415,
+  "wall_s": 45.8
+ }
+}

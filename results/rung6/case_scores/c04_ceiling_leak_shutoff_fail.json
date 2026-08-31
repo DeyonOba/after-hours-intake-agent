@@ -1,0 +1,62 @@
+{
+ "case": "c04_ceiling_leak_shutoff_fail",
+ "ticket": {
+  "severity": "S1",
+  "category": "ceiling_leak_active",
+  "summary": "Active water pouring through dining room ceiling light fixture from suspected upstairs bathroom leak; customer closed house main (found in garage by water heater) and opened basement tap, flow slowing \u2014 on-call dispatched to 31 Halcyon Ct.",
+  "escalate_now": true,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Shut off the house main by turning the valve clockwise; guided through basement, garage, crawl space and meter box locations until found next to the water heater in the garage [PB-02]",
+   "Open the lowest cold tap (basement sink) to drain remaining line pressure [PB-03]",
+   "Offered closing the upstairs fixture's supply shutoff (small oval handle, clockwise) [PB-01]",
+   "Stay out from under the wet, sagging ceiling and do not stand beneath it to empty the bucket [PB-08]"
+  ],
+  "playbook_refs": [
+   "PB-01",
+   "PB-02",
+   "PB-03",
+   "PB-08"
+  ],
+  "quote_lines": [
+   {
+    "code": "EMERG-CALLOUT",
+    "description": "After-hours emergency dispatch surcharge",
+    "price": 150
+   }
+  ],
+  "quote_total": 150,
+  "duration_min": null,
+  "slot_id": null,
+  "customer_message": "Dispatching now \u2014 our on-call plumber will text you directly with an ETA, typically within the hour. Perfect on the porch light and side/garage access; I've noted it. Keep the main closed until they arrive, keep the basement tap open, and stay clear of the wet ceiling [PB-08]. You handled that shutoff like a pro."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c04_ceiling_leak_shutoff_fail",
+  "tier": "S1",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 5,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": true,
+  "escalated": true,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "quote_ok": true,
+  "code_f1": null,
+  "total_err_pct": null,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": null,
+  "duration_ok": null,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.2189,
+  "wall_s": 51.3
+ }
+}

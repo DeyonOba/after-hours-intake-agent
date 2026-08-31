@@ -1,0 +1,56 @@
+{
+ "case": "c11_damp_spot",
+ "ticket": {
+  "severity": "S3",
+  "category": "damp_spot",
+  "summary": "Dinner-plate-sized damp yellow patch on bedroom ceiling in Apt 5C, stable 3 days, directly below upstairs neighbor's bathroom; neighbor reports no visible leak - needs leak trace.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Keep clear of the area and do not touch it if the ceiling starts to bulge or sag [PB-08]"
+  ],
+  "playbook_refs": [
+   "PB-08"
+  ],
+  "quote_lines": [
+   {
+    "code": "DIAG",
+    "description": "Diagnostic visit / camera inspection to trace ceiling leak source",
+    "price": 89
+   }
+  ],
+  "quote_total": 89,
+  "duration_min": 44,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "You're booked: Tue Sep 1, 10:30am at 230 Quarry Rd, Apt 5C. And yes - a heads-up to your neighbor is a great idea; access to their bathroom often cuts the diagnosis time in half. If the patch starts dripping or sagging before then, stay clear of it [PB-08] and text us right away."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c11_damp_spot",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 5,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 1,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.2321,
+  "wall_s": 40.8
+ }
+}

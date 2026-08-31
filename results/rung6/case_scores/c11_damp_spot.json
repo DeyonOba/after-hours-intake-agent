@@ -1,0 +1,58 @@
+{
+ "case": "c11_damp_spot",
+ "ticket": {
+  "severity": "S3",
+  "category": "damp_spot",
+  "summary": "Dinner-plate-sized damp yellow stain on bedroom ceiling (Apt 5C) directly below upstairs neighbor's bathroom; 3 days old, stable, no drip, no sag, no odor - needs leak diagnosis, may require neighbor access.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "If the patch begins to sag or hold water, stay clear of it and do not puncture it; call us immediately [PB-08]",
+   "If water ever starts running and can't be stopped, shut off the unit/house main - wheel clockwise or lever perpendicular to the pipe [PB-02]"
+  ],
+  "playbook_refs": [
+   "PB-08",
+   "PB-02"
+  ],
+  "quote_lines": [
+   {
+    "code": "DIAG",
+    "description": "Diagnostic visit / camera inspection to locate ceiling leak source",
+    "price": 89
+   }
+  ],
+  "quote_total": 89,
+  "duration_min": 44,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "You're all set - Tue Sep 1, 10:30 AM at 230 Quarry Rd, Apt 5C, diagnostic visit ($89, ~45 min). Meanwhile: if the patch starts sagging or holding water, stay out from under it and don't poke it - call us right away [PB-08]. And if water ever starts running where you can't stop it, shut off the house/unit main (clockwise, or lever perpendicular to the pipe) [PB-02]. It'd help to let your neighbor know we may need a peek at their bathroom."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c11_damp_spot",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 5,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 1,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.3034,
+  "wall_s": 55.3
+ }
+}

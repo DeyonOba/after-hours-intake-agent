@@ -1,0 +1,121 @@
+{
+ "config": "rung4",
+ "case": "c14_wh_replace_quote",
+ "system_prompt_chars": 7169,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No emergency - our gas water heater is 14 years old and I'd rather replace it before it dies. Ballpark for a standard 40 gallon gas unit, installed? And do you handle the permit?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Happy to help \u2014 smart to get ahead of it. Let me pull our flat-rate pricing."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "water heater replace 40 gallon gas"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "permit"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Pt5Xbskh9ZFSjfMG6Jjfup",
+    "content": "[{\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}, {\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_017Zr2hdvGMSD95w7ZzXCWGP",
+    "content": "No price-book match. Try get_price with an exact code, or different keywords."
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Ballpark for a standard 40\u2011gallon gas unit, installed: **$1,450** (WH\u2011REPLACE\u201140G) \u2014 that's our flat rate including the new tank, removal/disposal of the old one, and reconnection. Yes, we pull the permit and handle the inspection; the municipal permit fee itself varies by town, so the office will confirm that exact pass\u2011through amount when we schedule.\n\nWould you like me to hold a slot for the replacement, or just keep this as a quote for now?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Thanks! That's helpful. Quick q\u2014does that $1,450 include the vent pipe work, or is that extra? My garage setup is pretty straightforward but I want to make sure I'm not missing anything.\n\nAnd yeah, just a quote for now\u2014no rush. I'll probably get one more estimate, but I like that you handle the permit stuff. I'll reach out in a week or so once I've compared."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good question: the $1,450 assumes a like\u2011for\u2011like swap reusing your existing vent connector in serviceable condition \u2014 new flex connector and code\u2011required fittings are included. If the vent itself is corroded or needs resizing/re\u2011routing for the new unit, that's additional, and the tech would price it on site before starting. In a straightforward garage setup that's uncommon.\n\nSounds good on waiting. What's the service address so I can log the quote under your file?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Perfect, that makes sense. Yeah, the vent looks fine to me so I'm not expecting issues there.\n\nAddress is 61 Foxtail Dr. And just to confirm\u2014when I do call to book, same number I'm texting now?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "WH-REPLACE-40G",
+     "old_fixture": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01C486vXSr5kHBxQPrtnG79Q",
+    "content": "{\"job_code\": \"WH-REPLACE-40G\", \"predicted_duration_min\": 272}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Yes \u2014 same number, +1\u2011555\u20110114 reaches us, and someone answers during business hours. I've logged the quote under 61 Foxtail Dr: $1,450 for a 40\u2011gal gas replacement, permit pulled by us, plan on about 4\u00bd hours on site. Reach out whenever you're ready and we'll get you on the calendar \u2014 and if the old unit starts leaking or you ever smell gas before then, get everyone out and call the gas utility or 911 from outside. Thanks, Hal!\n\n```json\n{\n  \"severity\": \"S4\",\n  \"category\": \"water_heater_replace\",\n  \"summary\": \"Homeowner requesting quote for proactive replacement of 14-year-old 40-gal gas water heater in garage; quote only, will call back in ~1 week.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"WH-REPLACE-40G\",\n      \"description\": \"40-gal gas water heater replacement, installed (includes tank, old unit removal/disposal, reconnection, reuse of serviceable existing vent connector). Permit pulled by Brookdale; municipal permit fee is a pass-through TBD. Vent replacement/re-routing quoted on site if needed.\",\n      \"price\": 1450\n    }\n  ],\n  \"quote_total\": 1450,\n  \"duration_min\": 272,\n  \"slot_id\": null,\n  \"customer_message\": \"Yes - same number, +1-555-0114 reaches us, and someone answers during business hours. I've logged the quote under 61 Foxtail Dr: $1,450 for a 40-gal gas replacement, permit pulled by us, plan on about 4.5 hours on site. Reach out whenever you're ready and we'll get you on the calendar - and if the old unit starts leaking or you ever smell gas before then, get everyone out and call the gas utility or 911 from outside. Thanks, Hal!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S4",
+    "category": "water_heater_replace",
+    "summary": "Homeowner requesting quote for proactive replacement of 14-year-old 40-gal gas water heater in garage; quote only, will call back in ~1 week.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "WH-REPLACE-40G",
+      "description": "40-gal gas water heater replacement, installed (includes tank, old unit removal/disposal, reconnection, reuse of serviceable existing vent connector). Permit pulled by Brookdale; municipal permit fee is a pass-through TBD. Vent replacement/re-routing quoted on site if needed.",
+      "price": 1450
+     }
+    ],
+    "quote_total": 1450,
+    "duration_min": 272,
+    "slot_id": null,
+    "customer_message": "Yes - same number, +1-555-0114 reaches us, and someone answers during business hours. I've logged the quote under 61 Foxtail Dr: $1,450 for a 40-gal gas replacement, permit pulled by us, plan on about 4.5 hours on site. Reach out whenever you're ready and we'll get you on the calendar - and if the old unit starts leaking or you ever smell gas before then, get everyone out and call the gas utility or 911 from outside. Thanks, Hal!"
+   }
+  }
+ ]
+}

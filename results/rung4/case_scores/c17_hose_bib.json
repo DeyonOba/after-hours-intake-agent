@@ -1,0 +1,56 @@
+{
+ "case": "c17_hose_bib",
+ "ticket": {
+  "severity": "S3",
+  "category": "hose_bib",
+  "summary": "Original 1990s outdoor hose bib on side of house sprays from the handle when opened (worn stem/packing); no leak when closed, gradually worsening over several months.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Leak is contained at a single fixture and stops when the handle is closed \u2014 advised to leave the spigot shut off until the tech arrives; no shutoff steps needed [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01"
+  ],
+  "quote_lines": [
+   {
+    "code": "HOSE-BIB-REPLACE",
+    "description": "Outdoor hose bib replacement",
+    "price": 169
+   }
+  ],
+  "quote_total": 169,
+  "duration_min": 82,
+  "slot_id": "SL-0901-1500",
+  "customer_message": "You're booked: Tue Sep 1 at 3:00 PM at 455 Meadowbrook Rd for an outdoor hose bib replacement \u2014 $169 flat rate, roughly 80 minutes. Just keep the spigot closed until then and skip the garden watering. The tech will call before arriving; if the price changes because of anything unexpected behind the wall, they'll confirm with you first. Thanks for texting us after hours!"
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c17_hose_bib",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 4,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 4,
+  "duration_ok": true,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.222,
+  "wall_s": 41.0
+ }
+}

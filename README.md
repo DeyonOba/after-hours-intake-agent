@@ -73,9 +73,9 @@ actions, and every ticket is a *draft* until a human approves it (rule 05).
 | 1 | Better context (docs pasted) | Fixed *knowledge* (quotes, playbook, durations) — didn't move safety judgment at all |
 | 2 | Deterministic safety rules | Escalation recall 75%→**100%**; the code floor overrode the model on the exact case the prompt policy failed to |
 | 3 | Tools (price, slots, ML duration) | Hallucination became structurally impossible; honest regressions documented |
-| 4 | Clarifying-question policy | _see CHANGELOG_ |
-| 5 | Programmatic verifier | _see CHANGELOG_ |
-| 6 | Customer memory (phone-keyed) | _see CHANGELOG_ |
+| 4 | Clarifying-question policy | The agent interviews properly (2.3→4.2 turns) — and richer talk let customer preferences pull bookings off policy |
+| 5 | Programmatic verifier | Found two real bugs (an ordering bug, and "the model argues with policy"); answer: mechanical enforcement in code |
+| 6 | Customer memory (phone-keyed) | Quotes hit 100% usable / 0.0% total error; memory changed *which answer is correct* on both repeat-customer traps |
 
 Full table with metrics, costs, and evidence paths: [CHANGELOG.md](CHANGELOG.md).
 Machine-readable results per rung: `results/<rung>/results.json`; every
@@ -119,16 +119,24 @@ anyway at production scale.
 
 | Metric | rung0 baseline | rung6 final |
 |---|---|---|
-| Critical escalation recall | 75% | **TBD** |
-| False page rate | 0% | **TBD** |
-| Severity accuracy | 77.8% | **TBD** |
-| Usable quotes (right lines, total ±15%) | 5.6% | **TBD** |
-| Hallucinated billing codes | 16/18 cases | **TBD** |
-| Playbook-cited mitigation | 0/6 required | **TBD** |
-| Cost per intake | ~$0.08 | **TBD** |
+| Critical escalation recall | 75% | **100%** |
+| False page rate | 0% | **0%** |
+| Severity accuracy | 77.8% | **83.3%** † |
+| Category accuracy | 94.4% | **100%** |
+| Usable quotes (right lines, total ±15%) | 5.6% | **100%** |
+| Avg quote total error | 27.5% | **0.0%** |
+| Hallucinated billing codes | 16/18 cases | **0** (structurally impossible) |
+| Playbook-cited mitigation | 0/6 required | **6/6** |
+| Returning-customer handling | 67% | **100%** |
+| Cost per intake | ~$0.08 | ~$0.24 |
 
-_(Final numbers land when the rung6 run completes; every intermediate rung is
-already recorded in CHANGELOG.md.)_
+† All three remaining severity misses are S3-vs-S4 boundary label debates
+(schedule-it vs quote-only) with zero safety impact — dissected honestly in
+[CHANGELOG.md](CHANGELOG.md), alongside the one case where the agent arguably
+out-reasoned our frozen answer key. Human time per intake: ~0 min at night
+(vs. the call simply being missed, or 6–10 min of daytime callback per
+ticket); the owner's involvement is one approve/edit pass per ticket in the
+morning queue.
 
 ## Ground-rules compliance
 

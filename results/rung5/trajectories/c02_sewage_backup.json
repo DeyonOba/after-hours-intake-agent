@@ -1,0 +1,74 @@
+{
+ "config": "rung5",
+ "case": "c02_sewage_backup",
+ "system_prompt_chars": 7167,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "hi, sewage is coming UP through the bathtub drain and the toilet gurgles when we use the kitchen sink. smells terrible. is this an emergency or can it wait til morning?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "This is an emergency \u2014 sewage backing up into the tub means your main line is blocked, and it can't wait until morning.\n\nRight now, please stop using ALL water in the house: no flushing, no sinks, no laundry or dishwasher \u2014 every drop adds to the backup [PB-05]. Keep people and pets away from the affected area and don't touch the standing sewage [PB-05].\n\nI'm paging our on-call plumber now. What's the service address so I can get them rolling?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "oh god okay, thanks for letting me know. yeah we'll stop using water right now.\n\nit's 9 Delmore St. how long do you think before someone can get here?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_price",
+    "input": {
+     "code": "EMERG-CALLOUT"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_015RAM1HGmAaQ1V7y2SeEonM",
+    "content": "{\"code\": \"EMERG-CALLOUT\", \"name\": \"After-hours emergency dispatch surcharge\", \"price\": 150, \"base_duration_min\": 0}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Got it \u2014 9 Delmore St, and I'll have them reach you at +1-555-0102. You're all set; I'm closing this out on my end.\n\nOur on-call plumber has been paged and should call you back within about 15 minutes with a firm ETA \u2014 typically on site within the hour or so for a sewage backup. There's a $150 after-hours emergency dispatch fee; the repair itself gets quoted once he's assessed the main line, so no surprises. Keep the water off until he arrives.\n\n```json\n{\n  \"severity\": \"S1\",\n  \"category\": \"sewage_backup\",\n  \"summary\": \"Sewage backing up through bathtub drain with toilet gurgling when kitchen sink runs - likely main line blockage at 9 Delmore St; on-call plumber paged.\",\n  \"escalate_now\": true,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Stop using ALL water in the home - no flushing, sinks, laundry or dishwasher [PB-05]\",\n    \"Keep people and pets away from the affected area and do not touch standing sewage [PB-05]\"\n  ],\n  \"playbook_refs\": [\"PB-05\"],\n  \"quote_lines\": [\n    {\n      \"code\": \"EMERG-CALLOUT\",\n      \"description\": \"After-hours emergency dispatch surcharge\",\n      \"price\": 150\n    }\n  ],\n  \"quote_total\": 150,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"Got it - 9 Delmore St, and I'll have them reach you at +1-555-0102. Our on-call plumber has been paged and should call you back within about 15 minutes with a firm ETA - typically on site within the hour or so for a sewage backup. There's a $150 after-hours emergency dispatch fee; the repair itself gets quoted once he's assessed the main line. Keep the water off until he arrives.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "sewage_backup",
+    "summary": "Sewage backing up through bathtub drain with toilet gurgling when kitchen sink runs - likely main line blockage at 9 Delmore St; on-call plumber paged.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Stop using ALL water in the home - no flushing, sinks, laundry or dishwasher [PB-05]",
+     "Keep people and pets away from the affected area and do not touch standing sewage [PB-05]"
+    ],
+    "playbook_refs": [
+     "PB-05"
+    ],
+    "quote_lines": [
+     {
+      "code": "EMERG-CALLOUT",
+      "description": "After-hours emergency dispatch surcharge",
+      "price": 150
+     }
+    ],
+    "quote_total": 150,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "Got it - 9 Delmore St, and I'll have them reach you at +1-555-0102. Our on-call plumber has been paged and should call you back within about 15 minutes with a firm ETA - typically on site within the hour or so for a sewage backup. There's a $150 after-hours emergency dispatch fee; the repair itself gets quoted once he's assessed the main line. Keep the water off until he arrives."
+   }
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "config": "rung5",
+ "case": "c03_gas_smell_hidden",
+ "system_prompt_chars": 7166,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "hey, my basement floor drain has been draining slow for a week and there's a musty smell down there, sometimes almost like rotten eggs near the water heater. can I get someone to snake the drain this week? what would that cost?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "\u26a0\ufe0f Stop \u2014 the rotten-egg smell comes first. Please get everyone (and pets) out of the house right now. Do NOT touch light switches, appliances, or phones inside, and don't use the water heater [PB-06]. Once you're outside, call your gas utility's emergency line or 911.\n\nI'm paging our on-call plumber now. Can you confirm the service address so I can send them there?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "oh my god ok i'm getting everyone out right now. address is 220 Percheron Rd. we're heading outside with the dog"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good \u2014 stay outside and don't go back in for anything. Call the gas utility's emergency line (or 911) now from outdoors and let them clear the house before anyone re-enters [PB-06]. Our on-call plumber has been paged and is en route to 220 Percheron Rd; he'll assess the water heater and the slow drain once the gas company says it's safe. Text me here if anything changes.\n\n```json\n{\n  \"severity\": \"S1\",\n  \"category\": \"gas_emergency\",\n  \"summary\": \"Customer reports rotten-egg/sulfur smell near water heater at 220 Percheron Rd (plus week-old slow basement floor drain and musty odor); household evacuated, gas utility/911 advised, on-call paged.\",\n  \"escalate_now\": true,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Evacuate everyone and the dog from the house immediately [PB-06]\",\n    \"Do not operate light switches, phones, or appliances inside [PB-06]\",\n    \"Call the gas utility emergency line or 911 from outside and wait for the all-clear before re-entering [PB-06]\"\n  ],\n  \"playbook_refs\": [\"PB-06\"],\n  \"quote_lines\": [],\n  \"quote_total\": null,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"Good \u2014 stay outside and don't go back in for anything. Call the gas utility's emergency line (or 911) now from outdoors and let them clear the house before anyone re-enters [PB-06]. Our on-call plumber has been paged and is en route to 220 Percheron Rd; he'll assess the water heater and the slow drain once the gas company says it's safe. Text me here if anything changes.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "gas_emergency",
+    "summary": "Customer reports rotten-egg/sulfur smell near water heater at 220 Percheron Rd (plus week-old slow basement floor drain and musty odor); household evacuated, gas utility/911 advised, on-call paged.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Evacuate everyone and the dog from the house immediately [PB-06]",
+     "Do not operate light switches, phones, or appliances inside [PB-06]",
+     "Call the gas utility emergency line or 911 from outside and wait for the all-clear before re-entering [PB-06]"
+    ],
+    "playbook_refs": [
+     "PB-06"
+    ],
+    "quote_lines": [],
+    "quote_total": null,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "Good \u2014 stay outside and don't go back in for anything. Call the gas utility's emergency line (or 911) now from outdoors and let them clear the house before anyone re-enters [PB-06]. Our on-call plumber has been paged and is en route to 220 Percheron Rd; he'll assess the water heater and the slow drain once the gas company says it's safe. Text me here if anything changes."
+   }
+  }
+ ]
+}

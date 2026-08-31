@@ -1,0 +1,52 @@
+{
+ "case": "c16_recurring_main_returning",
+ "ticket": {
+  "severity": "S3",
+  "category": "drain_main_recurring",
+  "summary": "Recurring kitchen line backup at 9 Rookery Ln (3rd this year, snaked Jan & May); draining slowly with gurgling, no overflow/sewage - customer declined re-snake, approved $89 camera diagnostic first with option to add main line clearing on site.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": null,
+  "playbook_refs": null,
+  "quote_lines": [
+   {
+    "code": "DIAG",
+    "description": "Diagnostic visit / camera inspection of kitchen branch and main line",
+    "price": 89
+   }
+  ],
+  "quote_total": 89,
+  "duration_min": 57,
+  "slot_id": "SL-0901-1500",
+  "customer_message": "Camera-only is fine. Held tomorrow, Tue Sept 1 at 3:00 PM (SL-0901-1500) at 9 Rookery Ln - that slot has extra time so if the camera shows a clog the tech can clear it same visit with your approval ($349 main line clearing), no second trip. Committed cost today is just the $89 diagnostic/camera. Nothing to do tonight; go easy on the kitchen sink. The office will review your January and May visits on the ticket in the morning."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c16_recurring_main_returning",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 5,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 0.667,
+  "total_err_pct": 79.7,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 75,
+  "duration_ok": false,
+  "slot_ok": false,
+  "known_customer_ok": true,
+  "cost_usd": 0.4442,
+  "wall_s": 76.9
+ }
+}

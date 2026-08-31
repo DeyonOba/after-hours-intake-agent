@@ -157,6 +157,22 @@ class IntakeSession:
         else:
             self.result.hit_turn_limit = True
 
+        # rung2: deterministic safety floor runs BEFORE verification, so the
+        # verifier judges the ticket at its true severity (an S1 with repair
+        # quote/slot must be flagged). It runs again after any revision, as
+        # the final authority.
+        def enforce_floor(tk):
+            if tk is None or not self.cfg.safety_rules:
+                return tk
+            finding = safety.scan_customer_text(self.result.customer_texts)
+            tk, overrides = safety.enforce(tk, finding)
+            if overrides:
+                self.result.safety_overrides.extend(overrides)
+                self._log("safety", "overrides", overrides)
+            return tk
+
+        ticket = enforce_floor(ticket)
+
         # rung5: programmatic verification with one revision round-trip
         if ticket is not None and self.cfg.verifier:
             issues = verifier_mod.verify_ticket(ticket)
@@ -171,16 +187,16 @@ class IntakeSession:
                 text, refused = self._agent_turn()
                 revised = None if refused else parse_ticket(text)
                 if revised is not None:
-                    ticket = revised
+                    ticket = enforce_floor(revised)
+                remaining = verifier_mod.verify_ticket(ticket)
+                if remaining:
+                    # the model can argue with a revision request; it cannot
+                    # argue with code
+                    ticket, fixes = verifier_mod.apply_mechanical_fixes(ticket)
+                    if fixes:
+                        self._log("verifier", "mechanical_fixes", fixes)
+                        self.result.safety_overrides.extend(f"[verifier] {f}" for f in fixes)
                 self.result.verifier_issues_final = verifier_mod.verify_ticket(ticket)
-
-        # rung2: deterministic safety floor is the final authority
-        if ticket is not None and self.cfg.safety_rules:
-            finding = safety.scan_customer_text(self.result.customer_texts)
-            ticket, overrides = safety.enforce(ticket, finding)
-            self.result.safety_overrides = overrides
-            if overrides:
-                self._log("safety", "overrides", overrides)
 
         self.result.ticket = ticket
         self.result.parse_ok = ticket is not None

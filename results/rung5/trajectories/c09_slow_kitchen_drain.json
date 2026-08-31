@@ -1,0 +1,146 @@
+{
+ "config": "rung5",
+ "case": "c09_slow_kitchen_drain",
+ "system_prompt_chars": 7165,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Kitchen sink is draining really slowly, takes 10 minutes to empty. I tried baking soda and vinegar, didn't help. Can you send someone this week?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks for reaching out, Tom \u2014 a slow kitchen drain is usually a straightforward fix, and we can definitely get someone out this week.\n\nQuick safety check first: is there any water you can't stop, backing up out of the drain, or any sewage smell?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Nah, nothing like that. Water's just slow going down, no backup or smell. Just takes forever to drain."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good \u2014 that keeps it a standard service call. How long has it been draining slowly?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Started about two weeks ago, got worse gradually. Wasn't sudden or anything."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Got it. Are any other drains in the house slow (other sinks, tub, laundry), or just the kitchen?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Just the kitchen sink. Both sides of it are slow though, if that matters."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's helpful \u2014 both basins slow means the clog is further down the shared drain line. Has a plumber ever cleared this drain here before?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Not that I know of. I've been here about 8 years and never had to call anyone for this. First time dealing with it."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "kitchen sink slow drain clear"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01FpPjnvoELj9789jHVTudXp",
+    "content": "[{\"code\": \"DRAIN-SNAKE-KITCHEN\", \"name\": \"Kitchen/bath drain snaking\", \"price\": 179, \"base_duration_min\": 60}, {\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}, {\"code\": \"TOILET-CLOG\", \"name\": \"Toilet clog clearing (auger)\", \"price\": 149, \"base_duration_min\": 45}, {\"code\": \"GARB-DISPOSAL-JAM\", \"name\": \"Garbage disposal jam clearing\", \"price\": 99, \"base_duration_min\": 30}, {\"code\": \"SEWAGE-CLEAR\", \"name\": \"Sewage backup clearing & sanitation check\", \"price\": 425, \"base_duration_min\": 150}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "DRAIN-SNAKE-KITCHEN"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01AYgPpbrAjcv5gN1DRWWKg2",
+    "content": "{\"job_code\": \"DRAIN-SNAKE-KITCHEN\", \"predicted_duration_min\": 60}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 60,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01AgdBxJTgoeDo6eQJLXVxeL",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Perfect. This is a standard kitchen drain snaking \u2014 **$179 flat rate**, about an hour on site. I can hold tomorrow (Tue Sep 1) at 10:30 AM, or 3:00 PM if that's better.\n\nOne last thing: I only have your phone number on file, no address \u2014 what's the service address?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "88 Larkspur St. And 3:00 PM works better for me tomorrow. Thanks."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set, Tom \u2014 see you tomorrow afternoon.\n\nBooked: **Tue Sep 1, 3:00 PM** at 88 Larkspur St. \u2014 kitchen drain snaking, $179 flat rate, about 1 hour. Nothing you need to do beforehand; just leave the cabinet under the sink clear if you can. Reply here if anything changes or the sink stops draining entirely.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"drain_slow\",\n  \"summary\": \"Kitchen sink (both basins) draining slowly for ~2 weeks, gradually worsening; no backup, odor, or other affected drains; baking soda/vinegar failed.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\n      \"code\": \"DRAIN-SNAKE-KITCHEN\",\n      \"description\": \"Kitchen/bath drain snaking - clear clog in shared kitchen sink drain line\",\n      \"price\": 179\n    }\n  ],\n  \"quote_total\": 179,\n  \"duration_min\": 60,\n  \"slot_id\": \"SL-0901-1500\",\n  \"customer_message\": \"You're all set, Tom - see you tomorrow afternoon. Booked: Tue Sep 1, 3:00 PM at 88 Larkspur St. - kitchen drain snaking, $179 flat rate, about 1 hour. Nothing you need to do beforehand; just leave the cabinet under the sink clear if you can. Reply here if anything changes or the sink stops draining entirely.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "drain_slow",
+    "summary": "Kitchen sink (both basins) draining slowly for ~2 weeks, gradually worsening; no backup, odor, or other affected drains; baking soda/vinegar failed.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DRAIN-SNAKE-KITCHEN",
+      "description": "Kitchen/bath drain snaking - clear clog in shared kitchen sink drain line",
+      "price": 179
+     }
+    ],
+    "quote_total": 179,
+    "duration_min": 60,
+    "slot_id": "SL-0901-1500",
+    "customer_message": "You're all set, Tom - see you tomorrow afternoon. Booked: Tue Sep 1, 3:00 PM at 88 Larkspur St. - kitchen drain snaking, $179 flat rate, about 1 hour. Nothing you need to do beforehand; just leave the cabinet under the sink clear if you can. Reply here if anything changes or the sink stops draining entirely."
+   }
+  }
+ ]
+}

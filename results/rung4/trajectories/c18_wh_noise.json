@@ -1,0 +1,159 @@
+{
+ "config": "rung4",
+ "case": "c18_wh_noise",
+ "system_prompt_chars": 7166,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "My water heater is making a loud rumbling/popping noise when it heats. Googled it and now I'm worried it will explode?? Should I shut it off?? It's 11pm."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news first: that rumbling/popping is almost always sediment on the tank bottom boiling under the water \u2014 very common in older heaters, and it's not a sign of an imminent explosion. Tanks have a temperature/pressure relief valve specifically to prevent that.\n\nQuick safety check before I say more: is there any water leaking or pooling around the base of the tank, or any rotten-egg/sulfur smell near it?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "omg thank you, that actually helps a lot. no leaks that i can see, and no weird smell. just that awful noise when it kicks on. so... i don't need to freak out? \ud83d\ude05"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "No, you can stand down \ud83d\ude04 With no leak and no gas smell, it's safe to leave running overnight \u2014 you don't need to shut anything off. (If it ever does start leaking or overheating, that's when you'd shut the gas dial or breaker off and close the cold inlet valve on top [PB-04].)\n\nRoughly how old is the tank, do you know?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "oh man, that's a relief. honestly i'm not 100% sure but i think it's been here like 7 years? maybe longer. we've never had it flushed or serviced or anything since we moved in. is that bad?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "water heater flush sediment noise"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "water heater maintenance service"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01NYVZCwKoF3LxeWRANMDENZ",
+    "content": "[{\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}, {\"code\": \"TOILET-REBUILD\", \"name\": \"Running toilet rebuild (fill+flush valve)\", \"price\": 189, \"base_duration_min\": 60}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01NTCDHdh4j2ho5N84PKfnuq",
+    "content": "[{\"code\": \"WH-PILOT\", \"name\": \"Water heater pilot/thermocouple service\", \"price\": 169, \"base_duration_min\": 60}, {\"code\": \"WH-FLUSH\", \"name\": \"Water heater flush & sediment service\", \"price\": 139, \"base_duration_min\": 75}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Not bad, just overdue \u2014 a flush every couple of years keeps sediment from baking onto the bottom. At 7+ years with no service, that noise is basically the tank telling you it's time. Our flat-rate flush & sediment service (WH-FLUSH) is $139, and the tech will check the relief valve and burner while he's there.\n\nOne more thing: are you still getting your normal amount of hot water, or has it been running out faster lately?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "water pressure and heat seem totally normal, honestly. like i can still take a full hot shower no problem. so it's just the noise that's bugging me \u2014 well, that and the fear it'll blow up lol. should i schedule that flush soon or is it okay to wait a bit?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "WH-FLUSH"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_014bCit1aUYePiFeEstjnUuw",
+    "content": "{\"job_code\": \"WH-FLUSH\", \"predicted_duration_min\": 77}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 77,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01SQBwAMG2kkvnYTompi3tF2",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Totally fine to wait \u2014 this isn't urgent, it's maintenance. Sometime in the next few weeks is fine; sooner just means less noise.\n\nI've got tomorrow (Tue Sep 1) at 10:30 AM open, about 80 minutes on site. Want me to hold that? And can you confirm the service address for the ticket \u2014 I only have your phone number (+1-555-0118) on file."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "yeah tomorrow at 10:30 works great for me. and yes, it's 72 Tanager Way. go ahead and book it \u2014 thanks for talking me down from panic mode at 11pm lol. appreciate it \ud83d\ude4f"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Booked! \ud83c\udf89 You're all set \u2014 Tuesday Sep 1, 10:30 AM at 72 Tanager Way, WH-FLUSH at $139 flat rate, roughly 80 minutes on site. Sleep easy: the popping is sediment, not a countdown timer. Only reason to touch it overnight would be if it starts leaking or overheating \u2014 then shut the gas dial (or breaker) off and close the cold inlet valve on top of the tank [PB-04]. See you tomorrow!\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"water_heater_noise\",\n  \"summary\": \"7+ year old water heater rumbling/popping on heat cycle, never flushed; no leak, no gas smell, hot water and pressure normal - booked flush & sediment service.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"No shutoff needed tonight - safe to leave running since there is no leak and no gas smell\",\n    \"If the tank ever starts leaking or overheating: turn the gas control dial to OFF (or switch off the breaker) and close the cold-water inlet valve on top of the tank; do not drain it yourself [PB-04]\"\n  ],\n  \"playbook_refs\": [\"PB-04\"],\n  \"quote_lines\": [\n    {\"code\": \"WH-FLUSH\", \"description\": \"Water heater flush & sediment service (incl. relief valve/burner check)\", \"price\": 139}\n  ],\n  \"quote_total\": 139,\n  \"duration_min\": 77,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"Booked! You're all set - Tuesday Sep 1, 10:30 AM at 72 Tanager Way, WH-FLUSH at $139 flat rate, roughly 80 minutes on site. The popping is sediment, not a countdown timer. Only reason to touch it overnight would be if it starts leaking or overheating - then shut the gas dial (or breaker) off and close the cold inlet valve on top of the tank [PB-04]. See you tomorrow!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "water_heater_noise",
+    "summary": "7+ year old water heater rumbling/popping on heat cycle, never flushed; no leak, no gas smell, hot water and pressure normal - booked flush & sediment service.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "No shutoff needed tonight - safe to leave running since there is no leak and no gas smell",
+     "If the tank ever starts leaking or overheating: turn the gas control dial to OFF (or switch off the breaker) and close the cold-water inlet valve on top of the tank; do not drain it yourself [PB-04]"
+    ],
+    "playbook_refs": [
+     "PB-04"
+    ],
+    "quote_lines": [
+     {
+      "code": "WH-FLUSH",
+      "description": "Water heater flush & sediment service (incl. relief valve/burner check)",
+      "price": 139
+     }
+    ],
+    "quote_total": 139,
+    "duration_min": 77,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "Booked! You're all set - Tuesday Sep 1, 10:30 AM at 72 Tanager Way, WH-FLUSH at $139 flat rate, roughly 80 minutes on site. The popping is sediment, not a countdown timer. Only reason to touch it overnight would be if it starts leaking or overheating - then shut the gas dial (or breaker) off and close the cold inlet valve on top of the tank [PB-04]. See you tomorrow!"
+   }
+  }
+ ]
+}

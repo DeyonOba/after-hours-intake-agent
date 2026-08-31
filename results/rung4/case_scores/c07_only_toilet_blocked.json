@@ -1,0 +1,56 @@
+{
+ "case": "c07_only_toilet_blocked",
+ "ticket": {
+  "severity": "S2",
+  "category": "toilet_clog",
+  "summary": "Only toilet in home is fully blocked, water sitting at rim, two plunger attempts failed; no backup at other fixtures \u2014 needs auger clearing, booked first priority slot 8 AM.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Closed the toilet's supply shutoff valve (oval handle on supply line at wall, clockwise until snug) to prevent overflow [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01"
+  ],
+  "quote_lines": [
+   {
+    "code": "TOILET-CLOG",
+    "description": "Toilet clog clearing (auger)",
+    "price": 149
+   }
+  ],
+  "quote_total": 149,
+  "duration_min": 46,
+  "slot_id": "SL-0901-0800",
+  "customer_message": "You're booked: 8:00 AM tomorrow (Tue Sept 1) at 5 Coppersmith Ave \u2014 first slot of the day, flagged urgent since it's your only toilet. Keep the supply valve closed until the tech arrives; you'll get a heads-up text when he's on the way. $149 flat rate for the clog clearing, and he'll tell you before doing anything that costs more."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c07_only_toilet_blocked",
+  "tier": "S2",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 5,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 1,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.2504,
+  "wall_s": 47.2
+ }
+}

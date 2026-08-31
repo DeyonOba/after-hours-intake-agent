@@ -1,0 +1,164 @@
+{
+ "config": "rung6",
+ "case": "c07_only_toilet_blocked",
+ "system_prompt_chars": 7479,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Our toilet is completely blocked and almost overflowed when I flushed. Plunger did nothing. It's the only toilet in the house and we have kids. Tonight or tomorrow??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I'll pull up your account real quick."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "lookup_customer",
+    "input": {
+     "phone": "+1-555-0107"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01F9KrAxaFsHFRQEjQTQ2Pgd",
+    "content": "No record for this phone number (new customer)."
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Thanks for reaching out \u2014 sorry, that's a rough one with kids in the house.\n\nFirst, safety check: is the water in the bowl holding steady/slowly going down, or is anything overflowing onto the floor right now?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "It's holding steady right now but fills way too close to the rim when I flush. Scared to flush again honestly. No overflow on the floor yet but feels like it could happen anytime."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good instinct \u2014 don't flush again for now.\n\nNext: when you run the tub, shower, or sinks, does any water back up or drain slowly there too, or is it only the toilet?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Good question \u2014 sinks and shower are draining fine, seems like it's just the toilet. So it's gotta be something stuck in there specifically, right?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's likely \u2014 an object or wipes lodged in the trap rather than a main-line issue.\n\nAny chance the kids flushed a toy, wipes, or lots of paper \u2014 and when did this start?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Ugh, honestly yeah the kids could've done it \u2014 they're 4 and 6, and we've had close calls before. It started like an hour ago when my oldest flushed. I didn't see anything obvious in the bowl but there's definitely something blocking it."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "toilet clog blocked object removal auger"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01SdNL2NMmWLKFQwQJqU2pqg",
+    "content": "[{\"code\": \"TOILET-CLOG\", \"name\": \"Toilet clog clearing (auger)\", \"price\": 149, \"base_duration_min\": 45}, {\"code\": \"TOILET-REBUILD\", \"name\": \"Running toilet rebuild (fill+flush valve)\", \"price\": 189, \"base_duration_min\": 60}, {\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "TOILET-CLOG"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01TRnanP7R6kxN7xWNDoy1Em",
+    "content": "{\"job_code\": \"TOILET-CLOG\", \"predicted_duration_min\": 46}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 46,
+     "priority": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_016qw7hGj15NmiN32NbTvDPz",
+    "content": "[{\"id\": \"SL-0901-0800\", \"start\": \"2026-09-01T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}, {\"id\": \"SL-0902-0800\", \"start\": \"2026-09-02T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news: since your other drains are fine, it's a local clog in the toilet trap \u2014 likely a toy. Since it's your only toilet, I'm putting you in the first priority slot tomorrow, **Mon Sep 1 at 8:00 AM**.\n\nTonight, to remove the overflow risk: close the toilet's shutoff valve \u2014 the small oval handle on the supply line at the wall behind/beside the toilet, clockwise until snug [PB-01]. That way nothing can refill the bowl if someone flushes.\n\nQuote: **$149 flat (TOILET-CLOG \u2014 auger/clog clearing, ~45 min)**. If the object is wedged and the toilet has to be pulled to retrieve it, the tech will confirm any extra with you before doing the work.\n\nWhat's the service address I should put on the ticket?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "5 Coppersmith Ave \u2014 that's us. And yeah I'll close that valve right now, good call. So 8 AM tomorrow works, just really hoping it's not gonna be worse by then. Thanks for squeezing us in."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're all set \u2014 **5 Coppersmith Ave, Monday Sep 1 at 8:00 AM** (slot SL-0901-0800), $149 flat for toilet clog clearing. With the valve closed the bowl can't refill, so you shouldn't get an overflow overnight. If anything changes \u2014 water starts coming up in the tub/shower or spills onto the floor \u2014 text back and we'll page the on-call plumber right away. Sleep easy, and thanks for choosing Brookdale Plumbing!\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"toilet_clog\",\n  \"summary\": \"Only toilet in home is fully blocked (bowl fills near rim, plunger failed) after 6-year-old flushed something ~1hr ago; other drains flow fine, so localized trap clog/foreign object \u2014 booked first priority slot.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Stop flushing the toilet until the tech arrives\",\n    \"Close the toilet's supply shutoff valve (small oval handle on supply line, clockwise until snug) to prevent overflow [PB-01]\"\n  ],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [\n    {\"code\": \"TOILET-CLOG\", \"description\": \"Toilet clog clearing (auger); possible foreign object (kids' toy) \u2014 tech to confirm any additional charge if toilet must be pulled\", \"price\": 149}\n  ],\n  \"quote_total\": 149,\n  \"duration_min\": 46,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're all set \u2014 5 Coppersmith Ave, Monday Sep 1 at 8:00 AM (slot SL-0901-0800), $149 flat for toilet clog clearing. With the valve closed the bowl can't refill, so you shouldn't get an overflow overnight. If anything changes \u2014 water starts coming up in the tub/shower or spills onto the floor \u2014 text back and we'll page the on-call plumber right away. Sleep easy, and thanks for choosing Brookdale Plumbing!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S2",
+    "category": "toilet_clog",
+    "summary": "Only toilet in home is fully blocked (bowl fills near rim, plunger failed) after 6-year-old flushed something ~1hr ago; other drains flow fine, so localized trap clog/foreign object \u2014 booked first priority slot.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Stop flushing the toilet until the tech arrives",
+     "Close the toilet's supply shutoff valve (small oval handle on supply line, clockwise until snug) to prevent overflow [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "TOILET-CLOG",
+      "description": "Toilet clog clearing (auger); possible foreign object (kids' toy) \u2014 tech to confirm any additional charge if toilet must be pulled",
+      "price": 149
+     }
+    ],
+    "quote_total": 149,
+    "duration_min": 46,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're all set \u2014 5 Coppersmith Ave, Monday Sep 1 at 8:00 AM (slot SL-0901-0800), $149 flat for toilet clog clearing. With the valve closed the bowl can't refill, so you shouldn't get an overflow overnight. If anything changes \u2014 water starts coming up in the tub/shower or spills onto the floor \u2014 text back and we'll page the on-call plumber right away. Sleep easy, and thanks for choosing Brookdale Plumbing!"
+   }
+  }
+ ]
+}

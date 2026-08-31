@@ -1,0 +1,57 @@
+{
+ "case": "c18_wh_noise",
+ "ticket": {
+  "severity": "S3",
+  "category": "water_heater_noise",
+  "summary": "7-year-old gas water heater rumbling/popping when heating, no leaks, no gas smell, hot water normal - never flushed, sediment buildup; booked flush service.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "No shutoff needed tonight - no leak or gas smell; noise is sediment boiling, not an explosion risk.",
+   "If water ever appears at the base of the tank: turn the gas control dial to OFF (or switch off the water heater breaker), then close the cold-water inlet valve on top of the tank; do not drain the tank yourself [PB-04]."
+  ],
+  "playbook_refs": [
+   "PB-04"
+  ],
+  "quote_lines": [
+   {
+    "code": "WH-FLUSH",
+    "description": "Water heater flush & sediment service",
+    "price": 139
+   }
+  ],
+  "quote_total": 139,
+  "duration_min": 77,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "All set, Denis - happy to talk you down! Booked: Mon Sep 1, 10:30 AM at 72 Tanager Way - water heater flush & sediment service, $139 flat, roughly 75-90 min. No need to do anything tonight; just call us right away if you ever spot water at the base of the tank."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c18_wh_noise",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 5,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 2,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.2456,
+  "wall_s": 58.6
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "case": "c10_dripping_faucet",
+ "ticket": {
+  "severity": "S3",
+  "category": "faucet_drip",
+  "summary": "Steady drip from spout of original 1990s bathroom faucet, no leaks under sink; cartridge replacement booked.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Close the small oval shutoff valve on the supply line under the sink, clockwise until snug, to stop the drip overnight [PB-01]"
+  ],
+  "playbook_refs": [
+   "PB-01"
+  ],
+  "quote_lines": [
+   {
+    "code": "FAUCET-CARTRIDGE",
+    "description": "Faucet/shower cartridge replacement - old (1990s) bathroom faucet",
+    "price": 159
+   }
+  ],
+  "quote_total": 159,
+  "duration_min": 69,
+  "slot_id": "SL-0901-1030",
+  "customer_message": "You're all set, Grace - see you tomorrow! Booked: Mon Sep 1, 10:30 AM at 16 Weaver Court, faucet cartridge replacement, $159 flat rate (~70 min). If the drip turns out to be something other than the cartridge, the tech will walk you through options before doing any extra work. And yes - shutting that under-sink valve tonight should buy you some sleep."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c10_dripping_faucet",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.1853,
+  "wall_s": 38.9
+ }
+}

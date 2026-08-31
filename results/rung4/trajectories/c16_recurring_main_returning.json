@@ -1,0 +1,193 @@
+{
+ "config": "rung4",
+ "case": "c16_recurring_main_returning",
+ "system_prompt_chars": 7168,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Marcus Bell here. Kitchen line is backing up AGAIN - third time this year. You snaked it in January and May. It's draining a little but gurgling. What now?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Sorry you're dealing with this a third time, Marcus \u2014 and sorry we missed your call. Quick safety check first: is any water overflowing onto the floor, or backing up anywhere else in the house (other drains, toilet, basement floor drain)?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No water on the floor, thank god. Just the kitchen sink draining slow and that annoying gurgle sound. Everything else seems fine."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good \u2014 that keeps it out of emergency territory. Any foul/sewage smell or gunk coming back up out of the drain?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Nah, no smell or gunk backing up. Just slower than it should be and that gurgling noise when water goes down. It's annoying but not like a full backup situation."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "recurring main drain kitchen line camera"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "kitchen drain slow snake clear"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_017FVNqi9nRsPE3kDDuT2PoC",
+    "content": "[{\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}, {\"code\": \"DRAIN-SNAKE-KITCHEN\", \"name\": \"Kitchen/bath drain snaking\", \"price\": 179, \"base_duration_min\": 60}, {\"code\": \"DIAG\", \"name\": \"Diagnostic visit / camera inspection\", \"price\": 89, \"base_duration_min\": 45}, {\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01TqffTyHqzfeSYBqoMKMcQL",
+    "content": "[{\"code\": \"DRAIN-SNAKE-KITCHEN\", \"name\": \"Kitchen/bath drain snaking\", \"price\": 179, \"base_duration_min\": 60}, {\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}, {\"code\": \"TOILET-CLOG\", \"name\": \"Toilet clog clearing (auger)\", \"price\": 149, \"base_duration_min\": 45}, {\"code\": \"GARB-DISPOSAL-JAM\", \"name\": \"Garbage disposal jam clearing\", \"price\": 99, \"base_duration_min\": 30}, {\"code\": \"SEWAGE-CLEAR\", \"name\": \"Sewage backup clearing & sanitation check\", \"price\": 425, \"base_duration_min\": 150}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Makes sense \u2014 and a recurring gurgle usually points to something further down the line, not just soft clog at the trap. How long has it been slow this time?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Started yesterday morning. Was fine when I went to bed, woke up and it was doing this. Getting worse too \u2014 this morning it was even slower."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "DRAIN-SNAKE-KITCHEN",
+     "recurring": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Ng8FgcDaN6DWMctPbzAoLa",
+    "content": "{\"job_code\": \"DRAIN-SNAKE-KITCHEN\", \"predicted_duration_min\": 72}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 117,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01DmtKAG4FeBdLkohsfafTdg",
+    "content": "[{\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Since this is the third clear this year, I'd recommend snaking it plus a camera inspection to find out *why* it keeps closing up (grease buildup vs. a belly/root in the line): DRAIN-SNAKE-KITCHEN $179 + DIAG camera $89 = **$268**, about 2 hours on site.\n\nNothing you need to do tonight \u2014 it's contained, so just go light on the kitchen sink. I can hold tomorrow (Sep 1) at 3:00 PM. Can you confirm the service address we have on file is still correct?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Hold on \u2014 you're saying snake it again? That's the third time in like 8 months. I'm not paying another $179 to do the same thing if it's just gonna back up again in a few months.\n\nBut yeah, the camera inspection makes sense. At least we'd know what's actually wrong instead of just throwing money at snaking it over and over. Tomorrow at 3 works. Address is still 9 Rookery Ln."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "DIAG",
+     "recurring": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01FGdgsEwE4a7nJ9W1vQSoJ3",
+    "content": "{\"job_code\": \"DIAG\", \"predicted_duration_min\": 57}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 57,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Nq4rmSJ4Kq68vxWVyRt8ob",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Totally fair \u2014 camera first, and we'll only snake if the camera shows that's the right fix. So you're booked for **camera inspection / diagnostic, DIAG \u2014 $89**, about 1 hour, tomorrow (Tue Sep 1) at **3:00 PM** at 9 Rookery Ln. If the tech recommends additional work, he'll quote it on site for your approval before touching anything.\n\nYou're all set, Marcus \u2014 no need to do anything tonight beyond going easy on the kitchen sink. The tech will text ahead before arriving, and I've flagged your file as a repeat kitchen-line issue with the January and May visits noted so he arrives with the camera and history in hand.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"drain_main_recurring\",\n  \"summary\": \"Repeat kitchen line slow-drain with gurgling (3rd occurrence in 8 months, snaked Jan & May); customer declined another snake, booked camera diagnostic to find root cause.\",\n  \"escalate_now\": false,\n  \"known_customer\": true,\n  \"mitigation_advice\": [],\n  \"playbook_refs\": [],\n  \"quote_lines\": [\n    {\"code\": \"DIAG\", \"description\": \"Diagnostic visit / camera inspection of kitchen drain line\", \"price\": 89}\n  ],\n  \"quote_total\": 89,\n  \"duration_min\": 57,\n  \"slot_id\": \"SL-0901-1500\",\n  \"customer_message\": \"Totally fair - camera first, and we'll only snake if the camera shows that's the right fix. You're booked for camera inspection / diagnostic (DIAG) - $89, about 1 hour, tomorrow (Tue Sep 1) at 3:00 PM at 9 Rookery Ln. If the tech recommends additional work, he'll quote it on site for your approval first. No need to do anything tonight beyond going easy on the kitchen sink; your file is flagged as a repeat kitchen-line issue with the January and May visits noted.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "drain_main_recurring",
+    "summary": "Repeat kitchen line slow-drain with gurgling (3rd occurrence in 8 months, snaked Jan & May); customer declined another snake, booked camera diagnostic to find root cause.",
+    "escalate_now": false,
+    "known_customer": true,
+    "mitigation_advice": [],
+    "playbook_refs": [],
+    "quote_lines": [
+     {
+      "code": "DIAG",
+      "description": "Diagnostic visit / camera inspection of kitchen drain line",
+      "price": 89
+     }
+    ],
+    "quote_total": 89,
+    "duration_min": 57,
+    "slot_id": "SL-0901-1500",
+    "customer_message": "Totally fair - camera first, and we'll only snake if the camera shows that's the right fix. You're booked for camera inspection / diagnostic (DIAG) - $89, about 1 hour, tomorrow (Tue Sep 1) at 3:00 PM at 9 Rookery Ln. If the tech recommends additional work, he'll quote it on site for your approval first. No need to do anything tonight beyond going easy on the kitchen sink; your file is flagged as a repeat kitchen-line issue with the January and May visits noted."
+   }
+  }
+ ]
+}

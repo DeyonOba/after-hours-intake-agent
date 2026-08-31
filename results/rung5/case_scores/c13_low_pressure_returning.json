@@ -1,0 +1,57 @@
+{
+ "case": "c13_low_pressure_returning",
+ "ticket": {
+  "severity": "S3",
+  "category": "low_pressure_shower",
+  "summary": "Repeat low water pressure at master shower only (recurring from March service); no other fixtures affected, no leak/gas/sewage - diagnose to root cause and replace worn cartridge rather than clean/adjust.",
+  "escalate_now": false,
+  "known_customer": true,
+  "mitigation_advice": [],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "DIAG",
+    "description": "Diagnostic visit to trace pressure restriction (head/screen, cartridge, or mixing valve)",
+    "price": 89
+   },
+   {
+    "code": "FAUCET-CARTRIDGE",
+    "description": "Faucet/shower cartridge replacement (expected repair)",
+    "price": 159
+   }
+  ],
+  "quote_total": 248,
+  "duration_min": 115,
+  "slot_id": "SL-0901-1500",
+  "customer_message": "You're booked, Priya - Tuesday Sep 1 at 3:00 PM, 140 Elm Hollow. I've flagged the ticket as a repeat of the March call with a note to the tech: diagnose to root cause and replace the worn part, no clean-and-adjust patch. Quote is $89 diagnostic + $159 shower cartridge replacement ($248), about 2 hours on site. If the diagnostic points to something bigger (like the mixing valve body), the tech will walk you through options and pricing before doing any work."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c13_low_pressure_returning",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 5,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 0.667,
+  "total_err_pct": 56.0,
+  "quote_ok": false,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 46,
+  "duration_ok": false,
+  "slot_ok": false,
+  "known_customer_ok": true,
+  "cost_usd": 0.2653,
+  "wall_s": 54.9
+ }
+}

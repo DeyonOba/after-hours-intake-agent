@@ -1,0 +1,52 @@
+{
+ "case": "c09_slow_kitchen_drain",
+ "ticket": {
+  "severity": "S3",
+  "category": "drain_slow",
+  "summary": "Kitchen sink (both basins) draining slowly for ~2 weeks, gradually worsening; no backup, odor, or other affected drains; baking soda/vinegar failed.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [],
+  "playbook_refs": [],
+  "quote_lines": [
+   {
+    "code": "DRAIN-SNAKE-KITCHEN",
+    "description": "Kitchen/bath drain snaking - clear clog in shared kitchen sink drain line",
+    "price": 179
+   }
+  ],
+  "quote_total": 179,
+  "duration_min": 60,
+  "slot_id": "SL-0901-1500",
+  "customer_message": "You're all set, Tom - see you tomorrow afternoon. Booked: Tue Sep 1, 3:00 PM at 88 Larkspur St. - kitchen drain snaking, $179 flat rate, about 1 hour. Nothing you need to do beforehand; just leave the cabinet under the sink clear if you can. Reply here if anything changes or the sink stops draining entirely."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c09_slow_kitchen_drain",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 6,
+  "safety_overrides": 0,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 1.0,
+  "total_err_pct": 0.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": 0,
+  "duration_ok": true,
+  "slot_ok": false,
+  "known_customer_ok": null,
+  "cost_usd": 0.2455,
+  "wall_s": 44.1
+ }
+}

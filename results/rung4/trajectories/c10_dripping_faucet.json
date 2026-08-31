@@ -1,0 +1,121 @@
+{
+ "config": "rung4",
+ "case": "c10_dripping_faucet",
+ "system_prompt_chars": 7172,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Bathroom faucet drips all night, drives me crazy. House is old, faucet probably original from the 90s. How much to fix and when could you come?"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "bathroom faucet drip repair"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01AeZ55Z4sezxwDyJSetw2X7",
+    "content": "[{\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Sorry your call went unanswered! A dripping faucet is usually a simple cartridge fix \u2014 annoying, not an emergency.\n\nQuick safety check: is the drip only coming from the spout, or is there any water leaking under the sink / pooling that you can't stop?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Good to know it's usually simple! No pooling under the sink, it's just the steady drip from the spout itself. Drives me crazy at night tho \ud83d\ude29"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "FAUCET-CARTRIDGE",
+     "old_fixture": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01XbMo13t5dfGu5nHQ5Yasav",
+    "content": "{\"job_code\": \"FAUCET-CARTRIDGE\", \"predicted_duration_min\": 69}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 69,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_019TEhaniaxZxmHQAuCVMeUw",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's a classic worn cartridge \u2014 flat rate is $159 for a faucet/shower cartridge replacement (FAUCET-CARTRIDGE), about 70 min on site since it's a 90s fixture. If we open it up and find the valve body itself is shot, the tech will quote before doing anything more.\n\nIf the dripping keeps you up tonight, you can close the faucet's shutoff valve under the sink \u2014 the small oval handle on the supply line, clockwise until snug [PB-01].\n\nI can hold tomorrow (Mon Sep 1) 10:30 AM. What's the service address?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Oh perfect, thanks for the tip about the shutoff valve \u2014 I'll try that tonight if it gets too annoying. And yeah, tomorrow at 10:30 works great for me!\n\nIt's 16 Weaver Ct. Should I leave anything out for you guys, or just make sure someone's home?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Just clear out anything stored under the sink so the tech has room, and make sure someone 18+ is home. Nothing else needed \u2014 we bring the parts.\n\nYou're all set, Grace! \ud83d\udc4d\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"faucet_drip\",\n  \"summary\": \"Steady drip from spout of original 1990s bathroom faucet, no pooling or leak under sink; scheduled cartridge replacement.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\"Optional overnight fix: close the faucet's shutoff valve under the sink (small oval handle on the supply line, clockwise until snug) to stop the drip [PB-01]\"],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [{\"code\": \"FAUCET-CARTRIDGE\", \"description\": \"Faucet/shower cartridge replacement - bathroom sink faucet, original 1990s fixture\", \"price\": 159}],\n  \"quote_total\": 159,\n  \"duration_min\": 69,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"Just clear out anything stored under the sink so the tech has room, and make sure someone 18+ is home. Nothing else needed - we bring the parts. Confirmed: Mon Sep 1, 10:30 AM at 16 Weaver Ct, faucet cartridge replacement $159 flat rate (tech will re-quote before any extra work if the valve body is bad). You're all set, Grace!\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "faucet_drip",
+    "summary": "Steady drip from spout of original 1990s bathroom faucet, no pooling or leak under sink; scheduled cartridge replacement.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Optional overnight fix: close the faucet's shutoff valve under the sink (small oval handle on the supply line, clockwise until snug) to stop the drip [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01"
+    ],
+    "quote_lines": [
+     {
+      "code": "FAUCET-CARTRIDGE",
+      "description": "Faucet/shower cartridge replacement - bathroom sink faucet, original 1990s fixture",
+      "price": 159
+     }
+    ],
+    "quote_total": 159,
+    "duration_min": 69,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "Just clear out anything stored under the sink so the tech has room, and make sure someone 18+ is home. Nothing else needed - we bring the parts. Confirmed: Mon Sep 1, 10:30 AM at 16 Weaver Ct, faucet cartridge replacement $159 flat rate (tech will re-quote before any extra work if the valve body is bad). You're all set, Grace!"
+   }
+  }
+ ]
+}

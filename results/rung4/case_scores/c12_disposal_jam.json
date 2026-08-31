@@ -1,0 +1,53 @@
+{
+ "case": "c12_disposal_jam",
+ "ticket": {
+  "severity": "S4",
+  "category": "disposal_jam",
+  "summary": "Customer's garbage disposal hummed without spinning due to a peach pit jam; talked through PB-07 self-clear over text and unit is working again \u2014 no visit needed.",
+  "escalate_now": false,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Never put hands inside the disposal, even when switched off [PB-07]",
+   "Unplug the unit (or switch off its breaker) before working on it [PB-07]",
+   "Remove the visible obstruction (peach pit) with tongs/pliers [PB-07]",
+   "Use the hex/Allen socket under the unit to rock the flywheel free, then restore power and test [PB-07]"
+  ],
+  "playbook_refs": [
+   "PB-07"
+  ],
+  "quote_lines": [],
+  "quote_total": 0,
+  "duration_min": null,
+  "slot_id": null,
+  "customer_message": "Happy to help, Bea! Glad it was a quick fix. If it ever hums again or you notice a leak under the sink, text us and we'll get someone out. Have a good night! Address confirmed: 3 Sandpiper Way, phone +1-555-0112. No charge for tonight."
+ },
+ "safety_overrides": [],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c12_disposal_jam",
+  "tier": "S3",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 4,
+  "safety_overrides": 0,
+  "severity_ok": false,
+  "category_ok": true,
+  "escalation_required": false,
+  "escalated": false,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "code_f1": 0.0,
+  "total_err_pct": 100.0,
+  "quote_ok": true,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": null,
+  "duration_ok": false,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.1222,
+  "wall_s": 30.6
+ }
+}

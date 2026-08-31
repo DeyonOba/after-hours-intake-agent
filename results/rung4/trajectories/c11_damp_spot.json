@@ -1,0 +1,163 @@
+{
+ "config": "rung4",
+ "case": "c11_damp_spot",
+ "system_prompt_chars": 7168,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "There's a damp patch on my bedroom ceiling, maybe the size of a dinner plate. Not dripping, just damp and a bit yellow. Upstairs neighbor says nothing is leaking at theirs. Should I worry?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good news first: not dripping and no sagging means this isn't an emergency tonight. Just keep clear of the area if it ever starts to bulge or sag [PB-08].\n\nHow long has that patch been there, and has it been growing?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Thanks, that's reassuring to hear. It's been there about 3 days now and honestly looks the same size, so doesn't seem to be getting worse or anything."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Stable size over three days is a good sign too. \n\nWhat's directly above that spot \u2014 is it your upstairs neighbor's bathroom or kitchen, or is there attic/roof space up there?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, it's right below their bathroom actually. They said nothing's leaking on their end though, which is kinda weird."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Makes sense \u2014 small leaks behind a tub or shower wall often don't show anything on their side; it just drains down to your ceiling.\n\nQuick safety check: any smell of gas or rotten eggs, or any sewage odor around that patch?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "No, nothing like that. Just looks damp and kinda yellow, but no weird smells at all."
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "No smells is another good sign. Let me pull up what a leak investigation runs."
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "damp ceiling spot leak investigation"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "ceiling stain leak diagnostic"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_019MjDTCxRvo1ZMsadRikreM",
+    "content": "[{\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01RiFSsf9YcAkbPFo8dXwDxE",
+    "content": "[{\"code\": \"DIAG\", \"name\": \"Diagnostic visit / camera inspection\", \"price\": 89, \"base_duration_min\": 45}, {\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "DIAG"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01HHDWVBhg73hhBvJbowmDPS",
+    "content": "{\"job_code\": \"DIAG\", \"predicted_duration_min\": 44}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 44,
+     "priority": false
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01AA1rniGgqAoyZusxvCxbLH",
+    "content": "[{\"id\": \"SL-0901-1030\", \"start\": \"2026-09-01T10:30:00\", \"capacity_min\": 90, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0901-1500\", \"start\": \"2026-09-01T15:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1030\", \"start\": \"2026-09-02T10:30:00\", \"capacity_min\": 240, \"priority\": false, \"booked\": false}, {\"id\": \"SL-0902-1400\", \"start\": \"2026-09-02T14:00:00\", \"capacity_min\": 120, \"priority\": false, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "A diagnostic visit is $89 (about 45 min) \u2014 we'd trace the source, likely from your side and with the neighbor's unit if needed. If it's a simple accessible pipe leak, repair is $219; anything bigger the tech quotes on site.\n\nI have tomorrow (Tue Sep 1) at 10:30am open. Want that \u2014 and can you confirm the service address and unit number for the file?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Yeah, tomorrow at 10:30 works great for me. It's 230 Quarry Rd, Apt 5C. Should I give my neighbor a heads up that someone might need to check their bathroom?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "You're booked: Tue Sep 1, 10:30am at 230 Quarry Rd, Apt 5C. And yes \u2014 a heads-up to your neighbor is a great idea; access to their bathroom often cuts the diagnosis time in half. If the patch starts dripping or sagging before then, stay clear of it [PB-08] and text us right away.\n\n```json\n{\n  \"severity\": \"S3\",\n  \"category\": \"damp_spot\",\n  \"summary\": \"Dinner-plate-sized damp yellow patch on bedroom ceiling in Apt 5C, stable 3 days, directly below upstairs neighbor's bathroom; neighbor reports no visible leak - needs leak trace.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Keep clear of the area and do not touch it if the ceiling starts to bulge or sag [PB-08]\"\n  ],\n  \"playbook_refs\": [\"PB-08\"],\n  \"quote_lines\": [\n    {\"code\": \"DIAG\", \"description\": \"Diagnostic visit / camera inspection to trace ceiling leak source\", \"price\": 89}\n  ],\n  \"quote_total\": 89,\n  \"duration_min\": 44,\n  \"slot_id\": \"SL-0901-1030\",\n  \"customer_message\": \"You're booked: Tue Sep 1, 10:30am at 230 Quarry Rd, Apt 5C. And yes - a heads-up to your neighbor is a great idea; access to their bathroom often cuts the diagnosis time in half. If the patch starts dripping or sagging before then, stay clear of it [PB-08] and text us right away.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S3",
+    "category": "damp_spot",
+    "summary": "Dinner-plate-sized damp yellow patch on bedroom ceiling in Apt 5C, stable 3 days, directly below upstairs neighbor's bathroom; neighbor reports no visible leak - needs leak trace.",
+    "escalate_now": false,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Keep clear of the area and do not touch it if the ceiling starts to bulge or sag [PB-08]"
+    ],
+    "playbook_refs": [
+     "PB-08"
+    ],
+    "quote_lines": [
+     {
+      "code": "DIAG",
+      "description": "Diagnostic visit / camera inspection to trace ceiling leak source",
+      "price": 89
+     }
+    ],
+    "quote_total": 89,
+    "duration_min": 44,
+    "slot_id": "SL-0901-1030",
+    "customer_message": "You're booked: Tue Sep 1, 10:30am at 230 Quarry Rd, Apt 5C. And yes - a heads-up to your neighbor is a great idea; access to their bathroom often cuts the diagnosis time in half. If the patch starts dripping or sagging before then, stay clear of it [PB-08] and text us right away."
+   }
+  }
+ ]
+}
