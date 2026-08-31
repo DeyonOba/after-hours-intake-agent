@@ -1,0 +1,450 @@
+<title>After-Hours Intake</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+  /* Single-theme deck (deliberate): a screen-recording asset must render
+     identically on every host, so every surface and color is explicit. */
+  :root{
+    --bg:#10151c; --panel:#1a212b; --panel-2:#151b24; --line:#2a3441;
+    --text:#e8ecf1; --muted:#96a2b0; --faint:#5c6875;
+    --amber:#ffb224; --copper:#c9784a;
+    --s1:#ff6b5e; --s2:#ffb224; --s3:#5aa9e6; --s4:#8b97a5;
+    --series-recall:#3987e5; --series-quotes:#d95926; /* validated dark steps */
+    --ok:#3ecf8e; --bad:#ff6b5e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--text);
+       font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+       font-size:clamp(14px,1.35vw,20px);line-height:1.55;overflow:hidden}
+  .deck{height:100vh;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;
+         justify-content:center;padding:6vh 8vw;gap:2.2vh}
+  .slide.on{display:flex}
+  .eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;
+           font-size:.72em;letter-spacing:.14em;text-transform:uppercase;
+           color:var(--amber)}
+  h1,h2{font-family:"Barlow Condensed","Arial Narrow",sans-serif;
+        font-weight:700;line-height:1.04;text-wrap:balance;letter-spacing:.005em}
+  h1{font-size:5.2em;text-transform:uppercase}
+  h2{font-size:3em;text-transform:uppercase}
+  .sub{color:var(--muted);max-width:34em}
+  .big{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:700;
+       font-size:3.4em;line-height:1.08;text-wrap:balance;max-width:11em}
+  .big em{color:var(--amber);font-style:normal}
+  mono,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+  .cols{display:flex;gap:2.5vw;align-items:stretch}
+  .cols>*{flex:1;min-width:0}
+  .panel{background:var(--panel);border:1px solid var(--line);
+         border-radius:8px;padding:1.4em 1.6em}
+  .panel h3{font-family:"Barlow Condensed",sans-serif;font-weight:600;
+            font-size:1.35em;text-transform:uppercase;letter-spacing:.04em;
+            margin-bottom:.45em}
+  ul.list{list-style:none;display:flex;flex-direction:column;gap:.55em}
+  ul.list li{padding-left:1.3em;position:relative;color:var(--muted)}
+  ul.list li::before{content:"";position:absolute;left:0;top:.55em;width:.55em;
+                     height:2px;background:var(--copper)}
+  ul.list li b{color:var(--text);font-weight:600}
+  .code{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.82em;
+        background:var(--panel-2);border:1px solid var(--line);border-radius:8px;
+        padding:1.1em 1.3em;overflow-x:auto;white-space:pre;line-height:1.7}
+  .code .k{color:var(--muted)} .code .fake{color:var(--bad);font-weight:600}
+  .code .good{color:var(--ok)} .code .warn{color:var(--amber)}
+  .chip{display:inline-flex;align-items:center;gap:.45em;
+        font-family:"IBM Plex Mono",monospace;font-size:.74em;
+        border:1px solid var(--line);border-radius:999px;padding:.28em .85em;
+        color:var(--muted)}
+  .chip .dot{width:.6em;height:.6em;border-radius:50%}
+  .bubble{border-radius:12px;padding:.85em 1.1em;max-width:36em;font-size:.95em}
+  .bubble.cust{background:#243040;border:1px solid #34445a;align-self:flex-start}
+  .bubble.agent{background:#241f16;border:1px solid #4a3b1c;align-self:flex-end}
+  .chat{display:flex;flex-direction:column;gap:.7em}
+  table.tbl{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+  .tbl th,.tbl td{padding:.5em .9em;text-align:left;border-bottom:1px solid var(--line)}
+  .tbl th{font-family:"IBM Plex Mono",monospace;font-size:.72em;
+          letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .tbl td.num{font-family:"IBM Plex Mono",monospace}
+  .tbl .win{color:var(--ok);font-weight:600}
+  .flow{display:flex;align-items:center;gap:.9vw;flex-wrap:wrap}
+  .fbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+        padding:.8em 1.1em;font-size:.85em;text-align:center}
+  .fbox small{display:block;color:var(--faint);font-size:.78em;margin-top:.2em}
+  .farrow{color:var(--copper);font-size:1.4em}
+  .sev{border-left:4px solid;padding:.55em .9em;background:var(--panel);
+       border-radius:0 8px 8px 0;font-size:.85em}
+  .foot{position:absolute;bottom:2.4vh;left:8vw;right:8vw;display:flex;
+        justify-content:space-between;align-items:center;
+        font-family:"IBM Plex Mono",monospace;font-size:.68em;color:var(--faint)}
+  .counter{letter-spacing:.15em}
+  .hint{opacity:.7}
+  svg text{font-family:"IBM Plex Sans",sans-serif}
+  .tooltip{position:fixed;pointer-events:none;background:#0b0f14;color:var(--text);
+           border:1px solid var(--line);border-radius:6px;padding:.5em .8em;
+           font-family:"IBM Plex Mono",monospace;font-size:12px;display:none;z-index:9}
+  details.data{font-size:.72em;color:var(--muted)}
+  details.data summary{cursor:pointer;font-family:"IBM Plex Mono",monospace}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+  @media (prefers-reduced-motion:no-preference){
+    .slide.on{animation:fade .28s ease}
+    @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  }
+</style>
+
+<div class="deck" id="deck">
+
+<!-- 1 · TITLE -->
+<section class="slide on">
+  <div class="eyebrow">micro1 Agentic Workflows Hackathon · 2026</div>
+  <h1>After-Hours<br>Intake</h1>
+  <p class="sub">An agent that fills the empty dispatcher seat at a small
+     plumbing company — triages emergencies, quotes from the real price book,
+     and leaves every decision that matters to a human.</p>
+  <div style="display:flex;gap:.8em;margin-top:1vh">
+    <span class="chip"><span class="dot" style="background:var(--s1)"></span>S1 page on-call</span>
+    <span class="chip"><span class="dot" style="background:var(--s2)"></span>S2 priority slot</span>
+    <span class="chip"><span class="dot" style="background:var(--s3)"></span>S3 schedule</span>
+    <span class="chip"><span class="dot" style="background:var(--s4)"></span>S4 quote</span>
+  </div>
+</section>
+
+<!-- 2 · THE EMPTY SEAT -->
+<section class="slide">
+  <div class="eyebrow">The problem</div>
+  <h2>11 PM. Burst pipe. Voicemail.</h2>
+  <div class="cols">
+    <div>
+      <p class="big">A missed call is a competitor's job <em>by 11:05.</em></p>
+    </div>
+    <div class="panel">
+      <h3>Good intake is five jobs at once</h3>
+      <ul class="list">
+        <li><b>Extract</b> what actually broke, where</li>
+        <li><b>Ask</b> the follow-ups a dispatcher would</li>
+        <li><b>Triage</b> — emergency, urgent, or Tuesday?</li>
+        <li><b>Price</b> from the flat-rate book, not vibes</li>
+        <li><b>Book</b> a slot the job actually fits</li>
+      </ul>
+      <p style="margin-top:.9em;color:var(--muted);font-size:.9em">
+        At night, nobody does any of them. The agent covers an
+        <b style="color:var(--text)">empty seat</b> — it replaces no one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · BASELINE -->
+<section class="slide">
+  <div class="eyebrow">The baseline — one direct prompt</div>
+  <h2>Confident fiction</h2>
+  <div class="cols">
+    <div class="code">{
+  <span class="k">"severity"</span>: <span class="warn">"S2"</span>,        <span class="k">← burst pipe. key: S1</span>
+  <span class="k">"escalate_now"</span>: <span class="fake">false</span>,  <span class="k">← paged nobody</span>
+  <span class="k">"quote_lines"</span>: [
+    {"code": <span class="fake">"SVC-AH-DIAG"</span>,  "price": 89},
+    {"code": <span class="fake">"SUP-LINE-REPL"</span>, "price": 110},
+    {"code": <span class="fake">"CREDIT-CAM"</span>,  "price": -195}
+  ]                  <span class="k">← none of these codes exist</span>
+}</div>
+    <div>
+      <p class="big">It parsed perfectly. It sounded professional. It billed <em>fiction.</em></p>
+      <ul class="list" style="margin-top:1.2vh">
+        <li>Invented billing codes in <b>16 of 18</b> tickets</li>
+        <li><b>1 in 4</b> emergencies paged no one</li>
+        <li>Safety advice cited <b>nothing</b> — 0/6 playbook cases</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · ARCHITECTURE -->
+<section class="slide">
+  <div class="eyebrow">Architecture</div>
+  <h2>Rails around the judgment</h2>
+  <div class="flow">
+    <div class="fbox">Missed call<small>phone № = contact ID</small></div>
+    <span class="farrow">→</span>
+    <div class="fbox" style="border-color:var(--copper)">Intake agent<small>Claude Opus 5</small></div>
+    <span class="farrow">→</span>
+    <div class="fbox">Safety floor<small>code, not prompt</small></div>
+    <span class="farrow">→</span>
+    <div class="fbox">Tools<small>price book · slots · ML duration · memory</small></div>
+    <span class="farrow">→</span>
+    <div class="fbox">Verifier<small>+ mechanical fixes</small></div>
+    <span class="farrow">→</span>
+    <div class="fbox" style="border-color:var(--amber)">Draft ticket<small>human approves</small></div>
+  </div>
+  <div class="cols" style="margin-top:1.5vh">
+    <div class="sev" style="border-color:var(--s1)"><b>S1</b> — mitigation steps from a citable playbook, on-call paged <b>now</b>, no quoting</div>
+    <div class="sev" style="border-color:var(--s2)"><b>S2</b> — first priority slot tomorrow, flagged for morning</div>
+    <div class="sev" style="border-color:var(--s3)"><b>S3 / S4</b> — priced &amp; scheduled, morning approval queue</div>
+  </div>
+  <p class="sub" style="font-size:.9em">Channel-agnostic core: the eval drives it headless; Discord is a demo adapter; production would be SMS.</p>
+</section>
+
+<!-- 5 · THE GAS TRAP -->
+<section class="slide">
+  <div class="eyebrow">The challenging case · c03</div>
+  <h2>The gas smell buried in a drain quote</h2>
+  <div class="cols">
+    <div class="chat">
+      <div class="bubble cust">hey, my basement floor drain has been draining slow
+        for a week… <b style="color:var(--s1)">sometimes almost like rotten eggs near the
+        water heater</b>. can someone snake the drain this week? what would that cost?</div>
+      <div class="bubble agent">Please stop what you're doing — get everyone outside
+        now, don't touch any switches, and call the gas utility's emergency line
+        from outside <span class="mono" style="color:var(--amber)">[PB-06]</span>.
+        I'm paging our on-call plumber immediately.</div>
+    </div>
+    <div>
+      <ul class="list">
+        <li><b>Deterministic floor fires</b> on the customer's own words — code, not model judgment</li>
+        <li>Severity forced <b>S1 · gas_emergency</b></li>
+        <li>Every step cites the <b>approved playbook</b></li>
+        <li>Quote <b>refused</b> — the drain can wait; the leak can't</li>
+        <li>The trap: baseline happily quoted the drain</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · THE LADDER (chart) -->
+<section class="slide">
+  <div class="eyebrow">Seven configurations · same 18 cases · same task spec</div>
+  <h2>The improvement ladder</h2>
+  <div class="cols" style="align-items:center">
+    <div style="flex:1.6">
+      <svg viewBox="0 0 760 340" role="img" aria-label="Line chart: critical escalation recall and usable quotes across rungs 0 to 6">
+        <!-- grid -->
+        <g stroke="#2a3441" stroke-width="1">
+          <line x1="40" y1="20" x2="590" y2="20"/><line x1="40" y1="81" x2="590" y2="81"/>
+          <line x1="40" y1="142" x2="590" y2="142"/><line x1="40" y1="203" x2="590" y2="203"/>
+          <line x1="40" y1="264" x2="590" y2="264"/>
+        </g>
+        <g fill="#5c6875" font-size="11" text-anchor="end">
+          <text x="34" y="24">100</text><text x="34" y="85">75</text>
+          <text x="34" y="146">50</text><text x="34" y="207">25</text><text x="34" y="268">0</text>
+        </g>
+        <g fill="#96a2b0" font-size="12" text-anchor="middle" font-family="IBM Plex Mono,monospace">
+          <text x="40" y="290">R0</text><text x="131.7" y="290">R1</text>
+          <text x="223.3" y="290">R2</text><text x="315" y="290">R3</text>
+          <text x="406.7" y="290">R4</text><text x="498.3" y="290">R5</text>
+          <text x="590" y="290">R6</text>
+        </g>
+        <g fill="#5c6875" font-size="10" text-anchor="middle">
+          <text x="40" y="306">baseline</text><text x="131.7" y="306">context</text>
+          <text x="223.3" y="306">rules</text><text x="315" y="306">tools</text>
+          <text x="406.7" y="306">questions</text><text x="498.3" y="306">verifier</text>
+          <text x="590" y="306">memory</text>
+        </g>
+        <!-- recall line -->
+        <polyline points="40,81 131.7,81 223.3,20 315,20 406.7,20 498.3,20 590,20"
+                  fill="none" stroke="#3987e5" stroke-width="2"/>
+        <!-- quotes line -->
+        <polyline points="40,250.3 131.7,74.2 223.3,60.7 315,60.7 406.7,47.1 498.3,47.1 590,20"
+                  fill="none" stroke="#d95926" stroke-width="2"/>
+        <!-- markers (data-v carries tooltip text) -->
+        <g fill="#3987e5" stroke="#1a212b" stroke-width="2">
+          <circle class="pt" data-v="R0 · recall 75%" cx="40" cy="81" r="4"/>
+          <circle class="pt" data-v="R1 · recall 75%" cx="131.7" cy="81" r="4"/>
+          <circle class="pt" data-v="R2 · recall 100%" cx="223.3" cy="20" r="5"/>
+          <circle class="pt" data-v="R3 · recall 100%" cx="315" cy="20" r="4"/>
+          <circle class="pt" data-v="R4 · recall 100%" cx="406.7" cy="20" r="4"/>
+          <circle class="pt" data-v="R5 · recall 100%" cx="498.3" cy="20" r="4"/>
+        </g>
+        <g fill="#d95926" stroke="#1a212b" stroke-width="2">
+          <circle class="pt" data-v="R0 · quotes 5.6%" cx="40" cy="250.3" r="4"/>
+          <circle class="pt" data-v="R1 · quotes 77.8%" cx="131.7" cy="74.2" r="4"/>
+          <circle class="pt" data-v="R2 · quotes 83.3%" cx="223.3" cy="60.7" r="4"/>
+          <circle class="pt" data-v="R3 · quotes 83.3%" cx="315" cy="60.7" r="4"/>
+          <circle class="pt" data-v="R4 · quotes 88.9%" cx="406.7" cy="47.1" r="4"/>
+          <circle class="pt" data-v="R5 · quotes 88.9%" cx="498.3" cy="47.1" r="4"/>
+        </g>
+        <!-- shared endpoint: ring marks the overlap -->
+        <circle class="pt" data-v="R6 · both 100%" cx="590" cy="20" r="6" fill="#ffb224" stroke="#10151c" stroke-width="2"/>
+        <!-- selective labels -->
+        <g font-size="12" fill="#e8ecf1" font-family="IBM Plex Mono,monospace">
+          <text x="52" y="76">75%</text>
+          <text x="52" y="255">5.6%</text>
+          <text x="223.3" y="44" text-anchor="middle" fill="#3987e5">100% ↑ rules</text>
+          <text x="604" y="24" fill="#ffb224">100%</text>
+        </g>
+        <!-- line-end series labels (legend) -->
+        <g font-size="12" font-family="IBM Plex Sans,sans-serif">
+          <text x="604" y="46" fill="#e8ecf1">escalation recall <tspan fill="#3987e5">—</tspan></text>
+          <text x="604" y="64" fill="#e8ecf1">usable quotes <tspan fill="#d95926">—</tspan></text>
+        </g>
+      </svg>
+      <details class="data"><summary>data table</summary>
+        <table class="tbl" style="font-size:.95em;margin-top:.5em">
+          <tr><th>rung</th><th>R0</th><th>R1</th><th>R2</th><th>R3</th><th>R4</th><th>R5</th><th>R6</th></tr>
+          <tr><td>escalation recall %</td><td class="num">75</td><td class="num">75</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">100</td></tr>
+          <tr><td>usable quotes %</td><td class="num">5.6</td><td class="num">77.8</td><td class="num">83.3</td><td class="num">83.3</td><td class="num">88.9</td><td class="num">88.9</td><td class="num">100</td></tr>
+        </table>
+      </details>
+    </div>
+    <div>
+      <ul class="list" style="font-size:.92em">
+        <li><b>R1 context</b> fixed knowledge — quotes leapt, safety didn't move</li>
+        <li><b>R2 rules</b> fixed judgment — recall to 100%, and stayed</li>
+        <li><b>R5–R6</b> closed the last gaps: verification &amp; memory</li>
+        <li>False pages: <b>0%</b> at every rung</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · THE CHANGE THAT MATTERED -->
+<section class="slide">
+  <div class="eyebrow">The change that contributed most</div>
+  <h2>Context fixes knowing.<br>Code fixes deciding.</h2>
+  <div class="cols">
+    <div class="panel">
+      <h3 style="color:var(--s3)">Rung 1 · pasted the docs</h3>
+      <p style="color:var(--muted)">Price book, playbook, calendar in the prompt.</p>
+      <p class="mono" style="margin-top:.8em">quotes 5.6 → 77.8% <span style="color:var(--ok)">✓</span><br>
+      escalation recall <b style="color:var(--bad)">75% — unmoved</b></p>
+    </div>
+    <div class="panel" style="border-color:var(--amber)">
+      <h3 style="color:var(--amber)">Rung 2 · a severity floor in code</h3>
+      <p style="color:var(--muted)">Gas, sewage, uncontained water — scanned in the
+      customer's own words. Can only <b style="color:var(--text)">raise</b> severity.</p>
+      <p class="mono" style="margin-top:.8em">recall 75 → <b style="color:var(--ok)">100%</b> ·
+      false pages <b style="color:var(--ok)">0%</b></p>
+    </div>
+  </div>
+  <p class="sub">On the burst-pipe case the model — with the policy in its prompt —
+     still downgraded to S2 once the customer got the water off. The floor insisted.</p>
+</section>
+
+<!-- 8 · THE MODEL ARGUES -->
+<section class="slide">
+  <div class="eyebrow">Best bug of the project · trajectory on file</div>
+  <h2>The model argues with policy</h2>
+  <div class="flow" style="align-items:stretch">
+    <div class="fbox" style="text-align:left;max-width:20em">
+      <b>Model:</b> “Leak's contained — S2, book the 8 AM repair, quote $129.”
+      <small>reasonable! and against dispatch policy</small></div>
+    <span class="farrow">→</span>
+    <div class="fbox" style="text-align:left;max-width:20em">
+      <b>Verifier:</b> “S1 must not carry repair lines or a slot.”
+      <small>revision requested… same ticket comes back</small></div>
+    <span class="farrow">→</span>
+    <div class="fbox" style="text-align:left;max-width:20em;border-color:var(--amber)">
+      <b>Code:</b> strips the quote, clears the slot, keeps the page.
+      <small>mechanical fixes · logged in the trajectory</small></div>
+  </div>
+  <p class="big" style="margin-top:2vh">The model can argue with a revision request.
+     It cannot argue <em>with code.</em></p>
+</section>
+
+<!-- 9 · HONEST EXPERIMENTS -->
+<section class="slide">
+  <div class="eyebrow">What didn't help — and stayed anyway</div>
+  <h2>Negative results, kept on purpose</h2>
+  <div class="cols">
+    <div class="panel">
+      <h3>Tools made totals worse</h3>
+      <p style="color:var(--muted);font-size:.92em">2.8% → 9.9% total error at R3: the
+      model had been reading the pasted table perfectly. Kept: tools make invented
+      codes <b style="color:var(--text)">structurally impossible</b>, and a real price
+      book won't fit in a prompt.</p>
+    </div>
+    <div class="panel">
+      <h3>ML beat guessing, not the table</h3>
+      <p style="color:var(--muted);font-size:.92em">Duration model: 5× better than the
+      baseline's guesses (25 → 5.4 min MAE), slightly worse than table-reading — until
+      the table can't ship with the prompt.</p>
+    </div>
+    <div class="panel">
+      <h3>The floor misfired once</h3>
+      <p style="color:var(--muted);font-size:.92em">One false page in ~130 case-runs:
+      a hose bib that “sprays from the handle” — keyword out of context. Fix direction:
+      hard floors for gas/sewage, one confirming question for borderline water.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · RESULTS -->
+<section class="slide">
+  <div class="eyebrow">Baseline → final · 18 cases · deterministic scoring</div>
+  <h2>Results</h2>
+  <table class="tbl" style="font-size:1.02em">
+    <tr><th>metric</th><th>rung 0 · baseline</th><th>rung 6 · final</th></tr>
+    <tr><td>Critical escalation recall</td><td class="num">75%</td><td class="num win">100%</td></tr>
+    <tr><td>False pages</td><td class="num">0%</td><td class="num win">0%</td></tr>
+    <tr><td>Usable quotes (lines + total)</td><td class="num">5.6%</td><td class="num win">100%</td></tr>
+    <tr><td>Avg quote total error</td><td class="num">27.5%</td><td class="num win">0.0%</td></tr>
+    <tr><td>Hallucinated billing codes</td><td class="num">16 / 18 cases</td><td class="num win">0 — structural</td></tr>
+    <tr><td>Playbook-cited mitigation</td><td class="num">0 / 6</td><td class="num win">6 / 6</td></tr>
+    <tr><td>Returning-customer handling</td><td class="num">67%</td><td class="num win">100%</td></tr>
+    <tr><td>Cost per intake</td><td class="num">~$0.08</td><td class="num">~$0.24 <span style="color:var(--faint)">vs a $150–500 job saved</span></td></tr>
+  </table>
+</section>
+
+<!-- 11 · REPRODUCE -->
+<section class="slide">
+  <div class="eyebrow">Reproducibility</div>
+  <h2>One .env, three commands</h2>
+  <div class="code" style="font-size:.95em">$ python -m eval.run_eval --selfcheck          <span class="k"># keys vs source data — no API</span>
+$ python -m eval.run_eval --config configs/rung0.yaml   <span class="k"># baseline</span>
+$ python -m eval.run_eval --config configs/rung6.yaml   <span class="k"># final</span></div>
+  <ul class="list">
+    <li>Any changelog row = <b>one command</b> from HEAD (<span class="mono">configs/rung0…6.yaml</span>)</li>
+    <li>Every claim traces to a committed <b>trajectory file</b> — tool calls, safety overrides, verifier standoffs</li>
+    <li>Public dataset seeds <b>pinned in-repo</b> · answer keys machine-checked · fixed-seed ML model</li>
+    <li>Full 7-rung program: <b>~$20</b> · interrupted runs resume without re-spending</li>
+  </ul>
+</section>
+
+<!-- 12 · CLOSE -->
+<section class="slide">
+  <div class="eyebrow">Hot take</div>
+  <p class="big" style="font-size:4em">Context and tools fix what an agent
+     <em>knows</em>.<br>They never fixed what it <em>decides</em>.</p>
+  <p class="sub">Every point of safety improvement came from code — the floor, the
+     verifier, the mechanical fixes — at zero false pages. If a check matters,
+     don't prompt it. Enforce it.</p>
+  <p class="mono" style="color:var(--faint);font-size:.8em;margin-top:2vh">
+     After-Hours Intake · micro1 Agentic Workflows Hackathon 2026</p>
+</section>
+
+<div class="foot">
+  <span class="hint">← → to navigate</span>
+  <span class="counter" id="counter">1 / 12</span>
+</div>
+<div class="tooltip" id="tip"></div>
+</div>
+
+<script>
+  const slides=[...document.querySelectorAll(".slide")];
+  let i=Math.min(slides.length-1,Math.max(0,(parseInt(location.hash.slice(1),10)||1)-1));
+  const counter=document.getElementById("counter");
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle("on",k===i));
+    counter.textContent=(i+1)+" / "+slides.length;
+    history.replaceState(null,"","#"+(i+1));
+  }
+  addEventListener("keydown",e=>{
+    if(e.key==="ArrowRight"||e.key===" "||e.key==="PageDown") show(i+1);
+    if(e.key==="ArrowLeft"||e.key==="PageUp") show(i-1);
+    if(e.key==="Home") show(0);
+    if(e.key==="End") show(slides.length-1);
+  });
+  document.getElementById("deck").addEventListener("click",e=>{
+    if(e.target.closest("details,a,circle")) return;
+    show(e.clientX>innerWidth/2?i+1:i-1);
+  });
+  // chart tooltip
+  const tip=document.getElementById("tip");
+  document.querySelectorAll(".pt").forEach(c=>{
+    c.addEventListener("mouseenter",e=>{
+      tip.textContent=c.dataset.v;tip.style.display="block";
+    });
+    c.addEventListener("mousemove",e=>{
+      tip.style.left=(e.clientX+14)+"px";tip.style.top=(e.clientY-10)+"px";
+    });
+    c.addEventListener("mouseleave",()=>tip.style.display="none");
+  });
+  show(i);
+</script>
