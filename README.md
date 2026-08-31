@@ -165,6 +165,51 @@ morning queue.
   the open-source libraries in `requirements.txt`. Everything else in this
   repo was built during the event; the git history is the audit trail.
 
+## Acknowledgements
+
+### Data sourcing & ethical use (PI/PII)
+
+This project contains **no real personal information**. Every customer in the
+evaluation — name, phone number, address, equipment history — is synthetic
+(fictional 555-prefix numbers, invented addresses). The two public datasets
+that seed the evaluation cases were used within their published licenses:
+[`ctgadget/nyc_311_service_requests`](https://huggingface.co/datasets/ctgadget/nyc_311_service_requests)
+(public civic complaint records; only complaint-category and descriptor fields
+were used — no addresses or identifying fields carried into cases) and
+[`dipenbhuva/home-diy-repair-qa`](https://huggingface.co/datasets/dipenbhuva/home-diy-repair-qa)
+(itself synthetic). Seed rows are pinned in `data/seeds/` for auditability.
+API credentials live only in a gitignored `.env` and are absent from the repo,
+the zip, and the results. In a production deployment, contact identifiers
+would be hashed at capture and real customer data handled under explicit
+consent and retention policy — the phone-number-as-ID design was chosen
+partly because it needs no additional PII to function.
+
+### Built with Claude, with a human in the loop
+
+This project was developed in collaboration with Claude (Anthropic), used as
+an engineering collaborator inside a deliberate human-in-the-loop workflow:
+
+**IDEA → RESEARCH → IMPLEMENTATION → CRITIC → LOOP**
+
+Every design decision was proposed with its rationale, **approved or redirected
+by the author before implementation**, then passed through a critic step
+before the next iteration — the same discipline the agent itself is built
+around. The author owned the problem selection, the domain research direction,
+every architectural approval, the budget and model decisions, and final review
+of all deliverables. (Separately from the development process, the shipped
+agent runs on Claude Opus 5 via the Anthropic API, as documented in the
+architecture section.)
+
+### Origin of the idea
+
+The problem choice — after-hours intake as the revenue-critical bottleneck of
+small plumbing companies — originated with the author, from their own research
+into trade-service operations, without reuse of prior projects, templates, or
+external assistance. Per the hackathon's ground rules: everything in this
+repository was designed and built during the event; the only pre-existing
+components are the two public datasets and the open-source libraries listed in
+`requirements.txt`.
+
 ## Repo map
 
 ```
