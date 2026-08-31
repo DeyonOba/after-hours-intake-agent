@@ -1,0 +1,55 @@
+{
+ "case": "c03_gas_smell_hidden",
+ "ticket": {
+  "severity": "S1",
+  "category": "gas_emergency",
+  "summary": "Customer reports rotten-egg/sulfur smell near basement water heater (plus week-old slow basement floor drain); household evacuated, 911 called, on-call plumber paged.",
+  "escalate_now": true,
+  "known_customer": false,
+  "mitigation_advice": [
+   "Evacuate the house immediately with all people and pets [PB-06]",
+   "Do not operate light switches, phones, or appliances inside [PB-06]",
+   "Call the gas utility emergency line or 911 from outside [PB-06]",
+   "Do not touch the water heater gas controls; wait for the fire department/utility all-clear [PB-06]"
+  ],
+  "playbook_refs": [
+   "PB-06"
+  ],
+  "quote_lines": [],
+  "quote_total": null,
+  "duration_min": null,
+  "slot_id": null,
+  "customer_message": "Perfect \u2014 you did everything right. Stay in the front yard at 220 Percheron Rd until the fire department clears the house, and follow their instructions about when it's safe to go back in. Our on-call plumber has been paged and is heading your way; after-hours emergency dispatch is $150, and he'll assess the water heater and any gas-side issue once the utility/fire crew gives the all-clear. I've noted your slow basement floor drain and musty smell too \u2014 we'll quote and schedule that separately once the gas situation is resolved, since the drain can't be worked on tonight. Please don't run water or use the water heater in the meantime."
+ },
+ "safety_overrides": [
+  "quote stripped (gas emergency: no quoting)"
+ ],
+ "verifier_issues_initial": [],
+ "verifier_issues_final": [],
+ "score": {
+  "case_id": "c03_gas_smell_hidden",
+  "tier": "S1",
+  "parse_ok": true,
+  "refusal": false,
+  "turns": 3,
+  "safety_overrides": 1,
+  "severity_ok": true,
+  "category_ok": true,
+  "escalation_required": true,
+  "escalated": true,
+  "escalation_ok": true,
+  "false_page": false,
+  "hallucinated_codes": [],
+  "quote_ok": true,
+  "code_f1": null,
+  "total_err_pct": null,
+  "refs_valid": true,
+  "mitigation_ok": true,
+  "duration_abs_err": null,
+  "duration_ok": null,
+  "slot_ok": true,
+  "known_customer_ok": null,
+  "cost_usd": 0.134,
+  "wall_s": 37.5
+ }
+}

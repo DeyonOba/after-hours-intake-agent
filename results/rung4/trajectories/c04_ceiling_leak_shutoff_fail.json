@@ -1,0 +1,120 @@
+{
+ "config": "rung4",
+ "case": "c04_ceiling_leak_shutoff_fail",
+ "system_prompt_chars": 7169,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "Water is pouring through my dining room ceiling light fixture, I think from the upstairs bathroom. I put a bucket. What do I do??"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Turn off your water main right now \u2014 it's usually where the water line enters the house (basement front wall, crawl space, garage, or the meter box). Turn the wheel clockwise or the lever perpendicular to the pipe [PB-02].\n\nAlso: stay out from under that ceiling \u2014 don't stand beneath sagging, water-heavy drywall, and don't touch the light switch for that fixture [PB-08]. Can you find the main shutoff?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "omg ok im panicking but ill look. basement doesnt have anything like that... no shutoff valve i can see. where else?? and ill stay away from the light i promise that scares me"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Two more places to check: outside at the street in a metal/plastic meter box lid (usually a curb-side rectangle), or in the garage/crawl space where the pipe comes through the wall [PB-02].\n\nQuick alternative while you look \u2014 if the upstairs bathroom fixture is the source, close the small oval handle on the supply line under that toilet or sink, clockwise until snug [PB-01]."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok checking garage now... oh wait i see it!! theres like a metal box thing next to the water heater. is that it?? theres a handle on it"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That sounds like it \u2014 turn the wheel clockwise, or if it's a lever, turn it so it sits perpendicular (crosswise) to the pipe [PB-02]. Then open the lowest cold tap in the house \u2014 a basement sink or outdoor spigot \u2014 to drain the pressure out of the lines [PB-03].\n\nTell me when the water slows, and I'll page our on-call plumber to head out."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "turning it now... yes!! the water stopped coming through the ceiling!! im draining the tap in the basement sink right now. omg thank god. should i keep the bucket under the light just in case??"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "emergency callout after hours dispatch"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01RMfBiktZW5sMNb2Ar2iEAr",
+    "content": "[{\"code\": \"EMERG-CALLOUT\", \"name\": \"After-hours emergency dispatch surcharge\", \"price\": 150, \"base_duration_min\": 0}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Great work \u2014 that was exactly right. Yes, leave the bucket there; water trapped in the ceiling will keep dripping for a while, and keep clear of any sagging drywall [PB-08].\n\nOne safety check before I page the on-call plumber: do you smell anything like rotten eggs or sulfur anywhere in the house?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "no i dont smell anything like that. just wet drywall i guess. how long before someone can come out? this is such a mess"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Good \u2014 no gas, so we're clear there. I'm paging our on-call plumber now; typical after-hours arrival is within about 60\u201390 minutes tonight. There's a $150 after-hours emergency dispatch fee; the repair itself gets quoted after he sees the source.\n\nI have your number as +1-555-0104 but no address on file \u2014 what's the service address so he can head straight there?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "its 31 halcyon ct. and yeah ok i understand about the fee. should i do anything else while i wait? like should i turn off the upstairs toilet or something?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "No need \u2014 with the main off, the whole house is depressurized, so the upstairs fixtures can't feed the leak. Just keep all water off, leave the basement tap open to finish draining [PB-03], and stay out from under the wet ceiling and away from that light fixture [PB-08].\n\nYou're all set, Maria \u2014 on-call plumber is paged and dispatched to 31 Halcyon Ct now, ETA roughly 60\u201390 minutes; he'll text when he's close. Only charge confirmed tonight is the $150 after-hours dispatch fee, and he'll quote the repair once he finds the source. You did the hard part by getting that main shut off.\n\n```json\n{\n  \"severity\": \"S1\",\n  \"category\": \"ceiling_leak_active\",\n  \"summary\": \"Active water pouring through dining room ceiling light fixture from suspected upstairs bathroom leak; customer shut house main and leak stopped, on-call plumber dispatched to 31 Halcyon Ct.\",\n  \"escalate_now\": true,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Shut off the house main (found in garage near water heater) - wheel clockwise / lever perpendicular to pipe [PB-02]\",\n    \"Open the lowest cold tap (basement sink) to drain pressure from the lines [PB-03]\",\n    \"Stay clear of sagging water-heavy ceiling and do not operate the affected light switch/fixture [PB-08]\",\n    \"Offered alternative: close the oval supply-line shutoff under the upstairs fixture, clockwise until snug [PB-01]\",\n    \"Keep all water off in the house while waiting for the technician [PB-02]\"\n  ],\n  \"playbook_refs\": [\"PB-01\", \"PB-02\", \"PB-03\", \"PB-08\"],\n  \"quote_lines\": [\n    {\"code\": \"EMERG-CALLOUT\", \"description\": \"After-hours emergency dispatch surcharge\", \"price\": 150}\n  ],\n  \"quote_total\": 150,\n  \"duration_min\": null,\n  \"slot_id\": null,\n  \"customer_message\": \"No need - with the main off, the whole house is depressurized, so the upstairs fixtures can't feed the leak. Just keep all water off, leave the basement tap open to finish draining [PB-03], and stay out from under the wet ceiling and away from that light fixture [PB-08]. You're all set, Maria - on-call plumber is paged and dispatched to 31 Halcyon Ct now, ETA roughly 60-90 minutes; he'll text when he's close. Only charge confirmed tonight is the $150 after-hours dispatch fee, and he'll quote the repair once he finds the source. You did the hard part by getting that main shut off.\"\n}\n```"
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "ceiling_leak_active",
+    "summary": "Active water pouring through dining room ceiling light fixture from suspected upstairs bathroom leak; customer shut house main and leak stopped, on-call plumber dispatched to 31 Halcyon Ct.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Shut off the house main (found in garage near water heater) - wheel clockwise / lever perpendicular to pipe [PB-02]",
+     "Open the lowest cold tap (basement sink) to drain pressure from the lines [PB-03]",
+     "Stay clear of sagging water-heavy ceiling and do not operate the affected light switch/fixture [PB-08]",
+     "Offered alternative: close the oval supply-line shutoff under the upstairs fixture, clockwise until snug [PB-01]",
+     "Keep all water off in the house while waiting for the technician [PB-02]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02",
+     "PB-03",
+     "PB-08"
+    ],
+    "quote_lines": [
+     {
+      "code": "EMERG-CALLOUT",
+      "description": "After-hours emergency dispatch surcharge",
+      "price": 150
+     }
+    ],
+    "quote_total": 150,
+    "duration_min": null,
+    "slot_id": null,
+    "customer_message": "No need - with the main off, the whole house is depressurized, so the upstairs fixtures can't feed the leak. Just keep all water off, leave the basement tap open to finish draining [PB-03], and stay out from under the wet ceiling and away from that light fixture [PB-08]. You're all set, Maria - on-call plumber is paged and dispatched to 31 Halcyon Ct now, ETA roughly 60-90 minutes; he'll text when he's close. Only charge confirmed tonight is the $150 after-hours dispatch fee, and he'll quote the repair once he finds the source. You did the hard part by getting that main shut off."
+   }
+  }
+ ]
+}

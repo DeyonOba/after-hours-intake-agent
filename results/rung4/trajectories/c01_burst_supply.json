@@ -1,0 +1,180 @@
+{
+ "config": "rung4",
+ "case": "c01_burst_supply",
+ "system_prompt_chars": 7171,
+ "trajectory": [
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "PLEASE HELP water is SPRAYING out from under my kitchen sink, it's going everywhere, I called twice and nobody picked up!!"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "I'm here, Dana \u2014 let's stop the water first. Under the sink, find the small oval/football-shaped handle on the supply line and turn it clockwise until snug. There may be two (hot and cold) \u2014 close both. [PB-01]\n\nTell me if that stops the spray."
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "ok looking now!! i see them, turning turning... ok its off, still dripping a little but way better. no more spray thank god"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Great work \u2014 that's the main thing. Quick safety check: do you smell anything like rotten eggs or sulfur anywhere in the house?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "no nothing like that, just wet carpet smell lol. why?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Just a standard safety screen \u2014 a gas smell would mean evacuating, so I'm glad that's a no. \n\nWhere exactly was the spray coming from \u2014 the braided supply hose, the shutoff valve itself, or up at the faucet body?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "it was coming from like right where the hose connects to the faucet, under the sink. the hose looked like it split or something"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "supply line leak under sink contained repair"
+    }
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "price_book_lookup",
+    "input": {
+     "query": "faucet supply hose replacement"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Q7etH1S8mSi1i1gTnSwr3y",
+    "content": "[{\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}, {\"code\": \"LEAK-REPAIR-MINOR\", \"name\": \"Minor pipe leak repair (accessible)\", \"price\": 219, \"base_duration_min\": 90}, {\"code\": \"DRAIN-MAIN\", \"name\": \"Main line clearing (power auger)\", \"price\": 349, \"base_duration_min\": 120}]"
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01SX764qC38Cr6pqkau6Q6Mj",
+    "content": "[{\"code\": \"FAUCET-CARTRIDGE\", \"name\": \"Faucet/shower cartridge replacement\", \"price\": 159, \"base_duration_min\": 60}, {\"code\": \"SUPPLY-LINE-REPLACE\", \"name\": \"Supply line replacement\", \"price\": 129, \"base_duration_min\": 45}, {\"code\": \"HOSE-BIB-REPLACE\", \"name\": \"Outdoor hose bib replacement\", \"price\": 169, \"base_duration_min\": 75}, {\"code\": \"SHUTOFF-VALVE-REPLACE\", \"name\": \"Fixture shutoff valve replacement\", \"price\": 139, \"base_duration_min\": 45}, {\"code\": \"WH-REPLACE-40G\", \"name\": \"40-gal gas water heater replacement\", \"price\": 1450, \"base_duration_min\": 240}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "That's a classic burst braided supply hose \u2014 good news is it's a straightforward fix. Do you know roughly how old the faucet and those supply hoses are (15+ years, or fairly recent)?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "honestly no idea, ive been here like 3 years and the landlord never mentioned replacing anything. could be old idk"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "predict_duration",
+    "input": {
+     "job_code": "SUPPLY-LINE-REPLACE",
+     "old_fixture": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01Fbf3mgzMyp5ToMaFcdkwnw",
+    "content": "{\"job_code\": \"SUPPLY-LINE-REPLACE\", \"predicted_duration_min\": 51}"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "tool_use",
+   "content": {
+    "tool": "get_available_slots",
+    "input": {
+     "duration_min": 51,
+     "priority": true
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "content": {
+    "tool_use_id": "toolu_01V6KSM8v7jT1uFYRQ67VJff",
+    "content": "[{\"id\": \"SL-0901-0800\", \"start\": \"2026-09-01T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}, {\"id\": \"SL-0902-0800\", \"start\": \"2026-09-02T08:00:00\", \"capacity_min\": 240, \"priority\": true, \"booked\": false}]"
+   }
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Here's the plan: we replace the split supply hose \u2014 flat rate **$129 (SUPPLY-LINE-REPLACE)**, about 50 minutes on site. Since your kitchen sink is out of service, I can hold our first priority slot tomorrow, **Mon Sep 1 at 8:00 AM**. Keep those valves closed until then, and since you're renting, you may want to give your landlord a heads-up.\n\nWhat's the service address so I can confirm it on the ticket?"
+  },
+  {
+   "role": "customer",
+   "kind": "text",
+   "content": "yes please tomorrow morning works. its 48 Union Ave, Apt 2. should i really call the landlord tonight or can it wait til morning?"
+  },
+  {
+   "role": "agent",
+   "kind": "text",
+   "content": "Morning is fine \u2014 the water's off at the fixture, so nothing is getting worse tonight. Just a courtesy text/voicemail so they know a plumber is coming and who's paying.\n\nYou're booked, Dana \u2014 see you at 8:00 AM.\n\nConfirmed: **48 Union Ave, Apt 2**, Mon Sep 1, 8:00\u20139:00 AM window, $129 flat rate for the supply line replacement (if the shutoff valve under the sink turns out to be bad too, the tech will quote that separately before doing any extra work). Keep both under-sink valves closed until we arrive, and avoid using that sink. Text this number if anything changes overnight.\n\n```json\n{\n  \"severity\": \"S2\",\n  \"category\": \"leak_contained\",\n  \"summary\": \"Burst braided supply hose at kitchen faucet connection sprayed water; customer closed both fixture shutoffs and leak is now contained \u2014 kitchen sink out of service pending supply line replacement.\",\n  \"escalate_now\": false,\n  \"known_customer\": false,\n  \"mitigation_advice\": [\n    \"Closed both hot and cold fixture supply shutoff valves under the kitchen sink (clockwise until snug) \u2014 spray stopped, minor residual drip [PB-01]\",\n    \"Keep both under-sink valves closed and do not use the kitchen sink until the technician arrives [PB-01]\"\n  ],\n  \"playbook_refs\": [\"PB-01\"],\n  \"quote_lines\": [\n    {\"code\": \"SUPPLY-LINE-REPLACE\", \"description\": \"Supply line replacement \u2014 split braided hose at kitchen faucet connection\", \"price\": 129}\n  ],\n  \"quote_total\": 129,\n  \"duration_min\": 51,\n  \"slot_id\": \"SL-0901-0800\",\n  \"customer_message\": \"You're booked, Dana \u2014 see you at 8:00 AM. Confirmed: 48 Union Ave, Apt 2, Mon Sep 1, 8:00\u20139:00 AM window, $129 flat rate for the supply line replacement (if the shutoff valve under the sink turns out to be bad too, the tech will quote that separately before doing any extra work). Keep both under-sink valves closed until we arrive, and avoid using that sink. Text this number if anything changes overnight.\"\n}\n```"
+  },
+  {
+   "role": "safety",
+   "kind": "overrides",
+   "content": [
+    "severity S2 -> S1 (rules: ['uncontained_water'])",
+    "escalate_now forced true",
+    "playbook refs added: ['PB-02']"
+   ]
+  },
+  {
+   "role": "agent",
+   "kind": "ticket",
+   "content": {
+    "severity": "S1",
+    "category": "leak_contained",
+    "summary": "Burst braided supply hose at kitchen faucet connection sprayed water; customer closed both fixture shutoffs and leak is now contained \u2014 kitchen sink out of service pending supply line replacement.",
+    "escalate_now": true,
+    "known_customer": false,
+    "mitigation_advice": [
+     "Closed both hot and cold fixture supply shutoff valves under the kitchen sink (clockwise until snug) \u2014 spray stopped, minor residual drip [PB-01]",
+     "Keep both under-sink valves closed and do not use the kitchen sink until the technician arrives [PB-01]"
+    ],
+    "playbook_refs": [
+     "PB-01",
+     "PB-02"
+    ],
+    "quote_lines": [
+     {
+      "code": "SUPPLY-LINE-REPLACE",
+      "description": "Supply line replacement \u2014 split braided hose at kitchen faucet connection",
+      "price": 129
+     }
+    ],
+    "quote_total": 129,
+    "duration_min": 51,
+    "slot_id": "SL-0901-0800",
+    "customer_message": "You're booked, Dana \u2014 see you at 8:00 AM. Confirmed: 48 Union Ave, Apt 2, Mon Sep 1, 8:00\u20139:00 AM window, $129 flat rate for the supply line replacement (if the shutoff valve under the sink turns out to be bad too, the tech will quote that separately before doing any extra work). Keep both under-sink valves closed until we arrive, and avoid using that sink. Text this number if anything changes overnight."
+   }
+  }
+ ]
+}
